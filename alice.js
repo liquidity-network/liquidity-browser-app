@@ -3,6 +3,7 @@ $(document).ready(function(){
   console.log("hello alice with address: " + ALICE_PUB);
 
   $("#alice-address").text(ALICE_PUB);
+  var balance = 0;
 
   // Setup the LQDManager
   const lqdManagerA = new LQDManager({
@@ -11,14 +12,15 @@ $(document).ready(function(){
     contractAddress: HUB_CONTRACT_ADDRESS,
   });
 
-  function callBack (transfer) {
+  async function callBack (transfer) {
       console.log(transfer)
-      console.log("Alice received a transfer of 0 wei from " + transfer.wallet.address);
+      console.log("Alice is receiving a transfer of "+ transfer.amount + " wei from " + transfer.wallet.address);
       $("#send-button").prop('disabled', false);
       $("#send-button").text('💸 Send To Alice');
-      $("#alice-alert").text("Alice received a transfer of " + transfer.amount + " wei from " + transfer.wallet.address + " with tx id " + transfer.id);
+      $("#alice-alert").text("Alice is receiving a transfer of " + transfer.amount + " wei from " + transfer.wallet.address + " with tx id " + transfer.id);
       $("#alice-alert").removeClass("d-none");
-      $("#get-money-button").prop('disabled', false);
+      balance = await lqdManagerA.getOffChainBalance(ALICE_PUB);
+      $("#alice-balance").text('Balance: ' + balance);
   }
 
   async function register() {
@@ -26,11 +28,11 @@ $(document).ready(function(){
     const incomingTransferEventEmitter = await lqdManagerA.register(ALICE_PUB);
 
     // Trigger a log upon an incoming transfer
-    incomingTransferEventEmitter.on('IncomingTransfer', callBack)
+    incomingTransferEventEmitter.on('IncomingTransfer', await callBack)
 
     console.log("Alice is ready to receive transfers !");
     $("#send-button").prop('disabled', false);
-    $("#send-button").text('Send To Alice');
+    $("#send-button").text('💸 Send To Alice');
   }
 
   register();

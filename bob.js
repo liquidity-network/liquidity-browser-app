@@ -2,6 +2,8 @@ $(document).ready(function(){
   console.log("hello bob with address: " + BOB_PUB);
 
   $("#bob-address").text(BOB_PUB);
+
+  var balance = 0;
   
   // Specify to which commit-chain we want to connect
   const lqdManagerB = new LQDManager({
@@ -10,14 +12,15 @@ $(document).ready(function(){
     contractAddress: HUB_CONTRACT_ADDRESS,
   });
 
-  function callBack (transfer) {
+  async function callBack (transfer) {
       console.log(transfer)
       console.log("Bob is receiving a transfer of " + transfer.amount + " wei from " + transfer.wallet.address);
       $("#send-button").prop('disabled', false);
-      $("#send-button").text('Send To Alice');
+      $("#send-button").text('💸 Send To Alice');
       $("#bob-alert").text("Bob is receiving a transfer of " + transfer.amount + " wei from " + transfer.wallet.address + " with tx id " + transfer.id);
       $("#bob-alert").removeClass("d-none");
-      $("#get-money-button").prop('disabled', false);
+      balance = await lqdManagerB.getOffChainBalance(BOB_PUB);
+      $("#bob-balance").text('Balance: ' + balance);
   }
 
   const getMoney = () => {
@@ -39,20 +42,28 @@ $(document).ready(function(){
     const incomingTransferEventEmitter = await lqdManagerB.register(BOB_PUB);
 
     // Trigger a log upon an incoming transfer
-    incomingTransferEventEmitter.on('IncomingTransfer', callBack)
+    incomingTransferEventEmitter.on('IncomingTransfer', await callBack)
 
     console.log("Bob is ready to receive transfers !");
     $("#get-money-button").removeClass("d-none");
   }
   
   const sendToALice = async () => {
-    $("#send-button").prop('disabled', true);
-    $("#send-button").text('⌛ Sending...');
-    $("#get-money-button").prop('disabled', true);
+    $("#bob-alert").addClass("d-none");
 
     var val = $("#amount").val() || 0;
     val = parseInt(val);
     console.log(val);
+
+    if(val > balance){
+      $("#bob-alert").text("😭 Insufficient Funds!!");
+      $("#bob-alert").removeClass("d-none");
+      return;
+    }
+
+    $("#send-button").prop('disabled', true);
+    $("#send-button").text('⌛ Sending...');
+    $("#get-money-button").prop('disabled', true);
     
     // Send fETH on the commit-chain to Alice  
     const txId = await lqdManagerB.postTransfer({
