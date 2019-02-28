@@ -6,7 +6,7 @@ $(document).ready(function(){
   var balance = 0;
   
   // Specify to which commit-chain we want to connect
-  const lqdManagerB = new LQDManager({
+  const nocustManagerB = new NocustManager({
     rpcApi: web3,
     hubApiUrl: HUB_API_URL,
     contractAddress: HUB_CONTRACT_ADDRESS,
@@ -19,7 +19,7 @@ $(document).ready(function(){
       $("#send-button").text('💸 Send To Alice');
       $("#bob-alert").text("Bob is receiving a transfer of " + transfer.amount + " wei from " + transfer.wallet.address + " with tx id " + transfer.id);
       $("#bob-alert").removeClass("d-none");
-      balance = await lqdManagerB.getOffChainBalance(BOB_PUB);
+      balance = await nocustManagerB.getNocustBalance(BOB_PUB);
       $("#bob-balance").text('Balance: ' + balance);
   }
 
@@ -38,11 +38,11 @@ $(document).ready(function(){
   }
 
   async function register() {
-    // Register an address to be used with the LQD manager
-    const incomingTransferEventEmitter = await lqdManagerB.register(BOB_PUB);
+    // Register an address to be used with the Nocust manager
+    await nocustManagerB.registerAddress(BOB_PUB);
 
     // Trigger a log upon an incoming transfer
-    incomingTransferEventEmitter.on('IncomingTransfer', await callBack)
+    nocustManagerB.subscribeToIncomingTransfer(BOB_PUB, callBack)
 
     console.log("Bob is ready to receive transfers !");
     $("#get-money-button").removeClass("d-none");
@@ -66,7 +66,7 @@ $(document).ready(function(){
     $("#get-money-button").prop('disabled', true);
     
     // Send fETH on the commit-chain to Alice  
-    const txId = await lqdManagerB.postTransfer({
+    const txId = await nocustManagerB.sendTransaction({
         to: ALICE_PUB,
         // 0.00 fEther in Wei as BigNumber. 
         amount: val,

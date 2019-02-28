@@ -5,8 +5,8 @@ $(document).ready(function(){
   $("#alice-address").text(ALICE_PUB);
   var balance = 0;
 
-  // Setup the LQDManager
-  const lqdManagerA = new LQDManager({
+  // Setup the NocustManager
+  const nocustManagerA = new NocustManager({
     rpcApi: web3,
     hubApiUrl: HUB_API_URL,
     contractAddress: HUB_CONTRACT_ADDRESS,
@@ -19,16 +19,16 @@ $(document).ready(function(){
       $("#send-button").text('💸 Send To Alice');
       $("#alice-alert").text("Alice is receiving a transfer of " + transfer.amount + " wei from " + transfer.wallet.address + " with tx id " + transfer.id);
       $("#alice-alert").removeClass("d-none");
-      balance = await lqdManagerA.getOffChainBalance(ALICE_PUB);
+      balance = await nocustManagerA.getNocustBalance(ALICE_PUB);
       $("#alice-balance").text('Balance: ' + balance);
   }
 
   async function register() {
-    // Register an address to be used with the LQD manager
-    const incomingTransferEventEmitter = await lqdManagerA.register(ALICE_PUB);
-
+    // Register an address to be used with the Nocust manager
+    await nocustManagerA.registerAddress(ALICE_PUB);
+    
     // Trigger a log upon an incoming transfer
-    incomingTransferEventEmitter.on('IncomingTransfer', await callBack)
+    nocustManagerA.subscribeToIncomingTransfer(ALICE_PUB, callBack)
 
     console.log("Alice is ready to receive transfers !");
     $("#send-button").prop('disabled', false);

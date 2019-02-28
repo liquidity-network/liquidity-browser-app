@@ -1,4 +1,4 @@
-const HUB_CONTRACT_ADDRESS = "0x6B9f10931E88349A572F2f0883E49528902B4b5D";
+const HUB_CONTRACT_ADDRESS = "0x7e9c7846a22d4D6a8Fde0B586Ab1860B00316611";
 const HUB_API_URL = "https://rinkeby.liquidity.network/";
 const RPC_URL = "https://rinkeby.infura.io/";
 
@@ -6,7 +6,7 @@ const RPC_URL = "https://rinkeby.infura.io/";
 
 const Web3 = getWeb3();
 const BigNumber = getBigNumber();
-const LQDManager = getLQDManager();
+const NocustManager = getNocustManager();
 
 const web3 = new Web3(new Web3.providers.HttpProvider(RPC_URL));
 const wallets = web3.eth.accounts.wallet.create(2);
