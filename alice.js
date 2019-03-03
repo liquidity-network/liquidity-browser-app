@@ -19,6 +19,8 @@ $(document).ready(function(){
       $("#send-button").text('💸 Send To Alice');
       $("#alice-alert").text("Alice is receiving a transfer of " + transfer.amount + " wei from " + transfer.wallet.address + " with tx id " + transfer.id);
       $("#alice-alert").removeClass("d-none");
+      $("#alice-balance").text('Balance: ...updating...');
+      await sleep(10000);
       balance = await nocustManagerA.getNocustBalance(ALICE_PUB);
       $("#alice-balance").text('Balance: ' + balance);
   }
