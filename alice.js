@@ -8,7 +8,7 @@ $(document).ready(function(){
   // Setup the NocustManager
   const nocustManagerA = new NocustManager({
     rpcApi: web3,
-    hubApiUrl: HUB_API_URL,
+    operatorApiUrl: HUB_API_URL,
     contractAddress: HUB_CONTRACT_ADDRESS,
   });
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
       $("#alice-alert").removeClass("d-none");
       $("#alice-balance").text('Balance: ...updating...');
       await sleep(10000);
-      balance = await nocustManagerA.getNocustBalance(ALICE_PUB);
+      balance = await nocustManagerA.getNOCUSTBalance(ALICE_PUB);
       $("#alice-balance").text('Balance: ' + balance);
   }
 

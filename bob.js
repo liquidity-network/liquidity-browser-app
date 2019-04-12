@@ -8,7 +8,7 @@ $(document).ready(function(){
   // Specify to which commit-chain we want to connect
   const nocustManagerB = new NocustManager({
     rpcApi: web3,
-    hubApiUrl: HUB_API_URL,
+    operatorApiUrl: HUB_API_URL,
     contractAddress: HUB_CONTRACT_ADDRESS,
   });
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
       $("#bob-alert").removeClass("d-none");
       $("#bob-balance").text('Balance: ...updating...');
       await sleep(10000);
-      balance = await nocustManagerB.getNocustBalance(BOB_PUB);
+      balance = await nocustManagerB.getNOCUSTBalance(BOB_PUB);
       $("#bob-balance").text('Balance: ' + balance);
   }
 
