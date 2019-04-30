@@ -26,15 +26,23 @@ $(document).ready(function(){
   }
 
   async function register() {
-    // Register an address to be used with the Nocust manager
-    await nocustManagerA.registerAddress(ALICE_PUB);
-    
-    // Trigger a log upon an incoming transfer
-    nocustManagerA.subscribeToIncomingTransfer(ALICE_PUB, callBack)
-
-    console.log("Alice is ready to receive transfers !");
-    $("#send-button").prop('disabled', false);
-    $("#send-button").text('💸 Send To Alice');
+    try{
+      // Register an address to be used with the Nocust manager
+      await nocustManagerA.registerAddress(ALICE_PUB);
+      
+      // Trigger a log upon an incoming transfer
+      nocustManagerA.subscribeToIncomingTransfer(ALICE_PUB, callBack)
+  
+      console.log("Alice is ready to receive transfers !");
+      $("#send-button").prop('disabled', false);
+      $("#send-button").text('💸 Send To Alice');
+    }
+    catch(err){
+      if (err.message.includes("timeout")) {
+        console.log("Restarting registration due to timeout");
+        register();
+      }
+    }
   }
 
   register();

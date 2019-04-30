@@ -41,13 +41,20 @@ $(document).ready(function(){
 
   async function register() {
     // Register an address to be used with the Nocust manager
-    await nocustManagerB.registerAddress(BOB_PUB);
+    try {
+      await nocustManagerB.registerAddress(BOB_PUB);
+      // Trigger a log upon an incoming transfer
+      nocustManagerB.subscribeToIncomingTransfer(BOB_PUB, callBack);
 
-    // Trigger a log upon an incoming transfer
-    nocustManagerB.subscribeToIncomingTransfer(BOB_PUB, callBack)
-
-    console.log("Bob is ready to receive transfers !");
-    $("#get-money-button").removeClass("d-none");
+      console.log("Bob is ready to receive transfers !");
+      $("#get-money-button").removeClass("d-none");
+    }
+    catch(err){
+      if (err.message.includes("timeout")) {
+        console.log("Restarting registration due to timeout");
+        register();
+      }
+    }
   }
   
   const sendToALice = async () => {
