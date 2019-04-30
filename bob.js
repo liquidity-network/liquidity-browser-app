@@ -8,7 +8,7 @@ $(document).ready(function(){
   // Specify to which commit-chain we want to connect
   const nocustManagerB = new NocustManager({
     rpcApi: web3,
-    hubApiUrl: HUB_API_URL,
+    operatorApiUrl: HUB_API_URL,
     contractAddress: HUB_CONTRACT_ADDRESS,
   });
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
       $("#bob-alert").removeClass("d-none");
       $("#bob-balance").text('Balance: ...updating...');
       await sleep(10000);
-      balance = await nocustManagerB.getNocustBalance(BOB_PUB);
+      balance = await nocustManagerB.getNOCUSTBalance(BOB_PUB);
       $("#bob-balance").text('Balance: ' + balance);
   }
 
@@ -41,13 +41,20 @@ $(document).ready(function(){
 
   async function register() {
     // Register an address to be used with the Nocust manager
-    await nocustManagerB.registerAddress(BOB_PUB);
+    try {
+      await nocustManagerB.registerAddress(BOB_PUB);
+      // Trigger a log upon an incoming transfer
+      nocustManagerB.subscribeToIncomingTransfer(BOB_PUB, callBack);
 
-    // Trigger a log upon an incoming transfer
-    nocustManagerB.subscribeToIncomingTransfer(BOB_PUB, callBack)
-
-    console.log("Bob is ready to receive transfers !");
-    $("#get-money-button").removeClass("d-none");
+      console.log("Bob is ready to receive transfers !");
+      $("#get-money-button").removeClass("d-none");
+    }
+    catch(err){
+      if (err.message.includes("timeout")) {
+        console.log("Restarting registration due to timeout");
+        register();
+      }
+    }
   }
   
   const sendToALice = async () => {

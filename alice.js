@@ -8,7 +8,7 @@ $(document).ready(function(){
   // Setup the NocustManager
   const nocustManagerA = new NocustManager({
     rpcApi: web3,
-    hubApiUrl: HUB_API_URL,
+    operatorApiUrl: HUB_API_URL,
     contractAddress: HUB_CONTRACT_ADDRESS,
   });
 
@@ -21,20 +21,28 @@ $(document).ready(function(){
       $("#alice-alert").removeClass("d-none");
       $("#alice-balance").text('Balance: ...updating...');
       await sleep(10000);
-      balance = await nocustManagerA.getNocustBalance(ALICE_PUB);
+      balance = await nocustManagerA.getNOCUSTBalance(ALICE_PUB);
       $("#alice-balance").text('Balance: ' + balance);
   }
 
   async function register() {
-    // Register an address to be used with the Nocust manager
-    await nocustManagerA.registerAddress(ALICE_PUB);
-    
-    // Trigger a log upon an incoming transfer
-    nocustManagerA.subscribeToIncomingTransfer(ALICE_PUB, callBack)
-
-    console.log("Alice is ready to receive transfers !");
-    $("#send-button").prop('disabled', false);
-    $("#send-button").text('💸 Send To Alice');
+    try{
+      // Register an address to be used with the Nocust manager
+      await nocustManagerA.registerAddress(ALICE_PUB);
+      
+      // Trigger a log upon an incoming transfer
+      nocustManagerA.subscribeToIncomingTransfer(ALICE_PUB, callBack)
+  
+      console.log("Alice is ready to receive transfers !");
+      $("#send-button").prop('disabled', false);
+      $("#send-button").text('💸 Send To Alice');
+    }
+    catch(err){
+      if (err.message.includes("timeout")) {
+        console.log("Restarting registration due to timeout");
+        register();
+      }
+    }
   }
 
   register();

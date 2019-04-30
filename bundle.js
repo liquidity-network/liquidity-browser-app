@@ -1,20 +1,21 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const Web3 = require('web3') // Web3 1.0.0-beta.36 only for now
-const BigNumber = require('bignumber.js')
-const { NocustManager } = require('nocust-client')
+const Web3 = require("web3"); // Web3 1.0.0-beta.36 only for now
+const BigNumber = require("bignumber.js");
+const { NOCUSTManager } = require("nocust-client");
 
-window.getWeb3 = function(){
-    return Web3;
+window.getWeb3 = function() {
+  return Web3;
 };
 
-window.getBigNumber = function(){
+window.getBigNumber = function() {
   return BigNumber;
 };
 
-window.getNocustManager = function(){
-  return NocustManager;
+window.getNocustManager = function() {
+  return NOCUSTManager;
 };
-},{"bignumber.js":24,"nocust-client":326,"web3":730}],2:[function(require,module,exports){
+
+},{"bignumber.js":24,"nocust-client":326,"web3":727}],2:[function(require,module,exports){
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
@@ -204,7 +205,7 @@ Agent.prototype.freeSocket = function freeSocket(socket, opts) {
   socket.destroy();
 };
 
-},{"./patch-core":4,"es6-promisify":102,"events":827,"util":913}],4:[function(require,module,exports){
+},{"./patch-core":4,"es6-promisify":104,"events":827,"util":913}],4:[function(require,module,exports){
 'use strict';
 const url = require('url');
 const https = require('https');
@@ -420,7 +421,7 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
   return this._getEncoder(enc).encode(data, reporter);
 };
 
-},{"../asn1":8,"inherits":146,"vm":914}],10:[function(require,module,exports){
+},{"../asn1":8,"inherits":145,"vm":914}],10:[function(require,module,exports){
 var inherits = require('inherits');
 var Reporter = require('../base').Reporter;
 var Buffer = require('buffer').Buffer;
@@ -538,7 +539,7 @@ EncoderBuffer.prototype.join = function join(out, offset) {
   return out;
 };
 
-},{"../base":11,"buffer":791,"inherits":146}],11:[function(require,module,exports){
+},{"../base":11,"buffer":791,"inherits":145}],11:[function(require,module,exports){
 var base = exports;
 
 base.Reporter = require('./reporter').Reporter;
@@ -1182,7 +1183,7 @@ Node.prototype._isPrintstr = function isPrintstr(str) {
   return /^[A-Za-z0-9 '\(\)\+,\-\.\/:=\?]*$/.test(str);
 };
 
-},{"../base":11,"minimalistic-assert":324}],13:[function(require,module,exports){
+},{"../base":11,"minimalistic-assert":323}],13:[function(require,module,exports){
 var inherits = require('inherits');
 
 function Reporter(options) {
@@ -1305,7 +1306,7 @@ ReporterError.prototype.rethrow = function rethrow(msg) {
   return this;
 };
 
-},{"inherits":146}],14:[function(require,module,exports){
+},{"inherits":145}],14:[function(require,module,exports){
 var constants = require('../constants');
 
 exports.tagClass = {
@@ -1696,7 +1697,7 @@ function derDecodeLen(buf, primitive, fail) {
   return len;
 }
 
-},{"../../asn1":8,"inherits":146}],17:[function(require,module,exports){
+},{"../../asn1":8,"inherits":145}],17:[function(require,module,exports){
 var decoders = exports;
 
 decoders.der = require('./der');
@@ -1753,7 +1754,7 @@ PEMDecoder.prototype.decode = function decode(data, options) {
   return DERDecoder.prototype.decode.call(this, input, options);
 };
 
-},{"./der":16,"buffer":791,"inherits":146}],19:[function(require,module,exports){
+},{"./der":16,"buffer":791,"inherits":145}],19:[function(require,module,exports){
 var inherits = require('inherits');
 var Buffer = require('buffer').Buffer;
 
@@ -2050,7 +2051,7 @@ function encodeTag(tag, primitive, cls, reporter) {
   return res;
 }
 
-},{"../../asn1":8,"buffer":791,"inherits":146}],20:[function(require,module,exports){
+},{"../../asn1":8,"buffer":791,"inherits":145}],20:[function(require,module,exports){
 var encoders = exports;
 
 encoders.der = require('./der');
@@ -2079,7 +2080,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
   return out.join('\n');
 };
 
-},{"./der":19,"inherits":146}],22:[function(require,module,exports){
+},{"./der":19,"inherits":145}],22:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Mutex = /** @class */ (function () {
@@ -8895,7 +8896,7 @@ StreamCipher.prototype.setAAD = function setAAD (buf) {
 
 module.exports = StreamCipher
 
-},{"./aes":27,"./ghash":32,"./incr32":33,"buffer-xor":54,"cipher-base":55,"inherits":146,"safe-buffer":602}],29:[function(require,module,exports){
+},{"./aes":27,"./ghash":32,"./incr32":33,"buffer-xor":54,"cipher-base":55,"inherits":145,"safe-buffer":602}],29:[function(require,module,exports){
 var ciphers = require('./encrypter')
 var deciphers = require('./decrypter')
 var modes = require('./modes/list.json')
@@ -9036,7 +9037,7 @@ function createDecipher (suite, password) {
 exports.createDecipher = createDecipher
 exports.createDecipheriv = createDecipheriv
 
-},{"./aes":27,"./authCipher":28,"./modes":40,"./streamCipher":43,"cipher-base":55,"evp_bytestokey":120,"inherits":146,"safe-buffer":602}],31:[function(require,module,exports){
+},{"./aes":27,"./authCipher":28,"./modes":40,"./streamCipher":43,"cipher-base":55,"evp_bytestokey":122,"inherits":145,"safe-buffer":602}],31:[function(require,module,exports){
 var MODES = require('./modes')
 var AuthCipher = require('./authCipher')
 var Buffer = require('safe-buffer').Buffer
@@ -9152,7 +9153,7 @@ function createCipher (suite, password) {
 exports.createCipheriv = createCipheriv
 exports.createCipher = createCipher
 
-},{"./aes":27,"./authCipher":28,"./modes":40,"./streamCipher":43,"cipher-base":55,"evp_bytestokey":120,"inherits":146,"safe-buffer":602}],32:[function(require,module,exports){
+},{"./aes":27,"./authCipher":28,"./modes":40,"./streamCipher":43,"cipher-base":55,"evp_bytestokey":122,"inherits":145,"safe-buffer":602}],32:[function(require,module,exports){
 var Buffer = require('safe-buffer').Buffer
 var ZEROES = Buffer.alloc(16, 0)
 
@@ -9688,7 +9689,7 @@ StreamCipher.prototype._final = function () {
 
 module.exports = StreamCipher
 
-},{"./aes":27,"cipher-base":55,"inherits":146,"safe-buffer":602}],44:[function(require,module,exports){
+},{"./aes":27,"cipher-base":55,"inherits":145,"safe-buffer":602}],44:[function(require,module,exports){
 var DES = require('browserify-des')
 var aes = require('browserify-aes/browser')
 var aesModes = require('browserify-aes/modes')
@@ -9757,7 +9758,7 @@ exports.createDecipher = exports.Decipher = createDecipher
 exports.createDecipheriv = exports.Decipheriv = createDecipheriv
 exports.listCiphers = exports.getCiphers = getCiphers
 
-},{"browserify-aes/browser":29,"browserify-aes/modes":40,"browserify-des":45,"browserify-des/modes":46,"evp_bytestokey":120}],45:[function(require,module,exports){
+},{"browserify-aes/browser":29,"browserify-aes/modes":40,"browserify-des":45,"browserify-des/modes":46,"evp_bytestokey":122}],45:[function(require,module,exports){
 var CipherBase = require('cipher-base')
 var des = require('des.js')
 var inherits = require('inherits')
@@ -9809,7 +9810,7 @@ DES.prototype._final = function () {
   return Buffer.from(this._des.final())
 }
 
-},{"cipher-base":55,"des.js":65,"inherits":146,"safe-buffer":602}],46:[function(require,module,exports){
+},{"cipher-base":55,"des.js":67,"inherits":145,"safe-buffer":602}],46:[function(require,module,exports){
 exports['des-ecb'] = {
   key: 8,
   iv: 0
@@ -10141,7 +10142,7 @@ module.exports = {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./algorithms.json":49,"./sign":52,"./verify":53,"buffer":791,"create-hash":58,"inherits":146,"stream":901}],52:[function(require,module,exports){
+},{"./algorithms.json":49,"./sign":52,"./verify":53,"buffer":791,"create-hash":58,"inherits":145,"stream":901}],52:[function(require,module,exports){
 (function (Buffer){
 // much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var createHmac = require('create-hmac')
@@ -10290,7 +10291,7 @@ module.exports.getKey = getKey
 module.exports.makeKey = makeKey
 
 }).call(this,require("buffer").Buffer)
-},{"./curves.json":50,"bn.js":25,"browserify-rsa":47,"buffer":791,"create-hmac":60,"elliptic":75,"parse-asn1":383}],53:[function(require,module,exports){
+},{"./curves.json":50,"bn.js":25,"browserify-rsa":47,"buffer":791,"create-hmac":60,"elliptic":77,"parse-asn1":383}],53:[function(require,module,exports){
 (function (Buffer){
 // much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var BN = require('bn.js')
@@ -10377,7 +10378,7 @@ function checkValue (b, q) {
 module.exports = verify
 
 }).call(this,require("buffer").Buffer)
-},{"./curves.json":50,"bn.js":25,"buffer":791,"elliptic":75,"parse-asn1":383}],54:[function(require,module,exports){
+},{"./curves.json":50,"bn.js":25,"buffer":791,"elliptic":77,"parse-asn1":383}],54:[function(require,module,exports){
 (function (Buffer){
 module.exports = function xor (a, b) {
   var length = Math.min(a.length, b.length)
@@ -10492,7 +10493,7 @@ CipherBase.prototype._toString = function (value, enc, fin) {
 
 module.exports = CipherBase
 
-},{"inherits":146,"safe-buffer":602,"stream":901,"string_decoder":906}],56:[function(require,module,exports){
+},{"inherits":145,"safe-buffer":602,"stream":901,"string_decoder":906}],56:[function(require,module,exports){
 /* jshint node: true */
 (function () {
     "use strict";
@@ -10898,7 +10899,7 @@ function formatReturnValue (bn, enc, len) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"bn.js":25,"buffer":791,"elliptic":75}],58:[function(require,module,exports){
+},{"bn.js":25,"buffer":791,"elliptic":77}],58:[function(require,module,exports){
 'use strict'
 var inherits = require('inherits')
 var MD5 = require('md5.js')
@@ -10930,14 +10931,14 @@ module.exports = function createHash (alg) {
   return new Hash(sha(alg))
 }
 
-},{"cipher-base":55,"inherits":146,"md5.js":322,"ripemd160":403,"sha.js":606}],59:[function(require,module,exports){
+},{"cipher-base":55,"inherits":145,"md5.js":321,"ripemd160":403,"sha.js":606}],59:[function(require,module,exports){
 var MD5 = require('md5.js')
 
 module.exports = function (buffer) {
   return new MD5().update(buffer).digest()
 }
 
-},{"md5.js":322}],60:[function(require,module,exports){
+},{"md5.js":321}],60:[function(require,module,exports){
 'use strict'
 var inherits = require('inherits')
 var Legacy = require('./legacy')
@@ -11001,7 +11002,7 @@ module.exports = function createHmac (alg, key) {
   return new Hmac(alg, key)
 }
 
-},{"./legacy":61,"cipher-base":55,"create-hash/md5":59,"inherits":146,"ripemd160":403,"safe-buffer":602,"sha.js":606}],61:[function(require,module,exports){
+},{"./legacy":61,"cipher-base":55,"create-hash/md5":59,"inherits":145,"ripemd160":403,"safe-buffer":602,"sha.js":606}],61:[function(require,module,exports){
 'use strict'
 var inherits = require('inherits')
 var Buffer = require('safe-buffer').Buffer
@@ -11049,7 +11050,7 @@ Hmac.prototype._final = function () {
 }
 module.exports = Hmac
 
-},{"cipher-base":55,"inherits":146,"safe-buffer":602}],62:[function(require,module,exports){
+},{"cipher-base":55,"inherits":145,"safe-buffer":602}],62:[function(require,module,exports){
 'use strict'
 
 exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = require('randombytes')
@@ -11148,7 +11149,442 @@ exports.constants = {
   'POINT_CONVERSION_HYBRID': 6
 }
 
-},{"browserify-cipher":44,"browserify-sign":51,"browserify-sign/algos":48,"create-ecdh":57,"create-hash":58,"create-hmac":60,"diffie-hellman":71,"pbkdf2":385,"public-encrypt":390,"randombytes":397,"randomfill":398}],63:[function(require,module,exports){
+},{"browserify-cipher":44,"browserify-sign":51,"browserify-sign/algos":48,"create-ecdh":57,"create-hash":58,"create-hmac":60,"diffie-hellman":73,"pbkdf2":385,"public-encrypt":390,"randombytes":397,"randomfill":398}],63:[function(require,module,exports){
+(function (process){
+"use strict";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/* eslint-env browser */
+
+/**
+ * This is the web browser implementation of `debug()`.
+ */
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = localstorage();
+/**
+ * Colors.
+ */
+
+exports.colors = ['#0000CC', '#0000FF', '#0033CC', '#0033FF', '#0066CC', '#0066FF', '#0099CC', '#0099FF', '#00CC00', '#00CC33', '#00CC66', '#00CC99', '#00CCCC', '#00CCFF', '#3300CC', '#3300FF', '#3333CC', '#3333FF', '#3366CC', '#3366FF', '#3399CC', '#3399FF', '#33CC00', '#33CC33', '#33CC66', '#33CC99', '#33CCCC', '#33CCFF', '#6600CC', '#6600FF', '#6633CC', '#6633FF', '#66CC00', '#66CC33', '#9900CC', '#9900FF', '#9933CC', '#9933FF', '#99CC00', '#99CC33', '#CC0000', '#CC0033', '#CC0066', '#CC0099', '#CC00CC', '#CC00FF', '#CC3300', '#CC3333', '#CC3366', '#CC3399', '#CC33CC', '#CC33FF', '#CC6600', '#CC6633', '#CC9900', '#CC9933', '#CCCC00', '#CCCC33', '#FF0000', '#FF0033', '#FF0066', '#FF0099', '#FF00CC', '#FF00FF', '#FF3300', '#FF3333', '#FF3366', '#FF3399', '#FF33CC', '#FF33FF', '#FF6600', '#FF6633', '#FF9900', '#FF9933', '#FFCC00', '#FFCC33'];
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */
+// eslint-disable-next-line complexity
+
+function useColors() {
+  // NB: In an Electron preload script, document will be defined but not fully
+  // initialized. Since we know we're in Chrome, we'll just detect this case
+  // explicitly
+  if (typeof window !== 'undefined' && window.process && (window.process.type === 'renderer' || window.process.__nwjs)) {
+    return true;
+  } // Internet Explorer and Edge do not support colors.
+
+
+  if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
+    return false;
+  } // Is webkit? http://stackoverflow.com/a/16459606/376773
+  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+
+
+  return typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || // Is firebug? http://stackoverflow.com/a/398120/376773
+  typeof window !== 'undefined' && window.console && (window.console.firebug || window.console.exception && window.console.table) || // Is firefox >= v31?
+  // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+  typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31 || // Double check webkit in userAgent just in case we are in a worker
+  typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
+}
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */
+
+
+function formatArgs(args) {
+  args[0] = (this.useColors ? '%c' : '') + this.namespace + (this.useColors ? ' %c' : ' ') + args[0] + (this.useColors ? '%c ' : ' ') + '+' + module.exports.humanize(this.diff);
+
+  if (!this.useColors) {
+    return;
+  }
+
+  var c = 'color: ' + this.color;
+  args.splice(1, 0, c, 'color: inherit'); // The final "%c" is somewhat tricky, because there could be other
+  // arguments passed either before or after the %c, so we need to
+  // figure out the correct index to insert the CSS into
+
+  var index = 0;
+  var lastC = 0;
+  args[0].replace(/%[a-zA-Z%]/g, function (match) {
+    if (match === '%%') {
+      return;
+    }
+
+    index++;
+
+    if (match === '%c') {
+      // We only are interested in the *last* %c
+      // (the user may have provided their own)
+      lastC = index;
+    }
+  });
+  args.splice(lastC, 0, c);
+}
+/**
+ * Invokes `console.log()` when available.
+ * No-op when `console.log` is not a "function".
+ *
+ * @api public
+ */
+
+
+function log() {
+  var _console;
+
+  // This hackery is required for IE8/9, where
+  // the `console.log` function doesn't have 'apply'
+  return (typeof console === "undefined" ? "undefined" : _typeof(console)) === 'object' && console.log && (_console = console).log.apply(_console, arguments);
+}
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */
+
+
+function save(namespaces) {
+  try {
+    if (namespaces) {
+      exports.storage.setItem('debug', namespaces);
+    } else {
+      exports.storage.removeItem('debug');
+    }
+  } catch (error) {// Swallow
+    // XXX (@Qix-) should we be logging these?
+  }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */
+
+
+function load() {
+  var r;
+
+  try {
+    r = exports.storage.getItem('debug');
+  } catch (error) {} // Swallow
+  // XXX (@Qix-) should we be logging these?
+  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+
+
+  if (!r && typeof process !== 'undefined' && 'env' in process) {
+    r = process.env.DEBUG;
+  }
+
+  return r;
+}
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */
+
+
+function localstorage() {
+  try {
+    // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
+    // The Browser also has localStorage in the global context.
+    return localStorage;
+  } catch (error) {// Swallow
+    // XXX (@Qix-) should we be logging these?
+  }
+}
+
+module.exports = require('./common')(exports);
+var formatters = module.exports.formatters;
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */
+
+formatters.j = function (v) {
+  try {
+    return JSON.stringify(v);
+  } catch (error) {
+    return '[UnexpectedJSONParseError]: ' + error.message;
+  }
+};
+
+
+}).call(this,require('_process'))
+},{"./common":64,"_process":864}],64:[function(require,module,exports){
+"use strict";
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ */
+function setup(env) {
+  createDebug.debug = createDebug;
+  createDebug.default = createDebug;
+  createDebug.coerce = coerce;
+  createDebug.disable = disable;
+  createDebug.enable = enable;
+  createDebug.enabled = enabled;
+  createDebug.humanize = require('ms');
+  Object.keys(env).forEach(function (key) {
+    createDebug[key] = env[key];
+  });
+  /**
+  * Active `debug` instances.
+  */
+
+  createDebug.instances = [];
+  /**
+  * The currently active debug mode names, and names to skip.
+  */
+
+  createDebug.names = [];
+  createDebug.skips = [];
+  /**
+  * Map of special "%n" handling functions, for the debug "format" argument.
+  *
+  * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+  */
+
+  createDebug.formatters = {};
+  /**
+  * Selects a color for a debug namespace
+  * @param {String} namespace The namespace string for the for the debug instance to be colored
+  * @return {Number|String} An ANSI color code for the given namespace
+  * @api private
+  */
+
+  function selectColor(namespace) {
+    var hash = 0;
+
+    for (var i = 0; i < namespace.length; i++) {
+      hash = (hash << 5) - hash + namespace.charCodeAt(i);
+      hash |= 0; // Convert to 32bit integer
+    }
+
+    return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
+  }
+
+  createDebug.selectColor = selectColor;
+  /**
+  * Create a debugger with the given `namespace`.
+  *
+  * @param {String} namespace
+  * @return {Function}
+  * @api public
+  */
+
+  function createDebug(namespace) {
+    var prevTime;
+
+    function debug() {
+      // Disabled?
+      if (!debug.enabled) {
+        return;
+      }
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      var self = debug; // Set `diff` timestamp
+
+      var curr = Number(new Date());
+      var ms = curr - (prevTime || curr);
+      self.diff = ms;
+      self.prev = prevTime;
+      self.curr = curr;
+      prevTime = curr;
+      args[0] = createDebug.coerce(args[0]);
+
+      if (typeof args[0] !== 'string') {
+        // Anything else let's inspect with %O
+        args.unshift('%O');
+      } // Apply any `formatters` transformations
+
+
+      var index = 0;
+      args[0] = args[0].replace(/%([a-zA-Z%])/g, function (match, format) {
+        // If we encounter an escaped % then don't increase the array index
+        if (match === '%%') {
+          return match;
+        }
+
+        index++;
+        var formatter = createDebug.formatters[format];
+
+        if (typeof formatter === 'function') {
+          var val = args[index];
+          match = formatter.call(self, val); // Now we need to remove `args[index]` since it's inlined in the `format`
+
+          args.splice(index, 1);
+          index--;
+        }
+
+        return match;
+      }); // Apply env-specific formatting (colors, etc.)
+
+      createDebug.formatArgs.call(self, args);
+      var logFn = self.log || createDebug.log;
+      logFn.apply(self, args);
+    }
+
+    debug.namespace = namespace;
+    debug.enabled = createDebug.enabled(namespace);
+    debug.useColors = createDebug.useColors();
+    debug.color = selectColor(namespace);
+    debug.destroy = destroy;
+    debug.extend = extend; // Debug.formatArgs = formatArgs;
+    // debug.rawLog = rawLog;
+    // env-specific initialization logic for debug instances
+
+    if (typeof createDebug.init === 'function') {
+      createDebug.init(debug);
+    }
+
+    createDebug.instances.push(debug);
+    return debug;
+  }
+
+  function destroy() {
+    var index = createDebug.instances.indexOf(this);
+
+    if (index !== -1) {
+      createDebug.instances.splice(index, 1);
+      return true;
+    }
+
+    return false;
+  }
+
+  function extend(namespace, delimiter) {
+    return createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
+  }
+  /**
+  * Enables a debug mode by namespaces. This can include modes
+  * separated by a colon and wildcards.
+  *
+  * @param {String} namespaces
+  * @api public
+  */
+
+
+  function enable(namespaces) {
+    createDebug.save(namespaces);
+    createDebug.names = [];
+    createDebug.skips = [];
+    var i;
+    var split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
+    var len = split.length;
+
+    for (i = 0; i < len; i++) {
+      if (!split[i]) {
+        // ignore empty strings
+        continue;
+      }
+
+      namespaces = split[i].replace(/\*/g, '.*?');
+
+      if (namespaces[0] === '-') {
+        createDebug.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+      } else {
+        createDebug.names.push(new RegExp('^' + namespaces + '$'));
+      }
+    }
+
+    for (i = 0; i < createDebug.instances.length; i++) {
+      var instance = createDebug.instances[i];
+      instance.enabled = createDebug.enabled(instance.namespace);
+    }
+  }
+  /**
+  * Disable debug output.
+  *
+  * @api public
+  */
+
+
+  function disable() {
+    createDebug.enable('');
+  }
+  /**
+  * Returns true if the given mode name is enabled, false otherwise.
+  *
+  * @param {String} name
+  * @return {Boolean}
+  * @api public
+  */
+
+
+  function enabled(name) {
+    if (name[name.length - 1] === '*') {
+      return true;
+    }
+
+    var i;
+    var len;
+
+    for (i = 0, len = createDebug.skips.length; i < len; i++) {
+      if (createDebug.skips[i].test(name)) {
+        return false;
+      }
+    }
+
+    for (i = 0, len = createDebug.names.length; i < len; i++) {
+      if (createDebug.names[i].test(name)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+  /**
+  * Coerce `val`.
+  *
+  * @param {Mixed} val
+  * @return {Mixed}
+  * @api private
+  */
+
+
+  function coerce(val) {
+    if (val instanceof Error) {
+      return val.stack || val.message;
+    }
+
+    return val;
+  }
+
+  createDebug.enable(createDebug.load());
+  return createDebug;
+}
+
+module.exports = setup;
+
+
+},{"ms":325}],65:[function(require,module,exports){
 'use strict';
 var token = '%[a-f0-9]{2}';
 var singleMatcher = new RegExp(token, 'gi');
@@ -11244,7 +11680,7 @@ module.exports = function (encodedURI) {
 	}
 };
 
-},{}],64:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 'use strict';
 
 var keys = require('object-keys');
@@ -11304,7 +11740,7 @@ defineProperties.supportsDescriptors = !!supportsDescriptors;
 
 module.exports = defineProperties;
 
-},{"object-keys":376}],65:[function(require,module,exports){
+},{"object-keys":376}],67:[function(require,module,exports){
 'use strict';
 
 exports.utils = require('./des/utils');
@@ -11313,7 +11749,7 @@ exports.DES = require('./des/des');
 exports.CBC = require('./des/cbc');
 exports.EDE = require('./des/ede');
 
-},{"./des/cbc":66,"./des/cipher":67,"./des/des":68,"./des/ede":69,"./des/utils":70}],66:[function(require,module,exports){
+},{"./des/cbc":68,"./des/cipher":69,"./des/des":70,"./des/ede":71,"./des/utils":72}],68:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -11380,7 +11816,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
   }
 };
 
-},{"inherits":146,"minimalistic-assert":324}],67:[function(require,module,exports){
+},{"inherits":145,"minimalistic-assert":323}],69:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -11523,7 +11959,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
   return this._unpad(out);
 };
 
-},{"minimalistic-assert":324}],68:[function(require,module,exports){
+},{"minimalistic-assert":323}],70:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -11668,7 +12104,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
   utils.rip(l, r, out, off);
 };
 
-},{"../des":65,"inherits":146,"minimalistic-assert":324}],69:[function(require,module,exports){
+},{"../des":67,"inherits":145,"minimalistic-assert":323}],71:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -11725,7 +12161,7 @@ EDE.prototype._update = function _update(inp, inOff, out, outOff) {
 EDE.prototype._pad = DES.prototype._pad;
 EDE.prototype._unpad = DES.prototype._unpad;
 
-},{"../des":65,"inherits":146,"minimalistic-assert":324}],70:[function(require,module,exports){
+},{"../des":67,"inherits":145,"minimalistic-assert":323}],72:[function(require,module,exports){
 'use strict';
 
 exports.readUInt32BE = function readUInt32BE(bytes, off) {
@@ -11983,7 +12419,7 @@ exports.padSplit = function padSplit(num, size, group) {
   return out.join(' ');
 };
 
-},{}],71:[function(require,module,exports){
+},{}],73:[function(require,module,exports){
 (function (Buffer){
 var generatePrime = require('./lib/generatePrime')
 var primes = require('./lib/primes.json')
@@ -12029,7 +12465,7 @@ exports.DiffieHellmanGroup = exports.createDiffieHellmanGroup = exports.getDiffi
 exports.createDiffieHellman = exports.DiffieHellman = createDiffieHellman
 
 }).call(this,require("buffer").Buffer)
-},{"./lib/dh":72,"./lib/generatePrime":73,"./lib/primes.json":74,"buffer":791}],72:[function(require,module,exports){
+},{"./lib/dh":74,"./lib/generatePrime":75,"./lib/primes.json":76,"buffer":791}],74:[function(require,module,exports){
 (function (Buffer){
 var BN = require('bn.js');
 var MillerRabin = require('miller-rabin');
@@ -12197,7 +12633,7 @@ function formatReturnValue(bn, enc) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"./generatePrime":73,"bn.js":25,"buffer":791,"miller-rabin":323,"randombytes":397}],73:[function(require,module,exports){
+},{"./generatePrime":75,"bn.js":25,"buffer":791,"miller-rabin":322,"randombytes":397}],75:[function(require,module,exports){
 var randomBytes = require('randombytes');
 module.exports = findPrime;
 findPrime.simpleSieve = simpleSieve;
@@ -12304,7 +12740,7 @@ function findPrime(bits, gen) {
 
 }
 
-},{"bn.js":25,"miller-rabin":323,"randombytes":397}],74:[function(require,module,exports){
+},{"bn.js":25,"miller-rabin":322,"randombytes":397}],76:[function(require,module,exports){
 module.exports={
     "modp1": {
         "gen": "02",
@@ -12339,7 +12775,7 @@ module.exports={
         "prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dbe115974a3926f12fee5e438777cb6a932df8cd8bec4d073b931ba3bc832b68d9dd300741fa7bf8afc47ed2576f6936ba424663aab639c5ae4f5683423b4742bf1c978238f16cbe39d652de3fdb8befc848ad922222e04a4037c0713eb57a81a23f0c73473fc646cea306b4bcbc8862f8385ddfa9d4b7fa2c087e879683303ed5bdd3a062b3cf5b3a278a66d2a13f83f44f82ddf310ee074ab6a364597e899a0255dc164f31cc50846851df9ab48195ded7ea1b1d510bd7ee74d73faf36bc31ecfa268359046f4eb879f924009438b481c6cd7889a002ed5ee382bc9190da6fc026e479558e4475677e9aa9e3050e2765694dfc81f56e880b96e7160c980dd98edd3dfffffffffffffffff"
     }
 }
-},{}],75:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 'use strict';
 
 var elliptic = exports;
@@ -12354,7 +12790,7 @@ elliptic.curves = require('./elliptic/curves');
 elliptic.ec = require('./elliptic/ec');
 elliptic.eddsa = require('./elliptic/eddsa');
 
-},{"../package.json":90,"./elliptic/curve":78,"./elliptic/curves":81,"./elliptic/ec":82,"./elliptic/eddsa":85,"./elliptic/utils":89,"brorand":26}],76:[function(require,module,exports){
+},{"../package.json":92,"./elliptic/curve":80,"./elliptic/curves":83,"./elliptic/ec":84,"./elliptic/eddsa":87,"./elliptic/utils":91,"brorand":26}],78:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -12731,7 +13167,7 @@ BasePoint.prototype.dblp = function dblp(k) {
   return r;
 };
 
-},{"../../elliptic":75,"bn.js":25}],77:[function(require,module,exports){
+},{"../../elliptic":77,"bn.js":25}],79:[function(require,module,exports){
 'use strict';
 
 var curve = require('../curve');
@@ -13166,7 +13602,7 @@ Point.prototype.eqXToP = function eqXToP(x) {
 Point.prototype.toP = Point.prototype.normalize;
 Point.prototype.mixedAdd = Point.prototype.add;
 
-},{"../../elliptic":75,"../curve":78,"bn.js":25,"inherits":146}],78:[function(require,module,exports){
+},{"../../elliptic":77,"../curve":80,"bn.js":25,"inherits":145}],80:[function(require,module,exports){
 'use strict';
 
 var curve = exports;
@@ -13176,7 +13612,7 @@ curve.short = require('./short');
 curve.mont = require('./mont');
 curve.edwards = require('./edwards');
 
-},{"./base":76,"./edwards":77,"./mont":79,"./short":80}],79:[function(require,module,exports){
+},{"./base":78,"./edwards":79,"./mont":81,"./short":82}],81:[function(require,module,exports){
 'use strict';
 
 var curve = require('../curve');
@@ -13358,7 +13794,7 @@ Point.prototype.getX = function getX() {
   return this.x.fromRed();
 };
 
-},{"../../elliptic":75,"../curve":78,"bn.js":25,"inherits":146}],80:[function(require,module,exports){
+},{"../../elliptic":77,"../curve":80,"bn.js":25,"inherits":145}],82:[function(require,module,exports){
 'use strict';
 
 var curve = require('../curve');
@@ -14297,7 +14733,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
   return this.z.cmpn(0) === 0;
 };
 
-},{"../../elliptic":75,"../curve":78,"bn.js":25,"inherits":146}],81:[function(require,module,exports){
+},{"../../elliptic":77,"../curve":80,"bn.js":25,"inherits":145}],83:[function(require,module,exports){
 'use strict';
 
 var curves = exports;
@@ -14504,7 +14940,7 @@ defineCurve('secp256k1', {
   ]
 });
 
-},{"../elliptic":75,"./precomputed/secp256k1":88,"hash.js":127}],82:[function(require,module,exports){
+},{"../elliptic":77,"./precomputed/secp256k1":90,"hash.js":129}],84:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -14746,7 +15182,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
   throw new Error('Unable to find valid recovery factor');
 };
 
-},{"../../elliptic":75,"./key":83,"./signature":84,"bn.js":25,"hmac-drbg":139}],83:[function(require,module,exports){
+},{"../../elliptic":77,"./key":85,"./signature":86,"bn.js":25,"hmac-drbg":141}],85:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -14867,7 +15303,7 @@ KeyPair.prototype.inspect = function inspect() {
          ' pub: ' + (this.pub && this.pub.inspect()) + ' >';
 };
 
-},{"../../elliptic":75,"bn.js":25}],84:[function(require,module,exports){
+},{"../../elliptic":77,"bn.js":25}],86:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -15004,7 +15440,7 @@ Signature.prototype.toDER = function toDER(enc) {
   return utils.encode(res, enc);
 };
 
-},{"../../elliptic":75,"bn.js":25}],85:[function(require,module,exports){
+},{"../../elliptic":77,"bn.js":25}],87:[function(require,module,exports){
 'use strict';
 
 var hash = require('hash.js');
@@ -15124,7 +15560,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
   return val instanceof this.pointClass;
 };
 
-},{"../../elliptic":75,"./key":86,"./signature":87,"hash.js":127}],86:[function(require,module,exports){
+},{"../../elliptic":77,"./key":88,"./signature":89,"hash.js":129}],88:[function(require,module,exports){
 'use strict';
 
 var elliptic = require('../../elliptic');
@@ -15222,7 +15658,7 @@ KeyPair.prototype.getPublic = function getPublic(enc) {
 
 module.exports = KeyPair;
 
-},{"../../elliptic":75}],87:[function(require,module,exports){
+},{"../../elliptic":77}],89:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -15290,7 +15726,7 @@ Signature.prototype.toHex = function toHex() {
 
 module.exports = Signature;
 
-},{"../../elliptic":75,"bn.js":25}],88:[function(require,module,exports){
+},{"../../elliptic":77,"bn.js":25}],90:[function(require,module,exports){
 module.exports = {
   doubles: {
     step: 4,
@@ -16072,7 +16508,7 @@ module.exports = {
   }
 };
 
-},{}],89:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 'use strict';
 
 var utils = exports;
@@ -16194,7 +16630,7 @@ function intFromLE(bytes) {
 utils.intFromLE = intFromLE;
 
 
-},{"bn.js":25,"minimalistic-assert":324,"minimalistic-crypto-utils":325}],90:[function(require,module,exports){
+},{"bn.js":25,"minimalistic-assert":323,"minimalistic-crypto-utils":324}],92:[function(require,module,exports){
 module.exports={
   "_from": "elliptic@^6.4.0",
   "_id": "elliptic@6.4.1",
@@ -16213,12 +16649,28 @@ module.exports={
     "fetchSpec": "^6.4.0"
   },
   "_requiredBy": [
-    "/eth-lib"
+    "/browserify-sign",
+    "/create-ecdh",
+    "/eth-lib",
+    "/swarm-js/eth-lib",
+    "/web3-core-helpers/eth-lib",
+    "/web3-core-method/eth-lib",
+    "/web3-core/eth-lib",
+    "/web3-eth-abi/eth-lib",
+    "/web3-eth-accounts/eth-lib",
+    "/web3-eth-accounts/web3-utils/eth-lib",
+    "/web3-eth-contract/eth-lib",
+    "/web3-eth-ens/eth-lib",
+    "/web3-eth-iban/eth-lib",
+    "/web3-eth-personal/eth-lib",
+    "/web3-eth/eth-lib",
+    "/web3-net/eth-lib",
+    "/web3/eth-lib"
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz",
   "_shasum": "c2d0b7776911b86722c632c3c06c60f2f819939a",
   "_spec": "elliptic@^6.4.0",
-  "_where": "/home/george/Projects/liquidity/testapp/node_modules/eth-lib",
+  "_where": "/Users/hazemelagaty/Liquidity/liquidity-browser-app/node_modules/eth-lib",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -16282,7 +16734,7 @@ module.exports={
   "version": "6.4.1"
 }
 
-},{}],91:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 'use strict';
 
 /* globals
@@ -16461,7 +16913,7 @@ module.exports = function GetIntrinsic(name, allowMissing) {
 	return INTRINSICS[key];
 };
 
-},{}],92:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 'use strict';
 
 var GetIntrinsic = require('./GetIntrinsic');
@@ -16698,7 +17150,7 @@ var ES5 = {
 
 module.exports = ES5;
 
-},{"./GetIntrinsic":91,"./helpers/assertRecord":93,"./helpers/isFinite":94,"./helpers/isNaN":95,"./helpers/mod":96,"./helpers/sign":97,"es-to-primitive/es5":98,"has":125,"is-callable":189}],93:[function(require,module,exports){
+},{"./GetIntrinsic":93,"./helpers/assertRecord":95,"./helpers/isFinite":96,"./helpers/isNaN":97,"./helpers/mod":98,"./helpers/sign":99,"es-to-primitive/es5":100,"has":127,"is-callable":188}],95:[function(require,module,exports){
 'use strict';
 
 var GetIntrinsic = require('../GetIntrinsic');
@@ -16749,28 +17201,28 @@ module.exports = function assertRecord(ES, recordType, argumentName, value) {
   console.log(predicate(ES, value), value);
 };
 
-},{"../GetIntrinsic":91,"has":125}],94:[function(require,module,exports){
+},{"../GetIntrinsic":93,"has":127}],96:[function(require,module,exports){
 var $isNaN = Number.isNaN || function (a) { return a !== a; };
 
 module.exports = Number.isFinite || function (x) { return typeof x === 'number' && !$isNaN(x) && x !== Infinity && x !== -Infinity; };
 
-},{}],95:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 module.exports = Number.isNaN || function isNaN(a) {
 	return a !== a;
 };
 
-},{}],96:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 module.exports = function mod(number, modulo) {
 	var remain = number % modulo;
 	return Math.floor(remain >= 0 ? remain : remain + modulo);
 };
 
-},{}],97:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 module.exports = function sign(number) {
 	return number >= 0 ? 1 : -1;
 };
 
-},{}],98:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 'use strict';
 
 var toStr = Object.prototype.toString;
@@ -16817,12 +17269,12 @@ module.exports = function ToPrimitive(input) {
 	return ES5internalSlots['[[DefaultValue]]'](input);
 };
 
-},{"./helpers/isPrimitive":99,"is-callable":189}],99:[function(require,module,exports){
+},{"./helpers/isPrimitive":101,"is-callable":188}],101:[function(require,module,exports){
 module.exports = function isPrimitive(value) {
 	return value === null || (typeof value !== 'function' && typeof value !== 'object');
 };
 
-},{}],100:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 (function (process,global){
 /*!
  * @overview es6-promise - a tiny implementation of Promises/A+.
@@ -18009,7 +18461,7 @@ return Promise$1;
 
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":864}],101:[function(require,module,exports){
+},{"_process":864}],103:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -18085,7 +18537,7 @@ module.exports = function () {
     return require("es6-promise").Promise;
 }();
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"es6-promise":100}],102:[function(require,module,exports){
+},{"es6-promise":102}],104:[function(require,module,exports){
 "use strict";
 
 /* global module, require */
@@ -18171,7 +18623,7 @@ module.exports = function () {
         };
     };
 }();
-},{"./promise.js":101}],103:[function(require,module,exports){
+},{"./promise.js":103}],105:[function(require,module,exports){
 (function (Buffer){
 var sha3 = require('js-sha3').keccak_256
 var uts46 = require('idna-uts46-hx')
@@ -18205,7 +18657,7 @@ exports.hash = namehash
 exports.normalize = normalize
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":791,"idna-uts46-hx":145,"js-sha3":104}],104:[function(require,module,exports){
+},{"buffer":791,"idna-uts46-hx":144,"js-sha3":106}],106:[function(require,module,exports){
 (function (process,global){
 /**
  * [js-sha3]{@link https://github.com/emn178/js-sha3}
@@ -18684,7 +19136,7 @@ exports.normalize = normalize
 })();
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":864}],105:[function(require,module,exports){
+},{"_process":864}],107:[function(require,module,exports){
 // This was ported from https://github.com/emn178/js-sha3, with some minor
 // modifications and pruning. It is licensed under MIT:
 //
@@ -19016,9 +19468,9 @@ module.exports = {
   keccak256s: keccak(256),
   keccak512s: keccak(512)
 };
-},{}],106:[function(require,module,exports){
-arguments[4][104][0].apply(exports,arguments)
-},{"_process":864,"dup":104}],107:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
+arguments[4][106][0].apply(exports,arguments)
+},{"_process":864,"dup":106}],109:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -19937,7 +20389,7 @@ var AbiCoder = /** @class */ (function () {
 exports.AbiCoder = AbiCoder;
 exports.defaultAbiCoder = new AbiCoder();
 
-},{"./address":108,"./bignumber":109,"./bytes":110,"./errors":111,"./properties":113,"./utf8":116}],108:[function(require,module,exports){
+},{"./address":110,"./bignumber":111,"./bytes":112,"./errors":113,"./properties":115,"./utf8":118}],110:[function(require,module,exports){
 'use strict';
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -20063,7 +20515,7 @@ function getContractAddress(transaction) {
 }
 exports.getContractAddress = getContractAddress;
 
-},{"./bytes":110,"./errors":111,"./keccak256":112,"./rlp":114,"bn.js":25}],109:[function(require,module,exports){
+},{"./bytes":112,"./errors":113,"./keccak256":114,"./rlp":116,"bn.js":25}],111:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -20257,7 +20709,7 @@ exports.ConstantOne = bigNumberify(1);
 exports.ConstantTwo = bigNumberify(2);
 exports.ConstantWeiPerEther = bigNumberify('1000000000000000000');
 
-},{"./bytes":110,"./errors":111,"./properties":113,"./types":115,"bn.js":25}],110:[function(require,module,exports){
+},{"./bytes":112,"./errors":113,"./properties":115,"./types":117,"bn.js":25}],112:[function(require,module,exports){
 "use strict";
 /**
  *  Conversion Utilities
@@ -20521,7 +20973,7 @@ function joinSignature(signature) {
 }
 exports.joinSignature = joinSignature;
 
-},{"./errors":111}],111:[function(require,module,exports){
+},{"./errors":113}],113:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 // Unknown Error
@@ -20625,7 +21077,7 @@ function setCensorship(censorship, permanent) {
 }
 exports.setCensorship = setCensorship;
 
-},{}],112:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 var sha3 = require("js-sha3");
@@ -20635,7 +21087,7 @@ function keccak256(data) {
 }
 exports.keccak256 = keccak256;
 
-},{"./bytes":110,"js-sha3":106}],113:[function(require,module,exports){
+},{"./bytes":112,"js-sha3":108}],115:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 function defineReadOnly(object, name, value) {
@@ -20687,7 +21139,7 @@ function jsonCopy(object) {
 }
 exports.jsonCopy = jsonCopy;
 
-},{}],114:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 "use strict";
 //See: https://github.com/ethereum/wiki/wiki/RLP
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -20805,7 +21257,7 @@ function decode(data) {
 }
 exports.decode = decode;
 
-},{"./bytes":110}],115:[function(require,module,exports){
+},{"./bytes":112}],117:[function(require,module,exports){
 "use strict";
 ///////////////////////////////
 // Bytes
@@ -20862,7 +21314,7 @@ var HDNode = /** @class */ (function () {
 }());
 exports.HDNode = HDNode;
 
-},{}],116:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 var bytes_1 = require("./bytes");
@@ -20987,7 +21439,7 @@ function toUtf8String(bytes) {
 }
 exports.toUtf8String = toUtf8String;
 
-},{"./bytes":110}],117:[function(require,module,exports){
+},{"./bytes":112}],119:[function(require,module,exports){
 'use strict';
 
 var BN = require('bn.js');
@@ -21156,7 +21608,7 @@ module.exports = {
   fromWei: fromWei,
   toWei: toWei
 };
-},{"bn.js":118,"number-to-bn":373}],118:[function(require,module,exports){
+},{"bn.js":120,"number-to-bn":373}],120:[function(require,module,exports){
 (function (module, exports) {
   'use strict';
 
@@ -24585,7 +25037,7 @@ module.exports = {
   };
 })(typeof module === 'undefined' || module, this);
 
-},{}],119:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 'use strict';
 
 //
@@ -24849,7 +25301,7 @@ if ('undefined' !== typeof module) {
   module.exports = EventEmitter;
 }
 
-},{}],120:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 var Buffer = require('safe-buffer').Buffer
 var MD5 = require('md5.js')
 
@@ -24896,7 +25348,7 @@ function EVP_BytesToKey (password, salt, keyBits, ivLen) {
 
 module.exports = EVP_BytesToKey
 
-},{"md5.js":322,"safe-buffer":602}],121:[function(require,module,exports){
+},{"md5.js":321,"safe-buffer":602}],123:[function(require,module,exports){
 'use strict';
 
 var isCallable = require('is-callable');
@@ -24960,7 +25412,7 @@ var forEach = function forEach(list, iterator, thisArg) {
 
 module.exports = forEach;
 
-},{"is-callable":189}],122:[function(require,module,exports){
+},{"is-callable":188}],124:[function(require,module,exports){
 'use strict';
 
 /* eslint no-invalid-this: 1 */
@@ -25014,14 +25466,14 @@ module.exports = function bind(that) {
     return bound;
 };
 
-},{}],123:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 'use strict';
 
 var implementation = require('./implementation');
 
 module.exports = Function.prototype.bind || implementation;
 
-},{"./implementation":122}],124:[function(require,module,exports){
+},{"./implementation":124}],126:[function(require,module,exports){
 (function (global){
 var win;
 
@@ -25038,14 +25490,14 @@ if (typeof window !== "undefined") {
 module.exports = win;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],125:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 'use strict';
 
 var bind = require('function-bind');
 
 module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
-},{"function-bind":123}],126:[function(require,module,exports){
+},{"function-bind":125}],128:[function(require,module,exports){
 'use strict'
 var Buffer = require('safe-buffer').Buffer
 var Transform = require('stream').Transform
@@ -25142,7 +25594,7 @@ HashBase.prototype._digest = function () {
 
 module.exports = HashBase
 
-},{"inherits":146,"safe-buffer":602,"stream":901}],127:[function(require,module,exports){
+},{"inherits":145,"safe-buffer":602,"stream":901}],129:[function(require,module,exports){
 var hash = exports;
 
 hash.utils = require('./hash/utils');
@@ -25159,7 +25611,7 @@ hash.sha384 = hash.sha.sha384;
 hash.sha512 = hash.sha.sha512;
 hash.ripemd160 = hash.ripemd.ripemd160;
 
-},{"./hash/common":128,"./hash/hmac":129,"./hash/ripemd":130,"./hash/sha":131,"./hash/utils":138}],128:[function(require,module,exports){
+},{"./hash/common":130,"./hash/hmac":131,"./hash/ripemd":132,"./hash/sha":133,"./hash/utils":140}],130:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -25253,7 +25705,7 @@ BlockHash.prototype._pad = function pad() {
   return res;
 };
 
-},{"./utils":138,"minimalistic-assert":324}],129:[function(require,module,exports){
+},{"./utils":140,"minimalistic-assert":323}],131:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -25302,7 +25754,7 @@ Hmac.prototype.digest = function digest(enc) {
   return this.outer.digest(enc);
 };
 
-},{"./utils":138,"minimalistic-assert":324}],130:[function(require,module,exports){
+},{"./utils":140,"minimalistic-assert":323}],132:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -25450,7 +25902,7 @@ var sh = [
   8, 5, 12, 9, 12, 5, 14, 6, 8, 13, 6, 5, 15, 13, 11, 11
 ];
 
-},{"./common":128,"./utils":138}],131:[function(require,module,exports){
+},{"./common":130,"./utils":140}],133:[function(require,module,exports){
 'use strict';
 
 exports.sha1 = require('./sha/1');
@@ -25459,7 +25911,7 @@ exports.sha256 = require('./sha/256');
 exports.sha384 = require('./sha/384');
 exports.sha512 = require('./sha/512');
 
-},{"./sha/1":132,"./sha/224":133,"./sha/256":134,"./sha/384":135,"./sha/512":136}],132:[function(require,module,exports){
+},{"./sha/1":134,"./sha/224":135,"./sha/256":136,"./sha/384":137,"./sha/512":138}],134:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -25535,7 +25987,7 @@ SHA1.prototype._digest = function digest(enc) {
     return utils.split32(this.h, 'big');
 };
 
-},{"../common":128,"../utils":138,"./common":137}],133:[function(require,module,exports){
+},{"../common":130,"../utils":140,"./common":139}],135:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -25567,7 +26019,7 @@ SHA224.prototype._digest = function digest(enc) {
 };
 
 
-},{"../utils":138,"./256":134}],134:[function(require,module,exports){
+},{"../utils":140,"./256":136}],136:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -25674,7 +26126,7 @@ SHA256.prototype._digest = function digest(enc) {
     return utils.split32(this.h, 'big');
 };
 
-},{"../common":128,"../utils":138,"./common":137,"minimalistic-assert":324}],135:[function(require,module,exports){
+},{"../common":130,"../utils":140,"./common":139,"minimalistic-assert":323}],137:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -25711,7 +26163,7 @@ SHA384.prototype._digest = function digest(enc) {
     return utils.split32(this.h.slice(0, 12), 'big');
 };
 
-},{"../utils":138,"./512":136}],136:[function(require,module,exports){
+},{"../utils":140,"./512":138}],138:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -26043,7 +26495,7 @@ function g1_512_lo(xh, xl) {
   return r;
 }
 
-},{"../common":128,"../utils":138,"minimalistic-assert":324}],137:[function(require,module,exports){
+},{"../common":130,"../utils":140,"minimalistic-assert":323}],139:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -26094,7 +26546,7 @@ function g1_256(x) {
 }
 exports.g1_256 = g1_256;
 
-},{"../utils":138}],138:[function(require,module,exports){
+},{"../utils":140}],140:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -26374,7 +26826,7 @@ function shr64_lo(ah, al, num) {
 }
 exports.shr64_lo = shr64_lo;
 
-},{"inherits":146,"minimalistic-assert":324}],139:[function(require,module,exports){
+},{"inherits":145,"minimalistic-assert":323}],141:[function(require,module,exports){
 'use strict';
 
 var hash = require('hash.js');
@@ -26489,7 +26941,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
   return utils.encode(res, enc);
 };
 
-},{"hash.js":127,"minimalistic-assert":324,"minimalistic-crypto-utils":325}],140:[function(require,module,exports){
+},{"hash.js":129,"minimalistic-assert":323,"minimalistic-crypto-utils":324}],142:[function(require,module,exports){
 (function (Buffer){
 /**
  * Module dependencies.
@@ -26722,606 +27174,7 @@ function isDefaultPort(port, secure) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"agent-base":3,"buffer":791,"debug":141,"net":744,"tls":744,"url":909,"util":913}],141:[function(require,module,exports){
-(function (process){
-"use strict";
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-/* eslint-env browser */
-
-/**
- * This is the web browser implementation of `debug()`.
- */
-exports.log = log;
-exports.formatArgs = formatArgs;
-exports.save = save;
-exports.load = load;
-exports.useColors = useColors;
-exports.storage = localstorage();
-/**
- * Colors.
- */
-
-exports.colors = ['#0000CC', '#0000FF', '#0033CC', '#0033FF', '#0066CC', '#0066FF', '#0099CC', '#0099FF', '#00CC00', '#00CC33', '#00CC66', '#00CC99', '#00CCCC', '#00CCFF', '#3300CC', '#3300FF', '#3333CC', '#3333FF', '#3366CC', '#3366FF', '#3399CC', '#3399FF', '#33CC00', '#33CC33', '#33CC66', '#33CC99', '#33CCCC', '#33CCFF', '#6600CC', '#6600FF', '#6633CC', '#6633FF', '#66CC00', '#66CC33', '#9900CC', '#9900FF', '#9933CC', '#9933FF', '#99CC00', '#99CC33', '#CC0000', '#CC0033', '#CC0066', '#CC0099', '#CC00CC', '#CC00FF', '#CC3300', '#CC3333', '#CC3366', '#CC3399', '#CC33CC', '#CC33FF', '#CC6600', '#CC6633', '#CC9900', '#CC9933', '#CCCC00', '#CCCC33', '#FF0000', '#FF0033', '#FF0066', '#FF0099', '#FF00CC', '#FF00FF', '#FF3300', '#FF3333', '#FF3366', '#FF3399', '#FF33CC', '#FF33FF', '#FF6600', '#FF6633', '#FF9900', '#FF9933', '#FFCC00', '#FFCC33'];
-/**
- * Currently only WebKit-based Web Inspectors, Firefox >= v31,
- * and the Firebug extension (any Firefox version) are known
- * to support "%c" CSS customizations.
- *
- * TODO: add a `localStorage` variable to explicitly enable/disable colors
- */
-// eslint-disable-next-line complexity
-
-function useColors() {
-  // NB: In an Electron preload script, document will be defined but not fully
-  // initialized. Since we know we're in Chrome, we'll just detect this case
-  // explicitly
-  if (typeof window !== 'undefined' && window.process && (window.process.type === 'renderer' || window.process.__nwjs)) {
-    return true;
-  } // Internet Explorer and Edge do not support colors.
-
-
-  if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
-    return false;
-  } // Is webkit? http://stackoverflow.com/a/16459606/376773
-  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
-
-
-  return typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || // Is firebug? http://stackoverflow.com/a/398120/376773
-  typeof window !== 'undefined' && window.console && (window.console.firebug || window.console.exception && window.console.table) || // Is firefox >= v31?
-  // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
-  typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31 || // Double check webkit in userAgent just in case we are in a worker
-  typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
-}
-/**
- * Colorize log arguments if enabled.
- *
- * @api public
- */
-
-
-function formatArgs(args) {
-  args[0] = (this.useColors ? '%c' : '') + this.namespace + (this.useColors ? ' %c' : ' ') + args[0] + (this.useColors ? '%c ' : ' ') + '+' + module.exports.humanize(this.diff);
-
-  if (!this.useColors) {
-    return;
-  }
-
-  var c = 'color: ' + this.color;
-  args.splice(1, 0, c, 'color: inherit'); // The final "%c" is somewhat tricky, because there could be other
-  // arguments passed either before or after the %c, so we need to
-  // figure out the correct index to insert the CSS into
-
-  var index = 0;
-  var lastC = 0;
-  args[0].replace(/%[a-zA-Z%]/g, function (match) {
-    if (match === '%%') {
-      return;
-    }
-
-    index++;
-
-    if (match === '%c') {
-      // We only are interested in the *last* %c
-      // (the user may have provided their own)
-      lastC = index;
-    }
-  });
-  args.splice(lastC, 0, c);
-}
-/**
- * Invokes `console.log()` when available.
- * No-op when `console.log` is not a "function".
- *
- * @api public
- */
-
-
-function log() {
-  var _console;
-
-  // This hackery is required for IE8/9, where
-  // the `console.log` function doesn't have 'apply'
-  return (typeof console === "undefined" ? "undefined" : _typeof(console)) === 'object' && console.log && (_console = console).log.apply(_console, arguments);
-}
-/**
- * Save `namespaces`.
- *
- * @param {String} namespaces
- * @api private
- */
-
-
-function save(namespaces) {
-  try {
-    if (namespaces) {
-      exports.storage.setItem('debug', namespaces);
-    } else {
-      exports.storage.removeItem('debug');
-    }
-  } catch (error) {// Swallow
-    // XXX (@Qix-) should we be logging these?
-  }
-}
-/**
- * Load `namespaces`.
- *
- * @return {String} returns the previously persisted debug modes
- * @api private
- */
-
-
-function load() {
-  var r;
-
-  try {
-    r = exports.storage.getItem('debug');
-  } catch (error) {} // Swallow
-  // XXX (@Qix-) should we be logging these?
-  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
-
-
-  if (!r && typeof process !== 'undefined' && 'env' in process) {
-    r = process.env.DEBUG;
-  }
-
-  return r;
-}
-/**
- * Localstorage attempts to return the localstorage.
- *
- * This is necessary because safari throws
- * when a user disables cookies/localstorage
- * and you attempt to access it.
- *
- * @return {LocalStorage}
- * @api private
- */
-
-
-function localstorage() {
-  try {
-    // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
-    // The Browser also has localStorage in the global context.
-    return localStorage;
-  } catch (error) {// Swallow
-    // XXX (@Qix-) should we be logging these?
-  }
-}
-
-module.exports = require('./common')(exports);
-var formatters = module.exports.formatters;
-/**
- * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
- */
-
-formatters.j = function (v) {
-  try {
-    return JSON.stringify(v);
-  } catch (error) {
-    return '[UnexpectedJSONParseError]: ' + error.message;
-  }
-};
-
-
-}).call(this,require('_process'))
-},{"./common":142,"_process":864}],142:[function(require,module,exports){
-"use strict";
-
-/**
- * This is the common logic for both the Node.js and web browser
- * implementations of `debug()`.
- */
-function setup(env) {
-  createDebug.debug = createDebug;
-  createDebug.default = createDebug;
-  createDebug.coerce = coerce;
-  createDebug.disable = disable;
-  createDebug.enable = enable;
-  createDebug.enabled = enabled;
-  createDebug.humanize = require('ms');
-  Object.keys(env).forEach(function (key) {
-    createDebug[key] = env[key];
-  });
-  /**
-  * Active `debug` instances.
-  */
-
-  createDebug.instances = [];
-  /**
-  * The currently active debug mode names, and names to skip.
-  */
-
-  createDebug.names = [];
-  createDebug.skips = [];
-  /**
-  * Map of special "%n" handling functions, for the debug "format" argument.
-  *
-  * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
-  */
-
-  createDebug.formatters = {};
-  /**
-  * Selects a color for a debug namespace
-  * @param {String} namespace The namespace string for the for the debug instance to be colored
-  * @return {Number|String} An ANSI color code for the given namespace
-  * @api private
-  */
-
-  function selectColor(namespace) {
-    var hash = 0;
-
-    for (var i = 0; i < namespace.length; i++) {
-      hash = (hash << 5) - hash + namespace.charCodeAt(i);
-      hash |= 0; // Convert to 32bit integer
-    }
-
-    return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
-  }
-
-  createDebug.selectColor = selectColor;
-  /**
-  * Create a debugger with the given `namespace`.
-  *
-  * @param {String} namespace
-  * @return {Function}
-  * @api public
-  */
-
-  function createDebug(namespace) {
-    var prevTime;
-
-    function debug() {
-      // Disabled?
-      if (!debug.enabled) {
-        return;
-      }
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      var self = debug; // Set `diff` timestamp
-
-      var curr = Number(new Date());
-      var ms = curr - (prevTime || curr);
-      self.diff = ms;
-      self.prev = prevTime;
-      self.curr = curr;
-      prevTime = curr;
-      args[0] = createDebug.coerce(args[0]);
-
-      if (typeof args[0] !== 'string') {
-        // Anything else let's inspect with %O
-        args.unshift('%O');
-      } // Apply any `formatters` transformations
-
-
-      var index = 0;
-      args[0] = args[0].replace(/%([a-zA-Z%])/g, function (match, format) {
-        // If we encounter an escaped % then don't increase the array index
-        if (match === '%%') {
-          return match;
-        }
-
-        index++;
-        var formatter = createDebug.formatters[format];
-
-        if (typeof formatter === 'function') {
-          var val = args[index];
-          match = formatter.call(self, val); // Now we need to remove `args[index]` since it's inlined in the `format`
-
-          args.splice(index, 1);
-          index--;
-        }
-
-        return match;
-      }); // Apply env-specific formatting (colors, etc.)
-
-      createDebug.formatArgs.call(self, args);
-      var logFn = self.log || createDebug.log;
-      logFn.apply(self, args);
-    }
-
-    debug.namespace = namespace;
-    debug.enabled = createDebug.enabled(namespace);
-    debug.useColors = createDebug.useColors();
-    debug.color = selectColor(namespace);
-    debug.destroy = destroy;
-    debug.extend = extend; // Debug.formatArgs = formatArgs;
-    // debug.rawLog = rawLog;
-    // env-specific initialization logic for debug instances
-
-    if (typeof createDebug.init === 'function') {
-      createDebug.init(debug);
-    }
-
-    createDebug.instances.push(debug);
-    return debug;
-  }
-
-  function destroy() {
-    var index = createDebug.instances.indexOf(this);
-
-    if (index !== -1) {
-      createDebug.instances.splice(index, 1);
-      return true;
-    }
-
-    return false;
-  }
-
-  function extend(namespace, delimiter) {
-    return createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
-  }
-  /**
-  * Enables a debug mode by namespaces. This can include modes
-  * separated by a colon and wildcards.
-  *
-  * @param {String} namespaces
-  * @api public
-  */
-
-
-  function enable(namespaces) {
-    createDebug.save(namespaces);
-    createDebug.names = [];
-    createDebug.skips = [];
-    var i;
-    var split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
-    var len = split.length;
-
-    for (i = 0; i < len; i++) {
-      if (!split[i]) {
-        // ignore empty strings
-        continue;
-      }
-
-      namespaces = split[i].replace(/\*/g, '.*?');
-
-      if (namespaces[0] === '-') {
-        createDebug.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
-      } else {
-        createDebug.names.push(new RegExp('^' + namespaces + '$'));
-      }
-    }
-
-    for (i = 0; i < createDebug.instances.length; i++) {
-      var instance = createDebug.instances[i];
-      instance.enabled = createDebug.enabled(instance.namespace);
-    }
-  }
-  /**
-  * Disable debug output.
-  *
-  * @api public
-  */
-
-
-  function disable() {
-    createDebug.enable('');
-  }
-  /**
-  * Returns true if the given mode name is enabled, false otherwise.
-  *
-  * @param {String} name
-  * @return {Boolean}
-  * @api public
-  */
-
-
-  function enabled(name) {
-    if (name[name.length - 1] === '*') {
-      return true;
-    }
-
-    var i;
-    var len;
-
-    for (i = 0, len = createDebug.skips.length; i < len; i++) {
-      if (createDebug.skips[i].test(name)) {
-        return false;
-      }
-    }
-
-    for (i = 0, len = createDebug.names.length; i < len; i++) {
-      if (createDebug.names[i].test(name)) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-  /**
-  * Coerce `val`.
-  *
-  * @param {Mixed} val
-  * @return {Mixed}
-  * @api private
-  */
-
-
-  function coerce(val) {
-    if (val instanceof Error) {
-      return val.stack || val.message;
-    }
-
-    return val;
-  }
-
-  createDebug.enable(createDebug.load());
-  return createDebug;
-}
-
-module.exports = setup;
-
-
-},{"ms":143}],143:[function(require,module,exports){
-/**
- * Helpers.
- */
-
-var s = 1000;
-var m = s * 60;
-var h = m * 60;
-var d = h * 24;
-var w = d * 7;
-var y = d * 365.25;
-
-/**
- * Parse or format the given `val`.
- *
- * Options:
- *
- *  - `long` verbose formatting [false]
- *
- * @param {String|Number} val
- * @param {Object} [options]
- * @throws {Error} throw an error if val is not a non-empty string or a number
- * @return {String|Number}
- * @api public
- */
-
-module.exports = function(val, options) {
-  options = options || {};
-  var type = typeof val;
-  if (type === 'string' && val.length > 0) {
-    return parse(val);
-  } else if (type === 'number' && isNaN(val) === false) {
-    return options.long ? fmtLong(val) : fmtShort(val);
-  }
-  throw new Error(
-    'val is not a non-empty string or a valid number. val=' +
-      JSON.stringify(val)
-  );
-};
-
-/**
- * Parse the given `str` and return milliseconds.
- *
- * @param {String} str
- * @return {Number}
- * @api private
- */
-
-function parse(str) {
-  str = String(str);
-  if (str.length > 100) {
-    return;
-  }
-  var match = /^((?:\d+)?\-?\d?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
-    str
-  );
-  if (!match) {
-    return;
-  }
-  var n = parseFloat(match[1]);
-  var type = (match[2] || 'ms').toLowerCase();
-  switch (type) {
-    case 'years':
-    case 'year':
-    case 'yrs':
-    case 'yr':
-    case 'y':
-      return n * y;
-    case 'weeks':
-    case 'week':
-    case 'w':
-      return n * w;
-    case 'days':
-    case 'day':
-    case 'd':
-      return n * d;
-    case 'hours':
-    case 'hour':
-    case 'hrs':
-    case 'hr':
-    case 'h':
-      return n * h;
-    case 'minutes':
-    case 'minute':
-    case 'mins':
-    case 'min':
-    case 'm':
-      return n * m;
-    case 'seconds':
-    case 'second':
-    case 'secs':
-    case 'sec':
-    case 's':
-      return n * s;
-    case 'milliseconds':
-    case 'millisecond':
-    case 'msecs':
-    case 'msec':
-    case 'ms':
-      return n;
-    default:
-      return undefined;
-  }
-}
-
-/**
- * Short format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtShort(ms) {
-  var msAbs = Math.abs(ms);
-  if (msAbs >= d) {
-    return Math.round(ms / d) + 'd';
-  }
-  if (msAbs >= h) {
-    return Math.round(ms / h) + 'h';
-  }
-  if (msAbs >= m) {
-    return Math.round(ms / m) + 'm';
-  }
-  if (msAbs >= s) {
-    return Math.round(ms / s) + 's';
-  }
-  return ms + 'ms';
-}
-
-/**
- * Long format for `ms`.
- *
- * @param {Number} ms
- * @return {String}
- * @api private
- */
-
-function fmtLong(ms) {
-  var msAbs = Math.abs(ms);
-  if (msAbs >= d) {
-    return plural(ms, msAbs, d, 'day');
-  }
-  if (msAbs >= h) {
-    return plural(ms, msAbs, h, 'hour');
-  }
-  if (msAbs >= m) {
-    return plural(ms, msAbs, m, 'minute');
-  }
-  if (msAbs >= s) {
-    return plural(ms, msAbs, s, 'second');
-  }
-  return ms + ' ms';
-}
-
-/**
- * Pluralization helper.
- */
-
-function plural(ms, msAbs, n, name) {
-  var isPlural = msAbs >= n * 1.5;
-  return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
-}
-
-},{}],144:[function(require,module,exports){
+},{"agent-base":3,"buffer":791,"debug":63,"net":744,"tls":744,"url":909,"util":913}],143:[function(require,module,exports){
 /* This file is generated from the Unicode IDNA table, using
    the build-unicode-tables.py script. Please edit that
    script instead of this file. */
@@ -28080,7 +27933,7 @@ return {
 };
 }));
 
-},{}],145:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 (function(root, factory) {
   /* istanbul ignore next */
   if (typeof define === 'function' && define.amd) {
@@ -28214,7 +28067,7 @@ return {
   };
 }));
 
-},{"./idna-map":144,"punycode":871}],146:[function(require,module,exports){
+},{"./idna-map":143,"punycode":871}],145:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -28239,7 +28092,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],147:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERROR_MSGS = require("../constants/error_msgs");
@@ -28299,7 +28152,7 @@ function decorate(decorator, target, parameterIndex) {
 }
 exports.decorate = decorate;
 
-},{"../constants/error_msgs":159,"../constants/metadata_keys":161}],148:[function(require,module,exports){
+},{"../constants/error_msgs":158,"../constants/metadata_keys":160}],147:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var error_msgs_1 = require("../constants/error_msgs");
@@ -28332,7 +28185,7 @@ function inject(serviceIdentifier) {
 }
 exports.inject = inject;
 
-},{"../constants/error_msgs":159,"../constants/metadata_keys":161,"../planning/metadata":168,"./decorator_utils":147}],149:[function(require,module,exports){
+},{"../constants/error_msgs":158,"../constants/metadata_keys":160,"../planning/metadata":167,"./decorator_utils":146}],148:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERRORS_MSGS = require("../constants/error_msgs");
@@ -28349,7 +28202,7 @@ function injectable() {
 }
 exports.injectable = injectable;
 
-},{"../constants/error_msgs":159,"../constants/metadata_keys":161}],150:[function(require,module,exports){
+},{"../constants/error_msgs":158,"../constants/metadata_keys":160}],149:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -28368,7 +28221,7 @@ function multiInject(serviceIdentifier) {
 }
 exports.multiInject = multiInject;
 
-},{"../constants/metadata_keys":161,"../planning/metadata":168,"./decorator_utils":147}],151:[function(require,module,exports){
+},{"../constants/metadata_keys":160,"../planning/metadata":167,"./decorator_utils":146}],150:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -28387,7 +28240,7 @@ function named(name) {
 }
 exports.named = named;
 
-},{"../constants/metadata_keys":161,"../planning/metadata":168,"./decorator_utils":147}],152:[function(require,module,exports){
+},{"../constants/metadata_keys":160,"../planning/metadata":167,"./decorator_utils":146}],151:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -28406,7 +28259,7 @@ function optional() {
 }
 exports.optional = optional;
 
-},{"../constants/metadata_keys":161,"../planning/metadata":168,"./decorator_utils":147}],153:[function(require,module,exports){
+},{"../constants/metadata_keys":160,"../planning/metadata":167,"./decorator_utils":146}],152:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERRORS_MSGS = require("../constants/error_msgs");
@@ -28423,7 +28276,7 @@ function postConstruct() {
 }
 exports.postConstruct = postConstruct;
 
-},{"../constants/error_msgs":159,"../constants/metadata_keys":161,"../planning/metadata":168}],154:[function(require,module,exports){
+},{"../constants/error_msgs":158,"../constants/metadata_keys":160,"../planning/metadata":167}],153:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var metadata_1 = require("../planning/metadata");
@@ -28441,7 +28294,7 @@ function tagged(metadataKey, metadataValue) {
 }
 exports.tagged = tagged;
 
-},{"../planning/metadata":168,"./decorator_utils":147}],155:[function(require,module,exports){
+},{"../planning/metadata":167,"./decorator_utils":146}],154:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -28455,7 +28308,7 @@ function targetName(name) {
 }
 exports.targetName = targetName;
 
-},{"../constants/metadata_keys":161,"../planning/metadata":168,"./decorator_utils":147}],156:[function(require,module,exports){
+},{"../constants/metadata_keys":160,"../planning/metadata":167,"./decorator_utils":146}],155:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -28469,7 +28322,7 @@ function unmanaged() {
 }
 exports.unmanaged = unmanaged;
 
-},{"../constants/metadata_keys":161,"../planning/metadata":168,"./decorator_utils":147}],157:[function(require,module,exports){
+},{"../constants/metadata_keys":160,"../planning/metadata":167,"./decorator_utils":146}],156:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var literal_types_1 = require("../constants/literal_types");
@@ -28507,7 +28360,7 @@ var Binding = (function () {
 }());
 exports.Binding = Binding;
 
-},{"../constants/literal_types":160,"../utils/guid":187}],158:[function(require,module,exports){
+},{"../constants/literal_types":159,"../utils/guid":186}],157:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var BindingCount = {
@@ -28517,7 +28370,7 @@ var BindingCount = {
 };
 exports.BindingCount = BindingCount;
 
-},{}],159:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DUPLICATED_INJECTABLE_DECORATOR = "Cannot apply @injectable decorator multiple times.";
@@ -28579,7 +28432,7 @@ exports.CIRCULAR_DEPENDENCY_IN_FACTORY = function () {
 };
 exports.STACK_OVERFLOW = "Maximum call stack size exceeded";
 
-},{}],160:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var BindingScopeEnum = {
@@ -28606,7 +28459,7 @@ var TargetTypeEnum = {
 };
 exports.TargetTypeEnum = TargetTypeEnum;
 
-},{}],161:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NAMED_TAG = "named";
@@ -28621,7 +28474,7 @@ exports.PARAM_TYPES = "inversify:paramtypes";
 exports.DESIGN_PARAM_TYPES = "design:paramtypes";
 exports.POST_CONSTRUCT = "post_construct";
 
-},{}],162:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -28949,7 +28802,7 @@ var Container = (function () {
 }());
 exports.Container = Container;
 
-},{"../bindings/binding":157,"../constants/error_msgs":159,"../constants/literal_types":160,"../constants/metadata_keys":161,"../planning/metadata_reader":169,"../planning/planner":171,"../resolution/resolver":177,"../syntax/binding_to_syntax":181,"../utils/guid":187,"../utils/serialization":188,"./container_snapshot":164,"./lookup":165}],163:[function(require,module,exports){
+},{"../bindings/binding":156,"../constants/error_msgs":158,"../constants/literal_types":159,"../constants/metadata_keys":160,"../planning/metadata_reader":168,"../planning/planner":170,"../resolution/resolver":176,"../syntax/binding_to_syntax":180,"../utils/guid":186,"../utils/serialization":187,"./container_snapshot":163,"./lookup":164}],162:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var guid_1 = require("../utils/guid");
@@ -28970,7 +28823,7 @@ var AsyncContainerModule = (function () {
 }());
 exports.AsyncContainerModule = AsyncContainerModule;
 
-},{"../utils/guid":187}],164:[function(require,module,exports){
+},{"../utils/guid":186}],163:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ContainerSnapshot = (function () {
@@ -28986,7 +28839,7 @@ var ContainerSnapshot = (function () {
 }());
 exports.ContainerSnapshot = ContainerSnapshot;
 
-},{}],165:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERROR_MSGS = require("../constants/error_msgs");
@@ -29067,7 +28920,7 @@ var Lookup = (function () {
 }());
 exports.Lookup = Lookup;
 
-},{"../constants/error_msgs":159}],166:[function(require,module,exports){
+},{"../constants/error_msgs":158}],165:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var keys = require("./constants/metadata_keys");
@@ -29116,7 +28969,7 @@ exports.getServiceIdentifierAsString = serialization_1.getServiceIdentifierAsStr
 var binding_utils_1 = require("./utils/binding_utils");
 exports.multiBindToService = binding_utils_1.multiBindToService;
 
-},{"./annotation/decorator_utils":147,"./annotation/inject":148,"./annotation/injectable":149,"./annotation/multi_inject":150,"./annotation/named":151,"./annotation/optional":152,"./annotation/post_construct":153,"./annotation/tagged":154,"./annotation/target_name":155,"./annotation/unmanaged":156,"./constants/literal_types":160,"./constants/metadata_keys":161,"./container/container":162,"./container/container_module":163,"./planning/metadata_reader":169,"./syntax/constraint_helpers":184,"./utils/binding_utils":185,"./utils/guid":187,"./utils/serialization":188}],167:[function(require,module,exports){
+},{"./annotation/decorator_utils":146,"./annotation/inject":147,"./annotation/injectable":148,"./annotation/multi_inject":149,"./annotation/named":150,"./annotation/optional":151,"./annotation/post_construct":152,"./annotation/tagged":153,"./annotation/target_name":154,"./annotation/unmanaged":155,"./constants/literal_types":159,"./constants/metadata_keys":160,"./container/container":161,"./container/container_module":162,"./planning/metadata_reader":168,"./syntax/constraint_helpers":183,"./utils/binding_utils":184,"./utils/guid":186,"./utils/serialization":187}],166:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var guid_1 = require("../utils/guid");
@@ -29135,7 +28988,7 @@ var Context = (function () {
 }());
 exports.Context = Context;
 
-},{"../utils/guid":187}],168:[function(require,module,exports){
+},{"../utils/guid":186}],167:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -29156,7 +29009,7 @@ var Metadata = (function () {
 }());
 exports.Metadata = Metadata;
 
-},{"../constants/metadata_keys":161}],169:[function(require,module,exports){
+},{"../constants/metadata_keys":160}],168:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -29179,7 +29032,7 @@ var MetadataReader = (function () {
 }());
 exports.MetadataReader = MetadataReader;
 
-},{"../constants/metadata_keys":161}],170:[function(require,module,exports){
+},{"../constants/metadata_keys":160}],169:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Plan = (function () {
@@ -29191,7 +29044,7 @@ var Plan = (function () {
 }());
 exports.Plan = Plan;
 
-},{}],171:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var binding_count_1 = require("../bindings/binding_count");
@@ -29348,7 +29201,7 @@ function createMockRequest(container, serviceIdentifier, key, value) {
 }
 exports.createMockRequest = createMockRequest;
 
-},{"../bindings/binding_count":158,"../constants/error_msgs":159,"../constants/literal_types":160,"../constants/metadata_keys":161,"../utils/exceptions":186,"../utils/serialization":188,"./context":167,"./metadata":168,"./plan":170,"./reflection_utils":173,"./request":174,"./target":175}],172:[function(require,module,exports){
+},{"../bindings/binding_count":157,"../constants/error_msgs":158,"../constants/literal_types":159,"../constants/metadata_keys":160,"../utils/exceptions":185,"../utils/serialization":187,"./context":166,"./metadata":167,"./plan":169,"./reflection_utils":172,"./request":173,"./target":174}],171:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var QueryableString = (function () {
@@ -29377,7 +29230,7 @@ var QueryableString = (function () {
 }());
 exports.QueryableString = QueryableString;
 
-},{}],173:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var inject_1 = require("../annotation/inject");
@@ -29503,7 +29356,7 @@ function formatTargetMetadata(targetMetadata) {
     };
 }
 
-},{"../annotation/inject":148,"../constants/error_msgs":159,"../constants/literal_types":160,"../constants/metadata_keys":161,"../utils/serialization":188,"./target":175}],174:[function(require,module,exports){
+},{"../annotation/inject":147,"../constants/error_msgs":158,"../constants/literal_types":159,"../constants/metadata_keys":160,"../utils/serialization":187,"./target":174}],173:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var guid_1 = require("../utils/guid");
@@ -29529,7 +29382,7 @@ var Request = (function () {
 }());
 exports.Request = Request;
 
-},{"../utils/guid":187}],175:[function(require,module,exports){
+},{"../utils/guid":186}],174:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -29621,7 +29474,7 @@ var Target = (function () {
 }());
 exports.Target = Target;
 
-},{"../constants/metadata_keys":161,"../utils/guid":187,"./metadata":168,"./queryable_string":172}],176:[function(require,module,exports){
+},{"../constants/metadata_keys":160,"../utils/guid":186,"./metadata":167,"./queryable_string":171}],175:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var error_msgs_1 = require("../constants/error_msgs");
@@ -29673,7 +29526,7 @@ function resolveInstance(constr, childRequests, resolveRequest) {
 }
 exports.resolveInstance = resolveInstance;
 
-},{"../constants/error_msgs":159,"../constants/literal_types":160,"../constants/metadata_keys":161}],177:[function(require,module,exports){
+},{"../constants/error_msgs":158,"../constants/literal_types":159,"../constants/metadata_keys":160}],176:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERROR_MSGS = require("../constants/error_msgs");
@@ -29773,7 +29626,7 @@ function resolve(context) {
 }
 exports.resolve = resolve;
 
-},{"../constants/error_msgs":159,"../constants/literal_types":160,"../utils/exceptions":186,"../utils/serialization":188,"./instantiation":176}],178:[function(require,module,exports){
+},{"../constants/error_msgs":158,"../constants/literal_types":159,"../utils/exceptions":185,"../utils/serialization":187,"./instantiation":175}],177:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var literal_types_1 = require("../constants/literal_types");
@@ -29798,7 +29651,7 @@ var BindingInSyntax = (function () {
 }());
 exports.BindingInSyntax = BindingInSyntax;
 
-},{"../constants/literal_types":160,"./binding_when_on_syntax":182}],179:[function(require,module,exports){
+},{"../constants/literal_types":159,"./binding_when_on_syntax":181}],178:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var binding_in_syntax_1 = require("./binding_in_syntax");
@@ -29872,7 +29725,7 @@ var BindingInWhenOnSyntax = (function () {
 }());
 exports.BindingInWhenOnSyntax = BindingInWhenOnSyntax;
 
-},{"./binding_in_syntax":178,"./binding_on_syntax":180,"./binding_when_syntax":183}],180:[function(require,module,exports){
+},{"./binding_in_syntax":177,"./binding_on_syntax":179,"./binding_when_syntax":182}],179:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var binding_when_syntax_1 = require("./binding_when_syntax");
@@ -29888,7 +29741,7 @@ var BindingOnSyntax = (function () {
 }());
 exports.BindingOnSyntax = BindingOnSyntax;
 
-},{"./binding_when_syntax":183}],181:[function(require,module,exports){
+},{"./binding_when_syntax":182}],180:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERROR_MSGS = require("../constants/error_msgs");
@@ -29963,7 +29816,7 @@ var BindingToSyntax = (function () {
 }());
 exports.BindingToSyntax = BindingToSyntax;
 
-},{"../constants/error_msgs":159,"../constants/literal_types":160,"./binding_in_when_on_syntax":179,"./binding_when_on_syntax":182}],182:[function(require,module,exports){
+},{"../constants/error_msgs":158,"../constants/literal_types":159,"./binding_in_when_on_syntax":178,"./binding_when_on_syntax":181}],181:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var binding_on_syntax_1 = require("./binding_on_syntax");
@@ -30026,7 +29879,7 @@ var BindingWhenOnSyntax = (function () {
 }());
 exports.BindingWhenOnSyntax = BindingWhenOnSyntax;
 
-},{"./binding_on_syntax":180,"./binding_when_syntax":183}],183:[function(require,module,exports){
+},{"./binding_on_syntax":179,"./binding_when_syntax":182}],182:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var binding_on_syntax_1 = require("./binding_on_syntax");
@@ -30126,7 +29979,7 @@ var BindingWhenSyntax = (function () {
 }());
 exports.BindingWhenSyntax = BindingWhenSyntax;
 
-},{"./binding_on_syntax":180,"./constraint_helpers":184}],184:[function(require,module,exports){
+},{"./binding_on_syntax":179,"./constraint_helpers":183}],183:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var METADATA_KEY = require("../constants/metadata_keys");
@@ -30168,7 +30021,7 @@ var typeConstraint = function (type) { return function (request) {
 }; };
 exports.typeConstraint = typeConstraint;
 
-},{"../constants/metadata_keys":161,"../planning/metadata":168}],185:[function(require,module,exports){
+},{"../constants/metadata_keys":160,"../planning/metadata":167}],184:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.multiBindToService = function (container) {
@@ -30183,7 +30036,7 @@ exports.multiBindToService = function (container) {
     };
 };
 
-},{}],186:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERROR_MSGS = require("../constants/error_msgs");
@@ -30193,7 +30046,7 @@ function isStackOverflowExeption(error) {
 }
 exports.isStackOverflowExeption = isStackOverflowExeption;
 
-},{"../constants/error_msgs":159}],187:[function(require,module,exports){
+},{"../constants/error_msgs":158}],186:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function guid() {
@@ -30207,7 +30060,7 @@ function guid() {
 }
 exports.guid = guid;
 
-},{}],188:[function(require,module,exports){
+},{}],187:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ERROR_MSGS = require("../constants/error_msgs");
@@ -30312,7 +30165,7 @@ function getFunctionName(v) {
 }
 exports.getFunctionName = getFunctionName;
 
-},{"../constants/error_msgs":159}],189:[function(require,module,exports){
+},{"../constants/error_msgs":158}],188:[function(require,module,exports){
 'use strict';
 
 var fnToStr = Function.prototype.toString;
@@ -30351,7 +30204,7 @@ module.exports = function isCallable(value) {
 	return strClass === fnClass || strClass === genClass;
 };
 
-},{}],190:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 module.exports = isFunction
 
 var toString = Object.prototype.toString
@@ -30368,7 +30221,7 @@ function isFunction (fn) {
       fn === window.prompt))
 };
 
-},{}],191:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 /**
  * Returns a `Boolean` on whether or not the a `String` starts with '0x'
  * @param {String} str the string input value
@@ -30383,7 +30236,7 @@ module.exports = function isHexPrefixed(str) {
   return str.slice(0, 2) === '0x';
 }
 
-},{}],192:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 (function (global){
 // https://github.com/maxogden/websocket-stream/blob/48dc3ddf943e5ada668c31ccd94e9186f02fafbd/ws-fallback.js
 
@@ -30404,7 +30257,7 @@ if (typeof WebSocket !== 'undefined') {
 module.exports = ws
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],193:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 var json_stringify = require('./lib/stringify.js').stringify;
 var json_parse     = require('./lib/parse.js');
 
@@ -30418,7 +30271,7 @@ module.exports = function(options) {
 module.exports.parse = json_parse();
 module.exports.stringify = json_stringify;
 
-},{"./lib/parse.js":194,"./lib/stringify.js":195}],194:[function(require,module,exports){
+},{"./lib/parse.js":193,"./lib/stringify.js":194}],193:[function(require,module,exports){
 var BigNumber = null;
 /*
     json_parse.js
@@ -30804,7 +30657,7 @@ var json_parse = function (options) {
 
 module.exports = json_parse;
 
-},{"bignumber.js":196}],195:[function(require,module,exports){
+},{"bignumber.js":195}],194:[function(require,module,exports){
 var BigNumber = require('bignumber.js');
 
 /*
@@ -31189,7 +31042,7 @@ var JSON = module.exports;
     }
 }());
 
-},{"bignumber.js":196}],196:[function(require,module,exports){
+},{"bignumber.js":195}],195:[function(require,module,exports){
 /*! bignumber.js v4.1.0 https://github.com/MikeMcl/bignumber.js/LICENCE */
 
 ;(function (globalObj) {
@@ -33925,7 +33778,7 @@ var JSON = module.exports;
     }
 })(this);
 
-},{}],197:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -33934,7 +33787,7 @@ var DataView = getNative(root, 'DataView');
 
 module.exports = DataView;
 
-},{"./_getNative":250,"./_root":285}],198:[function(require,module,exports){
+},{"./_getNative":249,"./_root":284}],197:[function(require,module,exports){
 var hashClear = require('./_hashClear'),
     hashDelete = require('./_hashDelete'),
     hashGet = require('./_hashGet'),
@@ -33968,7 +33821,7 @@ Hash.prototype.set = hashSet;
 
 module.exports = Hash;
 
-},{"./_hashClear":256,"./_hashDelete":257,"./_hashGet":258,"./_hashHas":259,"./_hashSet":260}],199:[function(require,module,exports){
+},{"./_hashClear":255,"./_hashDelete":256,"./_hashGet":257,"./_hashHas":258,"./_hashSet":259}],198:[function(require,module,exports){
 var listCacheClear = require('./_listCacheClear'),
     listCacheDelete = require('./_listCacheDelete'),
     listCacheGet = require('./_listCacheGet'),
@@ -34002,7 +33855,7 @@ ListCache.prototype.set = listCacheSet;
 
 module.exports = ListCache;
 
-},{"./_listCacheClear":267,"./_listCacheDelete":268,"./_listCacheGet":269,"./_listCacheHas":270,"./_listCacheSet":271}],200:[function(require,module,exports){
+},{"./_listCacheClear":266,"./_listCacheDelete":267,"./_listCacheGet":268,"./_listCacheHas":269,"./_listCacheSet":270}],199:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -34011,7 +33864,7 @@ var Map = getNative(root, 'Map');
 
 module.exports = Map;
 
-},{"./_getNative":250,"./_root":285}],201:[function(require,module,exports){
+},{"./_getNative":249,"./_root":284}],200:[function(require,module,exports){
 var mapCacheClear = require('./_mapCacheClear'),
     mapCacheDelete = require('./_mapCacheDelete'),
     mapCacheGet = require('./_mapCacheGet'),
@@ -34045,7 +33898,7 @@ MapCache.prototype.set = mapCacheSet;
 
 module.exports = MapCache;
 
-},{"./_mapCacheClear":272,"./_mapCacheDelete":273,"./_mapCacheGet":274,"./_mapCacheHas":275,"./_mapCacheSet":276}],202:[function(require,module,exports){
+},{"./_mapCacheClear":271,"./_mapCacheDelete":272,"./_mapCacheGet":273,"./_mapCacheHas":274,"./_mapCacheSet":275}],201:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -34054,7 +33907,7 @@ var Promise = getNative(root, 'Promise');
 
 module.exports = Promise;
 
-},{"./_getNative":250,"./_root":285}],203:[function(require,module,exports){
+},{"./_getNative":249,"./_root":284}],202:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -34063,7 +33916,7 @@ var Set = getNative(root, 'Set');
 
 module.exports = Set;
 
-},{"./_getNative":250,"./_root":285}],204:[function(require,module,exports){
+},{"./_getNative":249,"./_root":284}],203:[function(require,module,exports){
 var MapCache = require('./_MapCache'),
     setCacheAdd = require('./_setCacheAdd'),
     setCacheHas = require('./_setCacheHas');
@@ -34092,7 +33945,7 @@ SetCache.prototype.has = setCacheHas;
 
 module.exports = SetCache;
 
-},{"./_MapCache":201,"./_setCacheAdd":286,"./_setCacheHas":287}],205:[function(require,module,exports){
+},{"./_MapCache":200,"./_setCacheAdd":285,"./_setCacheHas":286}],204:[function(require,module,exports){
 var ListCache = require('./_ListCache'),
     stackClear = require('./_stackClear'),
     stackDelete = require('./_stackDelete'),
@@ -34121,7 +33974,7 @@ Stack.prototype.set = stackSet;
 
 module.exports = Stack;
 
-},{"./_ListCache":199,"./_stackClear":289,"./_stackDelete":290,"./_stackGet":291,"./_stackHas":292,"./_stackSet":293}],206:[function(require,module,exports){
+},{"./_ListCache":198,"./_stackClear":288,"./_stackDelete":289,"./_stackGet":290,"./_stackHas":291,"./_stackSet":292}],205:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -34129,7 +33982,7 @@ var Symbol = root.Symbol;
 
 module.exports = Symbol;
 
-},{"./_root":285}],207:[function(require,module,exports){
+},{"./_root":284}],206:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -34137,7 +33990,7 @@ var Uint8Array = root.Uint8Array;
 
 module.exports = Uint8Array;
 
-},{"./_root":285}],208:[function(require,module,exports){
+},{"./_root":284}],207:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -34146,7 +33999,7 @@ var WeakMap = getNative(root, 'WeakMap');
 
 module.exports = WeakMap;
 
-},{"./_getNative":250,"./_root":285}],209:[function(require,module,exports){
+},{"./_getNative":249,"./_root":284}],208:[function(require,module,exports){
 /**
  * A specialized version of `_.filter` for arrays without support for
  * iteratee shorthands.
@@ -34173,7 +34026,7 @@ function arrayFilter(array, predicate) {
 
 module.exports = arrayFilter;
 
-},{}],210:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 var baseTimes = require('./_baseTimes'),
     isArguments = require('./isArguments'),
     isArray = require('./isArray'),
@@ -34224,7 +34077,7 @@ function arrayLikeKeys(value, inherited) {
 
 module.exports = arrayLikeKeys;
 
-},{"./_baseTimes":235,"./_isIndex":261,"./isArguments":301,"./isArray":302,"./isBuffer":305,"./isTypedArray":314}],211:[function(require,module,exports){
+},{"./_baseTimes":234,"./_isIndex":260,"./isArguments":300,"./isArray":301,"./isBuffer":304,"./isTypedArray":313}],210:[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for iteratee
  * shorthands.
@@ -34247,7 +34100,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-},{}],212:[function(require,module,exports){
+},{}],211:[function(require,module,exports){
 /**
  * Appends the elements of `values` to `array`.
  *
@@ -34269,7 +34122,7 @@ function arrayPush(array, values) {
 
 module.exports = arrayPush;
 
-},{}],213:[function(require,module,exports){
+},{}],212:[function(require,module,exports){
 /**
  * A specialized version of `_.some` for arrays without support for iteratee
  * shorthands.
@@ -34294,7 +34147,7 @@ function arraySome(array, predicate) {
 
 module.exports = arraySome;
 
-},{}],214:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
 var eq = require('./eq');
 
 /**
@@ -34317,7 +34170,7 @@ function assocIndexOf(array, key) {
 
 module.exports = assocIndexOf;
 
-},{"./eq":297}],215:[function(require,module,exports){
+},{"./eq":296}],214:[function(require,module,exports){
 var baseForOwn = require('./_baseForOwn'),
     createBaseEach = require('./_createBaseEach');
 
@@ -34333,7 +34186,7 @@ var baseEach = createBaseEach(baseForOwn);
 
 module.exports = baseEach;
 
-},{"./_baseForOwn":217,"./_createBaseEach":241}],216:[function(require,module,exports){
+},{"./_baseForOwn":216,"./_createBaseEach":240}],215:[function(require,module,exports){
 var createBaseFor = require('./_createBaseFor');
 
 /**
@@ -34351,7 +34204,7 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-},{"./_createBaseFor":242}],217:[function(require,module,exports){
+},{"./_createBaseFor":241}],216:[function(require,module,exports){
 var baseFor = require('./_baseFor'),
     keys = require('./keys');
 
@@ -34369,7 +34222,7 @@ function baseForOwn(object, iteratee) {
 
 module.exports = baseForOwn;
 
-},{"./_baseFor":216,"./keys":315}],218:[function(require,module,exports){
+},{"./_baseFor":215,"./keys":314}],217:[function(require,module,exports){
 var castPath = require('./_castPath'),
     toKey = require('./_toKey');
 
@@ -34395,7 +34248,7 @@ function baseGet(object, path) {
 
 module.exports = baseGet;
 
-},{"./_castPath":239,"./_toKey":295}],219:[function(require,module,exports){
+},{"./_castPath":238,"./_toKey":294}],218:[function(require,module,exports){
 var arrayPush = require('./_arrayPush'),
     isArray = require('./isArray');
 
@@ -34417,7 +34270,7 @@ function baseGetAllKeys(object, keysFunc, symbolsFunc) {
 
 module.exports = baseGetAllKeys;
 
-},{"./_arrayPush":212,"./isArray":302}],220:[function(require,module,exports){
+},{"./_arrayPush":211,"./isArray":301}],219:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     getRawTag = require('./_getRawTag'),
     objectToString = require('./_objectToString');
@@ -34447,7 +34300,7 @@ function baseGetTag(value) {
 
 module.exports = baseGetTag;
 
-},{"./_Symbol":206,"./_getRawTag":251,"./_objectToString":283}],221:[function(require,module,exports){
+},{"./_Symbol":205,"./_getRawTag":250,"./_objectToString":282}],220:[function(require,module,exports){
 /**
  * The base implementation of `_.hasIn` without support for deep paths.
  *
@@ -34462,7 +34315,7 @@ function baseHasIn(object, key) {
 
 module.exports = baseHasIn;
 
-},{}],222:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -34482,7 +34335,7 @@ function baseIsArguments(value) {
 
 module.exports = baseIsArguments;
 
-},{"./_baseGetTag":220,"./isObjectLike":311}],223:[function(require,module,exports){
+},{"./_baseGetTag":219,"./isObjectLike":310}],222:[function(require,module,exports){
 var baseIsEqualDeep = require('./_baseIsEqualDeep'),
     isObjectLike = require('./isObjectLike');
 
@@ -34512,7 +34365,7 @@ function baseIsEqual(value, other, bitmask, customizer, stack) {
 
 module.exports = baseIsEqual;
 
-},{"./_baseIsEqualDeep":224,"./isObjectLike":311}],224:[function(require,module,exports){
+},{"./_baseIsEqualDeep":223,"./isObjectLike":310}],223:[function(require,module,exports){
 var Stack = require('./_Stack'),
     equalArrays = require('./_equalArrays'),
     equalByTag = require('./_equalByTag'),
@@ -34597,7 +34450,7 @@ function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
 
 module.exports = baseIsEqualDeep;
 
-},{"./_Stack":205,"./_equalArrays":243,"./_equalByTag":244,"./_equalObjects":245,"./_getTag":253,"./isArray":302,"./isBuffer":305,"./isTypedArray":314}],225:[function(require,module,exports){
+},{"./_Stack":204,"./_equalArrays":242,"./_equalByTag":243,"./_equalObjects":244,"./_getTag":252,"./isArray":301,"./isBuffer":304,"./isTypedArray":313}],224:[function(require,module,exports){
 var Stack = require('./_Stack'),
     baseIsEqual = require('./_baseIsEqual');
 
@@ -34661,7 +34514,7 @@ function baseIsMatch(object, source, matchData, customizer) {
 
 module.exports = baseIsMatch;
 
-},{"./_Stack":205,"./_baseIsEqual":223}],226:[function(require,module,exports){
+},{"./_Stack":204,"./_baseIsEqual":222}],225:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isMasked = require('./_isMasked'),
     isObject = require('./isObject'),
@@ -34710,7 +34563,7 @@ function baseIsNative(value) {
 
 module.exports = baseIsNative;
 
-},{"./_isMasked":264,"./_toSource":296,"./isFunction":306,"./isObject":310}],227:[function(require,module,exports){
+},{"./_isMasked":263,"./_toSource":295,"./isFunction":305,"./isObject":309}],226:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isLength = require('./isLength'),
     isObjectLike = require('./isObjectLike');
@@ -34772,7 +34625,7 @@ function baseIsTypedArray(value) {
 
 module.exports = baseIsTypedArray;
 
-},{"./_baseGetTag":220,"./isLength":307,"./isObjectLike":311}],228:[function(require,module,exports){
+},{"./_baseGetTag":219,"./isLength":306,"./isObjectLike":310}],227:[function(require,module,exports){
 var baseMatches = require('./_baseMatches'),
     baseMatchesProperty = require('./_baseMatchesProperty'),
     identity = require('./identity'),
@@ -34805,7 +34658,7 @@ function baseIteratee(value) {
 
 module.exports = baseIteratee;
 
-},{"./_baseMatches":231,"./_baseMatchesProperty":232,"./identity":300,"./isArray":302,"./property":318}],229:[function(require,module,exports){
+},{"./_baseMatches":230,"./_baseMatchesProperty":231,"./identity":299,"./isArray":301,"./property":317}],228:[function(require,module,exports){
 var isPrototype = require('./_isPrototype'),
     nativeKeys = require('./_nativeKeys');
 
@@ -34837,7 +34690,7 @@ function baseKeys(object) {
 
 module.exports = baseKeys;
 
-},{"./_isPrototype":265,"./_nativeKeys":281}],230:[function(require,module,exports){
+},{"./_isPrototype":264,"./_nativeKeys":280}],229:[function(require,module,exports){
 var baseEach = require('./_baseEach'),
     isArrayLike = require('./isArrayLike');
 
@@ -34861,7 +34714,7 @@ function baseMap(collection, iteratee) {
 
 module.exports = baseMap;
 
-},{"./_baseEach":215,"./isArrayLike":303}],231:[function(require,module,exports){
+},{"./_baseEach":214,"./isArrayLike":302}],230:[function(require,module,exports){
 var baseIsMatch = require('./_baseIsMatch'),
     getMatchData = require('./_getMatchData'),
     matchesStrictComparable = require('./_matchesStrictComparable');
@@ -34885,7 +34738,7 @@ function baseMatches(source) {
 
 module.exports = baseMatches;
 
-},{"./_baseIsMatch":225,"./_getMatchData":249,"./_matchesStrictComparable":278}],232:[function(require,module,exports){
+},{"./_baseIsMatch":224,"./_getMatchData":248,"./_matchesStrictComparable":277}],231:[function(require,module,exports){
 var baseIsEqual = require('./_baseIsEqual'),
     get = require('./get'),
     hasIn = require('./hasIn'),
@@ -34920,7 +34773,7 @@ function baseMatchesProperty(path, srcValue) {
 
 module.exports = baseMatchesProperty;
 
-},{"./_baseIsEqual":223,"./_isKey":262,"./_isStrictComparable":266,"./_matchesStrictComparable":278,"./_toKey":295,"./get":298,"./hasIn":299}],233:[function(require,module,exports){
+},{"./_baseIsEqual":222,"./_isKey":261,"./_isStrictComparable":265,"./_matchesStrictComparable":277,"./_toKey":294,"./get":297,"./hasIn":298}],232:[function(require,module,exports){
 /**
  * The base implementation of `_.property` without support for deep paths.
  *
@@ -34936,7 +34789,7 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-},{}],234:[function(require,module,exports){
+},{}],233:[function(require,module,exports){
 var baseGet = require('./_baseGet');
 
 /**
@@ -34954,7 +34807,7 @@ function basePropertyDeep(path) {
 
 module.exports = basePropertyDeep;
 
-},{"./_baseGet":218}],235:[function(require,module,exports){
+},{"./_baseGet":217}],234:[function(require,module,exports){
 /**
  * The base implementation of `_.times` without support for iteratee shorthands
  * or max array length checks.
@@ -34976,7 +34829,7 @@ function baseTimes(n, iteratee) {
 
 module.exports = baseTimes;
 
-},{}],236:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     arrayMap = require('./_arrayMap'),
     isArray = require('./isArray'),
@@ -35015,7 +34868,7 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-},{"./_Symbol":206,"./_arrayMap":211,"./isArray":302,"./isSymbol":313}],237:[function(require,module,exports){
+},{"./_Symbol":205,"./_arrayMap":210,"./isArray":301,"./isSymbol":312}],236:[function(require,module,exports){
 /**
  * The base implementation of `_.unary` without support for storing metadata.
  *
@@ -35031,7 +34884,7 @@ function baseUnary(func) {
 
 module.exports = baseUnary;
 
-},{}],238:[function(require,module,exports){
+},{}],237:[function(require,module,exports){
 /**
  * Checks if a `cache` value for `key` exists.
  *
@@ -35046,7 +34899,7 @@ function cacheHas(cache, key) {
 
 module.exports = cacheHas;
 
-},{}],239:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 var isArray = require('./isArray'),
     isKey = require('./_isKey'),
     stringToPath = require('./_stringToPath'),
@@ -35069,7 +34922,7 @@ function castPath(value, object) {
 
 module.exports = castPath;
 
-},{"./_isKey":262,"./_stringToPath":294,"./isArray":302,"./toString":321}],240:[function(require,module,exports){
+},{"./_isKey":261,"./_stringToPath":293,"./isArray":301,"./toString":320}],239:[function(require,module,exports){
 var root = require('./_root');
 
 /** Used to detect overreaching core-js shims. */
@@ -35077,7 +34930,7 @@ var coreJsData = root['__core-js_shared__'];
 
 module.exports = coreJsData;
 
-},{"./_root":285}],241:[function(require,module,exports){
+},{"./_root":284}],240:[function(require,module,exports){
 var isArrayLike = require('./isArrayLike');
 
 /**
@@ -35111,7 +34964,7 @@ function createBaseEach(eachFunc, fromRight) {
 
 module.exports = createBaseEach;
 
-},{"./isArrayLike":303}],242:[function(require,module,exports){
+},{"./isArrayLike":302}],241:[function(require,module,exports){
 /**
  * Creates a base function for methods like `_.forIn` and `_.forOwn`.
  *
@@ -35138,7 +34991,7 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-},{}],243:[function(require,module,exports){
+},{}],242:[function(require,module,exports){
 var SetCache = require('./_SetCache'),
     arraySome = require('./_arraySome'),
     cacheHas = require('./_cacheHas');
@@ -35223,7 +35076,7 @@ function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
 
 module.exports = equalArrays;
 
-},{"./_SetCache":204,"./_arraySome":213,"./_cacheHas":238}],244:[function(require,module,exports){
+},{"./_SetCache":203,"./_arraySome":212,"./_cacheHas":237}],243:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     Uint8Array = require('./_Uint8Array'),
     eq = require('./eq'),
@@ -35337,7 +35190,7 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
 
 module.exports = equalByTag;
 
-},{"./_Symbol":206,"./_Uint8Array":207,"./_equalArrays":243,"./_mapToArray":277,"./_setToArray":288,"./eq":297}],245:[function(require,module,exports){
+},{"./_Symbol":205,"./_Uint8Array":206,"./_equalArrays":242,"./_mapToArray":276,"./_setToArray":287,"./eq":296}],244:[function(require,module,exports){
 var getAllKeys = require('./_getAllKeys');
 
 /** Used to compose bitmasks for value comparisons. */
@@ -35428,7 +35281,7 @@ function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
 
 module.exports = equalObjects;
 
-},{"./_getAllKeys":247}],246:[function(require,module,exports){
+},{"./_getAllKeys":246}],245:[function(require,module,exports){
 (function (global){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -35436,7 +35289,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 module.exports = freeGlobal;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],247:[function(require,module,exports){
+},{}],246:[function(require,module,exports){
 var baseGetAllKeys = require('./_baseGetAllKeys'),
     getSymbols = require('./_getSymbols'),
     keys = require('./keys');
@@ -35454,7 +35307,7 @@ function getAllKeys(object) {
 
 module.exports = getAllKeys;
 
-},{"./_baseGetAllKeys":219,"./_getSymbols":252,"./keys":315}],248:[function(require,module,exports){
+},{"./_baseGetAllKeys":218,"./_getSymbols":251,"./keys":314}],247:[function(require,module,exports){
 var isKeyable = require('./_isKeyable');
 
 /**
@@ -35474,7 +35327,7 @@ function getMapData(map, key) {
 
 module.exports = getMapData;
 
-},{"./_isKeyable":263}],249:[function(require,module,exports){
+},{"./_isKeyable":262}],248:[function(require,module,exports){
 var isStrictComparable = require('./_isStrictComparable'),
     keys = require('./keys');
 
@@ -35500,7 +35353,7 @@ function getMatchData(object) {
 
 module.exports = getMatchData;
 
-},{"./_isStrictComparable":266,"./keys":315}],250:[function(require,module,exports){
+},{"./_isStrictComparable":265,"./keys":314}],249:[function(require,module,exports){
 var baseIsNative = require('./_baseIsNative'),
     getValue = require('./_getValue');
 
@@ -35519,7 +35372,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"./_baseIsNative":226,"./_getValue":254}],251:[function(require,module,exports){
+},{"./_baseIsNative":225,"./_getValue":253}],250:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used for built-in method references. */
@@ -35567,7 +35420,7 @@ function getRawTag(value) {
 
 module.exports = getRawTag;
 
-},{"./_Symbol":206}],252:[function(require,module,exports){
+},{"./_Symbol":205}],251:[function(require,module,exports){
 var arrayFilter = require('./_arrayFilter'),
     stubArray = require('./stubArray');
 
@@ -35599,7 +35452,7 @@ var getSymbols = !nativeGetSymbols ? stubArray : function(object) {
 
 module.exports = getSymbols;
 
-},{"./_arrayFilter":209,"./stubArray":319}],253:[function(require,module,exports){
+},{"./_arrayFilter":208,"./stubArray":318}],252:[function(require,module,exports){
 var DataView = require('./_DataView'),
     Map = require('./_Map'),
     Promise = require('./_Promise'),
@@ -35659,7 +35512,7 @@ if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
 
 module.exports = getTag;
 
-},{"./_DataView":197,"./_Map":200,"./_Promise":202,"./_Set":203,"./_WeakMap":208,"./_baseGetTag":220,"./_toSource":296}],254:[function(require,module,exports){
+},{"./_DataView":196,"./_Map":199,"./_Promise":201,"./_Set":202,"./_WeakMap":207,"./_baseGetTag":219,"./_toSource":295}],253:[function(require,module,exports){
 /**
  * Gets the value at `key` of `object`.
  *
@@ -35674,7 +35527,7 @@ function getValue(object, key) {
 
 module.exports = getValue;
 
-},{}],255:[function(require,module,exports){
+},{}],254:[function(require,module,exports){
 var castPath = require('./_castPath'),
     isArguments = require('./isArguments'),
     isArray = require('./isArray'),
@@ -35715,7 +35568,7 @@ function hasPath(object, path, hasFunc) {
 
 module.exports = hasPath;
 
-},{"./_castPath":239,"./_isIndex":261,"./_toKey":295,"./isArguments":301,"./isArray":302,"./isLength":307}],256:[function(require,module,exports){
+},{"./_castPath":238,"./_isIndex":260,"./_toKey":294,"./isArguments":300,"./isArray":301,"./isLength":306}],255:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /**
@@ -35732,7 +35585,7 @@ function hashClear() {
 
 module.exports = hashClear;
 
-},{"./_nativeCreate":280}],257:[function(require,module,exports){
+},{"./_nativeCreate":279}],256:[function(require,module,exports){
 /**
  * Removes `key` and its value from the hash.
  *
@@ -35751,7 +35604,7 @@ function hashDelete(key) {
 
 module.exports = hashDelete;
 
-},{}],258:[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -35783,7 +35636,7 @@ function hashGet(key) {
 
 module.exports = hashGet;
 
-},{"./_nativeCreate":280}],259:[function(require,module,exports){
+},{"./_nativeCreate":279}],258:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used for built-in method references. */
@@ -35808,7 +35661,7 @@ function hashHas(key) {
 
 module.exports = hashHas;
 
-},{"./_nativeCreate":280}],260:[function(require,module,exports){
+},{"./_nativeCreate":279}],259:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -35833,7 +35686,7 @@ function hashSet(key, value) {
 
 module.exports = hashSet;
 
-},{"./_nativeCreate":280}],261:[function(require,module,exports){
+},{"./_nativeCreate":279}],260:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -35860,7 +35713,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],262:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 var isArray = require('./isArray'),
     isSymbol = require('./isSymbol');
 
@@ -35891,7 +35744,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-},{"./isArray":302,"./isSymbol":313}],263:[function(require,module,exports){
+},{"./isArray":301,"./isSymbol":312}],262:[function(require,module,exports){
 /**
  * Checks if `value` is suitable for use as unique object key.
  *
@@ -35908,7 +35761,7 @@ function isKeyable(value) {
 
 module.exports = isKeyable;
 
-},{}],264:[function(require,module,exports){
+},{}],263:[function(require,module,exports){
 var coreJsData = require('./_coreJsData');
 
 /** Used to detect methods masquerading as native. */
@@ -35930,7 +35783,7 @@ function isMasked(func) {
 
 module.exports = isMasked;
 
-},{"./_coreJsData":240}],265:[function(require,module,exports){
+},{"./_coreJsData":239}],264:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -35950,7 +35803,7 @@ function isPrototype(value) {
 
 module.exports = isPrototype;
 
-},{}],266:[function(require,module,exports){
+},{}],265:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /**
@@ -35967,7 +35820,7 @@ function isStrictComparable(value) {
 
 module.exports = isStrictComparable;
 
-},{"./isObject":310}],267:[function(require,module,exports){
+},{"./isObject":309}],266:[function(require,module,exports){
 /**
  * Removes all key-value entries from the list cache.
  *
@@ -35982,7 +35835,7 @@ function listCacheClear() {
 
 module.exports = listCacheClear;
 
-},{}],268:[function(require,module,exports){
+},{}],267:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /** Used for built-in method references. */
@@ -36019,7 +35872,7 @@ function listCacheDelete(key) {
 
 module.exports = listCacheDelete;
 
-},{"./_assocIndexOf":214}],269:[function(require,module,exports){
+},{"./_assocIndexOf":213}],268:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -36040,7 +35893,7 @@ function listCacheGet(key) {
 
 module.exports = listCacheGet;
 
-},{"./_assocIndexOf":214}],270:[function(require,module,exports){
+},{"./_assocIndexOf":213}],269:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -36058,7 +35911,7 @@ function listCacheHas(key) {
 
 module.exports = listCacheHas;
 
-},{"./_assocIndexOf":214}],271:[function(require,module,exports){
+},{"./_assocIndexOf":213}],270:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -36086,7 +35939,7 @@ function listCacheSet(key, value) {
 
 module.exports = listCacheSet;
 
-},{"./_assocIndexOf":214}],272:[function(require,module,exports){
+},{"./_assocIndexOf":213}],271:[function(require,module,exports){
 var Hash = require('./_Hash'),
     ListCache = require('./_ListCache'),
     Map = require('./_Map');
@@ -36109,7 +35962,7 @@ function mapCacheClear() {
 
 module.exports = mapCacheClear;
 
-},{"./_Hash":198,"./_ListCache":199,"./_Map":200}],273:[function(require,module,exports){
+},{"./_Hash":197,"./_ListCache":198,"./_Map":199}],272:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -36129,7 +35982,7 @@ function mapCacheDelete(key) {
 
 module.exports = mapCacheDelete;
 
-},{"./_getMapData":248}],274:[function(require,module,exports){
+},{"./_getMapData":247}],273:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -36147,7 +36000,7 @@ function mapCacheGet(key) {
 
 module.exports = mapCacheGet;
 
-},{"./_getMapData":248}],275:[function(require,module,exports){
+},{"./_getMapData":247}],274:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -36165,7 +36018,7 @@ function mapCacheHas(key) {
 
 module.exports = mapCacheHas;
 
-},{"./_getMapData":248}],276:[function(require,module,exports){
+},{"./_getMapData":247}],275:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -36189,7 +36042,7 @@ function mapCacheSet(key, value) {
 
 module.exports = mapCacheSet;
 
-},{"./_getMapData":248}],277:[function(require,module,exports){
+},{"./_getMapData":247}],276:[function(require,module,exports){
 /**
  * Converts `map` to its key-value pairs.
  *
@@ -36209,7 +36062,7 @@ function mapToArray(map) {
 
 module.exports = mapToArray;
 
-},{}],278:[function(require,module,exports){
+},{}],277:[function(require,module,exports){
 /**
  * A specialized version of `matchesProperty` for source values suitable
  * for strict equality comparisons, i.e. `===`.
@@ -36231,7 +36084,7 @@ function matchesStrictComparable(key, srcValue) {
 
 module.exports = matchesStrictComparable;
 
-},{}],279:[function(require,module,exports){
+},{}],278:[function(require,module,exports){
 var memoize = require('./memoize');
 
 /** Used as the maximum memoize cache size. */
@@ -36259,7 +36112,7 @@ function memoizeCapped(func) {
 
 module.exports = memoizeCapped;
 
-},{"./memoize":317}],280:[function(require,module,exports){
+},{"./memoize":316}],279:[function(require,module,exports){
 var getNative = require('./_getNative');
 
 /* Built-in method references that are verified to be native. */
@@ -36267,7 +36120,7 @@ var nativeCreate = getNative(Object, 'create');
 
 module.exports = nativeCreate;
 
-},{"./_getNative":250}],281:[function(require,module,exports){
+},{"./_getNative":249}],280:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -36275,7 +36128,7 @@ var nativeKeys = overArg(Object.keys, Object);
 
 module.exports = nativeKeys;
 
-},{"./_overArg":284}],282:[function(require,module,exports){
+},{"./_overArg":283}],281:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `exports`. */
@@ -36307,7 +36160,7 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-},{"./_freeGlobal":246}],283:[function(require,module,exports){
+},{"./_freeGlobal":245}],282:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -36331,7 +36184,7 @@ function objectToString(value) {
 
 module.exports = objectToString;
 
-},{}],284:[function(require,module,exports){
+},{}],283:[function(require,module,exports){
 /**
  * Creates a unary function that invokes `func` with its argument transformed.
  *
@@ -36348,7 +36201,7 @@ function overArg(func, transform) {
 
 module.exports = overArg;
 
-},{}],285:[function(require,module,exports){
+},{}],284:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
@@ -36359,7 +36212,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
 
-},{"./_freeGlobal":246}],286:[function(require,module,exports){
+},{"./_freeGlobal":245}],285:[function(require,module,exports){
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
 
@@ -36380,7 +36233,7 @@ function setCacheAdd(value) {
 
 module.exports = setCacheAdd;
 
-},{}],287:[function(require,module,exports){
+},{}],286:[function(require,module,exports){
 /**
  * Checks if `value` is in the array cache.
  *
@@ -36396,7 +36249,7 @@ function setCacheHas(value) {
 
 module.exports = setCacheHas;
 
-},{}],288:[function(require,module,exports){
+},{}],287:[function(require,module,exports){
 /**
  * Converts `set` to an array of its values.
  *
@@ -36416,7 +36269,7 @@ function setToArray(set) {
 
 module.exports = setToArray;
 
-},{}],289:[function(require,module,exports){
+},{}],288:[function(require,module,exports){
 var ListCache = require('./_ListCache');
 
 /**
@@ -36433,7 +36286,7 @@ function stackClear() {
 
 module.exports = stackClear;
 
-},{"./_ListCache":199}],290:[function(require,module,exports){
+},{"./_ListCache":198}],289:[function(require,module,exports){
 /**
  * Removes `key` and its value from the stack.
  *
@@ -36453,7 +36306,7 @@ function stackDelete(key) {
 
 module.exports = stackDelete;
 
-},{}],291:[function(require,module,exports){
+},{}],290:[function(require,module,exports){
 /**
  * Gets the stack value for `key`.
  *
@@ -36469,7 +36322,7 @@ function stackGet(key) {
 
 module.exports = stackGet;
 
-},{}],292:[function(require,module,exports){
+},{}],291:[function(require,module,exports){
 /**
  * Checks if a stack value for `key` exists.
  *
@@ -36485,7 +36338,7 @@ function stackHas(key) {
 
 module.exports = stackHas;
 
-},{}],293:[function(require,module,exports){
+},{}],292:[function(require,module,exports){
 var ListCache = require('./_ListCache'),
     Map = require('./_Map'),
     MapCache = require('./_MapCache');
@@ -36521,7 +36374,7 @@ function stackSet(key, value) {
 
 module.exports = stackSet;
 
-},{"./_ListCache":199,"./_Map":200,"./_MapCache":201}],294:[function(require,module,exports){
+},{"./_ListCache":198,"./_Map":199,"./_MapCache":200}],293:[function(require,module,exports){
 var memoizeCapped = require('./_memoizeCapped');
 
 /** Used to match property names within property paths. */
@@ -36550,7 +36403,7 @@ var stringToPath = memoizeCapped(function(string) {
 
 module.exports = stringToPath;
 
-},{"./_memoizeCapped":279}],295:[function(require,module,exports){
+},{"./_memoizeCapped":278}],294:[function(require,module,exports){
 var isSymbol = require('./isSymbol');
 
 /** Used as references for various `Number` constants. */
@@ -36573,7 +36426,7 @@ function toKey(value) {
 
 module.exports = toKey;
 
-},{"./isSymbol":313}],296:[function(require,module,exports){
+},{"./isSymbol":312}],295:[function(require,module,exports){
 /** Used for built-in method references. */
 var funcProto = Function.prototype;
 
@@ -36601,7 +36454,7 @@ function toSource(func) {
 
 module.exports = toSource;
 
-},{}],297:[function(require,module,exports){
+},{}],296:[function(require,module,exports){
 /**
  * Performs a
  * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
@@ -36640,7 +36493,7 @@ function eq(value, other) {
 
 module.exports = eq;
 
-},{}],298:[function(require,module,exports){
+},{}],297:[function(require,module,exports){
 var baseGet = require('./_baseGet');
 
 /**
@@ -36675,7 +36528,7 @@ function get(object, path, defaultValue) {
 
 module.exports = get;
 
-},{"./_baseGet":218}],299:[function(require,module,exports){
+},{"./_baseGet":217}],298:[function(require,module,exports){
 var baseHasIn = require('./_baseHasIn'),
     hasPath = require('./_hasPath');
 
@@ -36711,7 +36564,7 @@ function hasIn(object, path) {
 
 module.exports = hasIn;
 
-},{"./_baseHasIn":221,"./_hasPath":255}],300:[function(require,module,exports){
+},{"./_baseHasIn":220,"./_hasPath":254}],299:[function(require,module,exports){
 /**
  * This method returns the first argument it receives.
  *
@@ -36734,7 +36587,7 @@ function identity(value) {
 
 module.exports = identity;
 
-},{}],301:[function(require,module,exports){
+},{}],300:[function(require,module,exports){
 var baseIsArguments = require('./_baseIsArguments'),
     isObjectLike = require('./isObjectLike');
 
@@ -36772,7 +36625,7 @@ var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsAr
 
 module.exports = isArguments;
 
-},{"./_baseIsArguments":222,"./isObjectLike":311}],302:[function(require,module,exports){
+},{"./_baseIsArguments":221,"./isObjectLike":310}],301:[function(require,module,exports){
 /**
  * Checks if `value` is classified as an `Array` object.
  *
@@ -36800,7 +36653,7 @@ var isArray = Array.isArray;
 
 module.exports = isArray;
 
-},{}],303:[function(require,module,exports){
+},{}],302:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isLength = require('./isLength');
 
@@ -36835,7 +36688,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-},{"./isFunction":306,"./isLength":307}],304:[function(require,module,exports){
+},{"./isFunction":305,"./isLength":306}],303:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -36866,7 +36719,7 @@ function isBoolean(value) {
 
 module.exports = isBoolean;
 
-},{"./_baseGetTag":220,"./isObjectLike":311}],305:[function(require,module,exports){
+},{"./_baseGetTag":219,"./isObjectLike":310}],304:[function(require,module,exports){
 var root = require('./_root'),
     stubFalse = require('./stubFalse');
 
@@ -36906,7 +36759,7 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-},{"./_root":285,"./stubFalse":320}],306:[function(require,module,exports){
+},{"./_root":284,"./stubFalse":319}],305:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObject = require('./isObject');
 
@@ -36945,7 +36798,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{"./_baseGetTag":220,"./isObject":310}],307:[function(require,module,exports){
+},{"./_baseGetTag":219,"./isObject":309}],306:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -36982,7 +36835,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-},{}],308:[function(require,module,exports){
+},{}],307:[function(require,module,exports){
 /**
  * Checks if `value` is `null`.
  *
@@ -37006,7 +36859,7 @@ function isNull(value) {
 
 module.exports = isNull;
 
-},{}],309:[function(require,module,exports){
+},{}],308:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -37046,7 +36899,7 @@ function isNumber(value) {
 
 module.exports = isNumber;
 
-},{"./_baseGetTag":220,"./isObjectLike":311}],310:[function(require,module,exports){
+},{"./_baseGetTag":219,"./isObjectLike":310}],309:[function(require,module,exports){
 /**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -37079,7 +36932,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],311:[function(require,module,exports){
+},{}],310:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -37110,7 +36963,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],312:[function(require,module,exports){
+},{}],311:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isArray = require('./isArray'),
     isObjectLike = require('./isObjectLike');
@@ -37142,7 +36995,7 @@ function isString(value) {
 
 module.exports = isString;
 
-},{"./_baseGetTag":220,"./isArray":302,"./isObjectLike":311}],313:[function(require,module,exports){
+},{"./_baseGetTag":219,"./isArray":301,"./isObjectLike":310}],312:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -37173,7 +37026,7 @@ function isSymbol(value) {
 
 module.exports = isSymbol;
 
-},{"./_baseGetTag":220,"./isObjectLike":311}],314:[function(require,module,exports){
+},{"./_baseGetTag":219,"./isObjectLike":310}],313:[function(require,module,exports){
 var baseIsTypedArray = require('./_baseIsTypedArray'),
     baseUnary = require('./_baseUnary'),
     nodeUtil = require('./_nodeUtil');
@@ -37202,7 +37055,7 @@ var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedA
 
 module.exports = isTypedArray;
 
-},{"./_baseIsTypedArray":227,"./_baseUnary":237,"./_nodeUtil":282}],315:[function(require,module,exports){
+},{"./_baseIsTypedArray":226,"./_baseUnary":236,"./_nodeUtil":281}],314:[function(require,module,exports){
 var arrayLikeKeys = require('./_arrayLikeKeys'),
     baseKeys = require('./_baseKeys'),
     isArrayLike = require('./isArrayLike');
@@ -37241,7 +37094,7 @@ function keys(object) {
 
 module.exports = keys;
 
-},{"./_arrayLikeKeys":210,"./_baseKeys":229,"./isArrayLike":303}],316:[function(require,module,exports){
+},{"./_arrayLikeKeys":209,"./_baseKeys":228,"./isArrayLike":302}],315:[function(require,module,exports){
 var arrayMap = require('./_arrayMap'),
     baseIteratee = require('./_baseIteratee'),
     baseMap = require('./_baseMap'),
@@ -37296,7 +37149,7 @@ function map(collection, iteratee) {
 
 module.exports = map;
 
-},{"./_arrayMap":211,"./_baseIteratee":228,"./_baseMap":230,"./isArray":302}],317:[function(require,module,exports){
+},{"./_arrayMap":210,"./_baseIteratee":227,"./_baseMap":229,"./isArray":301}],316:[function(require,module,exports){
 var MapCache = require('./_MapCache');
 
 /** Error message constants. */
@@ -37371,7 +37224,7 @@ memoize.Cache = MapCache;
 
 module.exports = memoize;
 
-},{"./_MapCache":201}],318:[function(require,module,exports){
+},{"./_MapCache":200}],317:[function(require,module,exports){
 var baseProperty = require('./_baseProperty'),
     basePropertyDeep = require('./_basePropertyDeep'),
     isKey = require('./_isKey'),
@@ -37405,7 +37258,7 @@ function property(path) {
 
 module.exports = property;
 
-},{"./_baseProperty":233,"./_basePropertyDeep":234,"./_isKey":262,"./_toKey":295}],319:[function(require,module,exports){
+},{"./_baseProperty":232,"./_basePropertyDeep":233,"./_isKey":261,"./_toKey":294}],318:[function(require,module,exports){
 /**
  * This method returns a new empty array.
  *
@@ -37430,7 +37283,7 @@ function stubArray() {
 
 module.exports = stubArray;
 
-},{}],320:[function(require,module,exports){
+},{}],319:[function(require,module,exports){
 /**
  * This method returns `false`.
  *
@@ -37450,7 +37303,7 @@ function stubFalse() {
 
 module.exports = stubFalse;
 
-},{}],321:[function(require,module,exports){
+},{}],320:[function(require,module,exports){
 var baseToString = require('./_baseToString');
 
 /**
@@ -37480,7 +37333,7 @@ function toString(value) {
 
 module.exports = toString;
 
-},{"./_baseToString":236}],322:[function(require,module,exports){
+},{"./_baseToString":235}],321:[function(require,module,exports){
 'use strict'
 var inherits = require('inherits')
 var HashBase = require('hash-base')
@@ -37628,7 +37481,7 @@ function fnI (a, b, c, d, m, k, s) {
 
 module.exports = MD5
 
-},{"hash-base":126,"inherits":146,"safe-buffer":602}],323:[function(require,module,exports){
+},{"hash-base":128,"inherits":145,"safe-buffer":602}],322:[function(require,module,exports){
 var bn = require('bn.js');
 var brorand = require('brorand');
 
@@ -37745,7 +37598,7 @@ MillerRabin.prototype.getDivisor = function getDivisor(n, k) {
   return false;
 };
 
-},{"bn.js":25,"brorand":26}],324:[function(require,module,exports){
+},{"bn.js":25,"brorand":26}],323:[function(require,module,exports){
 module.exports = assert;
 
 function assert(val, msg) {
@@ -37758,7 +37611,7 @@ assert.equal = function assertEqual(l, r, msg) {
     throw new Error(msg || ('Assertion failed: ' + l + ' != ' + r));
 };
 
-},{}],325:[function(require,module,exports){
+},{}],324:[function(require,module,exports){
 'use strict';
 
 var utils = exports;
@@ -37818,103 +37671,267 @@ utils.encode = function encode(arr, enc) {
     return arr;
 };
 
+},{}],325:[function(require,module,exports){
+/**
+ * Helpers.
+ */
+
+var s = 1000;
+var m = s * 60;
+var h = m * 60;
+var d = h * 24;
+var w = d * 7;
+var y = d * 365.25;
+
+/**
+ * Parse or format the given `val`.
+ *
+ * Options:
+ *
+ *  - `long` verbose formatting [false]
+ *
+ * @param {String|Number} val
+ * @param {Object} [options]
+ * @throws {Error} throw an error if val is not a non-empty string or a number
+ * @return {String|Number}
+ * @api public
+ */
+
+module.exports = function(val, options) {
+  options = options || {};
+  var type = typeof val;
+  if (type === 'string' && val.length > 0) {
+    return parse(val);
+  } else if (type === 'number' && isNaN(val) === false) {
+    return options.long ? fmtLong(val) : fmtShort(val);
+  }
+  throw new Error(
+    'val is not a non-empty string or a valid number. val=' +
+      JSON.stringify(val)
+  );
+};
+
+/**
+ * Parse the given `str` and return milliseconds.
+ *
+ * @param {String} str
+ * @return {Number}
+ * @api private
+ */
+
+function parse(str) {
+  str = String(str);
+  if (str.length > 100) {
+    return;
+  }
+  var match = /^((?:\d+)?\-?\d?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
+    str
+  );
+  if (!match) {
+    return;
+  }
+  var n = parseFloat(match[1]);
+  var type = (match[2] || 'ms').toLowerCase();
+  switch (type) {
+    case 'years':
+    case 'year':
+    case 'yrs':
+    case 'yr':
+    case 'y':
+      return n * y;
+    case 'weeks':
+    case 'week':
+    case 'w':
+      return n * w;
+    case 'days':
+    case 'day':
+    case 'd':
+      return n * d;
+    case 'hours':
+    case 'hour':
+    case 'hrs':
+    case 'hr':
+    case 'h':
+      return n * h;
+    case 'minutes':
+    case 'minute':
+    case 'mins':
+    case 'min':
+    case 'm':
+      return n * m;
+    case 'seconds':
+    case 'second':
+    case 'secs':
+    case 'sec':
+    case 's':
+      return n * s;
+    case 'milliseconds':
+    case 'millisecond':
+    case 'msecs':
+    case 'msec':
+    case 'ms':
+      return n;
+    default:
+      return undefined;
+  }
+}
+
+/**
+ * Short format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function fmtShort(ms) {
+  var msAbs = Math.abs(ms);
+  if (msAbs >= d) {
+    return Math.round(ms / d) + 'd';
+  }
+  if (msAbs >= h) {
+    return Math.round(ms / h) + 'h';
+  }
+  if (msAbs >= m) {
+    return Math.round(ms / m) + 'm';
+  }
+  if (msAbs >= s) {
+    return Math.round(ms / s) + 's';
+  }
+  return ms + 'ms';
+}
+
+/**
+ * Long format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function fmtLong(ms) {
+  var msAbs = Math.abs(ms);
+  if (msAbs >= d) {
+    return plural(ms, msAbs, d, 'day');
+  }
+  if (msAbs >= h) {
+    return plural(ms, msAbs, h, 'hour');
+  }
+  if (msAbs >= m) {
+    return plural(ms, msAbs, m, 'minute');
+  }
+  if (msAbs >= s) {
+    return plural(ms, msAbs, s, 'second');
+  }
+  return ms + ' ms';
+}
+
+/**
+ * Pluralization helper.
+ */
+
+function plural(ms, msAbs, n, name) {
+  var isPlural = msAbs >= n * 1.5;
+  return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
+}
+
 },{}],326:[function(require,module,exports){
-"use strict";function __export(e){for(var t in e)exports.hasOwnProperty(t)||(exports[t]=e[t])}Object.defineProperty(exports,"__esModule",{value:!0});var hashable_model_1=require("./models/primitives/hashable.model");exports.Hashable=hashable_model_1.Hashable;var merkle_tree_model_1=require("./models/primitives/merkle-tree.model");exports.MerkleTree=merkle_tree_model_1.MerkleTree;var proof_of_stake_model_1=require("./models/primitives/proof-of-stake.model");exports.ProofOfStake=proof_of_stake_model_1.ProofOfStake;var signature_model_1=require("./models/primitives/signature.model");exports.Signature=signature_model_1.Signature;var aggregate_model_1=require("./models/transactions/aggregate.model");exports.Aggregate=aggregate_model_1.Aggregate;var balance_marker_model_1=require("./models/transactions/balance-marker.model");exports.BalanceMarker=balance_marker_model_1.BalanceMarker;var deposit_model_1=require("./models/transactions/deposit.model");exports.Deposit=deposit_model_1.Deposit;var transfer_model_1=require("./models/transactions/transfer.model");exports.Transfer=transfer_model_1.Transfer;var transfer_aggregate_type_model_1=require("./models/transactions/transfer-aggregate-type.model");exports.TransferAggregateType=transfer_aggregate_type_model_1.TransferAggregateType;var balance_model_1=require("./models/wallet/balance.model");exports.Balance=balance_model_1.Balance;var round_model_1=require("./models/wallet/round.model");exports.Round=round_model_1.Round;var wallet_model_1=require("./models/wallet/wallet.model");exports.Wallet=wallet_model_1.Wallet;var round_state_model_1=require("./models/state/round-state.model");exports.RoundState=round_state_model_1.RoundState;var hub_state_model_1=require("./models/state/hub-state.model");exports.HubState=hub_state_model_1.HubState;var chain_connectivity_model_1=require("./models/state/chain-connectivity.model");exports.ChainConnectivity=chain_connectivity_model_1.ChainConnectivity;var web3_connectivity_model_1=require("./models/state/web3-connectivity.model");exports.Web3Connectivity=web3_connectivity_model_1.Web3Connectivity;var contract_state_model_1=require("./models/state/contract-state.model");exports.ContractState=contract_state_model_1.ContractState;var transfer_state_model_1=require("./models/state/transfer-state.model");exports.TransferState=transfer_state_model_1.TransferState;var wallet_state_model_1=require("./models/state/wallet-state.model");exports.WalletState=wallet_state_model_1.WalletState;var wallet_sync_state_model_1=require("./models/state/wallet-sync-state.model");exports.WalletSyncState=wallet_sync_state_model_1.WalletSyncState;var wallet_update_error_model_1=require("./models/state/wallet-update-error.model");exports.WalletUpdateError=wallet_update_error_model_1.WalletUpdateError;var inversify_types_1=require("./inversify.types");exports.TYPES=inversify_types_1.TYPES;var inversify_container_1=require("./inversify.container");exports.NOCUSTClassFactory=inversify_container_1.NOCUSTClassFactory,exports.ClassContainerOption=inversify_container_1.ClassContainerOption;var nocust_client_1=require("./nocust-client");exports.NocustClient=nocust_client_1.NocustClient;var dispute_service_1=require("./services/dispute.service");exports.DisputeService=dispute_service_1.DisputeService;var payment_hub_abi_1=require("./models/payment-hub.abi");exports.PAYMENT_HUB_ABI=payment_hub_abi_1.PAYMENT_HUB_ABI;var util_1=require("./util");exports.Web3=util_1.Web3,exports.Web3Utils=util_1.Web3Utils,__export(require("./util"));var nocust_manager_1=require("./nocust-manager");exports.NocustManager=nocust_manager_1.NocustManager;var transfer_event_emitter_1=require("./transfer-event-emitter");exports.IncomingTransferEmitter=transfer_event_emitter_1.IncomingTransferEmitter;
-},{"./inversify.container":332,"./inversify.types":333,"./models/payment-hub.abi":335,"./models/primitives/hashable.model":336,"./models/primitives/merkle-tree.model":337,"./models/primitives/proof-of-stake.model":338,"./models/primitives/signature.model":339,"./models/state/chain-connectivity.model":340,"./models/state/contract-state.model":341,"./models/state/hub-state.model":342,"./models/state/round-state.model":343,"./models/state/transfer-state.model":345,"./models/state/wallet-state.model":346,"./models/state/wallet-sync-state.model":347,"./models/state/wallet-update-error.model":348,"./models/state/web3-connectivity.model":349,"./models/transactions/aggregate.model":350,"./models/transactions/balance-marker.model":351,"./models/transactions/deposit.model":352,"./models/transactions/transfer-aggregate-type.model":353,"./models/transactions/transfer.model":354,"./models/wallet/balance.model":356,"./models/wallet/round.model":357,"./models/wallet/wallet.model":358,"./nocust-client":359,"./nocust-manager":360,"./services/dispute.service":363,"./transfer-event-emitter":370,"./util":371}],327:[function(require,module,exports){
+"use strict";function __export(e){for(var t in e)exports.hasOwnProperty(t)||(exports[t]=e[t])}Object.defineProperty(exports,"__esModule",{value:!0});var hashable_model_1=require("./models/primitives/hashable.model");exports.Hashable=hashable_model_1.Hashable;var merkle_tree_model_1=require("./models/primitives/merkle-tree.model");exports.MerkleTree=merkle_tree_model_1.MerkleTree;var proof_of_exclusive_allotment_model_1=require("./models/primitives/proof-of-exclusive-allotment.model");exports.ProofOfExclusiveAllotment=proof_of_exclusive_allotment_model_1.ProofOfExclusiveAllotment;var signature_model_1=require("./models/primitives/signature.model");exports.Signature=signature_model_1.Signature;var active_state_model_1=require("./models/transactions/active-state.model");exports.ActiveState=active_state_model_1.ActiveState;var minimum_balance_marker_model_1=require("./models/transactions/minimum-balance-marker.model");exports.MinimumAvailableBalanceMarker=minimum_balance_marker_model_1.MinimumAvailableBalanceMarker;var deposit_model_1=require("./models/transactions/deposit.model");exports.Deposit=deposit_model_1.Deposit;var transfer_model_1=require("./models/transactions/transfer.model");exports.Transfer=transfer_model_1.Transfer;var transfer_active_state_update_type_model_1=require("./models/transactions/transfer-active-state-update-type.model");exports.TransferActiveStateUpdateType=transfer_active_state_update_type_model_1.TransferActiveStateUpdateType;var balance_model_1=require("./models/wallet/balance.model");exports.Balance=balance_model_1.Balance;var eon_model_1=require("./models/wallet/eon.model");exports.Eon=eon_model_1.Eon;var wallet_model_1=require("./models/wallet/wallet.model");exports.Wallet=wallet_model_1.Wallet;var eon_state_model_1=require("./models/state/eon-state.model");exports.EonState=eon_state_model_1.EonState;var operator_state_model_1=require("./models/state/operator-state.model");exports.OperatorState=operator_state_model_1.OperatorState;var chain_connectivity_model_1=require("./models/state/chain-connectivity.model");exports.ChainConnectivity=chain_connectivity_model_1.ChainConnectivity;var web3_connectivity_model_1=require("./models/state/web3-connectivity.model");exports.Web3Connectivity=web3_connectivity_model_1.Web3Connectivity;var contract_state_model_1=require("./models/state/contract-state.model");exports.ContractState=contract_state_model_1.ContractState;var transfer_state_model_1=require("./models/state/transfer-state.model");exports.TransferState=transfer_state_model_1.TransferState;var wallet_state_model_1=require("./models/state/wallet-state.model");exports.WalletState=wallet_state_model_1.WalletState;var wallet_sync_state_model_1=require("./models/state/wallet-sync-state.model");exports.WalletSyncState=wallet_sync_state_model_1.WalletSyncState;var wallet_update_error_model_1=require("./models/state/wallet-update-error.model");exports.WalletUpdateError=wallet_update_error_model_1.WalletUpdateError;var inversify_types_1=require("./inversify.types");exports.TYPES=inversify_types_1.TYPES;var inversify_container_1=require("./inversify.container");exports.NOCUSTClassFactory=inversify_container_1.NOCUSTClassFactory,exports.ClassContainerOption=inversify_container_1.ClassContainerOption;var nocust_client_1=require("./nocust-client");exports.NOCUSTClient=nocust_client_1.NOCUSTClient;var dispute_service_1=require("./services/dispute.service");exports.DisputeService=dispute_service_1.DisputeService;var nocust_commit_chain_abi_1=require("./models/nocust-commit-chain.abi");exports.NOCUST_COMMIT_CHAIN_ABI=nocust_commit_chain_abi_1.NOCUST_COMMIT_CHAIN_ABI;var util_1=require("./util");exports.Web3=util_1.Web3,exports.Web3Utils=util_1.Web3Utils,__export(require("./util"));var nocust_manager_1=require("./nocust-manager");exports.NOCUSTManager=nocust_manager_1.NOCUSTManager;var transfer_event_emitter_1=require("./transfer-event-emitter");exports.IncomingTransferEmitter=transfer_event_emitter_1.IncomingTransferEmitter;
+},{"./inversify.container":332,"./inversify.types":333,"./models/nocust-commit-chain.abi":335,"./models/primitives/hashable.model":336,"./models/primitives/merkle-tree.model":337,"./models/primitives/proof-of-exclusive-allotment.model":338,"./models/primitives/signature.model":339,"./models/state/chain-connectivity.model":340,"./models/state/contract-state.model":341,"./models/state/eon-state.model":342,"./models/state/operator-state.model":343,"./models/state/transfer-state.model":345,"./models/state/wallet-state.model":346,"./models/state/wallet-sync-state.model":347,"./models/state/wallet-update-error.model":348,"./models/state/web3-connectivity.model":349,"./models/transactions/active-state.model":350,"./models/transactions/deposit.model":351,"./models/transactions/minimum-balance-marker.model":352,"./models/transactions/transfer-active-state-update-type.model":353,"./models/transactions/transfer.model":354,"./models/wallet/balance.model":356,"./models/wallet/eon.model":357,"./models/wallet/wallet.model":358,"./nocust-client":359,"./nocust-manager":360,"./services/dispute.service":363,"./transfer-event-emitter":370,"./util":371}],327:[function(require,module,exports){
 "use strict";var __decorate=this&&this.__decorate||function(e,o,t,r){var n,i=arguments.length,c=i<3?o:null===r?r=Object.getOwnPropertyDescriptor(o,t):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)c=Reflect.decorate(e,o,t,r);else for(var f=e.length-1;0<=f;f--)(n=e[f])&&(c=(i<3?n(c):3<i?n(o,t,c):n(o,t))||c);return 3<i&&c&&Object.defineProperty(o,t,c),c};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),ConsoleLoggingService=function(){function e(){}return e.prototype.debug=function(e){},e.prototype.error=function(e){console.error(e)},e.prototype.info=function(e){console.info(e)},e.prototype.warning=function(e){console.warn(e)},e.prototype.log=function(e){console.log(e)},e=__decorate([inversify_1.injectable()],e)}();exports.ConsoleLoggingService=ConsoleLoggingService;
-},{"inversify":166}],328:[function(require,module,exports){
+},{"inversify":165}],328:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var ConstantRPCClientProvider=function(){function e(e){this.web3=e}return Object.defineProperty(e.prototype,"rpc",{get:function(){return this.web3},enumerable:!0,configurable:!0}),e}();exports.ConstantRPCClientProvider=ConstantRPCClientProvider;
 },{}],329:[function(require,module,exports){
 "use strict";var __decorate=this&&this.__decorate||function(e,t,r,n){var i,o=arguments.length,c=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)c=Reflect.decorate(e,t,r,n);else for(var a=e.length-1;0<=a;a--)(i=e[a])&&(c=(o<3?i(c):3<o?i(t,r,c):i(t,r))||c);return 3<o&&c&&Object.defineProperty(t,r,c),c},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,n){return function(e,t){n(e,t,r)}},__awaiter=this&&this.__awaiter||function(o,c,a,u){return new(a||(a=Promise))(function(e,t){function r(e){try{i(u.next(e))}catch(e){t(e)}}function n(e){try{i(u.throw(e))}catch(e){t(e)}}function i(t){t.done?e(t.value):new a(function(e){e(t.value)}).then(r,n)}i((u=u.apply(o,c||[])).next())})},__generator=this&&this.__generator||function(r,n){var i,o,c,e,a={label:0,sent:function(){if(1&c[0])throw c[1];return c[1]},trys:[],ops:[]};return e={next:t(0),throw:t(1),return:t(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function t(t){return function(e){return function(t){if(i)throw new TypeError("Generator is already executing.");for(;a;)try{if(i=1,o&&(c=2&t[0]?o.return:t[0]?o.throw||((c=o.return)&&c.call(o),0):o.next)&&!(c=c.call(o,t[1])).done)return c;switch(o=0,c&&(t=[2&t[0],c.value]),t[0]){case 0:case 1:c=t;break;case 4:return a.label++,{value:t[1],done:!1};case 5:a.label++,o=t[1],t=[0];continue;case 7:t=a.ops.pop(),a.trys.pop();continue;default:if(!(c=0<(c=a.trys).length&&c[c.length-1])&&(6===t[0]||2===t[0])){a=0;continue}if(3===t[0]&&(!c||t[1]>c[0]&&t[1]<c[3])){a.label=t[1];break}if(6===t[0]&&a.label<c[1]){a.label=c[1],c=t;break}if(c&&a.label<c[2]){a.label=c[2],a.ops.push(t);break}c[2]&&a.ops.pop(),a.trys.pop();continue}t=n.call(r,a)}catch(e){t=[6,e],o=0}finally{i=c=0}if(5&t[0])throw t[1];return{value:t[0]?t[1]:void 0,done:!0}}([t,e])}}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),__1=require("../.."),util_1=require("../../util"),EthereumRPCService=function(){function e(e){this.web3Provider=e}return Object.defineProperty(e.prototype,"rpc",{get:function(){return this.web3Provider.rpc},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"isConnected",{get:function(){return void 0!==this.rpc?this.rpc.eth.net.isListening():Promise.resolve(!1)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"accounts",{get:function(){var t=this,n=this;return new Promise(function(r,e){return __awaiter(t,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return[4,n.isConnected];case 1:return e.sent()?(t=r,[4,n.rpc.eth.getAccounts()]):[3,3];case 2:return t.apply(void 0,[e.sent().concat(this.privateAccounts)]),[3,4];case 3:r([]),e.label=4;case 4:return[2]}})})})},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"privateAccounts",{get:function(){return Array.from(this.rpc.eth.accounts.wallet).map(function(e){return e.address})},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"currentProvider",{get:function(){return this.rpc.currentProvider},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"canSignPersonal",{get:function(){return this.rpc.personal&&this.rpc.personal.sign},enumerable:!0,configurable:!0}),e.prototype.getContractAt=function(e,t){return new this.rpc.eth.Contract(e,t)},e.prototype.networkId=function(){var r=this;return this.cachedNetworkId?Promise.resolve(this.cachedNetworkId):new Promise(function(e,t){r.rpc.eth.net.getId(util_1.promiseExecutorCallback(e,t))}).then(function(e){var t=util_1.intValueOfResult(e);return r.cachedNetworkId=t})},e.prototype.latestBlockNumber=function(){var r=this;return new Promise(function(e,t){r.rpc.eth.getBlockNumber(util_1.promiseExecutorCallback(e,t))})},e.prototype.balanceOf=function(r){var n=this;return new Promise(function(e,t){n.rpc.eth.getBalance(util_1.add0xPrefix(r),util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.signPersonalMessage=function(r,n){var i=this;return new Promise(function(e,t){i.rpc.personal.sign(util_1.lqdWrapper(r),n,util_1.promiseExecutorCallback(e,t))})},e.prototype.signRawDigest=function(n,i){var o=this,c=this;return new Promise(function(e,t){var r=c.privateAccounts.indexOf(i);-1!==r?e(o.rpc.eth.accounts.wallet[r].sign(util_1.lqdWrapper(n)).signature):c.rpc.eth.sign(util_1.lqdWrapper(n),i,util_1.promiseExecutorCallback(e,t))})},e.prototype.recoverPersonalSigningAddress=function(e,r){var n=this;return new Promise(function(e,t){n.rpc.personal.ecRecover(r.checksum,util_1.add0xPrefix(r.rsv),util_1.promiseExecutorCallback(e,t))})},e.prototype.mineTestBlock=function(){var r=this;return new Promise(function(e,t){r.rpc.currentProvider.sendAsync({jsonrpc:"2.0",method:"evm_mine",id:12345,params:[]},util_1.promiseExecutorCallback(e,t))})},e.prototype.getOnChainTransactionReceipt=function(e){return this.rpc.eth.getTransactionReceipt(e)},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(__1.TYPES.EXTERNAL.RPC_PROVIDER_INTERFACE)),__metadata("design:paramtypes",[Object])],e)}();exports.EthereumRPCService=EthereumRPCService;
-},{"../..":326,"../../util":371,"inversify":166}],330:[function(require,module,exports){
+},{"../..":326,"../../util":371,"inversify":165}],330:[function(require,module,exports){
 "use strict";var __awaiter=this&&this.__awaiter||function(i,u,a,c){return new(a||(a=Promise))(function(e,t){function r(e){try{o(c.next(e))}catch(e){t(e)}}function n(e){try{o(c.throw(e))}catch(e){t(e)}}function o(t){t.done?e(t.value):new a(function(e){e(t.value)}).then(r,n)}o((c=c.apply(i,u||[])).next())})},__generator=this&&this.__generator||function(r,n){var o,i,u,e,a={label:0,sent:function(){if(1&u[0])throw u[1];return u[1]},trys:[],ops:[]};return e={next:t(0),throw:t(1),return:t(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function t(t){return function(e){return function(t){if(o)throw new TypeError("Generator is already executing.");for(;a;)try{if(o=1,i&&(u=2&t[0]?i.return:t[0]?i.throw||((u=i.return)&&u.call(i),0):i.next)&&!(u=u.call(i,t[1])).done)return u;switch(i=0,u&&(t=[2&t[0],u.value]),t[0]){case 0:case 1:u=t;break;case 4:return a.label++,{value:t[1],done:!1};case 5:a.label++,i=t[1],t=[0];continue;case 7:t=a.ops.pop(),a.trys.pop();continue;default:if(!(u=0<(u=a.trys).length&&u[u.length-1])&&(6===t[0]||2===t[0])){a=0;continue}if(3===t[0]&&(!u||t[1]>u[0]&&t[1]<u[3])){a.label=t[1];break}if(6===t[0]&&a.label<u[1]){a.label=u[1],u=t;break}if(u&&a.label<u[2]){a.label=u[2],a.ops.push(t);break}u[2]&&a.ops.pop(),a.trys.pop();continue}t=n.call(r,a)}catch(e){t=[6,e],i=0}finally{o=u=0}if(5&t[0])throw t[1];return{value:t[0]?t[1]:void 0,done:!0}}([t,e])}}};Object.defineProperty(exports,"__esModule",{value:!0});var MemoryStorageService=function(){function e(){this.memory=new Map}return e.prototype.get=function(t){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return[2,this.memory.get(t)]})})},e.prototype.set=function(t,r){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return this.memory.set(t,r),[2,!0]})})},e.prototype.del=function(t){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return[2,this.memory.delete(t)]})})},e}();exports.MemoryStorageService=MemoryStorageService;
 },{}],331:[function(require,module,exports){
 "use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var request_1=__importDefault(require("request")),XHRRequestApiService=function(){function u(){}return u.requestToPromise=function(e){return new Promise(function(r,n){e.withCredentials=!0,request_1.default(e,function(e,t){var o=!t||2!==Math.floor(t.statusCode/100);e||o?n(e||t||t.body):r(t.body)})})},u.cleanURL=function(e,t,o){return[e,"/",t,"?",o].join("").replace(/\/+/g,"/").replace(/:\//g,"://").replace(/\?+/g,"?")},u.prototype.options=function(e,t,o,r,n){},u.prototype.get=function(e,t,o,r){return u.requestToPromise({method:"GET",url:u.cleanURL(e,t,o),json:!0})},u.prototype.post=function(e,t,o,r,n){return u.requestToPromise({method:"POST",url:u.cleanURL(e,t,r),body:o,json:!0})},u.prototype.put=function(e,t,o,r,n){return u.requestToPromise({method:"PUT",url:u.cleanURL(e,t,r),body:o,json:!0})},u.prototype.submit=function(e,t,o,r,n){},u.prototype.patch=function(e,t,o,r,n){return u.requestToPromise({method:"PATCH",url:u.cleanURL(e,t,r),body:o,json:!0})},u.prototype.delete=function(e,t,o,r,n){return u.requestToPromise({method:"DELETE",url:u.cleanURL(e,t,r),json:!0})},u}();exports.XHRRequestApiService=XHRRequestApiService;
 },{"request":736}],332:[function(require,module,exports){
-"use strict";var __awaiter=this&&this.__awaiter||function(o,s,a,c){return new(a||(a=Promise))(function(e,n){function t(e){try{i(c.next(e))}catch(e){n(e)}}function r(e){try{i(c.throw(e))}catch(e){n(e)}}function i(n){n.done?e(n.value):new a(function(e){e(n.value)}).then(t,r)}i((c=c.apply(o,s||[])).next())})},__generator=this&&this.__generator||function(t,r){var i,o,s,e,a={label:0,sent:function(){if(1&s[0])throw s[1];return s[1]},trys:[],ops:[]};return e={next:n(0),throw:n(1),return:n(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function n(n){return function(e){return function(n){if(i)throw new TypeError("Generator is already executing.");for(;a;)try{if(i=1,o&&(s=2&n[0]?o.return:n[0]?o.throw||((s=o.return)&&s.call(o),0):o.next)&&!(s=s.call(o,n[1])).done)return s;switch(o=0,s&&(n=[2&n[0],s.value]),n[0]){case 0:case 1:s=n;break;case 4:return a.label++,{value:n[1],done:!1};case 5:a.label++,o=n[1],n=[0];continue;case 7:n=a.ops.pop(),a.trys.pop();continue;default:if(!(s=0<(s=a.trys).length&&s[s.length-1])&&(6===n[0]||2===n[0])){a=0;continue}if(3===n[0]&&(!s||n[1]>s[0]&&n[1]<s[3])){a.label=n[1];break}if(6===n[0]&&a.label<s[1]){a.label=s[1],s=n;break}if(s&&a.label<s[2]){a.label=s[2],a.ops.push(n);break}s[2]&&a.ops.pop(),a.trys.pop();continue}n=r.call(t,a)}catch(e){n=[6,e],o=0}finally{i=s=0}if(5&n[0])throw n[1];return{value:n[0]?n[1]:void 0,done:!0}}([n,e])}}};Object.defineProperty(exports,"__esModule",{value:!0}),require("reflect-metadata");var ClassContainerOption,inversify_1=require("inversify"),_1=require("."),rxjs_1=require("rxjs"),web3_connectivity_model_1=require("./models/state/web3-connectivity.model"),inversify_types_1=require("./inversify.types"),logging_1=require("./services/logging"),ethereum_rpc_service_1=require("./interfaces/default/ethereum-rpc.service"),memory_storage_service_1=require("./interfaces/default/memory-storage.service"),console_logging_service_1=require("./interfaces/default/console-logging.service"),xhr_request_api_service_1=require("./interfaces/default/xhr-request-api.service"),constant_client_provider_service_1=require("./interfaces/default/constant-client-provider.service"),NOCUSTClassFactory=function(){function n(){}return n.createClassContainerInternal=function(e,o,n,t,r,i){var s=this,a=new inversify_1.Container({defaultScope:"Singleton",autoBindInjectable:!0}),c=new rxjs_1.Subject;return i&&rxjs_1.timer(250,100).subscribe(function(){return __awaiter(s,void 0,void 0,function(){var n,t,r,i;return __generator(this,function(e){switch(e.label){case 0:return t=(n=c).next,r=web3_connectivity_model_1.Web3Connectivity.bind,[4,o.isConnected];case 1:return i=[void 0,e.sent()],[4,o.accounts];case 2:return t.apply(n,[new(r.apply(web3_connectivity_model_1.Web3Connectivity,i.concat([e.sent()])))]),[2]}})})}),a.bind(inversify_types_1.TYPES.SUBJECT.WEB3_CONNECTIVITY).toConstantValue(c),a.bind(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_SYNC).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.EXTERNAL.RPC_PROVIDER_INTERFACE).toConstantValue(e),a.bind(inversify_types_1.TYPES.EXTERNAL.REST_API_INTERFACE).toConstantValue(r),a.bind(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE).toConstantValue(o),a.bind(inversify_types_1.TYPES.EXTERNAL.STORAGE_MANAGER_INTERFACE).toConstantValue(n),a.bind(inversify_types_1.TYPES.EXTERNAL.LOGGING_INTERFACE).toConstantValue(t),logging_1.Logging.loggingInterface=t,a},n.createClassContainer=function(e){if(e.rpcProvider&&e.rpcProvider!==ClassContainerOption.NONE){if(e.web3Service!=ClassContainerOption.DEFAULT)throw Error("If an RPC Api is provided, the Web3 Service must be set to ClassContainerOption.DEFAULT.");e.web3Service=new ethereum_rpc_service_1.EthereumRPCService(e.rpcProvider)}else if(!e.web3Service||e.rpcProvider===ClassContainerOption.NONE||e.web3Service===ClassContainerOption.DEFAULT)throw Error("If no RPC Api is provided, a Web3 Service instance must be provided.");if(e.storageManager===ClassContainerOption.DEFAULT&&(e.storageManager=new memory_storage_service_1.MemoryStorageService),e.logging===ClassContainerOption.DEFAULT&&(e.logging=new console_logging_service_1.ConsoleLoggingService),e.restApi===ClassContainerOption.DEFAULT&&(e.restApi=new xhr_request_api_service_1.XHRRequestApiService),[e.storageManager,e.logging,e.restApi].some(function(e){return!e||e===ClassContainerOption.NONE}))throw Error("Incomplete config: storageManager, logging and resApi must be set.");return n.createClassContainerInternal(e.rpcProvider,e.web3Service,e.storageManager,e.logging,e.restApi,e.subscribeToWeb3Connectivity)},n.createDefaultClassContainer=function(e){return n.createClassContainer({rpcProvider:new constant_client_provider_service_1.ConstantRPCClientProvider(e),web3Service:ClassContainerOption.DEFAULT,storageManager:ClassContainerOption.DEFAULT,logging:ClassContainerOption.DEFAULT,restApi:ClassContainerOption.DEFAULT,subscribeToWeb3Connectivity:!1})},n.createNocustClient=function(e){return n.createClassContainer(e).get(_1.NocustClient)},n.createDefaultNocustClient=function(e){return n.createDefaultClassContainer(e).get(_1.NocustClient)},n}();exports.NOCUSTClassFactory=NOCUSTClassFactory,function(e){e[e.DEFAULT=0]="DEFAULT",e[e.NONE=1]="NONE"}(ClassContainerOption=exports.ClassContainerOption||(exports.ClassContainerOption={}));
-},{".":326,"./interfaces/default/console-logging.service":327,"./interfaces/default/constant-client-provider.service":328,"./interfaces/default/ethereum-rpc.service":329,"./interfaces/default/memory-storage.service":330,"./interfaces/default/xhr-request-api.service":331,"./inversify.types":333,"./models/state/web3-connectivity.model":349,"./services/logging":366,"inversify":166,"reflect-metadata":402,"rxjs":404}],333:[function(require,module,exports){
+"use strict";var __awaiter=this&&this.__awaiter||function(o,s,a,c){return new(a||(a=Promise))(function(e,n){function t(e){try{i(c.next(e))}catch(e){n(e)}}function r(e){try{i(c.throw(e))}catch(e){n(e)}}function i(n){n.done?e(n.value):new a(function(e){e(n.value)}).then(t,r)}i((c=c.apply(o,s||[])).next())})},__generator=this&&this.__generator||function(t,r){var i,o,s,e,a={label:0,sent:function(){if(1&s[0])throw s[1];return s[1]},trys:[],ops:[]};return e={next:n(0),throw:n(1),return:n(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function n(n){return function(e){return function(n){if(i)throw new TypeError("Generator is already executing.");for(;a;)try{if(i=1,o&&(s=2&n[0]?o.return:n[0]?o.throw||((s=o.return)&&s.call(o),0):o.next)&&!(s=s.call(o,n[1])).done)return s;switch(o=0,s&&(n=[2&n[0],s.value]),n[0]){case 0:case 1:s=n;break;case 4:return a.label++,{value:n[1],done:!1};case 5:a.label++,o=n[1],n=[0];continue;case 7:n=a.ops.pop(),a.trys.pop();continue;default:if(!(s=0<(s=a.trys).length&&s[s.length-1])&&(6===n[0]||2===n[0])){a=0;continue}if(3===n[0]&&(!s||n[1]>s[0]&&n[1]<s[3])){a.label=n[1];break}if(6===n[0]&&a.label<s[1]){a.label=s[1],s=n;break}if(s&&a.label<s[2]){a.label=s[2],a.ops.push(n);break}s[2]&&a.ops.pop(),a.trys.pop();continue}n=r.call(t,a)}catch(e){n=[6,e],o=0}finally{i=s=0}if(5&n[0])throw n[1];return{value:n[0]?n[1]:void 0,done:!0}}([n,e])}}};Object.defineProperty(exports,"__esModule",{value:!0}),require("reflect-metadata");var ClassContainerOption,inversify_1=require("inversify"),_1=require("."),rxjs_1=require("rxjs"),web3_connectivity_model_1=require("./models/state/web3-connectivity.model"),inversify_types_1=require("./inversify.types"),logging_1=require("./services/logging"),ethereum_rpc_service_1=require("./interfaces/default/ethereum-rpc.service"),memory_storage_service_1=require("./interfaces/default/memory-storage.service"),console_logging_service_1=require("./interfaces/default/console-logging.service"),xhr_request_api_service_1=require("./interfaces/default/xhr-request-api.service"),constant_client_provider_service_1=require("./interfaces/default/constant-client-provider.service"),NOCUSTClassFactory=function(){function n(){}return n.createClassContainerInternal=function(e,o,n,t,r,i){var s=this,a=new inversify_1.Container({defaultScope:"Singleton",autoBindInjectable:!0}),c=new rxjs_1.Subject;return i&&rxjs_1.timer(250,100).subscribe(function(){return __awaiter(s,void 0,void 0,function(){var n,t,r,i;return __generator(this,function(e){switch(e.label){case 0:return t=(n=c).next,r=web3_connectivity_model_1.Web3Connectivity.bind,[4,o.isConnected];case 1:return i=[void 0,e.sent()],[4,o.accounts];case 2:return t.apply(n,[new(r.apply(web3_connectivity_model_1.Web3Connectivity,i.concat([e.sent()])))]),[2]}})})}),a.bind(inversify_types_1.TYPES.SUBJECT.WEB3_CONNECTIVITY).toConstantValue(c),a.bind(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_SYNC).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL).toConstantValue(new rxjs_1.Subject),a.bind(inversify_types_1.TYPES.EXTERNAL.RPC_PROVIDER_INTERFACE).toConstantValue(e),a.bind(inversify_types_1.TYPES.EXTERNAL.REST_API_INTERFACE).toConstantValue(r),a.bind(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE).toConstantValue(o),a.bind(inversify_types_1.TYPES.EXTERNAL.STORAGE_MANAGER_INTERFACE).toConstantValue(n),a.bind(inversify_types_1.TYPES.EXTERNAL.LOGGING_INTERFACE).toConstantValue(t),logging_1.Logging.loggingInterface=t,a},n.createClassContainer=function(e){if(e.rpcProvider&&e.rpcProvider!==ClassContainerOption.NONE){if(e.web3Service!=ClassContainerOption.DEFAULT)throw Error("If an RPC Api is provided, the Web3 Service must be set to ClassContainerOption.DEFAULT.");e.web3Service=new ethereum_rpc_service_1.EthereumRPCService(e.rpcProvider)}else if(!e.web3Service||e.rpcProvider===ClassContainerOption.NONE||e.web3Service===ClassContainerOption.DEFAULT)throw Error("If no RPC Api is provided, a Web3 Service instance must be provided.");if(e.storageManager===ClassContainerOption.DEFAULT&&(e.storageManager=new memory_storage_service_1.MemoryStorageService),e.logging===ClassContainerOption.DEFAULT&&(e.logging=new console_logging_service_1.ConsoleLoggingService),e.restApi===ClassContainerOption.DEFAULT&&(e.restApi=new xhr_request_api_service_1.XHRRequestApiService),[e.storageManager,e.logging,e.restApi].some(function(e){return!e||e===ClassContainerOption.NONE}))throw Error("Incomplete config: storageManager, logging and resApi must be set.");return n.createClassContainerInternal(e.rpcProvider,e.web3Service,e.storageManager,e.logging,e.restApi,e.subscribeToWeb3Connectivity)},n.createDefaultClassContainer=function(e){return n.createClassContainer({rpcProvider:new constant_client_provider_service_1.ConstantRPCClientProvider(e),web3Service:ClassContainerOption.DEFAULT,storageManager:ClassContainerOption.DEFAULT,logging:ClassContainerOption.DEFAULT,restApi:ClassContainerOption.DEFAULT,subscribeToWeb3Connectivity:!1})},n.createNOCUSTClient=function(e){return n.createClassContainer(e).get(_1.NOCUSTClient)},n.createDefaultNOCUSTClient=function(e){return n.createDefaultClassContainer(e).get(_1.NOCUSTClient)},n}();exports.NOCUSTClassFactory=NOCUSTClassFactory,function(e){e[e.DEFAULT=0]="DEFAULT",e[e.NONE=1]="NONE"}(ClassContainerOption=exports.ClassContainerOption||(exports.ClassContainerOption={}));
+},{".":326,"./interfaces/default/console-logging.service":327,"./interfaces/default/constant-client-provider.service":328,"./interfaces/default/ethereum-rpc.service":329,"./interfaces/default/memory-storage.service":330,"./interfaces/default/xhr-request-api.service":331,"./inversify.types":333,"./models/state/web3-connectivity.model":349,"./services/logging":364,"inversify":165,"reflect-metadata":402,"rxjs":404}],333:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.TYPES={SUBJECT:{WEB3_CONNECTIVITY:Symbol("WEB3_CONNECTIVITY"),HUB_STATE_FETCH:Symbol("HUB_STATE_FETCH"),CONTRACT_STATE_FETCH:Symbol("CONTRACT_STATE_FETCH"),CONTRACT_API_AVAILABILITY:Symbol("CONTRACT_API_AVAILABILITY"),WALLET_STATE_SYNC:Symbol("WALLET_STATE_SYNC"),WALLET_STATE_POLL:Symbol("WALLET_STATE_POLL")},EXTERNAL:{RPC_PROVIDER_INTERFACE:Symbol("RPC_PROVIDER_INTERFACE"),REST_API_INTERFACE:Symbol("REST_API_INTERFACE"),WEB3_SERVICE_INTERFACE:Symbol("WEB3_SERVICE_INTERFACE"),STORAGE_MANAGER_INTERFACE:Symbol("STORAGE_MANAGER_INTERFACE"),LOGGING_INTERFACE:Symbol("LOGGING_INTERFACE")}};
 },{}],334:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.ERC20_ABI=[{constant:!0,inputs:[],name:"totalSupply",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"who",type:"address"}],name:"balanceOf",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"to",type:"address"},{name:"value",type:"uint256"}],name:"transfer",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"nonpayable",type:"function"},{anonymous:!1,inputs:[{indexed:!0,name:"owner",type:"address"},{indexed:!0,name:"spender",type:"address"},{indexed:!1,name:"value",type:"uint256"}],name:"Approval",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"from",type:"address"},{indexed:!0,name:"to",type:"address"},{indexed:!1,name:"value",type:"uint256"}],name:"Transfer",type:"event"},{constant:!0,inputs:[{name:"owner",type:"address"},{name:"spender",type:"address"}],name:"allowance",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"from",type:"address"},{name:"to",type:"address"},{name:"value",type:"uint256"}],name:"transferFrom",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!1,inputs:[{name:"spender",type:"address"},{name:"value",type:"uint256"}],name:"approve",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"nonpayable",type:"function"}];
 },{}],335:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.PAYMENT_HUB_ABI=[{constant:!0,inputs:[{name:"token",type:"address"},{name:"slot",type:"uint8"}],name:"getPendingWithdrawalsAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"}],name:"getTokenTrail",outputs:[{name:"",type:"uint64"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"BLOCKS_PER_EPOCH",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"currentEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"hasMissedCheckpointSubmission",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"DEPOSITS_KEPT",outputs:[{name:"",type:"uint8"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"eon",type:"uint256"}],name:"getWalletPendingWithdrawalAmountAtEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"trail",type:"uint64"},{name:"eon",type:"uint256"},{name:"txSetRoot",type:"bytes32"},{name:"deltas",type:"uint256[2]"},{name:"attester",type:"address"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"verifyProofOfActiveStateUpdateAgreement",outputs:[{name:"checksum",type:"bytes32"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"sender",type:"address"},{name:"recipient",type:"address"}],name:"getChallenge",outputs:[{name:"",type:"uint8"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint64"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"addr",type:"address"},{name:"eon",type:"uint256"}],name:"getDepositsAtEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"checksums",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"lrPassiveMark",type:"uint256[2][2]"},{name:"withdrawalAmount",type:"uint256"}],name:"requestWithdrawal",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"slot",type:"uint8"}],name:"getDepositsAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"EXTENDED_BLOCKS_PER_EPOCH",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"getServerContractStateVariables",outputs:[{name:"parentChainAccumulator",type:"bytes32"},{name:"lastSubmissionEon",type:"uint256"},{name:"lastCheckpointRoot",type:"bytes32"},{name:"isCheckpointSubmitted",type:"bool"},{name:"missedCheckpointSubmission",type:"bool"},{name:"liveChallenges",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"activeStateChecksum_passiveTransfersRoot",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"eonPassiveMark",type:"uint256[3]"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"LR",type:"uint256[2]"}],name:"verifyProofOfExclusiveAccountBalanceAllotment",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"eon",type:"uint256"}],name:"getPendingWithdrawalsAtEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"operator",outputs:[{name:"",type:"address"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"addr",type:"address"},{name:"slot",type:"uint8"}],name:"getWalletDepositAggregateAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"withdrawalAmount",type:"uint256"},{name:"expiry",type:"uint256"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"requestAuthorizedWithdrawal",outputs:[],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"recipient",type:"address"}],name:"confirmWithdrawal",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!0,inputs:[{name:"slot",type:"uint8"}],name:"getCheckpointAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"bytes32"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"checksums",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"LR",type:"uint256[2]"},{name:"dummyPassiveMark",type:"uint256[3]"}],name:"recoverAllFunds",outputs:[{name:"recovered",type:"uint256"}],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"beneficiary",type:"address"},{name:"amount",type:"uint256"}],name:"deposit",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"SR",type:"address[2]"},{name:"txSetRootChecksum",type:"bytes32[2]"},{name:"senderTransferRecipientTrails",type:"uint64[3]"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"lrDeltasPassiveMarkDummyAmount",type:"uint256[2][4]"},{name:"transferMembershipChain",type:"bytes32[]"}],name:"challengeTransferDeliveryWithProofOfPassiveStateUpdate",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"getCurrentEonDepositsWithdrawals",outputs:[{name:"currentEonDeposits",type:"uint256"},{name:"currentEonWithdrawals",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"message",type:"bytes32"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"signedMessageECRECOVER",outputs:[{name:"",type:"address"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!0,inputs:[{name:"trail",type:"uint64"}],name:"getTokenAtTrail",outputs:[{name:"",type:"address"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"currentEra",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"hasOutstandingChallenges",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"SR",type:"address[2]"},{name:"nonceAmount",type:"uint256[2]"},{name:"trails",type:"uint64[3]"},{name:"chain",type:"bytes32[]"},{name:"deltas",type:"uint256[2]"},{name:"rsTxSetRoot",type:"bytes32[3]"},{name:"v",type:"uint8"}],name:"challengeTransferDeliveryWithProofOfActiveStateUpdateAgreement",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"allotmentTrail",type:"uint64"},{name:"membershipTrail",type:"uint64"},{name:"node",type:"bytes32"},{name:"root",type:"bytes32"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"value",type:"uint256[]"},{name:"LR",type:"uint256[2]"}],name:"verifyProofOfExclusiveBalanceAllotment",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!0,inputs:[{name:"eonNumber",type:"uint256"},{name:"token",type:"address"}],name:"getServerContractLedgerStateVariables",outputs:[{name:"pendingWithdrawals",type:"uint256"},{name:"confirmedWithdrawals",type:"uint256"},{name:"deposits",type:"uint256"},{name:"totalBalance",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"expiry",type:"uint256"},{name:"amount",type:"uint256"},{name:"attester",type:"address"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"verifyWithdrawalAuthorization",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"txSetRoot",type:"bytes32"},{name:"trail",type:"uint64"},{name:"deltas",type:"uint256[2]"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"challengeStateUpdateWithProofOfActiveStateUpdateAgreement",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"allotmentTrail",type:"uint64"},{name:"node",type:"bytes32"},{name:"root",type:"bytes32"},{name:"chainValues",type:"bytes32[]"},{name:"LR",type:"uint256[2]"}],name:"verifyProofOfPassiveDelivery",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!0,inputs:[],name:"genesis",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"eon",type:"uint256"}],name:"getLiveChallenges",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"BLOCKS_PER_EON",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"EONS_KEPT",outputs:[{name:"",type:"uint8"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"getClientContractStateVariables",outputs:[{name:"latestCheckpointEonNumber",type:"uint256"},{name:"latestCheckpointsMerkleRoots",type:"bytes32[5]"},{name:"latestCheckpointsLiveChallenges",type:"uint256[5]"},{name:"currentEonDeposits",type:"uint256"},{name:"previousEonDeposits",type:"uint256"},{name:"secondPreviousEonDeposits",type:"uint256"},{name:"pendingWithdrawals",type:"uint256[2][]"},{name:"holderBalance",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"getIsWalletRecovered",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"trail",type:"uint256"},{name:"chain",type:"bytes32[]"},{name:"node",type:"bytes32"},{name:"merkleRoot",type:"bytes32"}],name:"verifyProofOfMembership",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"checksums",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"value",type:"uint256[]"},{name:"lrDeltasPassiveMark",type:"uint256[2][3]"},{name:"rsTxSetRoot",type:"bytes32[3]"},{name:"v",type:"uint8"}],name:"challengeStateUpdateWithProofOfExclusiveBalanceAllotment",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!1,inputs:[{name:"tokens",type:"address[2]"},{name:"senderTransferRecipientTrails",type:"uint64[3]"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"txChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"lrDeltasPassiveMark",type:"uint256[2][3]"},{name:"sellBuyBalanceNonce",type:"uint256[4]"},{name:"txSetRootChecksumDummy",type:"bytes32[3]"}],name:"challengeSwapEnactmentWithProofOfActiveStateUpdateAgreement",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[],name:"MIN_CHALLENGE_GAS_COST",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"withdrawalAmount",type:"uint256"},{name:"expiry",type:"uint256"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"requestDelegatedWithdrawal",outputs:[],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"recoverOnlyParentChainFunds",outputs:[{name:"reclaimed",type:"uint256"}],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!0,inputs:[],name:"lastSubmissionEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"slot",type:"uint8"}],name:"getConfirmedWithdrawalsAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{inputs:[{name:"blocksPerRound",type:"uint256"},{name:"operator",type:"address"}],payable:!1,stateMutability:"nonpayable",type:"constructor"},{payable:!0,stateMutability:"payable",type:"fallback"},{anonymous:!1,inputs:[{indexed:!0,name:"eon",type:"uint256"},{indexed:!1,name:"merkleRoot",type:"bytes32"}],name:"CheckpointSubmission",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"recipient",type:"address"},{indexed:!1,name:"amount",type:"uint256"}],name:"Deposit",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"requestor",type:"address"},{indexed:!1,name:"amount",type:"uint256"}],name:"WithdrawalRequest",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"requestor",type:"address"},{indexed:!1,name:"amount",type:"uint256"}],name:"WithdrawalConfirmation",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"recipient",type:"address"},{indexed:!0,name:"sender",type:"address"}],name:"ChallengeIssued",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"account",type:"address"},{indexed:!0,name:"eon",type:"uint256"},{indexed:!1,name:"trail",type:"uint64"},{indexed:!1,name:"allotmentChain",type:"bytes32[]"},{indexed:!1,name:"membershipChain",type:"bytes32[]"},{indexed:!1,name:"values",type:"uint256[]"},{indexed:!1,name:"lrDeltasPassiveMark",type:"uint256[2][3]"},{indexed:!1,name:"paint",type:"bytes32"},{indexed:!1,name:"passiveChecksum",type:"bytes32"},{indexed:!1,name:"r",type:"bytes32"},{indexed:!1,name:"s",type:"bytes32"},{indexed:!1,name:"v",type:"uint8"}],name:"StateUpdate",type:"event"},{constant:!1,inputs:[{name:"token",type:"address"}],name:"registerERC20",outputs:[],payable:!1,stateMutability:"nonpayable",type:"function"}];
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.NOCUST_COMMIT_CHAIN_ABI=[{constant:!0,inputs:[{name:"token",type:"address"},{name:"slot",type:"uint8"}],name:"getPendingWithdrawalsAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"}],name:"getTokenTrail",outputs:[{name:"",type:"uint64"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"BLOCKS_PER_EPOCH",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"currentEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"hasMissedCheckpointSubmission",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"DEPOSITS_KEPT",outputs:[{name:"",type:"uint8"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"eon",type:"uint256"}],name:"getWalletPendingWithdrawalAmountAtEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"trail",type:"uint64"},{name:"eon",type:"uint256"},{name:"txSetRoot",type:"bytes32"},{name:"deltas",type:"uint256[2]"},{name:"attester",type:"address"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"verifyProofOfActiveStateUpdateAgreement",outputs:[{name:"checksum",type:"bytes32"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"sender",type:"address"},{name:"recipient",type:"address"}],name:"getChallenge",outputs:[{name:"",type:"uint8"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint256"},{name:"",type:"uint64"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"addr",type:"address"},{name:"eon",type:"uint256"}],name:"getDepositsAtEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"checksums",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"lrPassiveMark",type:"uint256[2][2]"},{name:"withdrawalAmount",type:"uint256"}],name:"requestWithdrawal",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"slot",type:"uint8"}],name:"getDepositsAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"EXTENDED_BLOCKS_PER_EPOCH",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"getServerContractStateVariables",outputs:[{name:"parentChainAccumulator",type:"bytes32"},{name:"lastSubmissionEon",type:"uint256"},{name:"lastCheckpointRoot",type:"bytes32"},{name:"isCheckpointSubmitted",type:"bool"},{name:"missedCheckpointSubmission",type:"bool"},{name:"liveChallenges",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"activeStateChecksum_passiveTransfersRoot",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"eonPassiveMark",type:"uint256[3]"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"LR",type:"uint256[2]"}],name:"verifyProofOfExclusiveAccountBalanceAllotment",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"eon",type:"uint256"}],name:"getPendingWithdrawalsAtEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"operator",outputs:[{name:"",type:"address"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"addr",type:"address"},{name:"slot",type:"uint8"}],name:"getWalletDepositActiveStateAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"withdrawalAmount",type:"uint256"},{name:"expiry",type:"uint256"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"requestAuthorizedWithdrawal",outputs:[],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"recipient",type:"address"}],name:"confirmWithdrawal",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!0,inputs:[{name:"slot",type:"uint8"}],name:"getCheckpointAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"bytes32"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"checksums",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"LR",type:"uint256[2]"},{name:"dummyPassiveMark",type:"uint256[3]"}],name:"recoverAllFunds",outputs:[{name:"recovered",type:"uint256"}],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"beneficiary",type:"address"},{name:"amount",type:"uint256"}],name:"deposit",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"SR",type:"address[2]"},{name:"txSetRootChecksum",type:"bytes32[2]"},{name:"senderTransferRecipientTrails",type:"uint64[3]"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"lrDeltasPassiveMarkDummyAmount",type:"uint256[2][4]"},{name:"transferMembershipChain",type:"bytes32[]"}],name:"challengeTransferDeliveryWithProofOfPassiveStateUpdate",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"getCurrentEonDepositsWithdrawals",outputs:[{name:"currentEonDeposits",type:"uint256"},{name:"currentEonWithdrawals",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"message",type:"bytes32"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"signedMessageECRECOVER",outputs:[{name:"",type:"address"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!0,inputs:[{name:"trail",type:"uint64"}],name:"getTokenAtTrail",outputs:[{name:"",type:"address"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"currentEra",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"hasOutstandingChallenges",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"SR",type:"address[2]"},{name:"nonceAmount",type:"uint256[2]"},{name:"trails",type:"uint64[3]"},{name:"chain",type:"bytes32[]"},{name:"deltas",type:"uint256[2]"},{name:"rsTxSetRoot",type:"bytes32[3]"},{name:"v",type:"uint8"}],name:"challengeTransferDeliveryWithProofOfActiveStateUpdateAgreement",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"allotmentTrail",type:"uint64"},{name:"membershipTrail",type:"uint64"},{name:"node",type:"bytes32"},{name:"root",type:"bytes32"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"value",type:"uint256[]"},{name:"LR",type:"uint256[2]"}],name:"verifyProofOfExclusiveBalanceAllotment",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!0,inputs:[{name:"eonNumber",type:"uint256"},{name:"token",type:"address"}],name:"getServerContractLedgerStateVariables",outputs:[{name:"pendingWithdrawals",type:"uint256"},{name:"confirmedWithdrawals",type:"uint256"},{name:"deposits",type:"uint256"},{name:"totalBalance",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"expiry",type:"uint256"},{name:"amount",type:"uint256"},{name:"attester",type:"address"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"verifyWithdrawalAuthorization",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"txSetRoot",type:"bytes32"},{name:"trail",type:"uint64"},{name:"deltas",type:"uint256[2]"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"challengeStateUpdateWithProofOfActiveStateUpdateAgreement",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[{name:"allotmentTrail",type:"uint64"},{name:"node",type:"bytes32"},{name:"root",type:"bytes32"},{name:"chainValues",type:"bytes32[]"},{name:"LR",type:"uint256[2]"}],name:"verifyProofOfPassiveDelivery",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!0,inputs:[],name:"genesis",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"eon",type:"uint256"}],name:"getLiveChallenges",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"BLOCKS_PER_EON",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[],name:"EONS_KEPT",outputs:[{name:"",type:"uint8"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"getClientContractStateVariables",outputs:[{name:"latestCheckpointEonNumber",type:"uint256"},{name:"latestCheckpointsMerkleRoots",type:"bytes32[5]"},{name:"latestCheckpointsLiveChallenges",type:"uint256[5]"},{name:"currentEonDeposits",type:"uint256"},{name:"previousEonDeposits",type:"uint256"},{name:"secondPreviousEonDeposits",type:"uint256"},{name:"pendingWithdrawals",type:"uint256[2][]"},{name:"holderBalance",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"getIsWalletRecovered",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"trail",type:"uint256"},{name:"chain",type:"bytes32[]"},{name:"node",type:"bytes32"},{name:"merkleRoot",type:"bytes32"}],name:"verifyProofOfMembership",outputs:[{name:"",type:"bool"}],payable:!1,stateMutability:"pure",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"checksums",type:"bytes32[2]"},{name:"trail",type:"uint64"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"value",type:"uint256[]"},{name:"lrDeltasPassiveMark",type:"uint256[2][3]"},{name:"rsTxSetRoot",type:"bytes32[3]"},{name:"v",type:"uint8"}],name:"challengeStateUpdateWithProofOfExclusiveBalanceAllotment",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!1,inputs:[{name:"tokens",type:"address[2]"},{name:"senderTransferRecipientTrails",type:"uint64[3]"},{name:"allotmentChain",type:"bytes32[]"},{name:"membershipChain",type:"bytes32[]"},{name:"txChain",type:"bytes32[]"},{name:"values",type:"uint256[]"},{name:"lrDeltasPassiveMark",type:"uint256[2][3]"},{name:"sellBuyBalanceNonce",type:"uint256[4]"},{name:"txSetRootChecksumDummy",type:"bytes32[3]"}],name:"challengeSwapEnactmentWithProofOfActiveStateUpdateAgreement",outputs:[],payable:!0,stateMutability:"payable",type:"function"},{constant:!0,inputs:[],name:"MIN_CHALLENGE_GAS_COST",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"},{name:"withdrawalAmount",type:"uint256"},{name:"expiry",type:"uint256"},{name:"r",type:"bytes32"},{name:"s",type:"bytes32"},{name:"v",type:"uint8"}],name:"requestDelegatedWithdrawal",outputs:[],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!1,inputs:[{name:"token",type:"address"},{name:"holder",type:"address"}],name:"recoverOnlyParentChainFunds",outputs:[{name:"reclaimed",type:"uint256"}],payable:!1,stateMutability:"nonpayable",type:"function"},{constant:!0,inputs:[],name:"lastSubmissionEon",outputs:[{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{constant:!0,inputs:[{name:"token",type:"address"},{name:"slot",type:"uint8"}],name:"getConfirmedWithdrawalsAtSlot",outputs:[{name:"",type:"uint256"},{name:"",type:"uint256"}],payable:!1,stateMutability:"view",type:"function"},{inputs:[{name:"blocksPerEon",type:"uint256"},{name:"operator",type:"address"}],payable:!1,stateMutability:"nonpayable",type:"constructor"},{payable:!0,stateMutability:"payable",type:"fallback"},{anonymous:!1,inputs:[{indexed:!0,name:"eon",type:"uint256"},{indexed:!1,name:"merkleRoot",type:"bytes32"}],name:"CheckpointSubmission",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"recipient",type:"address"},{indexed:!1,name:"amount",type:"uint256"}],name:"Deposit",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"requestor",type:"address"},{indexed:!1,name:"amount",type:"uint256"}],name:"WithdrawalRequest",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"requestor",type:"address"},{indexed:!1,name:"amount",type:"uint256"}],name:"WithdrawalConfirmation",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"recipient",type:"address"},{indexed:!0,name:"sender",type:"address"}],name:"ChallengeIssued",type:"event"},{anonymous:!1,inputs:[{indexed:!0,name:"token",type:"address"},{indexed:!0,name:"account",type:"address"},{indexed:!0,name:"eon",type:"uint256"},{indexed:!1,name:"trail",type:"uint64"},{indexed:!1,name:"allotmentChain",type:"bytes32[]"},{indexed:!1,name:"membershipChain",type:"bytes32[]"},{indexed:!1,name:"values",type:"uint256[]"},{indexed:!1,name:"lrDeltasPassiveMark",type:"uint256[2][3]"},{indexed:!1,name:"activeStateChecksum",type:"bytes32"},{indexed:!1,name:"passiveChecksum",type:"bytes32"},{indexed:!1,name:"r",type:"bytes32"},{indexed:!1,name:"s",type:"bytes32"},{indexed:!1,name:"v",type:"uint8"}],name:"StateUpdate",type:"event"},{constant:!1,inputs:[{name:"token",type:"address"}],name:"registerERC20",outputs:[],payable:!1,stateMutability:"nonpayable",type:"function"}];
 },{}],336:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var Hashable=function(){function e(){}return Object.defineProperty(e.prototype,"id",{get:function(){return 0},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"hash",{get:function(){return""},enumerable:!0,configurable:!0}),e}();exports.Hashable=Hashable;
 },{}],337:[function(require,module,exports){
 "use strict";var __extends=this&&this.__extends||function(){var i=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var r in t)t.hasOwnProperty(r)&&(e[r]=t[r])};return function(e,t){function r(){this.constructor=e}i(e,t),e.prototype=null===t?Object.create(t):(r.prototype=t.prototype,new r)}}();Object.defineProperty(exports,"__esModule",{value:!0});var hashable_model_1=require("./hashable.model"),util_1=require("../../util"),MerkleTree=function(a){function s(e,t,r){var i=a.call(this)||this;i.leaves=e,i.index=r;var h=e.length;if(0===h)i._hash=util_1.EMPTY_HASH;else if(1===h)i._hash=e[0].hash,t[e[i._height=0].id]=i;else{var n=Math.floor(h/2),o=e.slice(0,n),l=e.slice(n,h);i.leftChild=new s(o,t,2*r),i.rightChild=new s(l,t,2*r+1),((i.leftChild.parent=i).rightChild.parent=i)._height=i.leftChild._height+1,i._hash=util_1.Web3Utils.soliditySha3({type:"uint32",value:i.leftChild._height},{type:"bytes32",value:i.leftChild._hash},{type:"bytes32",value:i.rightChild._hash})}return i}return __extends(s,a),s.proofChain=function(e){return e.map(function(e){return e.hash})},Object.defineProperty(s.prototype,"hash",{get:function(){return this._hash},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"isEmpty",{get:function(){return 0==this.leaves.length},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"proof",{get:function(){return this.getProof([])},enumerable:!0,configurable:!0}),s.prototype.getProof=function(e){var t=this.parent;return void 0===t?e:(e.push(t.leftChild===this?t.rightChild._hash:t.leftChild._hash),t.getProof(e))},s}(hashable_model_1.Hashable);exports.MerkleTree=MerkleTree;
 },{"../../util":371,"./hashable.model":336}],338:[function(require,module,exports){
-"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),util_1=require("../../util"),ProofOfStake=function(){function t(e,t,r,i,n,s,u,o,a,l,p,h,f,b){this._contractAddress=e,this._tokenAddress=t,this._walletAddress=r,this._paint=i,this._trail=n,this._round=s,this._allotmentChain=u,this._membershipChain=o,this._values=a,this._left=l,this._right=p,this._passiveChecksum=h,this._passiveAmount=f,this._passiveMarker=b,this._values=a.map(function(e){return new bignumber_js_1.default(e)}),this._left=new bignumber_js_1.default(l),this._right=new bignumber_js_1.default(p)}return t.fromJSON=function(e){return new t(e.contractAddress,e.tokenAddress,e.walletAddress,e.paint,e.trail,e.round,e.allotmentChain,e.membershipChain,e.values.map(function(e){return new bignumber_js_1.default(e)}),new bignumber_js_1.default(e.left),new bignumber_js_1.default(e.right),e.passiveChecksum,new bignumber_js_1.default(e.passiveAmount),new bignumber_js_1.default(e.passiveMarker))},t.checksumPaint=function(e,t,r,i){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:t})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:r})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:i})},{type:"bytes32",value:e}).toString()},Object.defineProperty(t.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,walletAddress:this._walletAddress,paint:this._paint,trail:this._trail,round:this._round,allotmentChain:this._allotmentChain,membershipChain:this._membershipChain,values:this._values.map(function(e){return e.toFixed(0)}),left:this._left.toFixed(0),right:this._right.toFixed(0),passiveChecksum:this._passiveChecksum,passiveAmount:this._passiveAmount,passiveMarker:this._passiveMarker}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"paint",{get:function(){return this._paint},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"round",{get:function(){return this._round},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._right.minus(this._left)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"walletAddress",{get:function(){return this._walletAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"contractAddress",{get:function(){return this._contractAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"trail",{get:function(){return this._trail},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"allotmentChain",{get:function(){return this._allotmentChain},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"membershipChain",{get:function(){return this._membershipChain},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"values",{get:function(){return this._values},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"left",{get:function(){return this._left},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"right",{get:function(){return this._right},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passiveChecksum",{get:function(){return this._passiveChecksum},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passiveMarker",{get:function(){return this._passiveMarker},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passiveAmount",{get:function(){return this._passiveAmount},enumerable:!0,configurable:!0}),t}();exports.ProofOfStake=ProofOfStake;
-},{"../../util":371,"bignumber.js":24}],339:[function(require,module,exports){
+"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),ProofOfExclusiveAllotment=function(){function t(e,t,r,n,i,s,o,u,a,l,c,h,f,p){this._contractAddress=e,this._tokenAddress=t,this._walletAddress=r,this._activeStateChecksum=n,this._trail=i,this._round=s,this._allotmentChain=o,this._membershipChain=u,this._values=a,this._left=l,this._right=c,this._passiveChecksum=h,this._passiveAmount=f,this._passiveMarker=p,this._values=a.map(function(e){return new bignumber_js_1.default(e)}),this._left=new bignumber_js_1.default(l),this._right=new bignumber_js_1.default(c)}return t.fromJSON=function(e){return new t(e.contractAddress,e.tokenAddress,e.walletAddress,e.activeStateChecksum,e.trail,e.eonNumber,e.allotmentChain,e.membershipChain,e.values.map(function(e){return new bignumber_js_1.default(e)}),new bignumber_js_1.default(e.left),new bignumber_js_1.default(e.right),e.passiveChecksum,new bignumber_js_1.default(e.passiveAmount),new bignumber_js_1.default(e.passiveMarker))},Object.defineProperty(t.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,walletAddress:this._walletAddress,activeStateChecksum:this._activeStateChecksum,trail:this._trail,eonNumber:this._round,allotmentChain:this._allotmentChain,membershipChain:this._membershipChain,values:this._values.map(function(e){return e.toFixed(0)}),left:this._left.toFixed(0),right:this._right.toFixed(0),passiveChecksum:this._passiveChecksum,passiveAmount:this._passiveAmount,passiveMarker:this._passiveMarker}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"activeStateChecksum",{get:function(){return this._activeStateChecksum},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"round",{get:function(){return this._round},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._right.minus(this._left)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"walletAddress",{get:function(){return this._walletAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"contractAddress",{get:function(){return this._contractAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"trail",{get:function(){return this._trail},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"allotmentChain",{get:function(){return this._allotmentChain},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"membershipChain",{get:function(){return this._membershipChain},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"values",{get:function(){return this._values},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"left",{get:function(){return this._left},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"right",{get:function(){return this._right},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passiveChecksum",{get:function(){return this._passiveChecksum},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passiveMarker",{get:function(){return this._passiveMarker},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passiveAmount",{get:function(){return this._passiveAmount},enumerable:!0,configurable:!0}),t}();exports.ProofOfExclusiveAllotment=ProofOfExclusiveAllotment;
+},{"bignumber.js":24}],339:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var util_1=require("../../util"),Signature=function(){function s(e,t,r,n,i){this._address=e,this._checksum=t,this._r=r,this._s=n,this._v=i}return s.fromJSON=function(e){return new s(e.address,e.checksumTransfer,e.r,e.s,e.v)},s.fromRSV=function(e,t,r){var n=util_1.remove0xPrefix(r),i=parseInt(n.slice(128,130),16);return i<27&&(i+=27),new s(e,t,n.slice(0,64),n.slice(64,128),i.toString(16))},Object.defineProperty(s.prototype,"json",{get:function(){return{address:this._address,checksum:this._checksum,r:this._r,s:this._s,v:this._v}},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"address",{get:function(){return util_1.remove0xPrefix(this._address)},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"checksum",{get:function(){return this._checksum},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"rsv",{get:function(){return""+this.r+this.s+this.v},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"r",{get:function(){return this._r},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"s",{get:function(){return this._s},enumerable:!0,configurable:!0}),Object.defineProperty(s.prototype,"v",{get:function(){return this._v},enumerable:!0,configurable:!0}),s.EMPTY=new s("0x0000000000000000000000000000000000000000",util_1.EMPTY_HASH,util_1.EMPTY_HASH,util_1.EMPTY_HASH,"00"),s}();exports.Signature=Signature;
 },{"../../util":371}],340:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var ChainConnectivity=function(){function n(n,t){this.connected=n,this.accounts=t}return n.DISCONNECTED=new n(!1,[]),n}();exports.ChainConnectivity=ChainConnectivity;
 },{}],341:[function(require,module,exports){
-"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),contract_api_service_1=require("../../services/contract-api.service"),ContractState=function(){function t(e,t,n,i,s,o,a,r,u,l,d,c,h,b,p,g,m,f,_){void 0===m&&(m=[new bignumber_js_1.default(0),new bignumber_js_1.default(0),new bignumber_js_1.default(0)]),void 0===f&&(f=0),this.networkId=e,this.genesis=t,this.block=n,this.currentRound=i,this.currentSubBlock=s,this.blocksPerRound=o,this.slackPeriod=a,this.extendedSlackPeriod=r,this.roundsKept=u,this.depositsKept=l,this.contractBalance=d,this.hasOutstandingChallenges=c,this.slackingChallenges=h,this.challengeCost=b,this.onChainBalance=p,this.pendingWithdrawals=g,this.deposits=m,this.timestamp=f,this.latestRoundsData=_,this.syncPeriod=2e4}return t.fromJSON=function(e){return new t(e.networkId,e.genesis,e.block,e.currentRound,e.currentSubBlock,e.blocksPerRound,e.slackPeriod,e.extendedSlackPeriod,e.roundsKept,e.depositsKept,e.contractBalance?new bignumber_js_1.default(e.contractBalance):void 0,e.hasOutstandingChallenges,e.slackingChallenges,e.challengeCost?new bignumber_js_1.default(e.challengeCost):void 0,e.onChainBalance?new bignumber_js_1.default(e.onChainBalance):void 0,e.pendingWithdrawals?e.pendingWithdrawals.map(function(e){return{amount:e.amount?new bignumber_js_1.default(e.amount):void 0,round:e.round}}):void 0,e.deposits?e.deposits.map(function(e){return new bignumber_js_1.default(e)}):void 0,e.timestamp,e.latestRoundsData)},Object.defineProperty(t.prototype,"json",{get:function(){return{networkId:this.networkId,genesis:this.genesis,block:this.block,currentRound:this.currentRound,currentSubBlock:this.currentSubBlock,blocksPerRound:this.blocksPerRound,slackPeriod:this.slackPeriod,extendedSlackPeriod:this.extendedSlackPeriod,roundsKept:this.roundsKept,depositsKept:this.depositsKept,lastSubmissionRound:this.lastSubmissionRound,contractBalance:this.contractBalance?this.contractBalance.toFixed(0):void 0,lastCheckpointSubmitted:this.lastCheckpointSubmitted,hasOutstandingChallenges:this.hasOutstandingChallenges,liveChallenges:this.liveChallenges,slackingChallenges:this.slackingChallenges,challengeCost:this.challengeCost?this.challengeCost.toFixed(0):void 0,onChainBalance:this.onChainBalance?this.onChainBalance.toFixed(0):void 0,pendingWithdrawals:this.pendingWithdrawals?this.pendingWithdrawals.map(function(e){return{round:e.round,amount:e.amount?e.amount.toFixed(0):void 0}}):void 0,deposits:this.deposits?this.deposits.map(function(e){return e.toFixed(0)}):void 0,timestamp:this.timestamp,latestRoundsData:this.latestRoundsData}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isCheckpointSubmitted",{get:function(){return this.lastSubmissionRound===this.currentRound},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isStateSynced",{get:function(){return(new Date).getTime()-this.timestamp<=this.syncPeriod},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isPunished",{get:function(){return this.hasMissedCheckpointSubmission||this.hasOutstandingChallenges},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"lastSubmissionRound",{get:function(){return this.latestRoundsData?Math.max.apply(Math,this.latestRoundsData.map(function(e){return e.round})):0},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"lastCheckpointSubmitted",{get:function(){var t=this;return this.latestRoundsData?this.latestRoundsData.find(function(e){return e.round===t.lastSubmissionRound}).merkleRoot:"0x0000000000000000000000000000000000000000"},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"liveChallenges",{get:function(){var t=this;return this.latestRoundsData?this.latestRoundsData.find(function(e){return e.round===t.lastSubmissionRound}).liveChallenges:0},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"hasMissedCheckpointSubmission",{get:function(){return 1<contract_api_service_1.ContractApiService.roundNumberAt(this.block,this.genesis,this.blocksPerRound)-this.lastSubmissionRound},enumerable:!0,configurable:!0}),t.EMPTY_STATE=new t(0,0,0,0,0,0,0,0,0,0,new bignumber_js_1.default(0),!1,0,new bignumber_js_1.default(0),new bignumber_js_1.default(0),[],[new bignumber_js_1.default(0),new bignumber_js_1.default(0),new bignumber_js_1.default(0)],0,[{round:0,merkleRoot:"0x0000000000000000000000000000000000000000",liveChallenges:0}]),t}();exports.ContractState=ContractState;
+"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),contract_api_service_1=require("../../services/contract-api.service"),ContractState=function(){function t(e,t,n,i,s,o,a,r,u,l,c,h,d,b,m,p,g,f,_){void 0===g&&(g=[new bignumber_js_1.default(0),new bignumber_js_1.default(0),new bignumber_js_1.default(0)]),void 0===f&&(f=0),this.networkId=e,this.genesis=t,this.block=n,this.currentEonNumber=i,this.currentSubBlock=s,this.blocksPerEon=o,this.slackPeriod=a,this.extendedSlackPeriod=r,this.eonsKept=u,this.depositsKept=l,this.contractBalance=c,this.hasOutstandingChallenges=h,this.slackingChallenges=d,this.challengeCost=b,this.onChainBalance=m,this.pendingWithdrawals=p,this.deposits=g,this.timestamp=f,this.LatestEonsData=_,this.syncPeriod=2e4}return t.fromJSON=function(e){return new t(e.networkId,e.genesis,e.block,e.currentEonNumber,e.currentSubBlock,e.blocksPerEon,e.slackPeriod,e.extendedSlackPeriod,e.eonsKept,e.depositsKept,e.contractBalance?new bignumber_js_1.default(e.contractBalance):void 0,e.hasOutstandingChallenges,e.slackingChallenges,e.challengeCost?new bignumber_js_1.default(e.challengeCost):void 0,e.onChainBalance?new bignumber_js_1.default(e.onChainBalance):void 0,e.pendingWithdrawals?e.pendingWithdrawals.map(function(e){return{amount:e.amount?new bignumber_js_1.default(e.amount):void 0,eonNumber:e.eonNumber}}):void 0,e.deposits?e.deposits.map(function(e){return new bignumber_js_1.default(e)}):void 0,e.timestamp,e.LatestEonsData)},Object.defineProperty(t.prototype,"json",{get:function(){return{networkId:this.networkId,genesis:this.genesis,block:this.block,currentEon:this.currentEonNumber,currentSubBlock:this.currentSubBlock,blocksPerEon:this.blocksPerEon,slackPeriod:this.slackPeriod,extendedSlackPeriod:this.extendedSlackPeriod,eonsKept:this.eonsKept,depositsKept:this.depositsKept,lastSubmissionEon:this.lastSubmissionEon,contractBalance:this.contractBalance?this.contractBalance.toFixed(0):void 0,lastCheckpointSubmitted:this.lastCheckpointSubmitted,hasOutstandingChallenges:this.hasOutstandingChallenges,liveChallenges:this.liveChallenges,slackingChallenges:this.slackingChallenges,challengeCost:this.challengeCost?this.challengeCost.toFixed(0):void 0,onChainBalance:this.onChainBalance?this.onChainBalance.toFixed(0):void 0,pendingWithdrawals:this.pendingWithdrawals?this.pendingWithdrawals.map(function(e){return{eonNumber:e.eonNumber,amount:e.amount?e.amount.toFixed(0):void 0}}):void 0,deposits:this.deposits?this.deposits.map(function(e){return e.toFixed(0)}):void 0,timestamp:this.timestamp,LatestEonsData:this.LatestEonsData}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isCheckpointSubmitted",{get:function(){return this.lastSubmissionEon===this.currentEonNumber},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isStateSynced",{get:function(){return(new Date).getTime()-this.timestamp<=this.syncPeriod},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isPunished",{get:function(){return this.hasMissedCheckpointSubmission||this.hasOutstandingChallenges},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"lastSubmissionEon",{get:function(){return this.LatestEonsData?Math.max.apply(Math,this.LatestEonsData.map(function(e){return e.eonNumber})):0},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"lastCheckpointSubmitted",{get:function(){var t=this;return this.LatestEonsData?this.LatestEonsData.find(function(e){return e.eonNumber===t.lastSubmissionEon}).merkleRoot:"0x0000000000000000000000000000000000000000"},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"liveChallenges",{get:function(){var t=this;return this.LatestEonsData?this.LatestEonsData.find(function(e){return e.eonNumber===t.lastSubmissionEon}).liveChallenges:0},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"hasMissedCheckpointSubmission",{get:function(){return 1<contract_api_service_1.ContractApiService.eonNumberAt(this.block,this.genesis,this.blocksPerEon)-this.lastSubmissionEon},enumerable:!0,configurable:!0}),t.EMPTY_STATE=new t(0,0,0,0,0,0,0,0,0,0,new bignumber_js_1.default(0),!1,0,new bignumber_js_1.default(0),new bignumber_js_1.default(0),[],[new bignumber_js_1.default(0),new bignumber_js_1.default(0),new bignumber_js_1.default(0)],0,[{eonNumber:0,merkleRoot:"0x0000000000000000000000000000000000000000",liveChallenges:0}]),t}();exports.ContractState=ContractState;
 },{"../../services/contract-api.service":361,"bignumber.js":24}],342:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var HubState=function(){function t(t,e,a){this.statusData=t,this.walletData=e,this.timestamp=a,this.syncPeriod=2e4}return Object.defineProperty(t.prototype,"isStateSynced",{get:function(){return(new Date).getTime()-this.timestamp<=this.syncPeriod},enumerable:!0,configurable:!0}),t.prototype.getMerkleProofData=function(t){return!this.walletData||!this.walletData.merkle_proofs||this.walletData.merkle_proofs.length<=t?null:this.walletData.merkle_proofs[t]},t.EMPTY_STATE=new t,t}();exports.HubState=HubState;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var EonState=function(t,e,o,c){this.checkpointSubmitted=t,this.checkpointMerkleRoot=e,this.checkpointBlock=o,this.checkpointUpperbound=c};exports.EonState=EonState;
 },{}],343:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var RoundState=function(t,e,o,c){this.checkpointSubmitted=t,this.checkpointMerkleRoot=e,this.checkpointBlock=o,this.checkpointUpperbound=c};exports.RoundState=RoundState;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var OperatorState=function(){function t(t,e,a){this.statusData=t,this.walletData=e,this.timestamp=a,this.syncPeriod=2e4}return Object.defineProperty(t.prototype,"isStateSynced",{get:function(){return(new Date).getTime()-this.timestamp<=this.syncPeriod},enumerable:!0,configurable:!0}),t.prototype.getMerkleProofData=function(t){return!this.walletData||!this.walletData.merkle_proofs||this.walletData.merkle_proofs.length<=t?null:this.walletData.merkle_proofs[t]},t.EMPTY_STATE=new t,t}();exports.OperatorState=OperatorState;
 },{}],344:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var StatePoll=function(t){this.wallet=t};exports.StatePoll=StatePoll;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var StateUpdatePoll=function(t){this.wallet=t};exports.StateUpdatePoll=StateUpdatePoll;
 },{}],345:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var TransferState=function(){function e(e){this.description=e}return Object.defineProperty(e.prototype,"desc",{get:function(){return this.description},enumerable:!0,configurable:!0}),e.PENDING_RECIPIENT_APPROVAL=new e(""),e.PENDING_PROVIDER_APPROVAL=new e(""),e.MISSING_CREDIT_CONFIRMATION=new e(""),e.MISSING_RECEIPT=new e(""),e.DELIVERY_RATIFIED=new e(""),e.DELIVERY_CONFIRMED=new e(""),e.CANCELLED=new e(""),e.SWAP_ACTIVE=new e(""),e.SWAP_FULFILLED=new e(""),e.SWAP_FINALIZED=new e(""),e.SWAP_FROZEN=new e(""),e}();exports.TransferState=TransferState;
 },{}],346:[function(require,module,exports){
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var wallet_sync_state_model_1=require("./wallet-sync-state.model"),wallet_update_error_model_1=require("./wallet-update-error.model"),WalletState=function(){function t(t,e,l,a,r){this.wallet=t,this.syncState=e,this.updateError=l,this.contractState=a,this.hubState=r}return t.EMPTY_STATE=new t(null,wallet_sync_state_model_1.WalletSyncState.WAITING,wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED),t}();exports.WalletState=WalletState;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var wallet_sync_state_model_1=require("./wallet-sync-state.model"),wallet_update_error_model_1=require("./wallet-update-error.model"),WalletState=function(){function t(t,e,l,a,r){this.wallet=t,this.syncState=e,this.updateError=l,this.contractState=a,this.operatorState=r}return t.EMPTY_STATE=new t(null,wallet_sync_state_model_1.WalletSyncState.WAITING,wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED),t}();exports.WalletState=WalletState;
 },{"./wallet-sync-state.model":347,"./wallet-update-error.model":348}],347:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var WalletSyncState=function(){function e(e){this._desc=e}return Object.defineProperty(e.prototype,"desc",{get:function(){return this._desc},enumerable:!0,configurable:!0}),e.SYNCHRONIZED=new e("Synchronized."),e.WAITING=new e("Waiting for additional data from server."),e.UNSAFE=new e("UNSAFE TO USE."),e}();exports.WalletSyncState=WalletSyncState;
 },{}],348:[function(require,module,exports){
-"use strict";var __extends=this&&this.__extends||function(){var t=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,n){e.__proto__=n}||function(e,n){for(var r in n)n.hasOwnProperty(r)&&(e[r]=n[r])};return function(e,n){function r(){this.constructor=e}t(e,n),e.prototype=null===n?Object.create(n):(r.prototype=n.prototype,new r)}}();Object.defineProperty(exports,"__esModule",{value:!0});var WalletUpdateError=function(r){function e(e){var n=r.call(this,e)||this;return n._reason=e,n}return __extends(e,r),Object.defineProperty(e.prototype,"reason",{get:function(){return this._reason},enumerable:!0,configurable:!0}),e.NO_WALLET_SPECIFIED=new e("No wallet specified for update."),e.NO_CONTRACT_STATE_SPECIFIED=new e("No contract state provided for update."),e.INCORRECT_NETWORK_ID=new e("Incorrect Blockchain Network Identifier."),e.UNREGISTERED=new e("Unregistered wallet."),e.UNREGISTERED_NO_REQUEST=new e("Unregistered wallet with no registration request provided."),e.UNREGISTERED_BAD_REQUEST=new e("Unregistered wallet with invalid registration request provided."),e.UNREGISTERED_APPROVAL_NOT_PENDING=new e("Unregistered wallet with no approval pending."),e.UNREGISTERED_APPROVAL_NOT_PROVIDED=new e("Unregistered wallet with no registration approval provided."),e.UNREGISTERED_APPROVAL_INVALID=new e("Unregistered wallet with invalid registration approval provided."),e.LOGIC_PROOF_ALREADY_UPDATED=new e("Proof of stake already updated."),e.LOGIC_OLD_ROUNDS_NOT_UPDATED=new e("Older rounds not updated."),e.LOGIC_PREVIOUS_ROUND_NOT_UPDATED=new e("Previous round not updated."),e.LOGIC_AGGREGATION_FORK=new e("Fork in transfer aggregation."),e.LOGIC_TRANSFER_CONFIRM_ERROR_OUTGOING=new e("Could not confirm outgoing transfer."),e.LOGIC_TRANSFER_CONFIRM_ERROR_INCOMING=new e("Could not confirm incoming transfer."),e.LOGIC_TRANSFER_CONFIRM_ERROR=new e("Could not confirm transfer."),e.LOGIC_RECEIPT_VALIDATION_ERROR_MISSING_CONFIRMATION=new e("Could not confirm receipt due to missing confirmation signatures."),e.LOGIC_PREMATURE_ROUND_ADVANCEMENT=new e("Cannot advance latest local round ahead of on-chain round."),e.LOGIC_UNKNOWN=new e("Unknown Logic Error"),e.LOCAL_DATA_MISSING_LATEST_ROUND=new e("Missing local data of latest round."),e.LOCAL_DATA_MISSING_PREVIOUS_ROUND=new e("Missing local data of previous round."),e.LOCAL_DATA_MISSING_MERKLE_PROOF=new e("Missing required merkle proof."),e.REMOTE_DATA_NO_MERKLE_PROOFS=new e("No merkle proof data available in update."),e.REMOTE_DATA_MISSING_MERKLE_PROOF=new e("Missing required merkle proof in update."),e.REMOTE_DATA_MISSING_DELIVERY_RECEIPT=new e("Missing required delivery receipt in update."),e.REMOTE_DATA_INVALID_DELIVERY_RECEIPT=new e("Invalid delivery receipt in update."),e.PROOF_OF_STAKE_INSUFFICIENT_BALANCE=new e("Granted balance in proof of stake is less than expected."),e.PROOF_OF_STAKE_INVALID=new e("Unverifiable proof of stake."),e.PROOF_OF_STAKE_INVALID_TRAIL=new e("Incorrect proof of stake trail."),e.PROOF_OF_STAKE_UNEXPECTED_PAINT=new e("Unexpected paint used in provided proof of stake."),e.AGGREGATE_TRANSFER_DEBIT_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by sender on debit of transfer."),e.AGGREGATE_SWAP_DEBIT_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by sender on debit of swap."),e.AGGREGATE_TRANSFER_CREDIT_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by recipient on credit of transfer."),e.AGGREGATE_SWAP_CREDIT_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by recipient on credit of swap."),e.AGGREGATE_FULFILLMENT_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by recipient on fulfillment of swap."),e.AGGREGATE_FINALIZATION_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by recipient on finalization of swap."),e.AGGREGATE_SENDER_CANCELLATION_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by sender on cancellation of swap."),e.AGGREGATE_RECIPIENT_CANCELLATION_WALLET_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by recipient on cancellation of swap."),e.AGGREGATE_TRANSFER_DEBIT_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on debit of transfer."),e.AGGREGATE_SWAP_DEBIT_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on debit of swap."),e.AGGREGATE_TRANSFER_CREDIT_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on credit of transfer."),e.AGGREGATE_SWAP_CREDIT_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on credit of swap."),e.AGGREGATE_FULFILLMENT_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on fulfillment of swap."),e.AGGREGATE_FINALIZATION_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on finalization of swap."),e.AGGREGATE_SENDER_CANCELLATION_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on sender cancellation of swap."),e.AGGREGATE_RECIPIENT_CANCELLATION_HUB_SIGNATURE_INVALID=new e("Invalid aggregate signature provided by hub on recipient cancellation of swap."),e.SWAP_FINALIZATION_FAILURE=new e("Could not successfully mark swap as finalized."),e.SWAP_FULFILLMENT_FAILURE=new e("Could not successfully mark swap as fulfilled."),e.SWAP_CANCELLATION_FAILURE=new e("Could not successfully mark swap as cancelled."),e.INVALID_WALLET_FREEZE_REQUEST_SIGNATURE=new e("Could not validate swap freeze request signature."),e.AGGREGATE_FULFILLMENT_HUB_SIGNATURE_MISSING=new e("Missing aggregate signature provided by hub on fulfillment of swap."),e.AGGREGATE_TX_SET_ROOT_INVALID_INCOMING=new e("Invalid aggregate transfer set root provided for next incoming transfer."),e.AGGREGATE_TX_SET_ROOT_INVALID_OUTGOING=new e("Invalid aggregate transfer set root provided for next outgoing transfer."),e.PROVIDER_PUNISHED=new e("This provider is not longer operational."),e.PROVIDER_NOT_AUDITABLE=new e("This provider has not synchronized with the parent chain."),e}(Error);exports.WalletUpdateError=WalletUpdateError;
+"use strict";var __extends=this&&this.__extends||function(){var r=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,n){e.__proto__=n}||function(e,n){for(var t in n)n.hasOwnProperty(t)&&(e[t]=n[t])};return function(e,n){function t(){this.constructor=e}r(e,n),e.prototype=null===n?Object.create(n):(t.prototype=n.prototype,new t)}}();Object.defineProperty(exports,"__esModule",{value:!0});var WalletUpdateError=function(t){function e(e){var n=t.call(this,e)||this;return n._reason=e,n}return __extends(e,t),Object.defineProperty(e.prototype,"reason",{get:function(){return this._reason},enumerable:!0,configurable:!0}),e.NO_WALLET_SPECIFIED=new e("No wallet specified for update."),e.NO_CONTRACT_STATE_SPECIFIED=new e("No contract state provided for update."),e.INCORRECT_NETWORK_ID=new e("Incorrect Blockchain Network Identifier."),e.UNREGISTERED=new e("Unregistered wallet."),e.UNREGISTERED_NO_REQUEST=new e("Unregistered wallet with no registration request provided."),e.UNREGISTERED_BAD_REQUEST=new e("Unregistered wallet with invalid registration request provided."),e.UNREGISTERED_APPROVAL_NOT_PENDING=new e("Unregistered wallet with no approval pending."),e.UNREGISTERED_APPROVAL_NOT_PROVIDED=new e("Unregistered wallet with no registration approval provided."),e.UNREGISTERED_APPROVAL_INVALID=new e("Unregistered wallet with invalid registration approval provided."),e.LOGIC_PROOF_ALREADY_UPDATED=new e("Proof of exclusive allotment already updated."),e.LOGIC_OLD_EONS_NOT_UPDATED=new e("Older rounds not updated."),e.LOGIC_PREVIOUS_EON_NOT_UPDATED=new e("Previous eonNumber not updated."),e.LOGIC_AGGREGATION_FORK=new e("Fork in transfer aggregation."),e.LOGIC_TRANSFER_CONFIRM_ERROR_OUTGOING=new e("Could not confirm outgoing transfer."),e.LOGIC_TRANSFER_CONFIRM_ERROR_INCOMING=new e("Could not confirm incoming transfer."),e.LOGIC_TRANSFER_CONFIRM_ERROR=new e("Could not confirm transfer."),e.LOGIC_RECEIPT_VALIDATION_ERROR_MISSING_CONFIRMATION=new e("Could not confirm receipt due to missing confirmation signatures."),e.LOGIC_PREMATURE_EON_ADVANCEMENT=new e("Cannot advance latest local eonNumber ahead of on-chain eonNumber."),e.LOGIC_UNKNOWN=new e("Unknown Logic Error"),e.LOCAL_DATA_MISSING_LATEST_EON=new e("Missing local data of latest eonNumber."),e.LOCAL_DATA_MISSING_PREVIOUS_EON=new e("Missing local data of previous eonNumber."),e.LOCAL_DATA_MISSING_MERKLE_PROOF=new e("Missing required merkle proof."),e.REMOTE_DATA_NO_MERKLE_PROOFS=new e("No merkle proof data available in update."),e.REMOTE_DATA_MISSING_MERKLE_PROOF=new e("Missing required merkle proof in update."),e.REMOTE_DATA_MISSING_DELIVERY_RECEIPT=new e("Missing required delivery receipt in update."),e.REMOTE_DATA_INVALID_DELIVERY_RECEIPT=new e("Invalid delivery receipt in update."),e.PROOF_OF_EXCLUSIVE_ALLOTMENT_INSUFFICIENT_BALANCE=new e("Granted balance in proof of exclusive allotment is less than expected."),e.PROOF_OF_EXCLUSIVE_ALLOTMENT_INVALID=new e("Unverifiable proof of exclusive allotment."),e.PROOF_OF_EXCLUSIVE_ALLOTMENT_INVALID_TRAIL=new e("Incorrect proof of exclusive allotment trail."),e.PROOF_OF_EXCLUSIVE_ALLOTMENT_UNEXPECTED_ACTIVE_STATE_CHECKSUM=new e("Unexpected activeStateChecksum used in provided proof of exclusive allotment."),e.ACTIVE_STATE_TRANSFER_DEBIT_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by sender on debit of transfer."),e.ACTIVE_STATE_SWAP_DEBIT_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by sender on debit of swap."),e.ACTIVE_STATE_TRANSFER_CREDIT_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by recipient on credit of transfer."),e.ACTIVE_STATE_SWAP_CREDIT_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by recipient on credit of swap."),e.ACTIVE_STATE_FULFILLMENT_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by recipient on fulfillment of swap."),e.ACTIVE_STATE_FINALIZATION_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by recipient on finalization of swap."),e.ACTIVE_STATE_SENDER_CANCELLATION_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by sender on cancellation of swap."),e.ACTIVE_STATE_RECIPIENT_CANCELLATION_WALLET_SIGNATURE_INVALID=new e("Invalid activeState signature provided by recipient on cancellation of swap."),e.ACTIVE_STATE_TRANSFER_DEBIT_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on debit of transfer."),e.ACTIVE_STATE_SWAP_DEBIT_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on debit of swap."),e.ACTIVE_STATE_TRANSFER_CREDIT_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on credit of transfer."),e.ACTIVE_STATE_SWAP_CREDIT_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on credit of swap."),e.ACTIVE_STATE_FULFILLMENT_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on fulfillment of swap."),e.ACTIVE_STATE_FINALIZATION_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on finalization of swap."),e.ACTIVE_STATE_SENDER_CANCELLATION_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on sender cancellation of swap."),e.ACTIVE_STATE_RECIPIENT_CANCELLATION_HUB_SIGNATURE_INVALID=new e("Invalid activeState signature provided by operator on recipient cancellation of swap."),e.SWAP_FINALIZATION_FAILURE=new e("Could not successfully mark swap as finalized."),e.SWAP_FULFILLMENT_FAILURE=new e("Could not successfully mark swap as fulfilled."),e.SWAP_CANCELLATION_FAILURE=new e("Could not successfully mark swap as cancelled."),e.INVALID_WALLET_FREEZE_REQUEST_SIGNATURE=new e("Could not validate swap freeze request signature."),e.ACTIVE_STATE_FULFILLMENT_HUB_SIGNATURE_MISSING=new e("Missing activeState signature provided by operator on fulfillment of swap."),e.ACTIVE_STATE_TX_SET_ROOT_INVALID_INCOMING=new e("Invalid activeState transfer set root provided for next incoming transfer."),e.ACTIVE_STATE_TX_SET_ROOT_INVALID_OUTGOING=new e("Invalid activeState transfer set root provided for next outgoing transfer."),e.PROVIDER_PUNISHED=new e("This provider is not longer operational."),e.PROVIDER_NOT_AUDITABLE=new e("This provider has not synchronized with the parent chain."),e}(Error);exports.WalletUpdateError=WalletUpdateError;
 },{}],349:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var Web3Connectivity=function(){function e(e,t){this.connected=e,this.accounts=t}return e.DISCONNECTED=new e(!1,[]),e}();exports.Web3Connectivity=Web3Connectivity;
 },{}],350:[function(require,module,exports){
-"use strict";var __extends=this&&this.__extends||function(){var t=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,n){e.__proto__=n}||function(e,n){for(var r in n)n.hasOwnProperty(r)&&(e[r]=n[r])};return function(e,n){function r(){this.constructor=e}t(e,n),e.prototype=null===n?Object.create(n):(r.prototype=n.prototype,new r)}}(),__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),transfer_model_1=require("./transfer.model"),merkle_tree_model_1=require("../primitives/merkle-tree.model"),hashable_model_1=require("../primitives/hashable.model"),util_1=require("../../util"),transfer_aggregate_type_model_1=require("./transfer-aggregate-type.model"),logging_1=require("../../services/logging"),Aggregate=function(a){function r(e,n,r,t,i){var s=a.call(this)||this;return s._contractAddress=e,s._tokenAddress=n,s._walletAddress=r,s._trailIdentifier=t,s._round=i,s._transfers=[],s._pendingTransfer=null,s._spent=new bignumber_js_1.default("0"),s._gained=new bignumber_js_1.default("0"),s._passivelyGained=new bignumber_js_1.default("0"),s._pendingReceipt=new bignumber_js_1.default("0"),s.recalculateTransactionTree(),s}return __extends(r,a),r.fromJSON=function(e){var n=new r(e.contractAddress,e.tokenAddress,e.walletAddress,e.trailIdentifier,e.round);return n._transfers=e.transfers.map(function(e){return transfer_model_1.Transfer.fromJSON(e)}),n._pendingTransfer=null==e.pendingTransfer?null:transfer_model_1.Transfer.fromJSON(e.pendingTransfer),n._spent=new bignumber_js_1.default(e.spent),n._gained=new bignumber_js_1.default(e.gained),n._passivelyGained=new bignumber_js_1.default(e.passivelyGained),n._pendingReceipt=new bignumber_js_1.default(e.pendingReceipt),n.recalculateTransactionTree(),n},r.checksum=function(e,n,r,t,i,s,a,g){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:n})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:r})},{type:"uint64",value:t},{type:"uint256",value:i},{type:"bytes32",value:s},{type:"uint256",value:a.toFixed(0)},{type:"uint256",value:g.toFixed(0)}).toString()},Object.defineProperty(r.prototype,"hash",{get:function(){return r.checksum(this._contractAddress,this._tokenAddress,this._walletAddress,this._trailIdentifier,this._round,this._transferTree.hash,this._spent,this._gained)},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,walletAddress:this._walletAddress,trailIdentifier:this._trailIdentifier,round:this._round,transfers:this._transfers.map(function(e){return e.json}),pendingTransfer:null==this._pendingTransfer?null:this._pendingTransfer.json,spent:this._spent,gained:this._gained,pendingReceipt:this._pendingReceipt,passivelyGained:this._passivelyGained}},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"isTransferPending",{get:function(){return null!=this._pendingTransfer&&null!=this._pendingTransfer},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"transfers",{get:function(){return this._transfers},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"pendingTransfer",{get:function(){return this._pendingTransfer},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"latestTransfer",{get:function(){return this.isTransferPending?this.pendingTransfer:this.lastConfirmedTransfer},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"lastConfirmedTransfer",{get:function(){var e=this._transfers.length;return 0<e?this._transfers[e-1]:null},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"amount",{get:function(){return this._gained.plus(this._passivelyGained).minus(this._spent)},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"spent",{get:function(){return this._spent},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"gained",{get:function(){return this._gained},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"passivelyGained",{get:function(){return this._passivelyGained},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"pendingReceipt",{get:function(){return this._pendingReceipt},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"walletAddress",{get:function(){return this._walletAddress},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"trailIdentifier",{get:function(){return this._trailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"round",{get:function(){return this._round},enumerable:!0,configurable:!0}),Object.defineProperty(r.prototype,"transferTree",{get:function(){return this._transferTree},enumerable:!0,configurable:!0}),r.prototype.createIncomingTransfer=function(e,n,r,t,i){if(!this.isTransferPending)return i?this._passivelyGained=this._passivelyGained.plus(n):this._gained=this._gained.plus(n),this._pendingReceipt=this._pendingReceipt.plus(n),this._pendingTransfer=new transfer_model_1.Transfer(this.tokenAddress,e,this._round,n,null,null,this.tokenAddress,this._walletAddress,this._trailIdentifier,e,r,t,i),this.recalculateTransactionTree(),this._pendingTransfer},r.prototype.createIncomingSwap=function(e,n,r,t,i,s,a){if(logging_1.Logging.debug("createIncomingSwap"),logging_1.Logging.debug([e,n,r.toFixed(0),t.toFixed(0),i.toFixed(0),s.toFixed(0),a]),!this.isTransferPending)return this._pendingTransfer=new transfer_model_1.Transfer(n,e,this._round,r,t,i,this.tokenAddress,this._walletAddress,this._trailIdentifier,n,s,a,!1),this.recalculateTransactionTree(),this._pendingTransfer},r.prototype.fulfillPendingSwap=function(){if(!this.isTransferPending||!this.pendingTransfer.isSwap)return logging_1.Logging.error("No pending swap."),!1;var e=[this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT),this.pendingTransfer.amountsMatched];if(e.some(function(e){return!e}))return logging_1.Logging.error(e),!1;if(util_1.isSameHexValue(this.pendingTransfer.recipientTokenAddress,this.tokenAddress)){var n=new bignumber_js_1.default(this.pendingTransfer.amountsMatched.in);if(n.lt(this.pendingTransfer.amountSwapped))return logging_1.Logging.error(n.toFixed(0)),logging_1.Logging.error(this.pendingTransfer.amountSwapped.toFixed(0)),!1;this._gained=this._gained.plus(this.pendingTransfer.amountSwapped)}return this.recalculateTransactionTree(),!0},r.prototype.finalizePendingSwap=function(){if(!this.isTransferPending||!this.pendingTransfer.isSwap)return logging_1.Logging.error("No pending swap."),!1;var e=[this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.FINALIZATION),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.FINALIZATION),this.pendingTransfer.amountsMatched];if(e.some(function(e){return!e}))return logging_1.Logging.error(e),!1;if(util_1.isSameHexValue(this.pendingTransfer.recipientTokenAddress,this.tokenAddress)){var n=new bignumber_js_1.default(this.pendingTransfer.amountsMatched.in);if(n.lt(this.pendingTransfer.amountSwapped))return logging_1.Logging.error(n.toFixed(0)),logging_1.Logging.error(this.pendingTransfer.amountSwapped.toFixed(0)),!1;this._gained=this._gained.plus(n.minus(this.pendingTransfer.amountSwapped))}return this._transfers.push(this._pendingTransfer),this._pendingTransfer=null,this.recalculateTransactionTree(),!0},r.prototype.cancelPendingSwap=function(){if(!this.isTransferPending||!this.pendingTransfer.isSwap)return logging_1.Logging.error("No pending swap."),!1;var e=[this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.FREEZING),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION)];return e.some(function(e){return!e})?(logging_1.Logging.error(e),!1):(util_1.isSameHexValue(this.pendingTransfer.recipientTokenAddress,this.tokenAddress)?(this._gained=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION).updated_gains),this._spent=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION).updated_spendings)):(this._gained=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION).updated_gains),this._spent=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION).updated_spendings)),this._transfers.push(this._pendingTransfer),this._pendingTransfer=null,this.recalculateTransactionTree(),!0)},r.prototype.confirmPendingIncomingTransfer=function(){if(this.isTransferPending&&util_1.isSameHexValue(this.pendingTransfer.recipient,this.walletAddress))return this.confirmPendingTransfer()},r.prototype.confirmPendingOutgoingTransfer=function(){return!(!this.isTransferPending||!util_1.isSameHexValue(this.pendingTransfer.sender,this.walletAddress))&&this.confirmPendingTransfer()},r.prototype.confirmPendingTransfer=function(){return!(!this.isTransferPending||!this.pendingTransfer)&&(!(this.pendingTransfer.isPassive?[this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)]:[this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)]).some(function(e){return!e})&&(this._pendingReceipt=new bignumber_js_1.default("0"),this._transfers.push(this._pendingTransfer),this._pendingTransfer=null,this.recalculateTransactionTree(),!0))},r.prototype.cancelPendingTransfer=function(){this.isTransferPending&&(this.pendingTransfer.sender==this.walletAddress?this._spent=this._spent.minus(this._pendingTransfer.amount):(this._pendingReceipt=this._pendingReceipt.minus(this._pendingTransfer.amount),this._gained=this._gained.minus(this._pendingTransfer.amount)),this._pendingTransfer=null,this.recalculateTransactionTree())},r.prototype.createOutgoingTransfer=function(e,n,r,t,i,s,a){if(void 0===a&&(a=null),!this.isTransferPending)return this._spent=this._spent.plus(r),this._pendingTransfer=new transfer_model_1.Transfer(this.tokenAddress,this._walletAddress,this._round,r,null,null,this.tokenAddress,e,n,e,i,s,t,a),this.recalculateTransactionTree(),this._pendingTransfer},r.prototype.createOutgoingSwap=function(e,n,r,t,i,s,a,g){if(logging_1.Logging.debug("createOutgoingSwap"),logging_1.Logging.debug([e,n,r,t.toFixed(0),i.toFixed(0),s.toFixed(0),a?a.toFixed(0):a,g]),!this.isTransferPending)return this._spent=this._spent.plus(t),this._pendingTransfer=new transfer_model_1.Transfer(this.tokenAddress,this._walletAddress,this._round,t,i,s,n,e,r,n,a,g,!1),this.recalculateTransactionTree(),this._pendingTransfer},r.prototype.recalculateTransactionTree=function(){var n=this;this._transferLeaves=new Map;var e=this._transfers;this.isTransferPending&&(e=e.concat(this._pendingTransfer));var r=0<(e=e.filter(function(e){return!(e.isPassive&&util_1.isSameHexValue(e.recipient,n.walletAddress))})).length&&e.filter(function(e){return e.isPassive&&util_1.isSameHexValue(e.sender,n.walletAddress)});r&&r.slice(0,-1).map(function(e){return e.finalizePassive()});var t=0<r.length&&r[r.length-1];if(t&&t.txId!==e[e.length-1].txId&&t.finalizePassive(),0<e.length){for(var i=1;i<e.length;)i*=2;for(;e.length<i;)e=e.concat(transfer_model_1.Transfer.PADDING_TRANSFER)}this._transferTree=new merkle_tree_model_1.MerkleTree(e,this._transferLeaves,0)},r}(hashable_model_1.Hashable);exports.Aggregate=Aggregate;
-},{"../../services/logging":366,"../../util":371,"../primitives/hashable.model":336,"../primitives/merkle-tree.model":337,"./transfer-aggregate-type.model":353,"./transfer.model":354,"bignumber.js":24}],351:[function(require,module,exports){
-"use strict";var __extends=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var r in t)t.hasOwnProperty(r)&&(e[r]=t[r])};return function(e,t){function r(){this.constructor=e}n(e,t),e.prototype=null===t?Object.create(t):(r.prototype=t.prototype,new r)}}(),__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var hashable_model_1=require("../primitives/hashable.model"),bignumber_js_1=__importDefault(require("bignumber.js")),util_1=require("../../util"),BalanceMarker=function(i){function t(e,t,r,n,o){var s=i.call(this)||this;return s._contractAddress=e,s._tokenAddress=t,s._address=r,s._round=n,s._amount=o,s}return __extends(t,i),t.fromJSON=function(e){return new t(e.contractAddress,e.tokenAddress,e.address,e.round,new bignumber_js_1.default(e.amount))},Object.defineProperty(t.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,address:this._address,round:this._round,amount:this._amount}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"address",{get:function(){return this._address},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"round",{get:function(){return this._round},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"hash",{get:function(){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:this._contractAddress})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:this._tokenAddress})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:this._address})},{type:"uint256",value:this._round},{type:"uint256",value:this._amount.toFixed(0)}).toString()},enumerable:!0,configurable:!0}),t}(hashable_model_1.Hashable);exports.BalanceMarker=BalanceMarker;
-},{"../../util":371,"../primitives/hashable.model":336,"bignumber.js":24}],352:[function(require,module,exports){
-"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),Deposit=function(){function t(e,t,r,n){this._txId=e,this._block=t,this._roundNumber=r,this._amount=n}return t.fromJSON=function(e){return new t(e.txId,e.block,e.roundNumber,new bignumber_js_1.default(e.amount))},Object.defineProperty(t.prototype,"json",{get:function(){return{txId:this._txId,block:this._block,roundNumber:this._roundNumber,amount:this._amount}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"txId",{get:function(){return this._txId},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"block",{get:function(){return this._block},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"roundNumber",{get:function(){return this._roundNumber},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),t}();exports.Deposit=Deposit;
-},{"bignumber.js":24}],353:[function(require,module,exports){
-"use strict";var TransferAggregateType;Object.defineProperty(exports,"__esModule",{value:!0}),function(e){e[e.DEBIT=0]="DEBIT",e[e.CREDIT=1]="CREDIT",e[e.FULFILLMENT=2]="FULFILLMENT",e[e.FINALIZATION=3]="FINALIZATION",e[e.FREEZING=4]="FREEZING",e[e.SENDER_CANCELLATION=5]="SENDER_CANCELLATION",e[e.RECIPIENT_CANCELLATION=6]="RECIPIENT_CANCELLATION"}(TransferAggregateType=exports.TransferAggregateType||(exports.TransferAggregateType={}));
+"use strict";var __extends=this&&this.__extends||function(){var r=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n])};return function(e,t){function n(){this.constructor=e}r(e,t),e.prototype=null===t?Object.create(t):(n.prototype=t.prototype,new n)}}(),__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),transfer_model_1=require("./transfer.model"),merkle_tree_model_1=require("../primitives/merkle-tree.model"),hashable_model_1=require("../primitives/hashable.model"),util_1=require("../../util"),transfer_active_state_update_type_model_1=require("./transfer-active-state-update-type.model"),logging_1=require("../../services/logging"),ActiveState=function(a){function n(e,t,n,r,i){var s=a.call(this)||this;return s._contractAddress=e,s._tokenAddress=t,s._walletAddress=n,s._trailIdentifier=r,s._eonNumber=i,s._transfers=[],s._pendingTransfer=null,s._spent=new bignumber_js_1.default("0"),s._gained=new bignumber_js_1.default("0"),s._passivelyGained=new bignumber_js_1.default("0"),s._pendingReceipt=new bignumber_js_1.default("0"),s.recalculateTransactionTree(),s}return __extends(n,a),n.fromJSON=function(e){var t=new n(e.contractAddress,e.tokenAddress,e.walletAddress,e.trailIdentifier,e.eonNumber);return t._transfers=e.transfers.map(function(e){return transfer_model_1.Transfer.fromJSON(e)}),t._pendingTransfer=null==e.pendingTransfer?null:transfer_model_1.Transfer.fromJSON(e.pendingTransfer),t._spent=new bignumber_js_1.default(e.spent),t._gained=new bignumber_js_1.default(e.gained),t._passivelyGained=new bignumber_js_1.default(e.passivelyGained),t._pendingReceipt=new bignumber_js_1.default(e.pendingReceipt),t.recalculateTransactionTree(),t},n.checksum=function(e,t,n,r,i,s,a,d){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:t})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:n})},{type:"uint64",value:r},{type:"uint256",value:i},{type:"bytes32",value:s},{type:"uint256",value:a.toFixed(0)},{type:"uint256",value:d.toFixed(0)}).toString()},Object.defineProperty(n.prototype,"hash",{get:function(){return n.checksum(this._contractAddress,this._tokenAddress,this._walletAddress,this._trailIdentifier,this._eonNumber,this._transferTree.hash,this._spent,this._gained)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,walletAddress:this._walletAddress,trailIdentifier:this._trailIdentifier,eonNumber:this._eonNumber,transfers:this._transfers.map(function(e){return e.json}),pendingTransfer:null==this._pendingTransfer?null:this._pendingTransfer.json,spent:this._spent,gained:this._gained,pendingReceipt:this._pendingReceipt,passivelyGained:this._passivelyGained}},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"isTransferPending",{get:function(){return null!=this._pendingTransfer&&null!=this._pendingTransfer},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"transfers",{get:function(){return this._transfers},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"pendingTransfer",{get:function(){return this._pendingTransfer},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"latestTransfer",{get:function(){return this.isTransferPending?this.pendingTransfer:this.lastConfirmedTransfer},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"lastConfirmedTransfer",{get:function(){var e=this._transfers.length;return 0<e?this._transfers[e-1]:null},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"amount",{get:function(){return this._gained.plus(this._passivelyGained).minus(this._spent)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"spent",{get:function(){return this._spent},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"gained",{get:function(){return this._gained},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"passivelyGained",{get:function(){return this._passivelyGained},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"pendingReceipt",{get:function(){return this._pendingReceipt},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"walletAddress",{get:function(){return this._walletAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"trailIdentifier",{get:function(){return this._trailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"eonNumber",{get:function(){return this._eonNumber},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"transferTree",{get:function(){return this._transferTree},enumerable:!0,configurable:!0}),n.prototype.createIncomingTransfer=function(e,t,n,r,i){if(!this.isTransferPending)return i?this._passivelyGained=this._passivelyGained.plus(t):this._gained=this._gained.plus(t),this._pendingReceipt=this._pendingReceipt.plus(t),this._pendingTransfer=new transfer_model_1.Transfer(this.tokenAddress,e,this._eonNumber,t,null,null,this.tokenAddress,this._walletAddress,this._trailIdentifier,e,n,r,i),this.recalculateTransactionTree(),this._pendingTransfer},n.prototype.createIncomingSwap=function(e,t,n,r,i,s,a){if(logging_1.Logging.debug("createIncomingSwap"),logging_1.Logging.debug([e,t,n.toFixed(0),r.toFixed(0),i.toFixed(0),s.toFixed(0),a]),!this.isTransferPending)return this._pendingTransfer=new transfer_model_1.Transfer(t,e,this._eonNumber,n,r,i,this.tokenAddress,this._walletAddress,this._trailIdentifier,t,s,a,!1),this.recalculateTransactionTree(),this._pendingTransfer},n.prototype.fulfillPendingSwap=function(){if(!this.isTransferPending||!this.pendingTransfer.isSwap)return logging_1.Logging.error("No pending swap."),!1;var e=[this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT),this.pendingTransfer.amountsMatched];if(e.some(function(e){return!e}))return logging_1.Logging.error(e),!1;if(util_1.isSameHexValue(this.pendingTransfer.recipientTokenAddress,this.tokenAddress)){var t=new bignumber_js_1.default(this.pendingTransfer.amountsMatched.in);if(t.lt(this.pendingTransfer.amountSwapped))return logging_1.Logging.error(t.toFixed(0)),logging_1.Logging.error(this.pendingTransfer.amountSwapped.toFixed(0)),!1;this._gained=this._gained.plus(this.pendingTransfer.amountSwapped)}return this.recalculateTransactionTree(),!0},n.prototype.finalizePendingSwap=function(){if(!this.isTransferPending||!this.pendingTransfer.isSwap)return logging_1.Logging.error("No pending swap."),!1;var e=[this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FINALIZATION),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FINALIZATION),this.pendingTransfer.amountsMatched];if(e.some(function(e){return!e}))return logging_1.Logging.error(e),!1;if(util_1.isSameHexValue(this.pendingTransfer.recipientTokenAddress,this.tokenAddress)){var t=new bignumber_js_1.default(this.pendingTransfer.amountsMatched.in);if(t.lt(this.pendingTransfer.amountSwapped))return logging_1.Logging.error(t.toFixed(0)),logging_1.Logging.error(this.pendingTransfer.amountSwapped.toFixed(0)),!1;this._gained=this._gained.plus(t.minus(this.pendingTransfer.amountSwapped))}return this._transfers.push(this._pendingTransfer),this._pendingTransfer=null,this.recalculateTransactionTree(),!0},n.prototype.cancelPendingSwap=function(){if(!this.isTransferPending||!this.pendingTransfer.isSwap)return logging_1.Logging.error("No pending swap."),!1;var e=[this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FREEZING),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION)];return e.some(function(e){return!e})?(logging_1.Logging.error(e),!1):(util_1.isSameHexValue(this.pendingTransfer.recipientTokenAddress,this.tokenAddress)?(this._gained=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION).updated_gains),this._spent=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION).updated_spendings)):(this._gained=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION).updated_gains),this._spent=new bignumber_js_1.default(this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION).updated_spendings)),this._transfers.push(this._pendingTransfer),this._pendingTransfer=null,this.recalculateTransactionTree(),!0)},n.prototype.confirmPendingIncomingTransfer=function(){if(this.isTransferPending&&util_1.isSameHexValue(this.pendingTransfer.recipient,this.walletAddress))return this.confirmPendingTransfer()},n.prototype.confirmPendingOutgoingTransfer=function(){return!(!this.isTransferPending||!util_1.isSameHexValue(this.pendingTransfer.sender,this.walletAddress))&&this.confirmPendingTransfer()},n.prototype.confirmPendingTransfer=function(){return!(!this.isTransferPending||!this.pendingTransfer)&&(!(this.pendingTransfer.isPassive?[this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)]:[this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),this.pendingTransfer.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)]).some(function(e){return!e})&&(this._pendingReceipt=new bignumber_js_1.default("0"),this._transfers.push(this._pendingTransfer),this._pendingTransfer=null,this.recalculateTransactionTree(),!0))},n.prototype.cancelPendingTransfer=function(){this.isTransferPending&&(this.pendingTransfer.sender==this.walletAddress?this._spent=this._spent.minus(this._pendingTransfer.amount):(this._pendingReceipt=this._pendingReceipt.minus(this._pendingTransfer.amount),this._gained=this._gained.minus(this._pendingTransfer.amount)),this._pendingTransfer=null,this.recalculateTransactionTree())},n.prototype.createOutgoingTransfer=function(e,t,n,r,i,s,a){if(void 0===a&&(a=null),!this.isTransferPending)return this._spent=this._spent.plus(n),this._pendingTransfer=new transfer_model_1.Transfer(this.tokenAddress,this._walletAddress,this._eonNumber,n,null,null,this.tokenAddress,e,t,e,i,s,r,a),this.recalculateTransactionTree(),this._pendingTransfer},n.prototype.createOutgoingSwap=function(e,t,n,r,i,s,a,d){if(logging_1.Logging.debug("createOutgoingSwap"),logging_1.Logging.debug([e,t,n,r.toFixed(0),i.toFixed(0),s.toFixed(0),a?a.toFixed(0):a,d]),!this.isTransferPending)return this._spent=this._spent.plus(r),this._pendingTransfer=new transfer_model_1.Transfer(this.tokenAddress,this._walletAddress,this._eonNumber,r,i,s,t,e,n,t,a,d,!1),this.recalculateTransactionTree(),this._pendingTransfer},n.prototype.recalculateTransactionTree=function(){var t=this;this._transferLeaves=new Map;var e=this._transfers;this.isTransferPending&&(e=e.concat(this._pendingTransfer));var n=0<(e=e.filter(function(e){return!(e.isPassive&&util_1.isSameHexValue(e.recipient,t.walletAddress))})).length&&e.filter(function(e){return e.isPassive&&util_1.isSameHexValue(e.sender,t.walletAddress)});n&&n.slice(0,-1).map(function(e){return e.finalizePassive()});var r=0<n.length&&n[n.length-1];if(r&&r.txId!==e[e.length-1].txId&&r.finalizePassive(),0<e.length){for(var i=1;i<e.length;)i*=2;for(;e.length<i;)e=e.concat(transfer_model_1.Transfer.PADDING_TRANSFER)}this._transferTree=new merkle_tree_model_1.MerkleTree(e,this._transferLeaves,0)},n}(hashable_model_1.Hashable);exports.ActiveState=ActiveState;
+},{"../../services/logging":364,"../../util":371,"../primitives/hashable.model":336,"../primitives/merkle-tree.model":337,"./transfer-active-state-update-type.model":353,"./transfer.model":354,"bignumber.js":24}],351:[function(require,module,exports){
+"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),Deposit=function(){function t(e,t,r,n){this._txId=e,this._block=t,this._eonNumber=r,this._amount=n}return t.fromJSON=function(e){return new t(e.txId,e.block,e.eonNumber,new bignumber_js_1.default(e.amount))},Object.defineProperty(t.prototype,"json",{get:function(){return{txId:this._txId,block:this._block,eonNumber:this._eonNumber,amount:this._amount}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"txId",{get:function(){return this._txId},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"block",{get:function(){return this._block},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"eonNumber",{get:function(){return this._eonNumber},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),t}();exports.Deposit=Deposit;
+},{"bignumber.js":24}],352:[function(require,module,exports){
+"use strict";var __extends=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var r in t)t.hasOwnProperty(r)&&(e[r]=t[r])};return function(e,t){function r(){this.constructor=e}n(e,t),e.prototype=null===t?Object.create(t):(r.prototype=t.prototype,new r)}}(),__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var hashable_model_1=require("../primitives/hashable.model"),bignumber_js_1=__importDefault(require("bignumber.js")),util_1=require("../../util"),MinimumAvailableBalanceMarker=function(i){function t(e,t,r,n,o){var s=i.call(this)||this;return s._contractAddress=e,s._tokenAddress=t,s._address=r,s._eonNumber=n,s._amount=o,s}return __extends(t,i),t.fromJSON=function(e){return new t(e.contractAddress,e.tokenAddress,e.address,e.eonNumber,new bignumber_js_1.default(e.amount))},Object.defineProperty(t.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,address:this._address,eonNumber:this._eonNumber,amount:this._amount}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"address",{get:function(){return this._address},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"round",{get:function(){return this._eonNumber},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"hash",{get:function(){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:this._contractAddress})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:this._tokenAddress})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:this._address})},{type:"uint256",value:this._eonNumber},{type:"uint256",value:this._amount.toFixed(0)}).toString()},enumerable:!0,configurable:!0}),t}(hashable_model_1.Hashable);exports.MinimumAvailableBalanceMarker=MinimumAvailableBalanceMarker;
+},{"../../util":371,"../primitives/hashable.model":336,"bignumber.js":24}],353:[function(require,module,exports){
+"use strict";var TransferActiveStateUpdateType;Object.defineProperty(exports,"__esModule",{value:!0}),function(e){e[e.DEBIT=0]="DEBIT",e[e.CREDIT=1]="CREDIT",e[e.FULFILLMENT=2]="FULFILLMENT",e[e.FINALIZATION=3]="FINALIZATION",e[e.FREEZING=4]="FREEZING",e[e.SENDER_CANCELLATION=5]="SENDER_CANCELLATION",e[e.RECIPIENT_CANCELLATION=6]="RECIPIENT_CANCELLATION"}(TransferActiveStateUpdateType=exports.TransferActiveStateUpdateType||(exports.TransferActiveStateUpdateType={}));
 },{}],354:[function(require,module,exports){
-"use strict";var __extends=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var i in t)t.hasOwnProperty(i)&&(e[i]=t[i])};return function(e,t){function i(){this.constructor=e}n(e,t),e.prototype=null===t?Object.create(t):(i.prototype=t.prototype,new i)}}(),__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),hashable_model_1=require("../primitives/hashable.model"),signature_model_1=require("../primitives/signature.model"),util_1=require("../../util"),logging_1=require("../../services/logging"),transfer_aggregate_type_model_1=require("./transfer-aggregate-type.model"),Transfer=function(h){function i(e,t,i,n,r,s,a,o,u,l,p,d,f,_,c){void 0===_&&(_=null),void 0===c&&(c=!1);var g=h.call(this)||this;return g._tokenAddress=e,g._address=t,g._round=i,g._amount=n,g._amountSwapped=r,g._startingBalance=s,g._recipientTokenAddress=a,g._recipient=o,g._recipientTrailIdentifier=u,g._target=l,g._nonce=p,g._txId=d,g._isPassive=f,g._passiveOffset=_,g._isPassiveFinalized=c,g._authorizations=new Map,g._confirmations=new Map,g._amount=new bignumber_js_1.default(n),void 0===p&&(g._nonce=new bignumber_js_1.default(Math.floor(1e8+899999999*Math.random()))),g}return __extends(i,h),i.fromJSON=function(e){var t=new i(e.tokenAddress,e.address,e.round,new bignumber_js_1.default(e.amount),e.amountSwapped?new bignumber_js_1.default(e.amountSwapped):null,e.startingBalance?new bignumber_js_1.default(e.startingBalance):null,e.recipientTokenAddress,e.recipient,e.recipientTrailIdentifier,e.target,new bignumber_js_1.default(e.nonce),e.txId,e.isPassive,e.passiveOffset?new bignumber_js_1.default(e.passiveOffset):null,e.isPassiveFinalized);return t._authorizations=new Map(util_1.JSONbig.parse(e.authorizations)),t._confirmations=new Map(util_1.JSONbig.parse(e.confirmations).map(function(e){return[e[0],signature_model_1.Signature.fromJSON(e[1])]})),t._deliveryProof=e.deliveryProof,t._amountsMatched=e.amountsMatched,t},i.checksumTransfer=function(e,t,i,n,r,s){if(r){var a=s||new bignumber_js_1.default(2).pow(256).minus(1);n=new bignumber_js_1.default(util_1.remove0xPrefix(util_1.Web3Utils.soliditySha3({type:"uint256",value:a.toFixed(0)},{type:"uint256",value:n.toFixed(0)}).toString()),16)}return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"uint256",value:t.toFixed(0)},{type:"uint64",value:i},{type:"uint256",value:n.toFixed(0)}).toString()},i.checksumSwap=function(e,t,i,n,r,s,a){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:t})},{type:"uint64",value:i},{type:"uint256",value:n.toFixed(0)},{type:"uint256",value:r.toFixed(0)},{type:"uint256",value:s.toFixed(0)},{type:"uint256",value:a.toFixed(0)}).toString()},i.checksumSwapFreeze=function(e,t,i){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:t})},{type:"uint256",value:i.toFixed(0)}).toString()},Object.defineProperty(i.prototype,"json",{get:function(){return{tokenAddress:this._tokenAddress,address:this._address,round:this._round,amount:this._amount.toFixed(0),amountSwapped:this._amountSwapped?this._amountSwapped.toFixed(0):null,startingBalance:this._startingBalance?this._startingBalance.toFixed(0):null,recipientTokenAddress:this._recipientTokenAddress,recipient:this._recipient,recipientTrailIdentifier:this._recipientTrailIdentifier,target:this._target,nonce:this._nonce.toFixed(0),txId:this._txId,authorizations:util_1.JSONbig.stringify(Array.from(this._authorizations.entries())),confirmations:util_1.JSONbig.stringify(Array.from(this._confirmations.entries()).map(function(e){return[e[0],e[1].json]})),deliveryProof:this._deliveryProof,amountsMatched:this._amountsMatched,isPassive:this._isPassive,passiveOffset:this._passiveOffset?this._passiveOffset.toFixed(0):null,isPassiveFinalized:this._isPassiveFinalized}},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwap",{get:function(){return null!=this.amountSwapped&&null!=this.amountSwapped},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapActive",{get:function(){var e=this.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),t=this.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT);return this.isSwap&&null!=e&&null!=e&&null!=t&&null!=t},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapFulfilled",{get:function(){var e=this.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapFrozen",{get:function(){var e=this.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.FREEZING);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapCancelled",{get:function(){var e=this.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapFinalized",{get:function(){var e=this.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.FINALIZATION);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"txId",{get:function(){return this._txId},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isPassive",{get:function(){return this._isPassive},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"passiveOffset",{get:function(){return this._passiveOffset},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"hash",{get:function(){return this===i.PADDING_TRANSFER?"0x0000000000000000000000000000000000000000000000000000000000000000":this.isSwap?util_1.isSameHexValue(this._tokenAddress,this._target)&&(this.isSwapFulfilled||this.isSwapFinalized||this.isSwapFrozen||this.isSwapCancelled)?i.checksumSwap(this._tokenAddress,this._recipientTokenAddress,this.recipientTrailIdentifier,this.amount,this.amountSwapped,i.FULFILLED_SWAP_MARKER,this.nonce):i.checksumSwap(this._tokenAddress,this._recipientTokenAddress,this.recipientTrailIdentifier,this.amount,this.amountSwapped,this.startingBalance,this.nonce):i.checksumTransfer(this._target,this._amount,this._recipientTrailIdentifier,this._nonce,this._isPassive,this.isPassive&&this._isPassiveFinalized?this._passiveOffset:null)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"cancellationHash",{get:function(){return i.checksumSwapFreeze(this.tokenAddress,this.recipientTokenAddress,this.nonce)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"recipientTokenAddress",{get:function(){return this._recipientTokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"startingBalance",{get:function(){return this._startingBalance},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"sender",{get:function(){return this._address},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"round",{get:function(){return this._round},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"amountSwapped",{get:function(){return this._amountSwapped},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"recipient",{get:function(){return this._recipient},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"recipientTrailIdentifier",{get:function(){return this._recipientTrailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"nonce",{get:function(){return this._nonce},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"confirmations",{get:function(){return this._confirmations},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"authorizations",{get:function(){return this._authorizations},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"deliveryProof",{get:function(){return this._deliveryProof},enumerable:!0,configurable:!0}),i.prototype.saveDeliveryProof=function(e){return this._deliveryProof?logging_1.Logging.error("saveDeliveryProof repetition"):this._deliveryProof=e,this},Object.defineProperty(i.prototype,"amountsMatched",{get:function(){return this._amountsMatched},set:function(e){this._amountsMatched=e},enumerable:!0,configurable:!0}),i.prototype.finalizePassive=function(){this.isPassive&&this._passiveOffset&&(this._isPassiveFinalized=!0)},i.PADDING_TRANSFER=new i("0x0000000000000000000000000000000000000000","0x0000000000000000000000000000000000000000",0,new bignumber_js_1.default(0),new bignumber_js_1.default(0),new bignumber_js_1.default(0),"0x0000000000000000000000000000000000000000","0x0000000000000000000000000000000000000000",0,"0x0000000000000000000000000000000000000000",new bignumber_js_1.default(0),0,!1),i.FULFILLED_SWAP_MARKER=new bignumber_js_1.default(2).pow(256).minus(1),i}(hashable_model_1.Hashable);exports.Transfer=Transfer;
-},{"../../services/logging":366,"../../util":371,"../primitives/hashable.model":336,"../primitives/signature.model":339,"./transfer-aggregate-type.model":353,"bignumber.js":24}],355:[function(require,module,exports){
-"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),Withdrawal=function(){function t(e,t,r){this._round=e,this._amount=t,this._isReady=r}return t.fromJSON=function(e){return new t(e.round,new bignumber_js_1.default(e.amount),e.isReady)},Object.defineProperty(t.prototype,"json",{get:function(){return{round:this._round,amount:this._amount.toFixed(0),isReady:this._isReady}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"round",{get:function(){return this._round},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isReady",{get:function(){return this._isReady},enumerable:!0,configurable:!0}),t}();exports.Withdrawal=Withdrawal;
+"use strict";var __extends=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var i in t)t.hasOwnProperty(i)&&(e[i]=t[i])};return function(e,t){function i(){this.constructor=e}n(e,t),e.prototype=null===t?Object.create(t):(i.prototype=t.prototype,new i)}}(),__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),hashable_model_1=require("../primitives/hashable.model"),signature_model_1=require("../primitives/signature.model"),util_1=require("../../util"),logging_1=require("../../services/logging"),transfer_active_state_update_type_model_1=require("./transfer-active-state-update-type.model"),Transfer=function(h){function i(e,t,i,n,r,s,a,o,u,l,p,d,_,c,f){void 0===c&&(c=null),void 0===f&&(f=!1);var b=h.call(this)||this;return b._tokenAddress=e,b._address=t,b._eonNumber=i,b._amount=n,b._amountSwapped=r,b._startingBalance=s,b._recipientTokenAddress=a,b._recipient=o,b._recipientTrailIdentifier=u,b._target=l,b._nonce=p,b._txId=d,b._isPassive=_,b._passiveOffset=c,b._isPassiveFinalized=f,b._authorizations=new Map,b._confirmations=new Map,b._amount=new bignumber_js_1.default(n),void 0===p&&(b._nonce=new bignumber_js_1.default(Math.floor(1e8+899999999*Math.random()))),b}return __extends(i,h),i.fromJSON=function(e){var t=new i(e.tokenAddress,e.address,e.eonNumber,new bignumber_js_1.default(e.amount),e.amountSwapped?new bignumber_js_1.default(e.amountSwapped):null,e.startingBalance?new bignumber_js_1.default(e.startingBalance):null,e.recipientTokenAddress,e.recipient,e.recipientTrailIdentifier,e.target,new bignumber_js_1.default(e.nonce),e.txId,e.isPassive,e.passiveOffset?new bignumber_js_1.default(e.passiveOffset):null,e.isPassiveFinalized);return t._authorizations=new Map(util_1.JSONbig.parse(e.authorizations)),t._confirmations=new Map(util_1.JSONbig.parse(e.confirmations).map(function(e){return[e[0],signature_model_1.Signature.fromJSON(e[1])]})),t._deliveryProof=e.deliveryProof,t._amountsMatched=e.amountsMatched,t},i.checksumTransfer=function(e,t,i,n,r,s){if(r){var a=s||new bignumber_js_1.default(2).pow(256).minus(1);n=new bignumber_js_1.default(util_1.remove0xPrefix(util_1.Web3Utils.soliditySha3({type:"uint256",value:a.toFixed(0)},{type:"uint256",value:n.toFixed(0)}).toString()),16)}return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"uint256",value:t.toFixed(0)},{type:"uint64",value:i},{type:"uint256",value:n.toFixed(0)}).toString()},i.checksumSwap=function(e,t,i,n,r,s,a){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:t})},{type:"uint64",value:i},{type:"uint256",value:n.toFixed(0)},{type:"uint256",value:r.toFixed(0)},{type:"uint256",value:s.toFixed(0)},{type:"uint256",value:a.toFixed(0)}).toString()},i.checksumSwapFreeze=function(e,t,i){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:t})},{type:"uint256",value:i.toFixed(0)}).toString()},Object.defineProperty(i.prototype,"json",{get:function(){return{tokenAddress:this._tokenAddress,address:this._address,eonNumber:this._eonNumber,amount:this._amount.toFixed(0),amountSwapped:this._amountSwapped?this._amountSwapped.toFixed(0):null,startingBalance:this._startingBalance?this._startingBalance.toFixed(0):null,recipientTokenAddress:this._recipientTokenAddress,recipient:this._recipient,recipientTrailIdentifier:this._recipientTrailIdentifier,target:this._target,nonce:this._nonce.toFixed(0),txId:this._txId,authorizations:util_1.JSONbig.stringify(Array.from(this._authorizations.entries())),confirmations:util_1.JSONbig.stringify(Array.from(this._confirmations.entries()).map(function(e){return[e[0],e[1].json]})),deliveryProof:this._deliveryProof,amountsMatched:this._amountsMatched,isPassive:this._isPassive,passiveOffset:this._passiveOffset?this._passiveOffset.toFixed(0):null,isPassiveFinalized:this._isPassiveFinalized}},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwap",{get:function(){return null!=this.amountSwapped&&null!=this.amountSwapped},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapActive",{get:function(){var e=this.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),t=this.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT);return this.isSwap&&null!=e&&null!=e&&null!=t&&null!=t},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapFulfilled",{get:function(){var e=this.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapFrozen",{get:function(){var e=this.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FREEZING);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapCancelled",{get:function(){var e=this.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isSwapFinalized",{get:function(){var e=this.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FINALIZATION);return this.isSwap&&null!=e&&null!=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"txId",{get:function(){return this._txId},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isPassive",{get:function(){return this._isPassive},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"passiveOffset",{get:function(){return this._passiveOffset},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"hash",{get:function(){return this===i.PADDING_TRANSFER?"0x0000000000000000000000000000000000000000000000000000000000000000":this.isSwap?util_1.isSameHexValue(this._tokenAddress,this._target)&&(this.isSwapFulfilled||this.isSwapFinalized||this.isSwapFrozen||this.isSwapCancelled)?i.checksumSwap(this._tokenAddress,this._recipientTokenAddress,this.recipientTrailIdentifier,this.amount,this.amountSwapped,i.FULFILLED_SWAP_MARKER,this.nonce):i.checksumSwap(this._tokenAddress,this._recipientTokenAddress,this.recipientTrailIdentifier,this.amount,this.amountSwapped,this.startingBalance,this.nonce):i.checksumTransfer(this._target,this._amount,this._recipientTrailIdentifier,this._nonce,this._isPassive,this.isPassive&&this._isPassiveFinalized?this._passiveOffset:null)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"cancellationHash",{get:function(){return i.checksumSwapFreeze(this.tokenAddress,this.recipientTokenAddress,this.nonce)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"recipientTokenAddress",{get:function(){return this._recipientTokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"startingBalance",{get:function(){return this._startingBalance},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"sender",{get:function(){return this._address},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"eonNumber",{get:function(){return this._eonNumber},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"amountSwapped",{get:function(){return this._amountSwapped},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"recipient",{get:function(){return this._recipient},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"recipientTrailIdentifier",{get:function(){return this._recipientTrailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"nonce",{get:function(){return this._nonce},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"confirmations",{get:function(){return this._confirmations},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"authorizations",{get:function(){return this._authorizations},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"deliveryProof",{get:function(){return this._deliveryProof},enumerable:!0,configurable:!0}),i.prototype.saveDeliveryProof=function(e){return this._deliveryProof?logging_1.Logging.error("saveDeliveryProof repetition"):this._deliveryProof=e,this},Object.defineProperty(i.prototype,"amountsMatched",{get:function(){return this._amountsMatched},set:function(e){this._amountsMatched=e},enumerable:!0,configurable:!0}),i.prototype.finalizePassive=function(){this.isPassive&&this._passiveOffset&&(this._isPassiveFinalized=!0)},i.PADDING_TRANSFER=new i("0x0000000000000000000000000000000000000000","0x0000000000000000000000000000000000000000",0,new bignumber_js_1.default(0),new bignumber_js_1.default(0),new bignumber_js_1.default(0),"0x0000000000000000000000000000000000000000","0x0000000000000000000000000000000000000000",0,"0x0000000000000000000000000000000000000000",new bignumber_js_1.default(0),0,!1),i.FULFILLED_SWAP_MARKER=new bignumber_js_1.default(2).pow(256).minus(1),i}(hashable_model_1.Hashable);exports.Transfer=Transfer;
+},{"../../services/logging":364,"../../util":371,"../primitives/hashable.model":336,"../primitives/signature.model":339,"./transfer-active-state-update-type.model":353,"bignumber.js":24}],355:[function(require,module,exports){
+"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),Withdrawal=function(){function t(e,t,r){this._eonNumber=e,this._amount=t,this._isReady=r}return t.fromJSON=function(e){return new t(e.eonNumber,new bignumber_js_1.default(e.amount),e.isReady)},Object.defineProperty(t.prototype,"json",{get:function(){return{eonNumber:this._eonNumber,amount:this._amount.toFixed(0),isReady:this._isReady}},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"eonNumber",{get:function(){return this._eonNumber},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this._amount},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isReady",{get:function(){return this._isReady},enumerable:!0,configurable:!0}),t}();exports.Withdrawal=Withdrawal;
 },{"bignumber.js":24}],356:[function(require,module,exports){
 "use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bignumber_js_1=__importDefault(require("bignumber.js")),Balance=function(){function e(e){this._value=e}return Object.defineProperty(e.prototype,"ether",{get:function(){return this._value.dividedBy(e.ether).integerValue(bignumber_js_1.default.ROUND_FLOOR).toNumber()},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"finney",{get:function(){return this._value.modulo(e.ether).dividedBy(e.finney).integerValue(bignumber_js_1.default.ROUND_FLOOR).toNumber()},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"szabo",{get:function(){return this._value.modulo(e.finney).dividedBy(e.szabo).integerValue(bignumber_js_1.default.ROUND_FLOOR).toNumber()},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"wei",{get:function(){return this._value.modulo(e.szabo).integerValue(bignumber_js_1.default.ROUND_FLOOR).toNumber()},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"value",{get:function(){return this._value},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"str",{get:function(){var e=[];return 0<this.ether&&e.push(this.ether+" eth"),0<this.finney&&e.push(this.finney+" fny"),0<this.szabo&&e.push(this.szabo+" sbo"),0<this.wei&&0==e.length&&e.push(this.wei+" wei"),0==e.length&&e.push("0"),e.join(" ")},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"longStr",{get:function(){var e=[];return 0<this.ether&&e.push(this.ether+" eth"),0<this.finney&&e.push(this.finney+" fny"),0<this.szabo&&e.push(this.szabo+" sbo"),0<this.wei&&e.push(this.wei+" wei"),0==e.length&&e.push("0 wei"),e.join(" ")},enumerable:!0,configurable:!0}),e.ether=new bignumber_js_1.default("1000000000000000000"),e.finney=new bignumber_js_1.default("1000000000000000"),e.szabo=new bignumber_js_1.default("1000000000000"),e}();exports.Balance=Balance;
 },{"bignumber.js":24}],357:[function(require,module,exports){
-"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var withdrawal_model_1=require("./../transactions/withdrawal.model"),aggregate_model_1=require("../transactions/aggregate.model"),proof_of_stake_model_1=require("../primitives/proof-of-stake.model"),deposit_model_1=require("../transactions/deposit.model"),balance_marker_model_1=require("../transactions/balance-marker.model"),bignumber_js_1=__importDefault(require("bignumber.js")),Round=function(){function n(e,t,n,r,i){this._contractAddress=e,this._tokenAddress=t,this._walletAddress=n,this._trailIdentifier=r,this._round=i,this._withdrawals=[],this._deposits=[],this._deposited=new bignumber_js_1.default("0"),this._depositedOnChain=new bignumber_js_1.default("0"),this._pendingIncomingTransfers=[],this._cancelledTransfers=[],this._aggregate=new aggregate_model_1.Aggregate(e,t,n,r,i)}return n.fromJSON=function(e){var t=new n(e.contractAddress,e.tokenAddress,e.walletAddress,e.trailIdentifier,e.round);return null!=e.aggregate&&(t._aggregate=aggregate_model_1.Aggregate.fromJSON(e.aggregate)),null!=e.proofOfStake&&(t._proofOfStake=proof_of_stake_model_1.ProofOfStake.fromJSON(e.proofOfStake)),null!=e.proposedProofOfStake&&(t.proposedProofOfStake=proof_of_stake_model_1.ProofOfStake.fromJSON(e.proposedProofOfStake)),t._withdrawals=e.withdrawals.map(function(e){return withdrawal_model_1.Withdrawal.fromJSON(e)}),t._deposits=e.deposits.map(function(e){return deposit_model_1.Deposit.fromJSON(e)}),t._deposited=new bignumber_js_1.default(e.deposited),t._depositedOnChain=new bignumber_js_1.default(e.depositedOnChain),null!=e.minimumAuthorizedBalance&&(t._minimumAuthorizedBalance=balance_marker_model_1.BalanceMarker.fromJSON(e.minimumAuthorizedBalance)),t._pendingIncomingTransfers=e.pendingIncomingTransfers,t._cancelledTransfers=e.cancelledTransfers,t},Object.defineProperty(n.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,walletAddress:this._walletAddress,trailIdentifier:this._trailIdentifier,round:this._round,aggregate:null==this._aggregate?null:this._aggregate.json,proofOfStake:null==this._proofOfStake?null:this._proofOfStake.json,proposedProofOfStake:null==this.proposedProofOfStake?null:this.proposedProofOfStake.json,withdrawals:this._withdrawals.map(function(e){return e.json}),deposits:this._deposits.map(function(e){return e.json}),deposited:this._deposited,depositedOnChain:this._depositedOnChain,minimumAuthorizedBalance:this._minimumAuthorizedBalance,pendingIncomingTransfers:this._pendingIncomingTransfers,cancelledTransfers:this._cancelledTransfers}},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"roundNumber",{get:function(){return this._round},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"proofOfStake",{get:function(){return this._proofOfStake},enumerable:!0,configurable:!0}),n.prototype.setProofOfStake=function(e){return this._proofOfStake=e,!0},Object.defineProperty(n.prototype,"chainBalance",{get:function(){return this._proofOfStake?this._proofOfStake.amount:new bignumber_js_1.default("0")},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"proposedChainBalance",{get:function(){return this.proposedProofOfStake?this.proposedProofOfStake.amount:new bignumber_js_1.default("0")},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"aggregate",{get:function(){return this._aggregate},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"currentRoundWithdrawalAmount",{get:function(){for(var e=new bignumber_js_1.default(0),t=0;t<this._withdrawals.length;t++)this._withdrawals[t].round==this._round&&(e=e.plus(this._withdrawals[t].amount));return e},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"isWithdrawalPending",{get:function(){return 0<this._withdrawals.length},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"walletAddress",{get:function(){return this._walletAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"trailIdentifier",{get:function(){return this._trailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"contractAddress",{get:function(){return this._contractAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"withdrawalAmount",{get:function(){return this._withdrawals.map(function(e){return e.amount}).reduce(function(e,t){return e.plus(t)})},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"availableBalance",{get:function(){var e=this.chainBalance.plus(this.offChainDeposited),t=this.currentRoundWithdrawalAmount;return e.plus(this.aggregate.amount).minus(t).minus(this.aggregate.pendingReceipt)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"expectedBalance",{get:function(){var e=this.chainBalance.plus(this.onChainDeposit),t=this.currentRoundWithdrawalAmount;return e.plus(this.aggregate.amount).minus(t).minus(this.aggregate.pendingReceipt)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"minimumAuthorizedBalance",{get:function(){return this._minimumAuthorizedBalance},set:function(e){this._minimumAuthorizedBalance=e},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"availableBalanceMarker",{get:function(){return new balance_marker_model_1.BalanceMarker(this._contractAddress,this._tokenAddress,this._walletAddress,this._round,this.availableBalance)},enumerable:!0,configurable:!0}),n.prototype.setOnChainWithdrawals=function(e){this._withdrawals=e},Object.defineProperty(n.prototype,"withdrawals",{get:function(){return this._withdrawals},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"deposits",{get:function(){return this._deposits},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"offChainDeposited",{get:function(){return this._deposited},enumerable:!0,configurable:!0}),n.prototype.addDeposit=function(t){return!this._deposits.find(function(e){return e.txId==t.txId})&&(this._deposits.push(t),this._deposited=this._deposited.plus(t.amount),!0)},Object.defineProperty(n.prototype,"onChainDeposit",{get:function(){return this._depositedOnChain},set:function(e){this._depositedOnChain=e},enumerable:!0,configurable:!0}),n.prototype.isCancelledTransfer=function(t){return null!=this.cancelledTransfers.find(function(e){return e.id==t.id})},n.prototype.addCancelledTransfer=function(e){this.isCancelledTransfer(e)||this._cancelledTransfers.push(e)},Object.defineProperty(n.prototype,"cancelledTransfers",{get:function(){return this._cancelledTransfers},enumerable:!0,configurable:!0}),n.prototype.isPendingIncomingTransfer=function(t){return null!=this.pendingIncomingTransfers.find(function(e){return e.id==t.id})},n.prototype.addPendingIncomingTransfer=function(e){this.isPendingIncomingTransfer(e)||this._pendingIncomingTransfers.push(e)},n.prototype.removePendingIncomingTransfer=function(t){var e=this.pendingIncomingTransfers.findIndex(function(e){return e.id==t.id});-1!=e&&this.pendingIncomingTransfers.splice(e,1)},Object.defineProperty(n.prototype,"pendingIncomingTransfers",{get:function(){return this._pendingIncomingTransfers},enumerable:!0,configurable:!0}),n}();exports.Round=Round;
-},{"../primitives/proof-of-stake.model":338,"../transactions/aggregate.model":350,"../transactions/balance-marker.model":351,"../transactions/deposit.model":352,"./../transactions/withdrawal.model":355,"bignumber.js":24}],358:[function(require,module,exports){
-"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var round_model_1=require("./round.model"),async_mutex_1=require("async-mutex"),signature_model_1=require("../primitives/signature.model"),aggregate_model_1=require("../transactions/aggregate.model"),bignumber_js_1=__importDefault(require("bignumber.js")),balance_marker_model_1=require("../transactions/balance-marker.model"),Wallet=function(){function i(e,t,r,n,i,o){this._address=e,this._networkId=t,this._contractOwnerAddress=r,this._contractAddress=n,this._tokenAddress=i,this._webAddress=o,this._registered=!1,this._pendingRegistrationApproval=!1,this._rounds=new Map,this._latestRoundNumber=0,this._onChainBalance=new bignumber_js_1.default(0),this._lock=new async_mutex_1.Mutex,this._rounds.set(0,new round_model_1.Round(n,i,e,0,0))}return i.fromJSON=function(e){var t=new i(e.address,e.networkId,e.contractOwnerAddress,e.contractAddress,e.tokenAddress,e.webAddress);for(var r in t._trailIdentifier=e.trailIdentifier,t._registered=e.registered,t._registrationRound=e.registrationRound,t._pendingRegistrationApproval=e.pendingRegistrationApproval,t._registrationApproval=e.registrationApproval?signature_model_1.Signature.fromJSON(e.registrationApproval):void 0,e.rounds)if(e.rounds.hasOwnProperty(r)){var n=e.rounds[r];t._rounds.set(parseInt(r,10),round_model_1.Round.fromJSON(n))}return t._onChainBalance=new bignumber_js_1.default(e.onChainBalance),t._latestRoundNumber=parseInt(e.latestRoundNumber,10),t},Object.defineProperty(i.prototype,"json",{get:function(){var n={};return this._rounds.forEach(function(e,t,r){n[t]=e.json}),{address:this._address,networkId:this._networkId,contractOwnerAddress:this._contractOwnerAddress,contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,webAddress:this._webAddress,trailIdentifier:this._trailIdentifier,registered:this._registered,registrationRound:this._registrationRound,pendingRegistrationApproval:this._pendingRegistrationApproval,registrationApproval:this.registrationApproval?this.registrationApproval.json:void 0,rounds:n,latestRoundNumber:this._latestRoundNumber,onChainBalance:this._onChainBalance}},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isRegistered",{get:function(){return this._registered},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isPendingRegistrationApproval",{get:function(){return this._pendingRegistrationApproval},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"address",{get:function(){return this._address},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"contractAddress",{get:function(){return this._contractAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"contractOwnerAddress",{get:function(){return this._contractOwnerAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"networkId",{get:function(){return this._networkId},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"trailIdentifier",{get:function(){return this._trailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"webAddress",{get:function(){return this._webAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"latestRound",{get:function(){return this.getRound(this._latestRoundNumber)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"previousRound",{get:function(){return this.getRound(this._latestRoundNumber-1)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"secondPreviousRound",{get:function(){return this.getRound(this._latestRoundNumber-2)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"lock",{get:function(){return this._lock},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"registrationRound",{get:function(){return this._registrationRound},enumerable:!0,configurable:!0}),i.prototype.getAdmissionAggregate=function(e,t){return void 0===t&&(t=0),new aggregate_model_1.Aggregate(this.contractAddress,this.tokenAddress,this.address,t,e)},i.prototype.markRegistered=function(e,t){if(!this.isRegistered){this._registrationApproval=e,this._registered=!0,this.unmarkPendingRegistrationApproval(),this._latestRoundNumber=this.registrationRound,this._trailIdentifier=t;var r=new round_model_1.Round(this.contractAddress,this.tokenAddress,this.address,this.trailIdentifier,this.registrationRound);this._rounds.set(r.roundNumber,r)}},Object.defineProperty(i.prototype,"registrationApproval",{get:function(){return this._registrationApproval},enumerable:!0,configurable:!0}),i.prototype.markPendingRegistrationApproval=function(e){this._registrationRound=e,this._pendingRegistrationApproval=!0},i.prototype.unmarkPendingRegistrationApproval=function(){this._pendingRegistrationApproval=!1},i.prototype.getRound=function(e){return this._rounds.get(e)},i.prototype.addRound=function(e){if(e.roundNumber!=this._latestRoundNumber+1)return!1;this._rounds.set(e.roundNumber,e),this._latestRoundNumber=e.roundNumber},i.prototype.addRoundForce=function(e){this._rounds.set(e.roundNumber,e),this._latestRoundNumber=e.roundNumber},Object.defineProperty(i.prototype,"withdrawableAmount",{get:function(){if(!this.previousRound||!this.previousRound.proofOfStake)return new bignumber_js_1.default(0);var e=this.previousRound.minimumAuthorizedBalance?this.previousRound.minimumAuthorizedBalance.amount:this.previousRound.availableBalance,t=bignumber_js_1.default.min(this.previousRound.chainBalance,e),r=this.latestRound.minimumAuthorizedBalance?this.latestRound.minimumAuthorizedBalance.amount:this.offChainBalance;return bignumber_js_1.default.min(t,r)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"onChainBalance",{get:function(){return this._onChainBalance},set:function(e){this._onChainBalance=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"offChainBalance",{get:function(){var e=new bignumber_js_1.default(0);if(!this.latestRound)return e;var t=this.latestRound.availableBalance;return!this.latestRound.proofOfStake&&this.previousRound&&(t=t.plus(this.previousRound.availableBalance)),t},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"offChainBalanceMarker",{get:function(){return new balance_marker_model_1.BalanceMarker(this._contractAddress,this._tokenAddress,this._address,this.latestRound.roundNumber,this.offChainBalance)},enumerable:!0,configurable:!0}),i.prototype.getRoundSwapStartingBalance=function(e){var t=new bignumber_js_1.default(0);if(e<=this.registrationRound)return t;var r=this.getRound(e);if(r&&r.proofOfStake)return r.chainBalance;var n=this.getRound(e-1);return n?n.availableBalance:t},i}();exports.Wallet=Wallet;
-},{"../primitives/signature.model":339,"../transactions/aggregate.model":350,"../transactions/balance-marker.model":351,"./round.model":357,"async-mutex":23,"bignumber.js":24}],359:[function(require,module,exports){
-"use strict";var __decorate=this&&this.__decorate||function(e,r,t,a){var n,i=arguments.length,s=i<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,t):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,r,t,a);else for(var o=e.length-1;0<=o;o--)(n=e[o])&&(s=(i<3?n(s):3<i?n(r,t,s):n(r,t))||s);return 3<i&&s&&Object.defineProperty(r,t,s),s},__metadata=this&&this.__metadata||function(e,r){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,r)},__param=this&&this.__param||function(t,a){return function(e,r){a(e,r,t)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var hub_api_service_1=require("./services/hub-api.service"),contract_api_service_1=require("./services/contract-api.service"),contract_state_service_1=require("./services/contract-state.service"),hub_state_service_1=require("./services/hub-state.service"),wallet_state_service_1=require("./services/wallet-state.service"),rxjs_1=require("rxjs"),inversify_types_1=require("./inversify.types"),round_model_1=require("./models/wallet/round.model"),poll_service_1=require("./services/poll.service"),wallet_storage_service_1=require("./services/wallet-storage.service"),bignumber_js_1=__importDefault(require("bignumber.js")),inversify_1=require("inversify"),wallet_model_1=require("./models/wallet/wallet.model"),signature_model_1=require("./models/primitives/signature.model"),dispute_service_1=require("./services/dispute.service"),transfer_state_model_1=require("./models/state/transfer-state.model"),util_1=require("./util"),logging_1=require("./services/logging"),transfer_aggregate_type_model_1=require("./models/transactions/transfer-aggregate-type.model"),aggregate_model_1=require("./models/transactions/aggregate.model"),balance_marker_model_1=require("./models/transactions/balance-marker.model"),NocustClient=function(){function e(e,r,t,a,n,i,s,o,g,d,_,u,l,c){this.walletStorageService=e,this.synchronizationPollService=r,this.web3Service=t,this.hubApiService=a,this.contractApiService=n,this.contractStateFetchService=i,this.hubStateFetchService=s,this.walletStateService=o,this.disputeService=g,this.walletStatePollObserver=d,this.web3ConnectivityObservable=_,this.hubStateObservable=u,this.contractStateObservable=l,this.walletStateSyncObservable=c}return e.prototype.prepareSwap=function(d,_,u,l,c){var f=round_model_1.Round.fromJSON(d.latestRound.json),p=round_model_1.Round.fromJSON(_.latestRound.json);return new Promise(function(e,r){if(u.gt(d.offChainBalance))return r("Insufficient balance.");if(f.aggregate.isTransferPending)return r("Another transfer is pending for the sender wallet.");if(p.aggregate.isTransferPending)return r("Another transfer is pending for the recipient wallet.");if(!util_1.isSameHexValue(d.contractAddress,_.contractAddress))return r("Wallets are not in the same hub contract.");if(d.networkId!=_.networkId)return r("Wallets are not on the same network.");if(!util_1.isSameHexValue(d.address,_.address))return r("Sender and recipient wallet are not the same address.");if(util_1.isSameHexValue(d.tokenAddress,_.tokenAddress))return r("Cannot swap the same token for itself.");if(!d.isRegistered)return r("Unregistered sender wallet.");if(!_.isRegistered)return r("Unregistered recipient wallet.");if(f.roundNumber!=p.roundNumber)return r("Swapping wallets are in different rounds.");var t=f.aggregate.createOutgoingSwap(_.address,_.tokenAddress,_.trailIdentifier,u,l,d.getRoundSwapStartingBalance(d.latestRound.roundNumber),c);if(null===t)return r("No outgoing swap created.");var a=new balance_marker_model_1.BalanceMarker(d.contractAddress,d.tokenAddress,d.address,d.latestRound.roundNumber,d.offChainBalance.minus(u));if(null===a)return r("Balance marker not created");if(null===p.aggregate.createIncomingSwap(d.address,d.tokenAddress,u,l,_.getRoundSwapStartingBalance(_.latestRound.roundNumber),t.nonce))return r("No incoming swap created.");for(var n=round_model_1.Round.fromJSON(p.json),i=n.aggregate.pendingTransfer,s=0,o=[transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT];s<o.length;s++){var g=o[s];i.authorizations.set(g,{}),i.confirmations.set(g,signature_model_1.Signature.EMPTY)}return i.amountsMatched={out:u.toFixed(0),in:l.toFixed(0)},n.aggregate.fulfillPendingSwap()?(logging_1.Logging.debug("Data prepared."),logging_1.Logging.debug({senderAggregate:[f.aggregate.spent.toFixed(0),f.aggregate.gained.toFixed(0),f.aggregate.transferTree.hash,f.aggregate.hash],recipientAggregate:[p.aggregate.spent.toFixed(0),p.aggregate.gained.toFixed(0),p.aggregate.transferTree.hash,p.aggregate.hash],recipientFulfillmentAggregate:[n.aggregate.spent.toFixed(0),n.aggregate.gained.toFixed(0),n.aggregate.transferTree.hash,n.aggregate.hash],marker:[a.amount.toFixed(0),a.hash]}),e({senderTransfer:t,recipientTransfer:t,hashes:{senderAggregate:f.aggregate.hash,recipientAggregate:p.aggregate.hash,recipientFulfillmentAggregate:n.aggregate.hash,marker:a.hash},balanceMarker:d.offChainBalance.minus(t.amount)})):r("Fake swap fulfillment failure.")})},e.prototype.sendSwap=function(o,g,d,e,r,t,a){var n=this;return new Promise(function(i,s){n.hubApiService.sendSwap(o,g,d,e,r,t,a).then(function(e){var r=o.getRound(d.senderTransfer.round),t=g.getRound(d.senderTransfer.round);if(!r||!t)return s("Could not send swap");var a=r.aggregate.createOutgoingSwap(g.address,g.tokenAddress,g.trailIdentifier,d.senderTransfer.amount,d.senderTransfer.amountSwapped,d.senderTransfer.startingBalance,d.senderTransfer.nonce,e.id),n=t.aggregate.createIncomingSwap(o.address,o.tokenAddress,d.recipientTransfer.amount,d.recipientTransfer.amountSwapped,d.recipientTransfer.startingBalance,d.recipientTransfer.nonce,e.id);return a&&n?i(e.id):s("Could not send swap")}).catch(s)})},e.prototype.sendSwapFreeze=function(t,a,n){var i=this;return new Promise(function(r,e){i.hubApiService.sendSwapFreeze(t,a,n).then(function(e){return r(!0)}).catch(e)})},e.prepareSwapFinalization=function(e,r){var t=r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT);if(!t)return null;var a=new bignumber_js_1.default(r.amountsMatched.in);if(a.lt(r.amountSwapped))return null;var n=a.minus(r.amountSwapped);return{hashes:{recipientFinalizationAggregate:aggregate_model_1.Aggregate.checksum(e.contractAddress,r.recipientTokenAddress,r.recipient,r.recipientTrailIdentifier,r.round,t.tx_set_hash,new bignumber_js_1.default(t.updated_spendings),new bignumber_js_1.default(t.updated_gains).plus(n))}}},e.prototype.sendSwapFinalization=function(t,a,n){var i=this;return new Promise(function(r,e){i.hubApiService.sendSwapFinalization(t,a,n).then(function(e){return r(!0)}).catch(e)})},e.prepareSwapCancellation=function(e,r){var t=r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),a=r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT);if(!t)return logging_1.Logging.error("Missing debit authorization."),null;if(!a)return logging_1.Logging.error("Missing fulfillment authorization."),null;var n=new bignumber_js_1.default(r.amountsMatched.in),i=new bignumber_js_1.default(r.amountsMatched.out),s=r.amount.minus(i),o=n.multipliedBy(r.amount).dividedToIntegerBy(100),g=r.amountSwapped.multipliedBy(i).dividedToIntegerBy(100);if(o.lt(g))return logging_1.Logging.error("Unfair termination price."),null;var d=util_1.isSameHexValue(e.tokenAddress,r.tokenAddress);logging_1.Logging.debug([e.contractAddress,r.tokenAddress,r.sender,d?e.trailIdentifier:r.recipientTrailIdentifier,r.round,t.tx_set_hash,new bignumber_js_1.default(t.updated_spendings).toFixed(0),new bignumber_js_1.default(t.updated_gains).plus(s).toFixed(0),s.toFixed(0)]);var _=aggregate_model_1.Aggregate.checksum(e.contractAddress,r.tokenAddress,r.sender,d?e.trailIdentifier:r.recipientTrailIdentifier,r.round,t.tx_set_hash,new bignumber_js_1.default(t.updated_spendings),new bignumber_js_1.default(t.updated_gains).plus(s));logging_1.Logging.debug([e.contractAddress,r.recipientTokenAddress,r.recipient,r.recipientTrailIdentifier,r.round,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings).plus(r.amountSwapped).toFixed(0),new bignumber_js_1.default(a.updated_gains).plus(n).toFixed(0),n.toFixed(0)]);var u=aggregate_model_1.Aggregate.checksum(e.contractAddress,r.recipientTokenAddress,r.recipient,r.recipientTrailIdentifier,r.round,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings).plus(r.amountSwapped),new bignumber_js_1.default(a.updated_gains).plus(n));return logging_1.Logging.debug("Data prepared."),logging_1.Logging.debug({hashes:{senderCancellationAggregate:[new bignumber_js_1.default(t.updated_spendings).toFixed(0),new bignumber_js_1.default(t.updated_gains).plus(s).toFixed(0),t.tx_set_hash,_],recipientCancellationAggregate:[new bignumber_js_1.default(a.updated_spendings).plus(r.amountSwapped).toFixed(0),new bignumber_js_1.default(a.updated_gains).plus(n).toFixed(0),a.tx_set_hash,u]}}),{hashes:{senderCancellationAggregate:_,recipientCancellationAggregate:u}}},e.prototype.sendSwapCancellation=function(t,a,n,i){var s=this;return new Promise(function(r,e){s.hubApiService.sendSwapCancellation(t,a,n,i).then(function(e){return r(!0)}).catch(e)})},e.prototype.prepareOutgoingTransfer=function(o,g,d,_,u){var l=this,c=round_model_1.Round.fromJSON(o.latestRound.json);return new Promise(function(i,s){return d.gt(o.offChainBalance)?s("Insufficient balance."):c.aggregate.isTransferPending?s("Another transfer is already pending."):void l.hubApiService.whoisWallet(o.tokenAddress,g,o.webAddress).then(function(a){if(!a||null==a.trail_identifier||null==a.trail_identifier)return s("Recipient wallet unregistered.");var n=new wallet_model_1.Wallet(g,o.networkId,o.contractOwnerAddress,o.contractAddress,o.tokenAddress,o.webAddress),e=n.getAdmissionAggregate(a.round),r=signature_model_1.Signature.fromRSV(g,e.hash,a.wallet_signature);l.contractApiService.validateAggregateSignature(e,r,o.contractAddress).then(function(e){if(!e)return s("Bad Recipient Admission Request.");var r=n.getAdmissionAggregate(a.round,a.trail_identifier),t=signature_model_1.Signature.fromRSV(o.contractOwnerAddress,r.hash,a.hub_signature);l.contractApiService.validateAggregateSignature(r,t,o.contractAddress).then(function(e){if(!e)return s("Bad Recipient Admission Approval.");var r=c.aggregate.createOutgoingTransfer(g,a.trail_identifier,d,_,u);if(null===r)return s("No outgoing transfer created.");var t=new balance_marker_model_1.BalanceMarker(o.contractAddress,o.tokenAddress,o.address,o.latestRound.roundNumber,o.offChainBalance.minus(d));return null===t?s("No balance marker created."):(logging_1.Logging.debug("Data prepared."),logging_1.Logging.debug({transfer:r,hashes:{aggregate:[c.aggregate.spent.toFixed(0),c.aggregate.gained.toFixed(0),c.aggregate.transferTree.hash,c.aggregate.hash],marker:[t.amount.toFixed(0),t.hash]}}),i({transfer:r,hashes:{aggregate:c.aggregate.hash,marker:t.hash},markerBalance:o.offChainBalance.minus(r.amount)}))})})}).catch(s)})},e.prototype.sendOutgoingTransfer=function(n,i,r,t){var s=this;return new Promise(function(a,e){s.hubApiService.sendTransfer(n,i,r,t).then(function(e){var r=n.getRound(i.transfer.round);if(!r)return a(void 0);var t=r.aggregate.createOutgoingTransfer(i.transfer.recipient,i.transfer.recipientTrailIdentifier,new bignumber_js_1.default(i.transfer.amount),i.transfer.isPassive,new bignumber_js_1.default(i.transfer.nonce),e.id,new bignumber_js_1.default(e.position));return a(t?e.id:void 0)}).catch(e)})},e.prepareReceipt=function(e,r){var t=round_model_1.Round.fromJSON(e.latestRound.json),a=t.aggregate.createIncomingTransfer(r.sender,r.amount,r.nonce,r.txId,r.isPassive);return a?(logging_1.Logging.debug("Data prepared"),logging_1.Logging.debug({transfer:a,hashes:{aggregate:[t.aggregate.spent.toFixed(0),t.aggregate.gained.toFixed(0),t.aggregate.transferTree.hash,t.aggregate.hash],marker:null}}),{transfer:a,hashes:{aggregate:t.aggregate.hash,marker:null},markerBalance:null}):null},e.prototype.sendIncomingTransferReceipt=function(n,i,r){var t=this;return new Promise(function(a,e){t.hubApiService.sendReceipt(n,i.transfer.txId,r).then(function(e){var r=n.getRound(i.transfer.round);if(!r)return a(!1);var t=r.aggregate.createIncomingTransfer(i.transfer.sender,i.transfer.amount,i.transfer.nonce,i.transfer.txId,i.transfer.isPassive);return a(!!t)}).catch(e)})},e.prototype.getAdmissionDigest=function(t){var a=this;return new Promise(function(r,e){a.contractApiService.currentRound(t.contractAddress).then(function(e){return r(t.getAdmissionAggregate(e).hash)}).catch(e)})},e.prototype.initiateWithdrawal=function(t,a,n,i){var s=this;return new Promise(function(r,e){if(a.gt(t.withdrawableAmount))return e();s.contractApiService.getChallengeCost(t.contractAddress).then(function(e){s.contractApiService.requestWithdrawal(a,t.address,t.previousRound.proofOfStake,t.contractAddress,e,n,i).then(r)}).catch(e)})},e.prototype.confirmWithdrawal=function(e,r,t){return this.contractApiService.confirmWithdrawal(e.tokenAddress,e.address,e.contractAddress,r,t)},e.resolveTransferState=function(e,r){var t=util_1.isSameHexValue(r.address,e.sender)&&util_1.isSameHexValue(r.tokenAddress,e.tokenAddress);return e.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)?e.isSwap?e.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)?e.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)?e.deliveryProof?transfer_state_model_1.TransferState.DELIVERY_RATIFIED:e.isSwapFinalized?transfer_state_model_1.TransferState.SWAP_FINALIZED:e.isSwapFulfilled?transfer_state_model_1.TransferState.SWAP_FULFILLED:e.isSwapFrozen?transfer_state_model_1.TransferState.SWAP_FROZEN:e.isSwapActive?transfer_state_model_1.TransferState.SWAP_ACTIVE:e.round===r.latestRound.roundNumber?transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:r.latestRound.proofOfStake?void 0:transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:transfer_state_model_1.TransferState.MISSING_CREDIT_CONFIRMATION:transfer_state_model_1.TransferState.PENDING_PROVIDER_APPROVAL:e.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)?e.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)?e.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)?e.deliveryProof?transfer_state_model_1.TransferState.DELIVERY_RATIFIED:e.round===r.latestRound.roundNumber?transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:r.latestRound.proofOfStake?t?transfer_state_model_1.TransferState.MISSING_RECEIPT:transfer_state_model_1.TransferState.DELIVERY_RATIFIED:transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:transfer_state_model_1.TransferState.MISSING_CREDIT_CONFIRMATION:transfer_state_model_1.TransferState.PENDING_PROVIDER_APPROVAL:transfer_state_model_1.TransferState.PENDING_RECIPIENT_APPROVAL:transfer_state_model_1.TransferState.CANCELLED},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(wallet_storage_service_1.WalletStorageService)),__param(1,inversify_1.inject(poll_service_1.PollService)),__param(2,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE)),__param(3,inversify_1.inject(hub_api_service_1.HubApiService)),__param(4,inversify_1.inject(contract_api_service_1.ContractApiService)),__param(5,inversify_1.inject(contract_state_service_1.ContractStateService)),__param(6,inversify_1.inject(hub_state_service_1.HubStateService)),__param(7,inversify_1.inject(wallet_state_service_1.WalletStateService)),__param(8,inversify_1.inject(dispute_service_1.DisputeService)),__param(9,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(10,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WEB3_CONNECTIVITY)),__param(11,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH)),__param(12,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH)),__param(13,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_SYNC)),__metadata("design:paramtypes",[wallet_storage_service_1.WalletStorageService,poll_service_1.PollService,Object,hub_api_service_1.HubApiService,contract_api_service_1.ContractApiService,contract_state_service_1.ContractStateService,hub_state_service_1.HubStateService,wallet_state_service_1.WalletStateService,dispute_service_1.DisputeService,Object,rxjs_1.Observable,rxjs_1.Observable,rxjs_1.Observable,rxjs_1.Observable])],e)}();exports.NocustClient=NocustClient;
-},{"./inversify.types":333,"./models/primitives/signature.model":339,"./models/state/transfer-state.model":345,"./models/transactions/aggregate.model":350,"./models/transactions/balance-marker.model":351,"./models/transactions/transfer-aggregate-type.model":353,"./models/wallet/round.model":357,"./models/wallet/wallet.model":358,"./services/contract-api.service":361,"./services/contract-state.service":362,"./services/dispute.service":363,"./services/hub-api.service":364,"./services/hub-state.service":365,"./services/logging":366,"./services/poll.service":367,"./services/wallet-state.service":368,"./services/wallet-storage.service":369,"./util":371,"bignumber.js":24,"inversify":166,"rxjs":404}],360:[function(require,module,exports){
-"use strict";var __awaiter=this&&this.__awaiter||function(i,a,o,c){return new(o||(o=Promise))(function(e,t){function r(e){try{s(c.next(e))}catch(e){t(e)}}function n(e){try{s(c.throw(e))}catch(e){t(e)}}function s(t){t.done?e(t.value):new o(function(e){e(t.value)}).then(r,n)}s((c=c.apply(i,a||[])).next())})},__generator=this&&this.__generator||function(r,n){var s,i,a,e,o={label:0,sent:function(){if(1&a[0])throw a[1];return a[1]},trys:[],ops:[]};return e={next:t(0),throw:t(1),return:t(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function t(t){return function(e){return function(t){if(s)throw new TypeError("Generator is already executing.");for(;o;)try{if(s=1,i&&(a=2&t[0]?i.return:t[0]?i.throw||((a=i.return)&&a.call(i),0):i.next)&&!(a=a.call(i,t[1])).done)return a;switch(i=0,a&&(t=[2&t[0],a.value]),t[0]){case 0:case 1:a=t;break;case 4:return o.label++,{value:t[1],done:!1};case 5:o.label++,i=t[1],t=[0];continue;case 7:t=o.ops.pop(),o.trys.pop();continue;default:if(!(a=0<(a=o.trys).length&&a[a.length-1])&&(6===t[0]||2===t[0])){o=0;continue}if(3===t[0]&&(!a||t[1]>a[0]&&t[1]<a[3])){o.label=t[1];break}if(6===t[0]&&o.label<a[1]){o.label=a[1],a=t;break}if(a&&o.label<a[2]){o.label=a[2],o.ops.push(t);break}a[2]&&o.ops.pop(),o.trys.pop();continue}t=n.call(r,o)}catch(e){t=[6,e],i=0}finally{s=a=0}if(5&t[0])throw t[1];return{value:t[0]?t[1]:void 0,done:!0}}([t,e])}}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var logging_1=require("./services/logging"),nocust_client_1=require("./nocust-client"),bignumber_js_1=__importDefault(require("bignumber.js")),transfer_model_1=require("./models/transactions/transfer.model"),wallet_model_1=require("./models/wallet/wallet.model"),inversify_container_1=require("./inversify.container"),constant_client_provider_service_1=require("./interfaces/default/constant-client-provider.service"),hub_api_service_1=require("./services/hub-api.service"),util_1=require("./util"),transfer_aggregate_type_model_1=require("./models/transactions/transfer-aggregate-type.model"),contract_api_service_1=require("./services/contract-api.service"),SLASH_GAS_COST=new bignumber_js_1.default(100100),NocustManager=function(){function e(e){this.receiptSubscriptions=new Map,this.contractAddress=e.contractAddress,this.hubApiUrl=e.hubApiUrl;var t=util_1.detectEnvironment();"browser"!==t&&"react-native"!==t||(e.rpcApi.currentProvider._prepareRequest=function(){var t=new XMLHttpRequest;return t.open("POST",this.host,!0),t.setRequestHeader("Content-Type","application/json"),t.timeout=this.timeout&&1!==this.timeout?this.timeout:0,this.headers&&this.headers.forEach(function(e){t.setRequestHeader(e.name,e.value)}),t}),this.nocustClient=inversify_container_1.NOCUSTClassFactory.createNocustClient({rpcProvider:new constant_client_provider_service_1.ConstantRPCClientProvider(e.rpcApi),web3Service:inversify_container_1.ClassContainerOption.DEFAULT,storageManager:e.storageManager||inversify_container_1.ClassContainerOption.DEFAULT,logging:e.logging||inversify_container_1.ClassContainerOption.DEFAULT,restApi:e.restApi||inversify_container_1.ClassContainerOption.DEFAULT,subscribeToWeb3Connectivity:!1})}return e.prototype.isAddressRegistered=function(t,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,2,,3]),[4,this.nocustClient.hubApiService.whoisWallet(r,t,this.hubApiUrl)];case 1:return e.sent(),[3,3];case 2:return e.sent(),[2,!1];case 3:return[2]}})})},e.prototype.registerAddress=function(r,n){return void 0===n&&(n=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,2,,3]),[4,this.registerAddressInternal(r,n)];case 1:return e.sent(),[3,3];case 2:if(-1<(t=e.sent()).message.search("The fields token, address must make a unique set."))return[2];throw new Error(t);case 3:return[2]}})})},e.prototype.subscribeToIncomingTransfer=function(t,r,e){void 0===e&&(e=this.contractAddress),"all"===e&&(e=void 0);var n=this.nocustClient.hubApiService.walletSyncObservable(this.hubApiUrl,t,hub_api_service_1.SocketMessageType.INCOMING_CONFIRMATION,e).subscribe(function(e){util_1.isSameHexValue(e.recipient.address,t)&&r(e)});return function(){return n.unsubscribe()}},e.prototype.sendTransaction=function(_){return __awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a,o,c,u,l,h,d,p,f;return __generator(this,function(e){switch(e.label){case 0:return r=_.tokenAddress?_.tokenAddress:this.contractAddress,n=Date.now(),[4,this.getSyncedWalletState(_.from,r,!0)];case 1:s=e.sent().wallet,i=Date.now()-n,n=Date.now(),e.label=2;case 2:return e.trys.push([2,4,,5]),[4,this.nocustClient.prepareOutgoingTransfer(s,_.to,util_1.toBigNumber(_.amount),!0,_.nonce)];case 3:return a=e.sent(),[3,5];case 4:if((o=e.sent())&&404===o.statusCode)throw new Error("The recipient "+_.to+" is not registered with the NOCUST hub for token "+(util_1.isSameHexValue(r,this.contractAddress)?"Ether":r)+", therefore he can't receive any transactions. The recipient needs to register with the hub first using registerAddress at least once.");throw new Error("Could not prepare transfer, "+JSON.stringify(o));case 5:if(c=Date.now()-n,!a)throw new Error("Failed to prepare transfer");e.label=6;case 6:return e.trys.push([6,8,,9]),[4,Promise.all([this.nocustClient.contractApiService.sign(_.from,a.hashes.aggregate),this.nocustClient.contractApiService.sign(_.from,a.hashes.marker)])];case 7:return t=e.sent(),u=t[0],l=t[1],[3,9];case 8:throw h=e.sent(),new Error("Could not sing hashes, "+h);case 9:n=Date.now(),e.label=10;case 10:return e.trys.push([10,12,,13]),[4,this.nocustClient.sendOutgoingTransfer(s,a,u,l)];case 11:return d=e.sent(),[3,13];case 12:throw p=e.sent(),new Error("Could not post transfer, "+JSON.stringify(p));case 13:return f=Date.now()-n,logging_1.Logging.debug("Sync time: "+i+" prepare time: "+c+" post time: "+f),[2,d]}})})},e.prototype.syncWallet=function(r,n){return void 0===n&&(n=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,2,,3]),[4,this.getSyncedWalletState(r,n,!1)];case 1:return e.sent(),[3,3];case 2:throw t=e.sent(),new Error("Sync failed "+t);case 3:return[2]}})})},e.prototype.deposit=function(s,i,a,o,c){return void 0===c&&(c=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n;return __generator(this,function(e){switch(e.label){case 0:if(i=util_1.toBigNumber(i),a=util_1.toBigNumber(a),util_1.isSameHexValue(c,this.contractAddress))return[3,5];r=void 0,e.label=1;case 1:return e.trys.push([1,3,,4]),[4,this.nocustClient.contractApiService.allowance(c,s,this.contractAddress)];case 2:return r=e.sent(),[3,4];case 3:throw e.sent(),new Error("Could not check for token allowance");case 4:if(r.isLessThan(i))throw new Error("Insufficient token transfer allowance, please approve the NOCUST contract to transfer funds.");e.label=5;case 5:return e.trys.push([5,7,,8]),[4,this.nocustClient.contractApiService.deposit(c,i,s,this.contractAddress,a,o)];case 6:return t=e.sent(),[3,8];case 7:throw n=e.sent(),new Error("Deposit failed "+n);case 8:return[2,t]}})})},e.prototype.approveAndDeposit=function(i,a,o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n,s;return __generator(this,function(e){switch(e.label){case 0:if(a=util_1.toBigNumber(a),o=util_1.toBigNumber(o),util_1.isSameHexValue(u,this.contractAddress))return[3,7];r=void 0,e.label=1;case 1:return e.trys.push([1,3,,4]),[4,this.nocustClient.contractApiService.allowance(u,i,this.contractAddress)];case 2:return r=e.sent(),[3,4];case 3:throw e.sent(),new Error("Could not check for token allowance");case 4:return r.isLessThan(a)?[4,this.nocustClient.web3Service.rpc.eth.getTransactionCount(i)]:[3,7];case 5:return t=e.sent(),[4,this.nocustClient.contractApiService.enableERC20Deposits(u,i,this.contractAddress,o,3e5,t)];case 6:e.sent(),e.label=7;case 7:return e.trys.push([7,9,,10]),[4,this.nocustClient.contractApiService.deposit(u,a,i,this.contractAddress,o,c,t?t+1:void 0)];case 8:return n=e.sent(),[3,10];case 9:throw s=e.sent(),new Error("Deposit failed "+s);case 10:return[2,n]}})})},e.prototype.withdrawalRequest=function(o,c,u,l,h){return void 0===h&&(h=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a;return __generator(this,function(e){switch(e.label){case 0:return c=util_1.toBigNumber(c),u=util_1.toBigNumber(u),[4,this.getSyncedWalletState(o,h,!0)];case 1:if(t=e.sent(),r=t.wallet,n=t.contractState,c.gt(r.withdrawableAmount))throw Error("No enough withdrawal allowance");if(s=bignumber_js_1.default.maximum(n.challengeCost,u),r.onChainBalance.isLessThan(s.times(SLASH_GAS_COST)))throw Error("Not enough balance, to make a withdrawal request you are required to pay the gas fee PLUS a fee equal to max("+n.challengeCost.decimalPlaces(-9)+" Gwei, gasPrice) * "+SLASH_GAS_COST+". This amount needs to be available on-chain.");e.label=2;case 2:return e.trys.push([2,4,,5]),[4,this.nocustClient.contractApiService.requestWithdrawal(c,o,r.previousRound.proofOfStake,this.contractAddress,s,u,l)];case 3:return i=e.sent(),[3,5];case 4:throw a=e.sent(),new Error("Withdrawal request transaction failed "+a);case 5:return[2,i]}})})},e.prototype.withdrawalConfirmation=function(n,s,i,a){return void 0===a&&(a=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r;return __generator(this,function(e){switch(e.label){case 0:s=util_1.toBigNumber(s),e.label=1;case 1:return e.trys.push([1,3,,4]),[4,this.nocustClient.contractApiService.confirmWithdrawal(a,n,this.contractAddress,s,i)];case 2:return t=e.sent(),[3,4];case 3:throw r=e.sent(),Error("Withdrawal confirmation transaction failed "+r);case 4:return[2,t]}})})},e.prototype.getNocustBalance=function(t,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(t,r,!1)];case 1:return[2,e.sent().wallet.offChainBalance]}})})},e.prototype.getSupportedTokens=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.nocustClient.hubApiService.getTokensList(this.hubApiUrl)];case 1:return[2,e.sent().map(function(e){return{tokenAddress:e.address,name:e.name,shortName:e.short_name}})]}})})},e.prototype.getTransaction=function(t){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.nocustClient.hubApiService.getTransfersFromTxId(t,this.hubApiUrl)];case 1:return[2,e.sent()]}})})},e.prototype.getTransactionsForAddress=function(t,r,n){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.nocustClient.hubApiService.getWalletData(t,r,this.hubApiUrl,n)];case 1:return[2,e.sent().transfers]}})})},e.prototype.getWithdrawalLimit=function(t,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(t,r,!1)];case 1:return[2,e.sent().wallet.withdrawableAmount]}})})},e.prototype.getOnChainBalance=function(t,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(t,r,!1)];case 1:return[2,e.sent().wallet.onChainBalance]}})})},e.prototype.getBlocksToWithdrawalConfirmation=function(o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a;return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(o,u,!1)];case 1:if(0===(t=e.sent().contractState).pendingWithdrawals.length)return[2,-1];if(!c)return[3,6];n=void 0,e.label=2;case 2:return e.trys.push([2,4,,5]),[4,this.nocustClient.web3Service.getOnChainTransactionReceipt(c)];case 3:return n=e.sent(),[3,5];case 4:throw s=e.sent(),new Error("Could not get on-chain transaction receipt, "+s);case 5:return r=contract_api_service_1.ContractApiService.roundNumberAt(n.blockNumber,t.genesis,t.blocksPerRound),[3,7];case 6:r=Math.min.apply(Math,t.pendingWithdrawals.map(function(e){return e.round})),e.label=7;case 7:return i=t.currentRound,a=i-r,[2,Math.max(t.extendedSlackPeriod+t.blocksPerRound*(2-a)-t.currentSubBlock+1,0)]}})})},e.prototype.getWithdrawalFee=function(n){return __awaiter(this,void 0,void 0,function(){var t,r;return __generator(this,function(e){switch(e.label){case 0:return n=util_1.toBigNumber(n),r=bignumber_js_1.default.bind,[4,this.nocustClient.contractApiService.getChallengeCost(this.contractAddress)];case 1:return t=new(r.apply(bignumber_js_1.default,[void 0,e.sent()])),[2,bignumber_js_1.default.maximum(SLASH_GAS_COST.times(t),SLASH_GAS_COST.times(n))]}})})},e.prototype.getEonNumber=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.nocustClient.contractApiService.currentRound(this.contractAddress)];case 1:return[2,e.sent()]}})})},e.prototype.getEraNumber=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.nocustClient.contractApiService.currentSubBlock(this.contractAddress)];case 1:return[2,e.sent()]}})})},e.prototype.getBlockPerEon=function(){return __awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return t=parseInt,[4,this.nocustClient.contractApiService.getBlocksPerRound(this.contractAddress)];case 1:return[2,t.apply(void 0,[e.sent()])]}})})},e.prototype.getWalletState=function(t,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return[2,this.getSyncedWalletState(t,r,!1)]})})},e.prototype.getOrderBook=function(t,r){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return[2,this.nocustClient.hubApiService.getSwapOrders(t,r,this.hubApiUrl)]})})},e.prototype.getSLADetail=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return[2,this.nocustClient.hubApiService.getSLADetails({webAddress:this.hubApiUrl})]})})},e.prototype.getSLAStatus=function(r){return __awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,2,,3]),[4,this.nocustClient.hubApiService.getSLAStatus({webAddress:this.hubApiUrl,address:r})];case 1:return t=e.sent(),[3,3];case 2:return e.sent(),[2,0];case 3:return t&&t.expiry?[2,parseInt(t.expiry)]:[2,0]}})})},e.prototype.buySLA=function(n){return __awaiter(this,void 0,void 0,function(){var t,r;return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSLADetail()];case 1:return t=e.sent(),[4,this.getSyncedWalletState(n,t.token,!0)];case 2:return r=e.sent().wallet,[4,this.getSLAStatus(n)];case 3:if(e.sent())return[2];if(r.offChainBalance.isLessThan(t.cost))throw"To pay for the SLA you need "+new bignumber_js_1.default(t.cost)+" wei of token "+t.token+" available as nocust funds";return[4,this.sendTransaction({to:t.recipient,amount:new bignumber_js_1.default(t.cost),from:n,tokenAddress:t.token})];case 4:return e.sent(),[2]}})})},e.prototype.isRecovery=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){switch(e.label){case 0:return[4,this.nocustClient.contractApiService.isPunished(this.contractAddress)];case 1:return[2,e.sent()]}})})},e.prototype.isAddressRegisteredWithHub=function(r,n){return void 0===n&&(n=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,2,,3]),[4,this.nocustClient.hubApiService.whoisWallet(n,r,this.hubApiUrl)];case 1:return t=e.sent(),[3,3];case 2:return e.sent(),[2,!1];case 3:return[2,!!t&&!!t.hub_signature]}})})},e.prototype.sendSwap=function(p,f,_,g,w){return __awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a,o,c,u,l,h,d;return __generator(this,function(e){switch(e.label){case 0:return g=util_1.toBigNumber(g),w=util_1.toBigNumber(w),[4,this.getSyncedWalletState(p,_,!0)];case 1:return r=e.sent().wallet,[4,this.getSyncedWalletState(p,f,!0)];case 2:n=e.sent().wallet,e.label=3;case 3:return e.trys.push([3,5,,6]),[4,this.nocustClient.prepareSwap(r,n,w,g)];case 4:return s=e.sent(),[3,6];case 5:throw i=e.sent(),new Error("Could not prepare swap "+i);case 6:return e.trys.push([6,8,,9]),[4,Promise.all([this.nocustClient.contractApiService.sign(p,s.hashes.recipientAggregate),this.nocustClient.contractApiService.sign(p,s.hashes.recipientFulfillmentAggregate),this.nocustClient.contractApiService.sign(p,s.hashes.senderAggregate),this.nocustClient.contractApiService.sign(p,s.hashes.marker)])];case 7:return t=e.sent(),a=t[0],o=t[1],c=t[2],u=t[3],[3,9];case 8:throw l=e.sent(),new Error("Could not sing hashes"+l);case 9:return e.trys.push([9,11,,12]),[4,this.nocustClient.sendSwap(r,n,s,c,a,o,u)];case 10:return h=e.sent(),[3,12];case 11:throw d=e.sent(),new Error("Could not post swap, "+JSON.stringify(d));case 12:return[2,h]}})})},e.prototype.finalizeSwap=function(o,c,u){return __awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a;return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(o,c,!0)];case 1:if(t=e.sent().wallet,r=t.latestRound.aggregate.transfers.concat([t.latestRound.aggregate.pendingTransfer]),!(n=r.find(function(e){return e.txId===u}))||!n.isSwap)throw Error("Could not find relevant swap data for txId "+u);s=nocust_client_1.NocustClient.prepareSwapFinalization(t,n),e.label=2;case 2:return e.trys.push([2,4,,5]),[4,this.nocustClient.contractApiService.sign(o,s.hashes.recipientFinalizationAggregate)];case 3:return i=e.sent(),[3,5];case 4:throw a=e.sent(),new Error("Could not sing hashes"+a);case 5:return this.nocustClient.sendSwapFinalization(t,n,i),[2]}})})},e.prototype.issueStateUpdateChallenge=function(s,i,a,o){return void 0===o&&(o=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n;return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(s,o,!0)];case 1:return t=e.sent(),r=t.wallet,n=t.contractState,[4,this.nocustClient.disputeService.canIssueStateUpdateChallenge(r,n)];case 2:if(!e.sent())throw Error("Cannot issue state update challenge at the moment");return[2,this.nocustClient.disputeService.issueStateUpdateChallenge(r,n,i,a)]}})})},e.prototype.issueDeliveryChallenge=function(i,a,o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n,s;return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(i,u,!0)];case 1:if(t=e.sent(),r=t.wallet,n=t.contractState,!(s=r.previousRound.aggregate.transfers.find(function(e){return e.id.toNumber()===a})))throw Error("Could not find relevant transfer data for txId ${tx}. Only transfers from the previous round can be challenged.");return[2,this.nocustClient.disputeService.issueDeliveryChallenge(r,s,n,o,c)]}})})},e.prototype.recoverFunds=function(a,o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n,s,i;return __generator(this,function(e){switch(e.label){case 0:return[4,this.getSyncedWalletState(a,u,!0)];case 1:return t=e.sent(),r=t.wallet,n=t.contractState,[4,this.nocustClient.disputeService.canRecoverAllFunds(r,n)];case 2:if(s=e.sent(),i=r.getRound(n.lastSubmissionRound-1),!s||!i||!i.proofOfStake)throw Error("Cannot issue state update challenge at the moment");return[2,this.nocustClient.contractApiService.recoverAllFunds(i.proofOfStake,o,c)]}})})},e.prototype.createWallet=function(s,i,a){return __awaiter(this,void 0,void 0,function(){var t,r,n;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,2,,3]),[4,this.nocustClient.contractApiService.getHubOwnerAddress(this.contractAddress)];case 1:return r=e.sent(),[3,3];case 2:throw n=e.sent(),new Error("Could not get contract Owner, "+n);case 3:return t=new wallet_model_1.Wallet(s,a,r,this.contractAddress,i,this.hubApiUrl),this.nocustClient.walletStorageService.saveWallet(t),[2,t]}})})},e.prototype.getSyncedWalletState=function(h,d,p){return __awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a,o,c,u,l;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,3,,4]),[4,this.nocustClient.web3Service.networkId()];case 1:return a=e.sent(),[4,this.nocustClient.walletStorageService.loadWallet(h,a,this.contractAddress,d)];case 2:return r=e.sent(),[3,4];case 3:throw o=e.sent(),Error("Retrieving wallet from storage, "+o);case 4:return r?[3,6]:[4,this.createWallet(h,d,a)];case 5:r=e.sent(),e.label=6;case 6:return e.trys.push([6,8,,9]),[4,Promise.all([this.nocustClient.contractStateFetchService.fetchContractState(r).then(function(e){return logging_1.Logging.debug("Done fetching contract state"),e}),this.nocustClient.hubStateFetchService.fetchHubState(r).then(function(e){return logging_1.Logging.debug("Done fetching hub state"),e})])];case 7:return t=e.sent(),n=t[0],s=t[1],[3,9];case 8:throw c=e.sent(),new Error("Could not fetch contract state and hub state "+c);case 9:if(s.walletData)return[3,11];if(!p)throw new Error("Wallet address "+h+" is not registered with hub for token "+(util_1.isSameHexValue(d,this.contractAddress)?"Ether":d)+", can't execute operation.");return u=s,[4,this.registerAddressInternal(h,d)];case 10:u.walletData=e.sent(),e.label=11;case 11:return e.trys.push([11,13,,14]),[4,this.nocustClient.walletStateService.syncWalletState(r,n,s)];case 12:return i=e.sent(),[3,14];case 13:throw l=e.sent(),new Error("Could not sync wallet state"+l);case 14:if(this.nocustClient.walletStorageService.saveWallet(i.wallet),i.updateError)throw Error("Could not sync wallet... "+i.updateError);return[2,i]}})})},e.prototype.registerAddressInternal=function(d,p){return void 0===p&&(p=this.contractAddress),__awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a,o,c,u,l,h=this;return __generator(this,function(e){switch(e.label){case 0:return[4,this.nocustClient.web3Service.networkId()];case 1:return t=e.sent(),[4,this.createWallet(d,p,t)];case 2:r=e.sent(),e.label=3;case 3:return e.trys.push([3,5,,6]),[4,this.nocustClient.hubApiService.getStatusData(this.hubApiUrl)];case 4:return n=e.sent().latest.round,[3,6];case 5:throw s=e.sent(),new Error("Could not get current round, "+s);case 6:i=r.getAdmissionAggregate(n).hash,e.label=7;case 7:return e.trys.push([7,9,,10]),[4,this.nocustClient.contractApiService.sign(d,i)];case 8:return a=e.sent(),[3,10];case 9:throw o=e.sent(),new Error("Could not produce registration signature, "+o);case 10:c=function(){return new Promise(function(t,e){var r=setTimeout(function(){return e("Wait for registration timeout")},2e4),n=h.nocustClient.hubApiService.walletSyncObservable(h.hubApiUrl,d,hub_api_service_1.SocketMessageType.REGISTERED_WALLET,p).subscribe(function(e){clearTimeout(r),n.unsubscribe(),t(e)})})},e.label=11;case 11:return e.trys.push([11,13,,14]),[4,this.nocustClient.hubApiService.register(r,a)];case 12:return e.sent(),[3,14];case 13:throw u=e.sent(),Error("Could not post registration, "+JSON.stringify(u));case 14:return e.trys.push([14,16,,17]),[4,c()];case 15:return e.sent(),[3,17];case 16:throw l=e.sent(),new Error("Registration did not succeed, "+l);case 17:return[2,void 0]}})})},e.prototype.approveReceipt=function(u){return __awaiter(this,void 0,void 0,function(){var t,r,n,s,i,a,o,c=this;return __generator(this,function(e){switch(e.label){case 0:if(t=function(e,t){var r=new transfer_model_1.Transfer(e.wallet.token,e.wallet.address,e.round,new bignumber_js_1.default(e.amount),e.amount_swapped?new bignumber_js_1.default(e.amount_swapped):null,null,e.recipient.address,e.recipient.token,e.recipient_trail_identifier,null,new bignumber_js_1.default(e.nonce),e.id,e.passive);return t&&r.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,e.sender_aggregate),r},r=u.latestRound.pendingIncomingTransfers.filter(function(e){return!e.passive}),0===(n=r.map(function(e){return nocust_client_1.NocustClient.prepareReceipt(u,t(e,!0))})).length)return[2];e.label=1;case 1:return e.trys.push([1,3,,4]),[4,Promise.all(n.map(function(e){return c.nocustClient.contractApiService.sign(u.address,e.hashes.aggregate)}))];case 2:return s=e.sent(),[3,4];case 3:throw i=e.sent(),new Error("Could not sign receipt, "+i);case 4:return e.trys.push([4,6,,7]),[4,Promise.all(s.map(function(e,t){return c.nocustClient.sendIncomingTransferReceipt(u,n[t],e)}))];case 5:return e.sent(),[3,7];case 6:throw a=e.sent(),new Error("Could not send receipt, "+a);case 7:return e.trys.push([7,9,,10]),[4,Promise.all(n.map(function(i){return __awaiter(c,void 0,void 0,function(){var t=this;return __generator(this,function(e){return[2,new Promise(function(n,s){return __awaiter(t,void 0,void 0,function(){var t,r;return __generator(this,function(e){return t=this.nocustClient.hubApiService.walletSyncObservable(this.hubApiUrl,u.address,hub_api_service_1.SocketMessageType.INCOMING_TIMEOUT,u.tokenAddress,i.transfer.txId).subscribe(function(){t.unsubscribe(),s("Timeout")}),r=this.nocustClient.hubApiService.walletSyncObservable(this.hubApiUrl,u.address,hub_api_service_1.SocketMessageType.INCOMING_CONFIRMATION,u.tokenAddress,i.transfer.txId).subscribe(function(){t.unsubscribe(),r.unsubscribe(),n()}),[2]})})})]})})}))];case 8:return e.sent(),[3,10];case 9:throw o=e.sent(),new Error("While waiting for incoming transfer confirmation, "+o);case 10:return[2]}})})},e}();exports.NocustManager=NocustManager;
-},{"./interfaces/default/constant-client-provider.service":328,"./inversify.container":332,"./models/transactions/transfer-aggregate-type.model":353,"./models/transactions/transfer.model":354,"./models/wallet/wallet.model":358,"./nocust-client":359,"./services/contract-api.service":361,"./services/hub-api.service":364,"./services/logging":366,"./util":371,"bignumber.js":24}],361:[function(require,module,exports){
-"use strict";var __decorate=this&&this.__decorate||function(e,t,i,r){var n,o=arguments.length,a=o<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,i):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,i,r);else for(var u=e.length-1;0<=u;u--)(n=e[u])&&(a=(o<3?n(a):3<o?n(t,i,a):n(t,i))||a);return 3<o&&a&&Object.defineProperty(t,i,a),a},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(i,r){return function(e,t){r(e,t,i)}},__awaiter=this&&this.__awaiter||function(o,a,u,s){return new(u||(u=Promise))(function(e,t){function i(e){try{n(s.next(e))}catch(e){t(e)}}function r(e){try{n(s.throw(e))}catch(e){t(e)}}function n(t){t.done?e(t.value):new u(function(e){e(t.value)}).then(i,r)}n((s=s.apply(o,a||[])).next())})},__generator=this&&this.__generator||function(i,r){var n,o,a,e,u={label:0,sent:function(){if(1&a[0])throw a[1];return a[1]},trys:[],ops:[]};return e={next:t(0),throw:t(1),return:t(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function t(t){return function(e){return function(t){if(n)throw new TypeError("Generator is already executing.");for(;u;)try{if(n=1,o&&(a=2&t[0]?o.return:t[0]?o.throw||((a=o.return)&&a.call(o),0):o.next)&&!(a=a.call(o,t[1])).done)return a;switch(o=0,a&&(t=[2&t[0],a.value]),t[0]){case 0:case 1:a=t;break;case 4:return u.label++,{value:t[1],done:!1};case 5:u.label++,o=t[1],t=[0];continue;case 7:t=u.ops.pop(),u.trys.pop();continue;default:if(!(a=0<(a=u.trys).length&&a[a.length-1])&&(6===t[0]||2===t[0])){u=0;continue}if(3===t[0]&&(!a||t[1]>a[0]&&t[1]<a[3])){u.label=t[1];break}if(6===t[0]&&u.label<a[1]){u.label=a[1],a=t;break}if(a&&u.label<a[2]){u.label=a[2],u.ops.push(t);break}a[2]&&u.ops.pop(),u.trys.pop();continue}t=r.call(i,u)}catch(e){t=[6,e],o=0}finally{n=a=0}if(5&t[0])throw t[1];return{value:t[0]?t[1]:void 0,done:!0}}([t,e])}}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0}),require("reflect-metadata");var inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),proof_of_stake_model_1=require("../models/primitives/proof-of-stake.model"),payment_hub_abi_1=require("../models/payment-hub.abi"),util_1=require("../util"),round_model_1=require("../models/wallet/round.model"),signature_model_1=require("../models/primitives/signature.model"),bignumber_js_1=__importDefault(require("bignumber.js")),aggregate_model_1=require("../models/transactions/aggregate.model"),transfer_model_1=require("../models/transactions/transfer.model"),logging_1=require("./logging"),erc20_abi_1=require("../models/erc20-abi"),SLASH_GAS_COST=new bignumber_js_1.default(100100),ContractApiService=function(){function e(e){this.web3Service=e,this.contracts=new Map}var a;return(a=e).prototype.getABI=function(e,t){return void 0===t&&(t=payment_hub_abi_1.PAYMENT_HUB_ABI),this.contracts.has(e)||this.contracts.set(e,this.web3Service.getContractAt(t,e)),this.contracts.get(e)},e.prototype.genesis=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.genesis().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getLiveChallenges=function(i,r){var n=this;return new Promise(function(e,t){n.getABI(r).methods.getLiveChallenges(i).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.currentRound=function(n){var o=this;return new Promise(function(r,e){o.web3Service.latestBlockNumber().then(function(i){return o.genesis(n).then(function(t){return o.getBlocksPerRound(n).then(function(e){return r(a.roundNumberAt(i,t,e))})})}).catch(e)})},e.roundNumberAt=function(e,t,i){return Math.floor((e-t)/i)+1},e.prototype.nextBlockRound=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.currentEon().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.currentSubBlock=function(n){var o=this;return new Promise(function(r,e){o.web3Service.latestBlockNumber().then(function(i){return o.genesis(n).then(function(t){return o.getBlocksPerRound(n).then(function(e){return r(a.subBlockAt(i,t,e))})})}).catch(e)})},e.subBlockAt=function(e,t,i){return(e-t)%i},e.prototype.nextBlockSubBlock=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.currentEra().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.lastSubmissionEon=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.lastSubmissionRound().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.balance=function(i,r){var n=this;return void 0===r&&(r=null),r?new Promise(function(e,t){n.getABI(r,erc20_abi_1.ERC20_ABI).methods.balanceOf(util_1.add0xPrefix(i)).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult):this.web3Service.balanceOf(i)},e.prototype.allowance=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(i,erc20_abi_1.ERC20_ABI).methods.allowance(util_1.add0xPrefix(r),util_1.add0xPrefix(n)).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.pendingWithdrawals=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(o).methods.getPendingWithdrawalsAtSlot(util_1.add0xPrefix(i),r%n).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.getBlocksPerRound=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.BLOCKS_PER_EON().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getSlackPeriod=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.BLOCKS_PER_EPOCH().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getExtendedSlackPeriod=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.EXTENDED_BLOCKS_PER_EPOCH().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getRoundsKept=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.EONS_KEPT().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getDepositsKept=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.DEPOSITS_KEPT().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getChallengeCost=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.MIN_CHALLENGE_GAS_COST().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.recordBook=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getIsWalletRecovered(util_1.add0xPrefix(i),r).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.checkpoint=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(r).methods.getCheckpointAtSlot(i%n).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.valueOfResult)},e.prototype.clientContractStateVariables=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getClientContractStateVariables(util_1.add0xPrefix(i),r).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return{lastCheckpointRoundNumber:util_1.intValueOfResult(e[0]),merkleRoots:e[1],liveChallenges:e[2].map(function(e){return util_1.intValueOfResult(e)}),currentRoundDeposits:util_1.bigNumberValueOfResult(e[3]),previousRoundDeposits:util_1.bigNumberValueOfResult(e[4]),secondPreviousRoundDeposits:util_1.bigNumberValueOfResult(e[5]),pendingWithdrawals:e[6].filter(function(e){return"0"!==e[0]}).map(function(e){return[util_1.intValueOfResult(e[0]),util_1.bigNumberValueOfResult(e[1])]}),holderBalance:util_1.bigNumberValueOfResult(e[7])}})},e.prototype.metamaskHashFix=function(e){return this.web3Service.currentProvider.isMetaMask?util_1.Web3Utils.soliditySha3("Ethereum Signed Message:\n32",e):e},e.prototype.vrs=function(e){var t=util_1.remove0xPrefix(e),i=parseInt(t.slice(128,130),16);return i<27&&(i+=27),t.slice(0,128)+i.toString(16)},e.prototype.signPersonal=function(t,i){return this.web3Service.signPersonalMessage(t,i).then(function(e){return signature_model_1.Signature.fromRSV(i,t,e)})},e.prototype.signRaw=function(e,t){var i=this.metamaskHashFix(e);return this.web3Service.signRawDigest(i,t).then(function(e){return signature_model_1.Signature.fromRSV(t,i,e)})},e.prototype.sign=function(e,t){return this.web3Service.canSignPersonal?this.signPersonal(t,e):this.signRaw(t,e)},e.prototype.recoverSigningAddress=function(i,r,e){var n=this;return void 0===e&&(e=!1),e?this.recoverSigningAddressLocal(i):new Promise(function(e,t){n.getABI(r).methods.signedMessageECRECOVER(i.checksum,util_1.add0xPrefix(i.r),util_1.add0xPrefix(i.s),util_1.add0xPrefix(i.v)).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.validateAggregateSignature=function(t,e,i){return this.verifyProofOfTransitionAgreement(t.tokenAddress,t.walletAddress,t.trailIdentifier,t.round,t.transferTree.hash,t.spent,t.gained,e,i).then(function(e){return e&&util_1.isSameHexValue(e.toString(),t.hash)}).catch(function(e){return logging_1.Logging.error("Transition Agreement Check Rejected: "+e),!1})},e.prototype.validateDataAggregate=function(u,s,l,d,g,c,f,_){var m=this;return logging_1.Logging.debug("validateDataAggregate"),new Promise(function(t,e){var i=util_1.isSameHexValue(l.address,u.wallet.address)&&util_1.isSameHexValue(l.token,u.wallet.token),r=i?u.wallet_trail_identifier:u.recipient_trail_identifier,n=i?u.recipient:u.wallet,o=aggregate_model_1.Aggregate.checksum(g,c,l.address,r,u.round,s.tx_set_hash,new bignumber_js_1.default(s.updated_spendings),new bignumber_js_1.default(s.updated_gains)),a=util_1.isSameHexValue(d,l.address)?signature_model_1.Signature.fromRSV(d,o,s.wallet_signature):signature_model_1.Signature.fromRSV(d,o,s.hub_signature);m.verifyProofOfTransitionAgreement(c,l.address,r,u.round,s.tx_set_hash,new bignumber_js_1.default(s.updated_spendings),new bignumber_js_1.default(s.updated_gains),a,g).then(function(e){if(!util_1.isSameHexValue(e,o))return t(!1);logging_1.Logging.debug(e),_?m.verifyProofOfSwapAggregationRaw(u.wallet.token,u.recipient.token,s.tx_set_index,s.tx_set_proof,new bignumber_js_1.default(u.amount),new bignumber_js_1.default(u.amount_swapped),_,u.recipient_trail_identifier,new bignumber_js_1.default(u.nonce),s.tx_set_hash,g,f).then(t):m.verifyProofOfTransferAggregationRaw(s.tx_set_index,s.tx_set_proof,n.address,new bignumber_js_1.default(u.amount),u.recipient_trail_identifier,new bignumber_js_1.default(u.nonce),s.tx_set_hash,g,!1,null,f).then(t)}).catch(e)})},e.prototype.validateTransferDebit=function(n,o,a,u,s){var l=this;return logging_1.Logging.debug("validateTransferDebit"),new Promise(function(t,e){var i=aggregate_model_1.Aggregate.checksum(a,u,n.wallet.address,n.wallet_trail_identifier,n.round,n.sender_aggregate.tx_set_hash,new bignumber_js_1.default(n.sender_aggregate.updated_spendings),new bignumber_js_1.default(n.sender_aggregate.updated_gains)),r=util_1.isSameHexValue(o,n.wallet.address)?signature_model_1.Signature.fromRSV(o,i,n.sender_aggregate.wallet_signature):signature_model_1.Signature.fromRSV(o,i,n.sender_aggregate.hub_signature);l.verifyProofOfTransitionAgreement(u,n.wallet.address,n.wallet_trail_identifier,n.round,n.sender_aggregate.tx_set_hash,new bignumber_js_1.default(n.sender_aggregate.updated_spendings),new bignumber_js_1.default(n.sender_aggregate.updated_gains),r,a).then(function(e){if(!util_1.isSameHexValue(e,i))return t(!1);logging_1.Logging.debug(e),l.verifyProofOfTransferAggregationRaw(n.sender_aggregate.tx_set_index,n.sender_aggregate.tx_set_proof,n.recipient.address,new bignumber_js_1.default(n.amount),n.recipient_trail_identifier,new bignumber_js_1.default(n.nonce),n.sender_aggregate.tx_set_hash,a,n.passive,new bignumber_js_1.default(n.position),s).then(t)}).catch(e)})},e.prototype.validateTransferCredit=function(n,o,a,u,s){var l=this;return logging_1.Logging.debug("validateTransferCredit"),new Promise(function(t,e){if(n.passive)return t(!1);var i=aggregate_model_1.Aggregate.checksum(a,u,n.recipient.address,n.recipient_trail_identifier,n.round,n.recipient_aggregate.tx_set_hash,new bignumber_js_1.default(n.recipient_aggregate.updated_spendings),new bignumber_js_1.default(n.recipient_aggregate.updated_gains)),r=util_1.isSameHexValue(o,n.recipient.address)?signature_model_1.Signature.fromRSV(o,i,n.recipient_aggregate.wallet_signature):signature_model_1.Signature.fromRSV(o,i,n.recipient_aggregate.hub_signature);l.verifyProofOfTransitionAgreement(u,n.recipient.address,n.recipient_trail_identifier,n.round,n.recipient_aggregate.tx_set_hash,new bignumber_js_1.default(n.recipient_aggregate.updated_spendings),new bignumber_js_1.default(n.recipient_aggregate.updated_gains),r,a).then(function(e){if(!util_1.isSameHexValue(e,i))return t(!1);logging_1.Logging.debug(e),l.verifyProofOfTransferAggregationRaw(n.recipient_aggregate.tx_set_index,n.recipient_aggregate.tx_set_proof,n.wallet.address,new bignumber_js_1.default(n.amount),n.recipient_trail_identifier,new bignumber_js_1.default(n.nonce),n.recipient_aggregate.tx_set_hash,a,n.passive,new bignumber_js_1.default(n.position),s).then(t)}).catch(e)})},e.prototype.validateDeliveryProof=function(l,i,d,g,c){var f=this;return logging_1.Logging.debug("validateDeliveryProof"),new Promise(function(o,a){var e=new round_model_1.Round(d,g,l.recipient,l.recipientTrailIdentifier,l.round+1),u=i.delivery_proof,s=u.merkle_proof,t=new proof_of_stake_model_1.ProofOfStake(d,g,l.recipient,s.paint,l.recipientTrailIdentifier,l.round+1,s.allotment_chain,s.membership_chain,s.values.map(function(e){return new bignumber_js_1.default(e)}),new bignumber_js_1.default(s.left),new bignumber_js_1.default(s.right),s.passive_checksum,new bignumber_js_1.default(s.passive_amount),new bignumber_js_1.default(s.passive_marker));f.verifyProof(e,t).then(function(e){if(!e)return logging_1.Logging.error("Invalid recipient proof of stake"),o(!1);var n=u.final_aggregate;f.getHubOwnerAddress(d).then(function(e){var i=aggregate_model_1.Aggregate.checksum(d,g,l.recipient,l.recipientTrailIdentifier,l.round,n.tx_set_hash,new bignumber_js_1.default(n.updated_spendings),new bignumber_js_1.default(n.updated_gains));if(!util_1.isSameHexValue(i,s.paint)){var t=proof_of_stake_model_1.ProofOfStake.checksumPaint(i,d,g,l.recipient);return logging_1.Logging.error(i),logging_1.Logging.error(t),logging_1.Logging.error(s.paint),logging_1.Logging.error("Mismatching paint."),o(!1)}var r=signature_model_1.Signature.fromRSV(e,i,n.hub_signature);f.verifyProofOfTransitionAgreement(g,l.recipient,l.recipientTrailIdentifier,l.round,n.tx_set_hash,new bignumber_js_1.default(n.updated_spendings),new bignumber_js_1.default(n.updated_gains),r,d).then(function(e){if(!util_1.isSameHexValue(e,i))return logging_1.Logging.error("Mismatching aggregate checksumTransfer by hub"),logging_1.Logging.error(e),logging_1.Logging.error(i),o(!1);var t=signature_model_1.Signature.fromRSV(l.recipient,i,n.wallet_signature);f.verifyProofOfTransitionAgreement(g,l.recipient,l.recipientTrailIdentifier,l.round,n.tx_set_hash,new bignumber_js_1.default(n.updated_spendings),new bignumber_js_1.default(n.updated_gains),t,d).then(function(e){if(!util_1.isSameHexValue(e,i))return logging_1.Logging.error("Mismatching aggregate checksumTransfer by wallet"),logging_1.Logging.error(e),logging_1.Logging.error(i),o(!1);f.verifyProofOfTransferAggregationRaw(u.transfer_membership_trail,u.transfer_membership_chain,l.sender,l.amount,l.recipientTrailIdentifier,l.nonce,n.tx_set_hash,d,l.isPassive,l.passiveOffset,c).then(o)}).catch(a)}).catch(a)})}).catch(a)})},e.prototype.validateSignature=function(t,e){return this.recoverSigningAddress(t,e).then(function(e){return util_1.isSameHexValue(e,t.address)}).catch(function(){return!1})},e.prototype.getHubOwnerAddress=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.operator().call(util_1.promiseExecutorCallback(e,t))})},e.prototype.validateHubSignature=function(e,i){var r=this;return this.getHubOwnerAddress(i).then(function(t){return r.recoverSigningAddress(e,i).then(function(e){return util_1.isSameHexValue(e,t)})}).catch(function(){return!1})},e.prototype.doNothingOnce=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(r).methods.doNothing.send({from:i,gas:o,gasPrice:n.toFixed(0)},util_1.promiseExecutorCallback(e,t))})},e.prototype.doNothing=function(r,n,o,a,u){var t=this;return new Promise(function(i,e){return __awaiter(t,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:t=0,e.label=1;case 1:return t<r?[4,this.doNothingOnce(n,o,a,u)]:[3,4];case 2:e.sent(),e.label=3;case 3:return t++,[3,1];case 4:return i(!0),[2]}})})})},e.prototype.getDeposits=function(i,r,n,o,a){var u=this;return new Promise(function(e,t){if(r<1)return e(void 0);u.getABI(a).methods.getDepositsAtSlot(o,i,r%n).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e&&e[0].valueOf()==r?new bignumber_js_1.default(e[1].valueOf()):new bignumber_js_1.default(0)})},e.prototype.getTotalDepositAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getWalletDepositAggregateAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return new bignumber_js_1.default(e[1].valueOf())})},e.prototype.getTotalDepositRoundAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getWalletDepositAggregateAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e[0].valueOf()})},e.prototype.getPendingWithdrawalsAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getPendingWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return new bignumber_js_1.default(e[1].valueOf())})},e.prototype.getPendingWithdrawalsRoundAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getPendingWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e[0].valueOf()})},e.prototype.getConfirmedWithdrawalsAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getConfirmedWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return new bignumber_js_1.default(e[1].valueOf())})},e.prototype.getConfirmedWithdrawalsRoundAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getConfirmedWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e[0].valueOf()})},e.prototype.deposit=function(i,r,n,o,e,t,a){var u=this,s=util_1.isSameHexValue(i,o)?{value:r.toFixed(0),from:n,gasPrice:e.toFixed(0),gas:t,nonce:a}:{value:0,from:n,gasPrice:e.toFixed(0),gas:t,nonce:a};return new Promise(function(e,t){u.getABI(o).methods.deposit(util_1.add0xPrefix(i),n,r.toFixed(0)).send(s,util_1.promiseExecutorCallback(e,t))})},e.prototype.enableERC20Deposits=function(i,r,n,o,a,u){var s=this;return new Promise(function(e,t){s.getABI(i,erc20_abi_1.ERC20_ABI).methods.approve(util_1.add0xPrefix(n),new bignumber_js_1.default(2).pow(256).minus(1).toFixed(0)).send({from:r,gasPrice:o.toFixed(0),gas:a,nonce:u},util_1.promiseExecutorCallback(e,t))})},e.prototype.requestWithdrawal=function(i,r,n,o,a,u,s){var l=this;return new Promise(function(e,t){l.getABI(o).methods.requestWithdrawal(n.tokenAddress,[n.paint,n.passiveChecksum],n.trail,n.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),n.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),n.values.map(function(e){return e.toFixed(0)}),[[n.left.toFixed(0),n.right.toFixed(0)],[n.passiveAmount.toFixed(0),n.passiveMarker.toFixed(0)]],i.toFixed(0)).send({from:r,value:a.multipliedBy(SLASH_GAS_COST).toFixed(0),gas:s,gasPrice:u.toFixed(0)},util_1.promiseExecutorCallback(e,t))})},e.prototype.confirmWithdrawal=function(i,r,n,o,a){var u=this;return new Promise(function(e,t){u.getABI(n).methods.confirmWithdrawal(util_1.add0xPrefix(i),util_1.add0xPrefix(r)).send({from:r,gasPrice:o.toFixed(0),gas:a},util_1.promiseExecutorCallback(e,t))})},e.prototype.hasOutstandingChallenges=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.hasOutstandingChallenges().call(util_1.promiseExecutorCallback(e,t))})},e.prototype.hasMissedCheckpointSubmission=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.hasMissedCheckpointSubmission().call(util_1.promiseExecutorCallback(e,t))})},e.prototype.isPunished=function(r){var n=this;return new Promise(function(t,i){n.hasOutstandingChallenges(r).then(function(e){return e?t(!0):n.hasMissedCheckpointSubmission(r).then(t).catch(i)}).catch(i)})},e.prototype.estimateChallengeInitialEmptyStateCost=function(r,n,o,a,u,s,l,d){var g=this;return logging_1.Logging.debug("estimateChallengeInitialEmptyStateCost"),new Promise(function(t,i){g.balance(n).then(function(e){g.getABI(d).methods.challengeStateUpdateWithProofOfActiveStateUpdateAgreement(r,a,o,[u.toFixed(0),s.toFixed(0)],util_1.add0xPrefix(l.r),util_1.add0xPrefix(l.s),util_1.add0xPrefix(l.v)).estimateGas({from:n,value:e.toFixed(0)},util_1.promiseExecutorCallback(t,i))}).catch(i)})},e.prototype.submitChallengeInitialEmptyState=function(i,r,n,o,a,u,s,l,d,g,c){var f=this;return logging_1.Logging.debug("submitChallengeInitialEmptyState"),new Promise(function(e,t){f.getABI(d).methods.challengeStateUpdateWithProofOfActiveStateUpdateAgreement(i,o,n,[a.toFixed(0),u.toFixed(0)],util_1.add0xPrefix(s.r),util_1.add0xPrefix(s.s),util_1.add0xPrefix(s.v)).send({from:r,value:l.toFixed(0),gasPrice:g.toFixed(0),gas:c},util_1.promiseExecutorCallback(e,t))})},e.prototype.estimateChallengeInitialMerkleStateCost=function(r,n,o,a,u,s,l){var d=this;return logging_1.Logging.debug("estimateChallengeInitialMerkleStateCost"),new Promise(function(t,i){d.balance(r).then(function(e){d.getABI(l).methods.challengeStateUpdateWithProofOfExclusiveBalanceAllotment(n.tokenAddress,[n.paint,n.passiveChecksum],n.trail,n.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),n.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),n.values.map(function(e){return e.toFixed(0)}),[[n.left.toFixed(0),n.right.toFixed(0)],[a.toFixed(0),u.toFixed(0)],[n.passiveAmount.toFixed(0),n.passiveMarker.toFixed(0)]][(util_1.add0xPrefix(s.r),util_1.add0xPrefix(s.s),o)],util_1.add0xPrefix(s.v)).estimateGas({from:r,value:e.toFixed(0)},util_1.promiseExecutorCallback(t,i))}).catch(i)})},e.prototype.submitChallengeInitialMerkleState=function(i,r,n,o,a,u,s,l,d,g){var c=this;return logging_1.Logging.debug("submitChallengeInitialMerkleState"),new Promise(function(e,t){c.getABI(l).methods.submitInitialMerkleState(r.tokenAddress,[r.paint,r.passiveChecksum],r.trail,r.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),r.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),r.values.map(function(e){return e.toFixed(0)}),[[r.left.toFixed(0),r.right.toFixed(0)],[o.toFixed(0),a.toFixed(0)],[r.passiveAmount.toFixed(0),r.passiveMarker.toFixed(0)]][(util_1.add0xPrefix(u.r),util_1.add0xPrefix(u.s),n)],util_1.add0xPrefix(u.v)).send({from:i,value:s.toFixed(0),gasPrice:d.toFixed(0),gas:g},util_1.promiseExecutorCallback(e,t))})},e.prototype.estimateDeliveryCommitmentCost=function(r,n,o,a,u,s,l,d,g,c,f,_,m,p,h){var x=this;return logging_1.Logging.debug("estimateDeliveryCommitmentCost"),new Promise(function(t,i){x.balance(n).then(function(e){x.getABI(h).methods.challengeTransferDeliveryWithProofOfActiveStateUpdateAgreement(util_1.add0xPrefix(r),[util_1.add0xPrefix(o),util_1.add0xPrefix(a)],[u.toFixed(0),m.toFixed(0)],[s,l,d],g.map(function(e){return util_1.add0xPrefix(e)}),[f.toFixed(0),_.toFixed(0)],[util_1.add0xPrefix(p.r),util_1.add0xPrefix(p.s),util_1.add0xPrefix(c)],util_1.add0xPrefix(p.v)).estimateGas({from:n,value:e.toFixed(0)},util_1.promiseExecutorCallback(t,i))}).catch(i)})},e.prototype.submitDeliveryCommitment=function(i,r,n,o,a,u,s,l,d,g,c,f,_,m,p,h,x,b){var v=this;return logging_1.Logging.debug("submitDeliveryCommitment"),new Promise(function(e,t){v.getABI(h).methods.challengeTransferDeliveryWithProofOfActiveStateUpdateAgreement(util_1.add0xPrefix(i),[util_1.add0xPrefix(n),util_1.add0xPrefix(o)],[a.toFixed(0),_.toFixed(0)],[u,s,l],d.map(function(e){return util_1.add0xPrefix(e)}),[c.toFixed(0),f.toFixed(0)],[util_1.add0xPrefix(m.r),util_1.add0xPrefix(m.s),util_1.add0xPrefix(g)],util_1.add0xPrefix(m.v)).send({from:r,value:p.toFixed(0),gasPrice:x.toFixed(0),gas:b},util_1.promiseExecutorCallback(e,t))})},e.prototype.getChallengeBook=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(o).methods.getChallenge(util_1.add0xPrefix(i),r,n).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.verifyProofOfTransferAggregationRaw=function(i,r,e,t,n,o,a,u,s,l,d){var g=this;void 0===l&&(l=null),logging_1.Logging.debug("verifyProofOfTransferAggregationRaw");var c=transfer_model_1.Transfer.checksumTransfer(e,t,n,o,s,l);return d?s?(logging_1.Logging.debug("!! We are skipping verifyProofOfTransferAggregationRaw for passive transfer because not supported !!"),Promise.resolve(!0)):this.verifyProofOfMembershipLocal(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(c),util_1.add0xPrefix(a)):s?(logging_1.Logging.debug("!! We are skipping verifyProofOfTransferAggregationRaw for passive transfer because not supported !!"),Promise.resolve(!0)):new Promise(function(e,t){g.getABI(u).methods.verifyProofOfMembership(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(c),util_1.add0xPrefix(a)).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.verifyProofOfSwapAggregationRaw=function(e,t,i,r,n,o,a,u,s,l,d,g){var c=this;logging_1.Logging.debug("verifyProofOfSwapAggregationRaw"),logging_1.Logging.debug([e,t,i,r,n,o,a,u,s,l,d]);var f=transfer_model_1.Transfer.checksumSwap(e,t,u,n,o,a,s);return g?this.verifyProofOfMembershipLocal(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(f),util_1.add0xPrefix(l)):new Promise(function(e,t){c.getABI(d).methods.verifyProofOfMembership(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(f),util_1.add0xPrefix(l)).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.verifyProofOfTransitionAgreement=function(i,r,n,o,a,u,s,l,d,e){var g=this;return void 0===e&&(e=!0),logging_1.Logging.debug("verifyProofOfTransitionAgreement"),logging_1.Logging.debug([util_1.add0xPrefix(i),util_1.add0xPrefix(r),n,o,util_1.add0xPrefix(a),[u.toFixed(0),s.toFixed(0)],util_1.add0xPrefix(l.address),util_1.add0xPrefix(l.r),util_1.add0xPrefix(l.s),util_1.add0xPrefix(l.v)]),e?this.verifyProofOfTransitionAgreementLocal(i,r,n,o,a,u,s,l,d):new Promise(function(e,t){g.getABI(d).methods.verifyProofOfActiveStateUpdateAgreement(util_1.add0xPrefix(i),util_1.add0xPrefix(r),n,o,util_1.add0xPrefix(a),[u.toFixed(0),s.toFixed(0)],util_1.add0xPrefix(l.address),util_1.add0xPrefix(l.r),util_1.add0xPrefix(l.s),util_1.add0xPrefix(l.v)).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.valueOfResult)},e.prototype.verifyProof=function(e,t){return logging_1.Logging.debug("verifyProof"),this.verifyProofRaw(e.tokenAddress,e.walletAddress,t.paint,t.trail,e.roundNumber,t.allotmentChain,t.membershipChain,t.values.map(function(e){return e.toFixed(0)}),t.left.toFixed(0),t.right.toFixed(0),t.passiveChecksum,t.passiveAmount.toFixed(0),t.passiveMarker.toFixed(0),e.contractAddress)},e.prototype.verifyProofRaw=function(i,r,n,o,a,u,s,l,d,g,c,f,_,m){var p=this;return logging_1.Logging.debug("verifyProofRaw"),logging_1.Logging.debug([util_1.add0xPrefix(i),util_1.add0xPrefix(r),[util_1.add0xPrefix(n),util_1.add0xPrefix(c)],o,[a,f,_],u,s,l,[d,g]]),new Promise(function(e,t){p.getABI(m).methods.verifyProofOfExclusiveAccountBalanceAllotment(util_1.add0xPrefix(i),util_1.add0xPrefix(r),[util_1.add0xPrefix(n),util_1.add0xPrefix(c)],o,[a,f,_],u,s,l,[d,g]).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.getStateUpdateEvents=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).events.StateUpdate({filter:{token:util_1.add0xPrefix(i),account:r},fromBlock:0,toBlock:"latest"},util_1.promiseExecutorCallback(e,t))})},e.prototype.getStateUpdateEventAtRound=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(o).events.StateUpdate({filter:{token:util_1.add0xPrefix(i),account:r,round:n},fromBlock:0,toBlock:"latest"},util_1.promiseExecutorCallback(e,t))})},e.prototype.recoverOnlyOnChainFunds=function(i,r,n,o,a){var u=this;return new Promise(function(e,t){u.getABI(n).methods.recoverOnlyParentChainFunds(util_1.add0xPrefix(i)).send({from:r,gasPrice:o.toFixed(0),gas:a},util_1.promiseExecutorCallback(e,t))})},e.prototype.getReclaimableOnChainFunds=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.recoverOnlyParentChainFunds(util_1.add0xPrefix(i)).call({from:r},util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.recoverAllFunds=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(i.contractAddress).methods.recoverAllFunds(i.tokenAddress,i.paint,i.trail,i.allotmentChain,i.membershipChain,i.values.map(function(e){return e.toFixed(0)}),[i.left.toFixed(0),i.right.toFixed(0)]).send({from:i.walletAddress,gasPrice:r.toFixed(0),gas:n},util_1.promiseExecutorCallback(e,t))})},e.prototype.getAllReclaimableFunds=function(i){var r=this;return new Promise(function(e,t){r.getABI(i.contractAddress).methods.recoverAllFunds(util_1.add0xPrefix(i.tokenAddress),util_1.add0xPrefix(i.paint),i.trail,i.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),i.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),i.values.map(function(e){return e.toFixed(0)}),[i.left.toFixed(0),i.right.toFixed(0)]).call({from:i.walletAddress},util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.verifyProofOfTransitionAgreementLocal=function(r,n,o,a,u,s,l,d,g){return __awaiter(this,void 0,void 0,function(){var t,i;return __generator(this,function(e){switch(e.label){case 0:return t=this.paintChecksumLocal(r,n,o,a,u,s,l,g),[4,this.recoverSigningAddressLocal(d)];case 1:if(i=e.sent(),util_1.isSameHexValue(d.address,i))return[2,t];throw new Error("signature verification failed, recovered address: "+util_1.add0xPrefix(i)+" expected: "+util_1.add0xPrefix(d.address))}})})},e.prototype.recoverSigningAddressLocal=function(i){return __awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return t=util_1.lqdWrapper(this.metamaskHashFix(i.checksum)),[4,this.web3Service.rpc.eth.accounts.recover(util_1.add0xPrefix(t),util_1.add0xPrefix(i.v),util_1.add0xPrefix(i.r),util_1.add0xPrefix(i.s))];case 1:return[2,e.sent()]}})})},e.prototype.paintChecksumLocal=function(e,t,i,r,n,o,a,u){return util_1.Web3Utils.soliditySha3({type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:u})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:e})},{type:"bytes32",value:util_1.Web3Utils.soliditySha3({type:"address",value:t})},{type:"uint64",value:i},{type:"uint256",value:r},{type:"bytes32",value:n},{type:"uint256",value:o.toFixed(0)},{type:"uint256",value:a.toFixed(0)}).toString()},e.prototype.verifyProofOfMembershipLocal=function(r,n,o,a){return __awaiter(this,void 0,void 0,function(){var t,i;return __generator(this,function(e){for(t=0;t<n.length;t++)i=!1,0<r&&(i=r%2==1,r=Math.floor(r/2)),o=util_1.Web3Utils.soliditySha3({type:"uint32",value:t},{type:"bytes32",value:i?n[t]:o},{type:"bytes32",value:i?o:n[t]});return[2,util_1.isSameHexValue(o,a)]})})},e.prototype.verifyProofLocal=function(e,t){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return[2]})})},e=a=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE)),__metadata("design:paramtypes",[Object])],e)}();exports.ContractApiService=ContractApiService;
-},{"../inversify.types":333,"../models/erc20-abi":334,"../models/payment-hub.abi":335,"../models/primitives/proof-of-stake.model":338,"../models/primitives/signature.model":339,"../models/transactions/aggregate.model":350,"../models/transactions/transfer.model":354,"../models/wallet/round.model":357,"../util":371,"./logging":366,"bignumber.js":24,"inversify":166,"reflect-metadata":402}],362:[function(require,module,exports){
-"use strict";var __decorate=this&&this.__decorate||function(t,e,r,n){var a,o=arguments.length,c=o<3?e:null===n?n=Object.getOwnPropertyDescriptor(e,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)c=Reflect.decorate(t,e,r,n);else for(var i=t.length-1;0<=i;i--)(a=t[i])&&(c=(o<3?a(c):3<o?a(e,r,c):a(e,r))||c);return 3<o&&c&&Object.defineProperty(e,r,c),c},__metadata=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},__param=this&&this.__param||function(r,n){return function(t,e){n(t,e,r)}},__awaiter=this&&this.__awaiter||function(o,c,i,s){return new(i||(i=Promise))(function(t,e){function r(t){try{a(s.next(t))}catch(t){e(t)}}function n(t){try{a(s.throw(t))}catch(t){e(t)}}function a(e){e.done?t(e.value):new i(function(t){t(e.value)}).then(r,n)}a((s=s.apply(o,c||[])).next())})},__generator=this&&this.__generator||function(r,n){var a,o,c,t,i={label:0,sent:function(){if(1&c[0])throw c[1];return c[1]},trys:[],ops:[]};return t={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(t[Symbol.iterator]=function(){return this}),t;function e(e){return function(t){return function(e){if(a)throw new TypeError("Generator is already executing.");for(;i;)try{if(a=1,o&&(c=2&e[0]?o.return:e[0]?o.throw||((c=o.return)&&c.call(o),0):o.next)&&!(c=c.call(o,e[1])).done)return c;switch(o=0,c&&(e=[2&e[0],c.value]),e[0]){case 0:case 1:c=e;break;case 4:return i.label++,{value:e[1],done:!1};case 5:i.label++,o=e[1],e=[0];continue;case 7:e=i.ops.pop(),i.trys.pop();continue;default:if(!(c=0<(c=i.trys).length&&c[c.length-1])&&(6===e[0]||2===e[0])){i=0;continue}if(3===e[0]&&(!c||e[1]>c[0]&&e[1]<c[3])){i.label=e[1];break}if(6===e[0]&&i.label<c[1]){i.label=c[1],c=e;break}if(c&&i.label<c[2]){i.label=c[2],i.ops.push(e);break}c[2]&&i.ops.pop(),i.trys.pop();continue}e=n.call(r,i)}catch(t){e=[6,t],o=0}finally{a=c=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,t])}}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),rxjs_1=require("rxjs"),contract_api_service_1=require("./contract-api.service"),inversify_types_1=require("../inversify.types"),contract_state_model_1=require("../models/state/contract-state.model"),logging_1=require("./logging"),wallet_storage_service_1=require("./wallet-storage.service"),ContractStateService=function(){function t(t,e,r,n){var a=this;this.walletStatePollObservable=t,this.contractStateFetchObserver=e,this.web3Service=r,this.contractApi=n,this.stateCache=new Map,this.parametersCache=new Map,t.subscribe(function(t){a.fetchContractState(t.wallet).then(function(t){a.contractStateFetchObserver.next(t)})})}return t.prototype.fetchContractState=function(a){var o=this;logging_1.Logging.debug("fetchContractState");var c=new contract_state_model_1.ContractState;return c.timestamp=(new Date).getTime(),this.web3Service.networkId().then(function(t){return c.networkId=t,o.web3Service.latestBlockNumber()}).then(function(t){c.block=t;var e,r=wallet_storage_service_1.WalletStorageService.walletKey(a.address,c.networkId,a.contractAddress,a.tokenAddress),n=r.concat("/",c.block.toString());return o.stateCache.has(n)?((e=o.stateCache.get(n)).timestamp=c.timestamp,e.networkId=c.networkId,e):o.parametersCache.has(r)?((e=o.parametersCache.get(r)).timestamp=c.timestamp,e.networkId=c.networkId,e.block=c.block,o.fetchContractStateVariables(a,e).then(function(t){return o.stateCache.set(n,t),t})):o.fetchContractStateConstants(a,c).then(function(t){return o.parametersCache.set(r,t),o.fetchContractStateVariables(a,t)}).then(function(t){return o.stateCache.set(n,t),t})}).catch(function(t){return logging_1.Logging.error(t),null})},t.prototype.fetchContractStateConstants=function(e,t){var r=this;logging_1.Logging.debug("fetchContractStateConstants");var n=contract_state_model_1.ContractState.fromJSON(t.json);return this.contractApi.genesis(e.contractAddress).then(function(t){return n.genesis=t,r.contractApi.getBlocksPerRound(e.contractAddress)}).then(function(t){return n.blocksPerRound=t,r.contractApi.getChallengeCost(e.contractAddress)}).then(function(t){return n.challengeCost=t,r.contractApi.getSlackPeriod(e.contractAddress)}).then(function(t){return n.slackPeriod=t,r.contractApi.getExtendedSlackPeriod(e.contractAddress)}).then(function(t){return n.extendedSlackPeriod=t,r.contractApi.getRoundsKept(e.contractAddress)}).then(function(t){return n.roundsKept=t,r.contractApi.getDepositsKept(e.contractAddress)}).then(function(t){return n.depositsKept=t,n})},t.prototype.fetchContractStateVariables=function(s,u){return __awaiter(this,void 0,void 0,function(){var e,r,n,a,o,c,i;return __generator(this,function(t){switch(t.label){case 0:return logging_1.Logging.debug("fetchContractStateVariables"),e=contract_state_model_1.ContractState.fromJSON(u.json),r=contract_api_service_1.ContractApiService.roundNumberAt(e.block,e.genesis,e.blocksPerRound),!e.currentRound||r>e.currentRound?(n=e,[4,this.contractApi.hasOutstandingChallenges(s.contractAddress)]):[3,2];case 1:n.hasOutstandingChallenges=t.sent(),t.label=2;case 2:return e.currentRound=r,e.currentSubBlock=contract_api_service_1.ContractApiService.subBlockAt(e.block,e.genesis,e.blocksPerRound),[4,this.contractApi.clientContractStateVariables(s.tokenAddress,s.address,s.contractAddress)];case 3:for(a=t.sent(),e.onChainBalance=a.holderBalance,e.deposits[0]=a.currentRoundDeposits,e.deposits[1]=a.previousRoundDeposits,e.deposits[2]=a.secondPreviousRoundDeposits,e.pendingWithdrawals=a.pendingWithdrawals.map(function(t){return{round:t[0],amount:t[1]}}),e.latestRoundsData=new Array(e.roundsKept).fill({round:0,merkleRoot:"0x0000000000000000000000000000000000000000",liveChallenges:0}),o=0;o<e.roundsKept&&o<=a.lastCheckpointRoundNumber;o++)c=a.lastCheckpointRoundNumber-o,i=c%e.roundsKept,e.latestRoundsData[i]={round:c,merkleRoot:a.merkleRoots[i],liveChallenges:a.liveChallenges[i]};return[2,e]}})})},t=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(1,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH)),__param(2,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE)),__param(3,inversify_1.inject(contract_api_service_1.ContractApiService)),__metadata("design:paramtypes",[rxjs_1.Observable,Object,Object,contract_api_service_1.ContractApiService])],t)}();exports.ContractStateService=ContractStateService;
-},{"../inversify.types":333,"../models/state/contract-state.model":341,"./contract-api.service":361,"./logging":366,"./wallet-storage.service":369,"inversify":166,"rxjs":404}],363:[function(require,module,exports){
-"use strict";var __decorate=this&&this.__decorate||function(e,r,t,n){var a,o=arguments.length,i=o<3?r:null===n?n=Object.getOwnPropertyDescriptor(r,t):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(e,r,t,n);else for(var g=e.length-1;0<=g;g--)(a=e[g])&&(i=(o<3?a(i):3<o?a(r,t,i):a(r,t))||i);return 3<o&&i&&Object.defineProperty(r,t,i),i},__metadata=this&&this.__metadata||function(e,r){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,r)},__param=this&&this.__param||function(t,n){return function(e,r){n(e,r,t)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),contract_api_service_1=require("./contract-api.service"),round_model_1=require("../models/wallet/round.model"),signature_model_1=require("../models/primitives/signature.model"),proof_of_stake_model_1=require("../models/primitives/proof-of-stake.model"),wallet_update_error_model_1=require("../models/state/wallet-update-error.model"),util_1=require("../util"),bignumber_js_1=__importDefault(require("bignumber.js")),aggregate_model_1=require("../models/transactions/aggregate.model"),logging_1=require("./logging"),transfer_aggregate_type_model_1=require("../models/transactions/transfer-aggregate-type.model"),DisputeService=function(){function e(e){this.contractApi=e}var c;return(c=e).prototype.canIssueStateUpdateChallenge=function(e,r){var t=this;return e.lock.runExclusive(function(){return t.canIssueStateUpdateChallengeInternal(e,r)})},e.prototype.canIssueStateUpdateChallengeInternal=function(a,o){var r=this;return new Promise(function(n,e){r.contractApi.getChallengeBook(a.tokenAddress,a.address,a.address,a.contractAddress).then(function(e){var r=0<parseInt(e[0].valueOf(),10),t=parseInt(e[2].valueOf(),10);return!a.isRegistered||a.isPendingRegistrationApproval?(logging_1.Logging.error("reason 1"),n(!1)):a.registrationRound>=o.currentRound?(logging_1.Logging.error("reason 2"),n(!1)):!a.previousRound||a.previousRound.roundNumber<o.currentRound-1?(logging_1.Logging.error("reason 3"),n(!1)):a.registrationRound<a.previousRound.roundNumber&&!a.previousRound.proofOfStake?(logging_1.Logging.error("reason 4"),n(!1)):a.previousRound.aggregate.lastConfirmedTransfer&&!a.previousRound.aggregate.lastConfirmedTransfer.confirmations.get(util_1.isSameHexValue(a.previousRound.aggregate.lastConfirmedTransfer.sender,a.address)?transfer_aggregate_type_model_1.TransferAggregateType.DEBIT:transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)?(logging_1.Logging.error("reason 5"),n(!1)):r||t>=o.currentRound-1?(logging_1.Logging.error("reason 6"),n(!1)):o.currentSubBlock<o.slackPeriod?(logging_1.Logging.error("reason 7"),n(!1)):o?o.networkId!=a.networkId?(logging_1.Logging.error("reason 9"),n(!1)):n(!o.isPunished):(logging_1.Logging.error("reason 8"),n(!1))})})},e.prototype.canRecoverAllFunds=function(e,r){var t=this;return e.lock.runExclusive(function(){return t.canRecoverAllFundsInternal(e,r)})},e.prototype.canRecoverAllFundsInternal=function(a,o){var i=this;return new Promise(function(t,n){return i.contractApi.recordBook(a.tokenAddress,a.address,a.contractAddress).then(function(e){var r=o.lastSubmissionRound-1;return!a.isRegistered||a.isPendingRegistrationApproval?(logging_1.Logging.error("canRecoverAllFunds reason 1"),t(!1)):a.registrationRound>=r?(logging_1.Logging.error("canRecoverAllFunds reason 2"),t(!1)):a.getRound(r)&&a.getRound(r).proofOfStake?e?(logging_1.Logging.error("canRecoverAllFunds reason 4"),t(!1)):o.networkId!=a.networkId?(logging_1.Logging.error("reason 9"),t(!1)):i.contractApi.getAllReclaimableFunds(a.getRound(r).proofOfStake).then(function(e){return t(!e.isZero())}).catch(n):(logging_1.Logging.error("canRecoverAllFunds reason 3"),t(!1))})})},e.prototype.canRecoverOnChainFunds=function(e,r){var t=this;return e.lock.runExclusive(function(){return t.canRecoverOnChainFundsInternal(e,r)})},e.prototype.canRecoverOnChainFundsInternal=function(n,a){var o=this;return new Promise(function(r,t){return o.contractApi.recordBook(n.tokenAddress,n.address,n.contractAddress).then(function(e){return a.deposits?e?(logging_1.Logging.error("canRecoverOnChainFunds reason 3"),r(!1)):a.networkId!=n.networkId?(logging_1.Logging.error("reason 9"),r(!1)):void o.contractApi.getReclaimableOnChainFunds(n.tokenAddress,n.address,n.contractAddress).then(function(e){return r(!e.isZero())}).catch(t):(logging_1.Logging.error("canRecoverOnChainFunds reason 1"),r(!1))})})},e.prototype.issueStateUpdateChallenge=function(g,s,l,d){var u=this;return g.lock.runExclusive(function(){return new Promise(function(o,i){u.canIssueStateUpdateChallengeInternal(g,s).then(function(e){if(!e)return o(!1);var r=g.previousRound.aggregate.isTransferPending,t=r?round_model_1.Round.fromJSON(g.previousRound.json):g.previousRound;r&&t.aggregate.cancelPendingTransfer();var n=t.aggregate.lastConfirmedTransfer,a=n?n.confirmations.get(util_1.isSameHexValue(n.sender,g.address)?transfer_aggregate_type_model_1.TransferAggregateType.DEBIT:transfer_aggregate_type_model_1.TransferAggregateType.CREDIT):signature_model_1.Signature.EMPTY;t.roundNumber!=g.registrationRound||n||(a=g.registrationApproval),logging_1.Logging.log(t.proofOfStake),logging_1.Logging.log(t.aggregate.trailIdentifier),logging_1.Logging.log(t.aggregate.hash),logging_1.Logging.log(a.checksum),logging_1.Logging.log(a.json),n&&u.contractApi.verifyProofOfTransitionAgreement(g.tokenAddress,g.address,g.trailIdentifier,t.roundNumber,t.aggregate.transferTree.hash,t.aggregate.spent,t.aggregate.gained,a,g.contractAddress).then(function(e){logging_1.Logging.log("res"),logging_1.Logging.log(e)}).catch(function(e){logging_1.Logging.error("bad"),logging_1.Logging.error(e)}),t.proofOfStake?(a===signature_model_1.Signature.EMPTY&&n&&logging_1.Logging.error("Empty signature on aggregate."),u.contractApi.estimateChallengeInitialMerkleStateCost(g.address,t.proofOfStake,t.aggregate.transferTree.hash,t.aggregate.spent,t.aggregate.gained,a,g.contractAddress).then(function(e){logging_1.Logging.log("estimateChallengeInitialMerkleStateCost: "+e),u.contractApi.submitChallengeInitialMerkleState(g.address,t.proofOfStake,t.aggregate.transferTree.hash,t.aggregate.spent,t.aggregate.gained,a,s.challengeCost.multipliedBy(e),g.contractAddress,l,d).then(o).catch(i)}).catch(i)):u.contractApi.estimateChallengeInitialEmptyStateCost(g.tokenAddress,g.address,g.trailIdentifier,t.aggregate.transferTree.hash,t.aggregate.spent,t.aggregate.gained,a,g.contractAddress).then(function(e){logging_1.Logging.log("estimateChallengeInitialEmptyStateCost: "+e),u.contractApi.submitChallengeInitialEmptyState(g.tokenAddress,g.address,g.trailIdentifier,t.aggregate.transferTree.hash,t.aggregate.spent,t.aggregate.gained,a,s.challengeCost.multipliedBy(e),g.contractAddress,l,d).then(o).catch(i)}).catch(i)})})})},e.prototype.checkStateUpdateChallengeResponse=function(d,e){var u=this;return new Promise(function(i,e){var g,s,l=d.latestRound.roundNumber;u.contractApi.getStateUpdateEventAtRound(d.tokenAddress,d.address,l,d.contractAddress).then(function(e){if(!e||!e.length)return i(null);var r=e.find(function(e){return util_1.isSameHexValue(e.args.account,d.address)&&e.args.round.toNumber()==l});if(!r||!r.args)return i(null);var t=r.args;logging_1.Logging.log("answer"),logging_1.Logging.log(t),g=new proof_of_stake_model_1.ProofOfStake(d.contractAddress,d.tokenAddress,d.address,t.paint,t.trail.toNumber(),l,t.allotmentChain,t.membershipChain,t.values.map(function(e){return new bignumber_js_1.default(e)}),t.LR[0],t.LR[1],t.passiveChecksum,t.lrDeltasPassiveMark[2][0],t.lrDeltasPassiveMark[2][1]);var n=util_1.remove0xPrefix(t.r.toString(16)),a=util_1.remove0xPrefix(t.s.toString(16)),o=util_1.remove0xPrefix(t.v.toString(16));return s=signature_model_1.Signature.fromRSV(d.contractOwnerAddress,t.paint,[n,a,o].join("")),u.contractApi.verifyProof(d.getRound(l),g)}).then(function(e){if(!e)throw wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_INVALID;return util_1.isSameHexValue(s.checksum,util_1.EMPTY_HASH)||u.contractApi.validateHubSignature(s,d.contractAddress)}).then(function(e){if(!e)throw wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TRANSFER_CREDIT_HUB_SIGNATURE_INVALID;return i([g,s])}).catch(e)})},e.prototype.resolveOnChainStateUpdateDispute=function(e,r,t){var n=this;return e.lock.runExclusive(function(){return n.resolveOnChainStateUpdateDisputeInternal(e,r,t)})},e.prototype.resolveOnChainStateUpdateDisputeInternal=function(i,g,s){var e=this;return new Promise(function(t,n){if(i.latestRound.proofOfStake)return t(wallet_update_error_model_1.WalletUpdateError.LOGIC_PROOF_ALREADY_UPDATED);if(!g||!s)return n(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF);var a=i.latestRound,o=i.previousRound;e.contractApi.verifyProof(a,g).then(function(e){if(!e)return n(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_INVALID);if(g.amount.isLessThan(o.expectedBalance))return n(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_INSUFFICIENT_BALANCE);if(a.setProofOfStake(g),util_1.isSameHexValue(g.paint,o.aggregate.hash)){if(o.aggregate.isTransferPending)!util_1.isSameHexValue(o.aggregate.pendingTransfer.recipient,i.address)?(o.aggregate.pendingTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,s),o.aggregate.confirmPendingOutgoingTransfer()):(o.aggregate.pendingTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,s),o.aggregate.confirmPendingIncomingTransfer());return t(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF)}if(o.aggregate.isTransferPending){var r=aggregate_model_1.Aggregate.fromJSON(o.aggregate.json);if(r.cancelPendingTransfer(),util_1.isSameHexValue(g.paint,r.hash))return o.aggregate.cancelPendingTransfer(),t(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR)}return t(wallet_update_error_model_1.WalletUpdateError.LOGIC_UNKNOWN)}).catch(n)})},e.canIssueDeliveryChallenge=function(e,r,t){return!!t&&(!t.isPunished&&(!!r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)&&(!!r.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)&&(!(!util_1.isSameHexValue(e.address,r.sender)&&!util_1.isSameHexValue(e.address,r.recipient))&&(r.round==t.currentRound-1&&!(t.currentSubBlock<t.slackPeriod))))))},e.prototype.issueDeliveryChallenge=function(i,g,s,l,d){var u=this;return i.lock.runExclusive(function(){return new Promise(function(r,t){if(!c.canIssueDeliveryChallenge(i,g,s))return t(new Error);var n=util_1.isSameHexValue(i.address,g.sender),a=g.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT),o=g.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT);u.contractApi.estimateDeliveryCommitmentCost(i.tokenAddress,i.address,g.sender,g.recipient,g.nonce,n?i.trailIdentifier:g.recipientTrailIdentifier,a.tx_set_index,g.recipientTrailIdentifier,a.tx_set_proof,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings),new bignumber_js_1.default(a.updated_gains),g.amount,o,i.contractAddress).then(function(e){logging_1.Logging.log("estimateDeliveryCommitmentCost: "+e),u.contractApi.submitDeliveryCommitment(i.tokenAddress,i.address,g.sender,g.recipient,g.nonce,n?i.trailIdentifier:g.recipientTrailIdentifier,a.tx_set_index,g.recipientTrailIdentifier,a.tx_set_proof,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings),new bignumber_js_1.default(a.updated_gains),g.amount,o,s.challengeCost.multipliedBy(e),i.contractAddress,l,d).then(r).catch(t)}).catch(t)})})},e=c=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(contract_api_service_1.ContractApiService)),__metadata("design:paramtypes",[contract_api_service_1.ContractApiService])],e)}();exports.DisputeService=DisputeService;
-},{"../models/primitives/proof-of-stake.model":338,"../models/primitives/signature.model":339,"../models/state/wallet-update-error.model":348,"../models/transactions/aggregate.model":350,"../models/transactions/transfer-aggregate-type.model":353,"../models/wallet/round.model":357,"../util":371,"./contract-api.service":361,"./logging":366,"bignumber.js":24,"inversify":166}],364:[function(require,module,exports){
-(function (process){
-"use strict";var __decorate=this&&this.__decorate||function(e,t,r,s){var i,n=arguments.length,o=n<3?t:null===s?s=Object.getOwnPropertyDescriptor(t,r):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)o=Reflect.decorate(e,t,r,s);else for(var a=e.length-1;0<=a;a--)(i=e[a])&&(o=(n<3?i(o):3<n?i(t,r,o):i(t,r))||o);return 3<n&&o&&Object.defineProperty(t,r,o),o},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,s){return function(e,t){s(e,t,r)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var util_1=require("./../util"),rxjs_1=require("rxjs"),inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),util_2=require("../util"),isomorphic_ws_1=__importDefault(require("isomorphic-ws")),operators_1=require("rxjs/operators"),logging_1=require("./logging");require("reflect-metadata");var SocketMessageType,https_proxy_agent_1=__importDefault(require("https-proxy-agent")),WS_RECONNECT_INIT_INTERVAL=500,WS_RECONNECT_INCREASE=2;!function(e){e.INCOMING_TRANSFER="incoming_transfer",e.INCOMING_RECEIPT="incoming_receipt",e.INCOMING_CONFIRMATION="incoming_confirmation",e.INCOMING_TIMEOUT="timeout_transfer",e.REGISTERED_WALLET="registered_wallet"}(SocketMessageType=exports.SocketMessageType||(exports.SocketMessageType={}));var HubApiService=function(){function e(e){this.api=e,this.syncMessageObserver=new rxjs_1.Subject,this.subscribedAddresses=[],this.webSocketUrl="",this.webSocketReconnectInterval=WS_RECONNECT_INIT_INTERVAL}return e.prototype.getStatusData=function(e){return this.api.get(e,"audit/")},e.prototype.getTokensList=function(e){return this.api.get(e,"audit/tokens/")},e.prototype.getWalletData=function(e,t,r,s,i){return void 0===s&&(s=0),void 0===i&&(i=0),this.api.get(r,"audit/"+util_2.remove0xPrefix(t)+"/"+util_2.remove0xPrefix(e)+"/","round_number="+s+"&transfer_id="+i)},e.prototype.whoisWallet=function(e,t,r){return this.api.get(r,"audit/"+util_2.remove0xPrefix(e)+"/"+util_2.remove0xPrefix(t)+"/whois")},e.prototype.getTransfersFromTxId=function(e,t){return this.api.get(t,"transfer/"+e.toString())},e.prototype.getSwapOrders=function(e,t,r,s){return this.api.get(r,"audit/swaps/"+util_2.remove0xPrefix(e)+"/"+util_2.remove0xPrefix(t),s?"round_number="+s:null)},e.prototype.register=function(e,t){return this.api.post(e.webAddress,"admission/",{token:util_2.remove0xPrefix(e.tokenAddress),address:util_2.remove0xPrefix(e.address),authorization:t.rsv})},e.prototype.getSLADetails=function(e){return this.api.get(e.webAddress,"sla/")},e.prototype.getSLAStatus=function(e){return this.api.get(e.webAddress,"sla/"+util_2.remove0xPrefix(e.address))},e.prototype.sendTransfer=function(e,t,r,s){return this.api.post(e.webAddress,"transfer/",{wallet_signature:{value:r.rsv},wallet_balance_signature:{value:s.rsv},round:t.transfer.round,amount:t.transfer.amount,passive:t.transfer.isPassive,wallet_balance:t.markerBalance.toFixed(0),nonce:t.transfer.nonce,wallet:{address:util_2.remove0xPrefix(t.transfer.sender),token:util_2.remove0xPrefix(e.tokenAddress)},recipient:util_2.remove0xPrefix(t.transfer.recipient)})},e.prototype.sendSwap=function(e,t,r,s,i,n,o){return this.api.post(e.webAddress,"swap/",{debit_signature:{value:s.rsv},debit_balance_signature:{value:o.rsv},credit_signature:{value:i.rsv},fulfillment_signature:{value:n.rsv},round:r.senderTransfer.round,amount:r.senderTransfer.amount,amount_swapped:r.senderTransfer.amountSwapped,nonce:r.senderTransfer.nonce,debit_balance:r.balanceMarker.toFixed(0),wallet:{address:e.address,token:e.tokenAddress},recipient:{address:t.address,token:t.tokenAddress}})},e.prototype.sendSwapFreeze=function(e,t,r){return this.api.put(e.webAddress,"swap/"+t.txId+"/freeze",{freezing_signature:{value:r.rsv}})},e.prototype.sendSwapCancellation=function(e,t,r,s){return this.api.put(e.webAddress,"swap/"+t.txId+"/cancel",{sender_cancellation_signature:{value:r.rsv},recipient_cancellation_signature:{value:s.rsv}})},e.prototype.sendSwapFinalization=function(e,t,r){return this.api.put(e.webAddress,"swap/"+t.txId+"/finalize",{finalization_signature:{value:r.rsv}})},e.prototype.sendReceipt=function(e,t,r){return this.api.put(e.webAddress,"transfer/"+t+"/",{wallet_signature:{value:r.rsv}})},e.prototype.isWebSocketConnectionOpen=function(){return!(!this.socket||this.socket.readyState!==this.socket.OPEN)},e.prototype.toWebSocketUrl=function(e){if(e.endsWith("/")||(e+="/"),e.startsWith("https://"))return"wss://"+e.slice(8);if(e.startsWith("http://"))return"ws://"+e.slice(7);if(e.startsWith("ws://")||e.startsWith("wss://"))return e;throw Error("Unknown protocol")},e.prototype.initSocket=function(t,r){var s=this,i=this;if(i.webSocketUrl=i.toWebSocketUrl(r),process&&process.env&&(process.env.HTTPS_PROXY||process.env.https_proxy)){var e=process.env.HTTPS_PROXY||process.env.https_proxy,n=new https_proxy_agent_1.default(e);i.socket=new isomorphic_ws_1.default(i.webSocketUrl+"sync/wallets/",{agent:n})}else i.socket=new isomorphic_ws_1.default(i.webSocketUrl+"sync/wallets/");i.socket.onclose=function(e){logging_1.Logging.log("Socket closed, reopen..."+e),setTimeout(function(){return i.initSocket(t,r)},i.webSocketReconnectInterval),i.webSocketReconnectInterval*=WS_RECONNECT_INCREASE},i.socket.onerror=function(e){logging_1.Logging.log("Socket error, reopen..."+e)},i.socket.onopen=function(){i.webSocketReconnectInterval=WS_RECONNECT_INIT_INTERVAL;var e=util_1.removeDuplicateFromArray(Array.from(s.subscribedAddresses).concat([t]).map(function(e){return util_2.remove0xPrefix(e)}));i.socket.send(JSON.stringify({action:"subscribe",wallets:e}))},i.socket.onmessage=function(e){i.webSocketReconnectInterval=WS_RECONNECT_INIT_INTERVAL;var t=util_1.JSONbig.parse(e.data);"success"===t.status?i.subscribedAddresses=t.message.wallets.map(function(e){return util_1.add0xPrefix(e)}):"notify"===t.status&&i.syncMessageObserver.next(t)}},e.prototype.walletSyncObservable=function(e,t,r,s,i){var n=this.subscribedAddresses.find(function(e){return e===t});if(this.socket&&!n&&this.socket.readyState!==this.socket.OPEN)throw Error("Do not run this function in parallel");if(this.socket||this.initSocket(t,e),this.webSocketUrl!==this.toWebSocketUrl(e))throw Error("Hub api url inconsistent");if(!n&&this.socket.readyState===this.socket.OPEN){var o=util_1.removeDuplicateFromArray(Array.from(this.subscribedAddresses).concat([t]).map(function(e){return util_2.remove0xPrefix(e)}));this.socket.send(JSON.stringify({action:"subscribe",wallets:o}))}var a=null==r,u=null==s,c=null==i;return this.syncMessageObserver.pipe(operators_1.map(function(e){return e.message}),operators_1.filter(function(e){if(!util_2.isSameHexValue(e.topic,t))return!1;switch(e.type){case SocketMessageType.REGISTERED_WALLET:return u||util_2.isSameHexValue(e.data.token,s);case SocketMessageType.INCOMING_CONFIRMATION:case SocketMessageType.INCOMING_RECEIPT:case SocketMessageType.INCOMING_TIMEOUT:case SocketMessageType.INCOMING_TRANSFER:return(a||e.type===r)&&(u||util_2.isSameHexValue(e.data.wallet.token,s))&&(c||i===e.data.id)}}),operators_1.map(function(e){return e.data}))},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.REST_API_INTERFACE)),__metadata("design:paramtypes",[Object])],e)}();exports.HubApiService=HubApiService;
-}).call(this,require('_process'))
-},{"../inversify.types":333,"../util":371,"./../util":371,"./logging":366,"_process":864,"https-proxy-agent":140,"inversify":166,"isomorphic-ws":192,"reflect-metadata":402,"rxjs":404,"rxjs/operators":601}],365:[function(require,module,exports){
-"use strict";var __decorate=this&&this.__decorate||function(e,t,r,i){var a,s=arguments.length,n=s<3?t:null===i?i=Object.getOwnPropertyDescriptor(t,r):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,r,i);else for(var u=e.length-1;0<=u;u--)(a=e[u])&&(n=(s<3?a(n):3<s?a(t,r,n):a(t,r))||n);return 3<s&&n&&Object.defineProperty(t,r,n),n},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,i){return function(e,t){i(e,t,r)}};Object.defineProperty(exports,"__esModule",{value:!0});var rxjs_1=require("rxjs"),hub_api_service_1=require("./hub-api.service"),hub_state_model_1=require("../models/state/hub-state.model"),inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),HubStateService=function(){function e(e,t,r){var i=this;this.walletStatePollObservable=e,this.hubStateFetchObserver=t,this.hubApi=r,e.subscribe(function(e){i.fetchHubState(e.wallet).then(function(e){i.hubStateFetchObserver.next(e)})})}return e.prototype.fetchHubState=function(e){var t=new hub_state_model_1.HubState;return t.timestamp=(new Date).getTime(),Promise.all([this.hubApi.getStatusData(e.webAddress),this.hubApi.getWalletData(e.address,e.tokenAddress,e.webAddress,e.latestRound.roundNumber-1).catch(function(){})]).then(function(e){return t.statusData=e[0],t.walletData=e[1],t}).catch(function(){return t})},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(1,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH)),__param(2,inversify_1.inject(hub_api_service_1.HubApiService)),__metadata("design:paramtypes",[rxjs_1.Observable,Object,hub_api_service_1.HubApiService])],e)}();exports.HubStateService=HubStateService;
-},{"../inversify.types":333,"../models/state/hub-state.model":342,"./hub-api.service":364,"inversify":166,"rxjs":404}],366:[function(require,module,exports){
+"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var withdrawal_model_1=require("./../transactions/withdrawal.model"),active_state_model_1=require("../transactions/active-state.model"),proof_of_exclusive_allotment_model_1=require("../primitives/proof-of-exclusive-allotment.model"),deposit_model_1=require("../transactions/deposit.model"),minimum_balance_marker_model_1=require("../transactions/minimum-balance-marker.model"),bignumber_js_1=__importDefault(require("bignumber.js")),Eon=function(){function n(e,t,n,r,i){this._contractAddress=e,this._tokenAddress=t,this._walletAddress=n,this._trailIdentifier=r,this._eonNumber=i,this._withdrawals=[],this._deposits=[],this._deposited=new bignumber_js_1.default("0"),this._depositedOnChain=new bignumber_js_1.default("0"),this._pendingIncomingTransfers=[],this._cancelledTransfers=[],this._activeState=new active_state_model_1.ActiveState(e,t,n,r,i)}return n.fromJSON=function(e){var t=new n(e.contractAddress,e.tokenAddress,e.walletAddress,e.trailIdentifier,e.eonNumber);return null!=e.activeState&&(t._activeState=active_state_model_1.ActiveState.fromJSON(e.activeState)),null!=e.proofOfExclusiveAllotment&&(t._proofOfExclusiveAllotment=proof_of_exclusive_allotment_model_1.ProofOfExclusiveAllotment.fromJSON(e.proofOfExclusiveAllotment)),null!=e.proposedProofOfExclusiveAllotment&&(t.proposedProofOfExclusiveAllotment=proof_of_exclusive_allotment_model_1.ProofOfExclusiveAllotment.fromJSON(e.proposedProofOfExclusiveAllotment)),t._withdrawals=e.withdrawals.map(function(e){return withdrawal_model_1.Withdrawal.fromJSON(e)}),t._deposits=e.deposits.map(function(e){return deposit_model_1.Deposit.fromJSON(e)}),t._deposited=new bignumber_js_1.default(e.deposited),t._depositedOnChain=new bignumber_js_1.default(e.depositedOnChain),null!=e.minimumAuthorizedBalance&&(t._minimumAuthorizedBalance=minimum_balance_marker_model_1.MinimumAvailableBalanceMarker.fromJSON(e.minimumAuthorizedBalance)),t._pendingIncomingTransfers=e.pendingIncomingTransfers,t._cancelledTransfers=e.cancelledTransfers,t},Object.defineProperty(n.prototype,"json",{get:function(){return{contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,walletAddress:this._walletAddress,trailIdentifier:this._trailIdentifier,eonNumber:this._eonNumber,activeState:null==this._activeState?null:this._activeState.json,proofOfExclusiveAllotment:null==this._proofOfExclusiveAllotment?null:this._proofOfExclusiveAllotment.json,proposedProofOfExclusiveAllotment:null==this.proposedProofOfExclusiveAllotment?null:this.proposedProofOfExclusiveAllotment.json,withdrawals:this._withdrawals.map(function(e){return e.json}),deposits:this._deposits.map(function(e){return e.json}),deposited:this._deposited,depositedOnChain:this._depositedOnChain,minimumAuthorizedBalance:this._minimumAuthorizedBalance,pendingIncomingTransfers:this._pendingIncomingTransfers,cancelledTransfers:this._cancelledTransfers}},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"eonNumber",{get:function(){return this._eonNumber},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"proofOfExclusiveAllotment",{get:function(){return this._proofOfExclusiveAllotment},enumerable:!0,configurable:!0}),n.prototype.setProofOfExclusiveAllotment=function(e){return this._proofOfExclusiveAllotment=e,!0},Object.defineProperty(n.prototype,"chainBalance",{get:function(){return this._proofOfExclusiveAllotment?this._proofOfExclusiveAllotment.amount:new bignumber_js_1.default("0")},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"proposedChainBalance",{get:function(){return this.proposedProofOfExclusiveAllotment?this.proposedProofOfExclusiveAllotment.amount:new bignumber_js_1.default("0")},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"activeState",{get:function(){return this._activeState},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"currentEonWithdrawalAmount",{get:function(){for(var e=new bignumber_js_1.default(0),t=0;t<this._withdrawals.length;t++)this._withdrawals[t].eonNumber==this._eonNumber&&(e=e.plus(this._withdrawals[t].amount));return e},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"isWithdrawalPending",{get:function(){return 0<this._withdrawals.length},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"walletAddress",{get:function(){return this._walletAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"trailIdentifier",{get:function(){return this._trailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"contractAddress",{get:function(){return this._contractAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"withdrawalAmount",{get:function(){return this._withdrawals.map(function(e){return e.amount}).reduce(function(e,t){return e.plus(t)})},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"availableBalance",{get:function(){var e=this.chainBalance.plus(this.offChainDeposited),t=this.currentEonWithdrawalAmount;return e.plus(this.activeState.amount).minus(t).minus(this.activeState.pendingReceipt)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"expectedBalance",{get:function(){var e=this.chainBalance.plus(this.onChainDeposit),t=this.currentEonWithdrawalAmount;return e.plus(this.activeState.amount).minus(t).minus(this.activeState.pendingReceipt)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"minimumAuthorizedBalance",{get:function(){return this._minimumAuthorizedBalance},set:function(e){this._minimumAuthorizedBalance=e},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"availableBalanceMarker",{get:function(){return new minimum_balance_marker_model_1.MinimumAvailableBalanceMarker(this._contractAddress,this._tokenAddress,this._walletAddress,this._eonNumber,this.availableBalance)},enumerable:!0,configurable:!0}),n.prototype.setOnChainWithdrawals=function(e){this._withdrawals=e},Object.defineProperty(n.prototype,"withdrawals",{get:function(){return this._withdrawals},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"deposits",{get:function(){return this._deposits},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"offChainDeposited",{get:function(){return this._deposited},enumerable:!0,configurable:!0}),n.prototype.addDeposit=function(t){return!this._deposits.find(function(e){return e.txId==t.txId})&&(this._deposits.push(t),this._deposited=this._deposited.plus(t.amount),!0)},Object.defineProperty(n.prototype,"onChainDeposit",{get:function(){return this._depositedOnChain},set:function(e){this._depositedOnChain=e},enumerable:!0,configurable:!0}),n.prototype.isCancelledTransfer=function(t){return null!=this.cancelledTransfers.find(function(e){return e.id==t.id})},n.prototype.addCancelledTransfer=function(e){this.isCancelledTransfer(e)||this._cancelledTransfers.push(e)},Object.defineProperty(n.prototype,"cancelledTransfers",{get:function(){return this._cancelledTransfers},enumerable:!0,configurable:!0}),n.prototype.isPendingIncomingTransfer=function(t){return null!=this.pendingIncomingTransfers.find(function(e){return e.id==t.id})},n.prototype.addPendingIncomingTransfer=function(e){this.isPendingIncomingTransfer(e)||this._pendingIncomingTransfers.push(e)},n.prototype.removePendingIncomingTransfer=function(t){var e=this.pendingIncomingTransfers.findIndex(function(e){return e.id==t.id});-1!=e&&this.pendingIncomingTransfers.splice(e,1)},Object.defineProperty(n.prototype,"pendingIncomingTransfers",{get:function(){return this._pendingIncomingTransfers},enumerable:!0,configurable:!0}),n}();exports.Eon=Eon;
+},{"../primitives/proof-of-exclusive-allotment.model":338,"../transactions/active-state.model":350,"../transactions/deposit.model":351,"../transactions/minimum-balance-marker.model":352,"./../transactions/withdrawal.model":355,"bignumber.js":24}],358:[function(require,module,exports){
+"use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var eon_model_1=require("./eon.model"),async_mutex_1=require("async-mutex"),signature_model_1=require("../primitives/signature.model"),active_state_model_1=require("../transactions/active-state.model"),bignumber_js_1=__importDefault(require("bignumber.js")),minimum_balance_marker_model_1=require("../transactions/minimum-balance-marker.model"),Wallet=function(){function i(e,t,r,n,i,o){this._address=e,this._networkId=t,this._contractOwnerAddress=r,this._contractAddress=n,this._tokenAddress=i,this._webAddress=o,this._registered=!1,this._pendingRegistrationApproval=!1,this._eons=new Map,this._latestEonNumber=0,this._onChainBalance=new bignumber_js_1.default(0),this._lock=new async_mutex_1.Mutex,this._eons.set(0,new eon_model_1.Eon(n,i,e,0,0))}return i.fromJSON=function(e){var t=new i(e.address,e.networkId,e.contractOwnerAddress,e.contractAddress,e.tokenAddress,e.webAddress);for(var r in t._trailIdentifier=e.trailIdentifier,t._registered=e.registered,t._registrationEon=e.registrationEon,t._pendingRegistrationApproval=e.pendingRegistrationApproval,t._registrationApproval=e.registrationApproval?signature_model_1.Signature.fromJSON(e.registrationApproval):void 0,e.eons)if(e.eons.hasOwnProperty(r)){var n=e.eons[r];t._eons.set(parseInt(r,10),eon_model_1.Eon.fromJSON(n))}return t._onChainBalance=new bignumber_js_1.default(e.onChainBalance),t._latestEonNumber=parseInt(e.latestEonNumber,10),t},Object.defineProperty(i.prototype,"json",{get:function(){var n={};return this._eons.forEach(function(e,t,r){n[t]=e.json}),{address:this._address,networkId:this._networkId,contractOwnerAddress:this._contractOwnerAddress,contractAddress:this._contractAddress,tokenAddress:this._tokenAddress,webAddress:this._webAddress,trailIdentifier:this._trailIdentifier,registered:this._registered,registrationEon:this._registrationEon,pendingRegistrationApproval:this._pendingRegistrationApproval,registrationApproval:this.registrationApproval?this.registrationApproval.json:void 0,eons:n,latestEonNumber:this._latestEonNumber,onChainBalance:this._onChainBalance}},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isRegistered",{get:function(){return this._registered},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"isPendingRegistrationApproval",{get:function(){return this._pendingRegistrationApproval},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"address",{get:function(){return this._address},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"contractAddress",{get:function(){return this._contractAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"contractOwnerAddress",{get:function(){return this._contractOwnerAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"tokenAddress",{get:function(){return this._tokenAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"networkId",{get:function(){return this._networkId},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"trailIdentifier",{get:function(){return this._trailIdentifier},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"webAddress",{get:function(){return this._webAddress},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"latestEon",{get:function(){return this.getEon(this._latestEonNumber)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"previousEon",{get:function(){return this.getEon(this._latestEonNumber-1)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"secondPreviousEon",{get:function(){return this.getEon(this._latestEonNumber-2)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"lock",{get:function(){return this._lock},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"registrationEon",{get:function(){return this._registrationEon},enumerable:!0,configurable:!0}),i.prototype.getAdmissionActiveState=function(e,t){return void 0===t&&(t=0),new active_state_model_1.ActiveState(this.contractAddress,this.tokenAddress,this.address,t,e)},i.prototype.markRegistered=function(e,t){if(!this.isRegistered){this._registrationApproval=e,this._registered=!0,this.unmarkPendingRegistrationApproval(),this._latestEonNumber=this.registrationEon,this._trailIdentifier=t;var r=new eon_model_1.Eon(this.contractAddress,this.tokenAddress,this.address,this.trailIdentifier,this.registrationEon);this._eons.set(r.eonNumber,r)}},Object.defineProperty(i.prototype,"registrationApproval",{get:function(){return this._registrationApproval},enumerable:!0,configurable:!0}),i.prototype.markPendingRegistrationApproval=function(e){this._registrationEon=e,this._pendingRegistrationApproval=!0},i.prototype.unmarkPendingRegistrationApproval=function(){this._pendingRegistrationApproval=!1},i.prototype.getEon=function(e){return this._eons.get(e)},i.prototype.addEon=function(e){if(e.eonNumber!=this._latestEonNumber+1)return!1;this._eons.set(e.eonNumber,e),this._latestEonNumber=e.eonNumber},i.prototype.addEonForce=function(e){this._eons.set(e.eonNumber,e),this._latestEonNumber=e.eonNumber},Object.defineProperty(i.prototype,"withdrawableAmount",{get:function(){if(!this.previousEon||!this.previousEon.proofOfExclusiveAllotment)return new bignumber_js_1.default(0);var e=this.previousEon.minimumAuthorizedBalance?this.previousEon.minimumAuthorizedBalance.amount:this.previousEon.availableBalance,t=bignumber_js_1.default.min(this.previousEon.chainBalance,e),r=this.latestEon.minimumAuthorizedBalance?this.latestEon.minimumAuthorizedBalance.amount:this.offChainBalance;return bignumber_js_1.default.min(t,r)},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"onChainBalance",{get:function(){return this._onChainBalance},set:function(e){this._onChainBalance=e},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"offChainBalance",{get:function(){var e=new bignumber_js_1.default(0);if(!this.latestEon)return e;var t=this.latestEon.availableBalance;return!this.latestEon.proofOfExclusiveAllotment&&this.previousEon&&(t=t.plus(this.previousEon.availableBalance)),t},enumerable:!0,configurable:!0}),Object.defineProperty(i.prototype,"minimumAvailableBalanceMarker",{get:function(){return new minimum_balance_marker_model_1.MinimumAvailableBalanceMarker(this._contractAddress,this._tokenAddress,this._address,this.latestEon.eonNumber,this.offChainBalance)},enumerable:!0,configurable:!0}),i.prototype.getEonSwapStartingBalance=function(e){var t=new bignumber_js_1.default(0);if(e<=this.registrationEon)return t;var r=this.getEon(e);if(r&&r.proofOfExclusiveAllotment)return r.chainBalance;var n=this.getEon(e-1);return n?n.availableBalance:t},i}();exports.Wallet=Wallet;
+},{"../primitives/signature.model":339,"../transactions/active-state.model":350,"../transactions/minimum-balance-marker.model":352,"./eon.model":357,"async-mutex":23,"bignumber.js":24}],359:[function(require,module,exports){
+"use strict";var __decorate=this&&this.__decorate||function(e,t,r,a){var n,i=arguments.length,s=i<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,r):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,a);else for(var o=e.length-1;0<=o;o--)(n=e[o])&&(s=(i<3?n(s):3<i?n(t,r,s):n(t,r))||s);return 3<i&&s&&Object.defineProperty(t,r,s),s},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,a){return function(e,t){a(e,t,r)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var operator_api_service_1=require("./services/operator-api.service"),contract_api_service_1=require("./services/contract-api.service"),contract_state_service_1=require("./services/contract-state.service"),operator_state_service_1=require("./services/operator-state.service"),wallet_state_service_1=require("./services/wallet-state.service"),rxjs_1=require("rxjs"),inversify_types_1=require("./inversify.types"),eon_model_1=require("./models/wallet/eon.model"),poll_service_1=require("./services/poll.service"),wallet_storage_service_1=require("./services/wallet-storage.service"),bignumber_js_1=__importDefault(require("bignumber.js")),inversify_1=require("inversify"),wallet_model_1=require("./models/wallet/wallet.model"),signature_model_1=require("./models/primitives/signature.model"),dispute_service_1=require("./services/dispute.service"),transfer_state_model_1=require("./models/state/transfer-state.model"),util_1=require("./util"),logging_1=require("./services/logging"),transfer_active_state_update_type_model_1=require("./models/transactions/transfer-active-state-update-type.model"),active_state_model_1=require("./models/transactions/active-state.model"),minimum_balance_marker_model_1=require("./models/transactions/minimum-balance-marker.model"),NOCUSTClient=function(){function e(e,t,r,a,n,i,s,o,_,c,d,l,u,p){this.walletStorageService=e,this.synchronizationPollService=t,this.web3Service=r,this.operatorApiService=a,this.contractApiService=n,this.contractStateFetchService=i,this.operatorStateService=s,this.walletStateService=o,this.disputeService=_,this.walletStatePollObserver=c,this.web3ConnectivityObservable=d,this.operatorStateObservable=l,this.contractStateObservable=u,this.walletStateSyncObservable=p}return e.prototype.prepareSwap=function(c,d,l,u,p){var f=eon_model_1.Eon.fromJSON(c.latestEon.json),v=eon_model_1.Eon.fromJSON(d.latestEon.json);return new Promise(function(e,t){if(l.gt(c.offChainBalance))return t("Insufficient balance.");if(f.activeState.isTransferPending)return t("Another transfer is pending for the sender wallet.");if(v.activeState.isTransferPending)return t("Another transfer is pending for the recipient wallet.");if(!util_1.isSameHexValue(c.contractAddress,d.contractAddress))return t("Wallets are not in the same commit chain contract.");if(c.networkId!=d.networkId)return t("Wallets are not on the same network.");if(!util_1.isSameHexValue(c.address,d.address))return t("Sender and recipient wallet are not the same address.");if(util_1.isSameHexValue(c.tokenAddress,d.tokenAddress))return t("Cannot swap the same token for itself.");if(!c.isRegistered)return t("Unregistered sender wallet.");if(!d.isRegistered)return t("Unregistered recipient wallet.");if(f.eonNumber!=v.eonNumber)return t("Swapping wallets are in different rounds.");var r=f.activeState.createOutgoingSwap(d.address,d.tokenAddress,d.trailIdentifier,l,u,c.getEonSwapStartingBalance(c.latestEon.eonNumber),p);if(null===r)return t("No outgoing swap created.");var a=new minimum_balance_marker_model_1.MinimumAvailableBalanceMarker(c.contractAddress,c.tokenAddress,c.address,c.latestEon.eonNumber,c.offChainBalance.minus(l));if(null===a)return t("Balance marker not created");if(null===v.activeState.createIncomingSwap(c.address,c.tokenAddress,l,u,d.getEonSwapStartingBalance(d.latestEon.eonNumber),r.nonce))return t("No incoming swap created.");for(var n=eon_model_1.Eon.fromJSON(v.json),i=n.activeState.pendingTransfer,s=0,o=[transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT];s<o.length;s++){var _=o[s];i.authorizations.set(_,{}),i.confirmations.set(_,signature_model_1.Signature.EMPTY)}return i.amountsMatched={out:l.toFixed(0),in:u.toFixed(0)},n.activeState.fulfillPendingSwap()?(logging_1.Logging.debug("Data prepared."),logging_1.Logging.debug({senderActiveState:[f.activeState.spent.toFixed(0),f.activeState.gained.toFixed(0),f.activeState.transferTree.hash,f.activeState.hash],recipientActiveState:[v.activeState.spent.toFixed(0),v.activeState.gained.toFixed(0),v.activeState.transferTree.hash,v.activeState.hash],recipientFulfillmentActiveState:[n.activeState.spent.toFixed(0),n.activeState.gained.toFixed(0),n.activeState.transferTree.hash,n.activeState.hash],marker:[a.amount.toFixed(0),a.hash]}),e({senderTransfer:r,recipientTransfer:r,hashes:{senderActiveState:f.activeState.hash,recipientActiveState:v.activeState.hash,recipientFulfillmentActiveState:n.activeState.hash,marker:a.hash},balanceMarker:c.offChainBalance.minus(r.amount)})):t("Fake swap fulfillment failure.")})},e.prototype.sendSwap=function(o,_,c,e,t,r,a){var n=this;return new Promise(function(i,s){n.operatorApiService.sendSwap(o,_,c,e,t,r,a).then(function(e){var t=o.getEon(c.senderTransfer.eonNumber),r=_.getEon(c.senderTransfer.eonNumber);if(!t||!r)return s("Could not send swap");var a=t.activeState.createOutgoingSwap(_.address,_.tokenAddress,_.trailIdentifier,c.senderTransfer.amount,c.senderTransfer.amountSwapped,c.senderTransfer.startingBalance,c.senderTransfer.nonce,e.id),n=r.activeState.createIncomingSwap(o.address,o.tokenAddress,c.recipientTransfer.amount,c.recipientTransfer.amountSwapped,c.recipientTransfer.startingBalance,c.recipientTransfer.nonce,e.id);return a&&n?i(e.id):s("Could not send swap")}).catch(s)})},e.prototype.sendSwapFreeze=function(r,a,n){var i=this;return new Promise(function(t,e){i.operatorApiService.sendSwapFreeze(r,a,n).then(function(e){return t(!0)}).catch(e)})},e.prepareSwapFinalization=function(e,t){var r=t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT);if(!r)return null;var a=new bignumber_js_1.default(t.amountsMatched.in);if(a.lt(t.amountSwapped))return null;var n=a.minus(t.amountSwapped);return{hashes:{recipientFinalizationActiveState:active_state_model_1.ActiveState.checksum(e.contractAddress,t.recipientTokenAddress,t.recipient,t.recipientTrailIdentifier,t.eonNumber,r.tx_set_hash,new bignumber_js_1.default(r.updated_spendings),new bignumber_js_1.default(r.updated_gains).plus(n))}}},e.prototype.sendSwapFinalization=function(r,a,n){var i=this;return new Promise(function(t,e){i.operatorApiService.sendSwapFinalization(r,a,n).then(function(e){return t(!0)}).catch(e)})},e.prepareSwapCancellation=function(e,t){var r=t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),a=t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT);if(!r)return logging_1.Logging.error("Missing debit authorization."),null;if(!a)return logging_1.Logging.error("Missing fulfillment authorization."),null;var n=new bignumber_js_1.default(t.amountsMatched.in),i=new bignumber_js_1.default(t.amountsMatched.out),s=t.amount.minus(i),o=n.multipliedBy(t.amount).dividedToIntegerBy(100),_=t.amountSwapped.multipliedBy(i).dividedToIntegerBy(100);if(o.lt(_))return logging_1.Logging.error("Unfair termination price."),null;var c=util_1.isSameHexValue(e.tokenAddress,t.tokenAddress);logging_1.Logging.debug([e.contractAddress,t.tokenAddress,t.sender,c?e.trailIdentifier:t.recipientTrailIdentifier,t.eonNumber,r.tx_set_hash,new bignumber_js_1.default(r.updated_spendings).toFixed(0),new bignumber_js_1.default(r.updated_gains).plus(s).toFixed(0),s.toFixed(0)]);var d=active_state_model_1.ActiveState.checksum(e.contractAddress,t.tokenAddress,t.sender,c?e.trailIdentifier:t.recipientTrailIdentifier,t.eonNumber,r.tx_set_hash,new bignumber_js_1.default(r.updated_spendings),new bignumber_js_1.default(r.updated_gains).plus(s));logging_1.Logging.debug([e.contractAddress,t.recipientTokenAddress,t.recipient,t.recipientTrailIdentifier,t.eonNumber,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings).plus(t.amountSwapped).toFixed(0),new bignumber_js_1.default(a.updated_gains).plus(n).toFixed(0),n.toFixed(0)]);var l=active_state_model_1.ActiveState.checksum(e.contractAddress,t.recipientTokenAddress,t.recipient,t.recipientTrailIdentifier,t.eonNumber,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings).plus(t.amountSwapped),new bignumber_js_1.default(a.updated_gains).plus(n));return logging_1.Logging.debug("Data prepared."),logging_1.Logging.debug({hashes:{senderCancellationActiveState:[new bignumber_js_1.default(r.updated_spendings).toFixed(0),new bignumber_js_1.default(r.updated_gains).plus(s).toFixed(0),r.tx_set_hash,d],recipientCancellationActiveState:[new bignumber_js_1.default(a.updated_spendings).plus(t.amountSwapped).toFixed(0),new bignumber_js_1.default(a.updated_gains).plus(n).toFixed(0),a.tx_set_hash,l]}}),{hashes:{senderCancellationActiveState:d,recipientCancellationActiveState:l}}},e.prototype.sendSwapCancellation=function(r,a,n,i){var s=this;return new Promise(function(t,e){s.operatorApiService.sendSwapCancellation(r,a,n,i).then(function(e){return t(!0)}).catch(e)})},e.prototype.prepareOutgoingTransfer=function(o,_,c,d,l){var u=this,p=eon_model_1.Eon.fromJSON(o.latestEon.json);return new Promise(function(i,s){return c.gt(o.offChainBalance)?s("Insufficient balance."):p.activeState.isTransferPending?s("Another transfer is already pending."):void u.operatorApiService.whoisWallet(o.tokenAddress,_,o.webAddress).then(function(a){if(!a||null==a.trail_identifier||null==a.trail_identifier)return s("Recipient wallet unregistered.");var n=new wallet_model_1.Wallet(_,o.networkId,o.contractOwnerAddress,o.contractAddress,o.tokenAddress,o.webAddress),e=n.getAdmissionActiveState(a.eon_number),t=signature_model_1.Signature.fromRSV(_,e.hash,a.wallet_signature);u.contractApiService.validateActiveStateSignature(e,t,o.contractAddress).then(function(e){if(!e)return s("Bad Recipient Admission Request.");var t=n.getAdmissionActiveState(a.eon_number,a.trail_identifier),r=signature_model_1.Signature.fromRSV(o.contractOwnerAddress,t.hash,a.operator_signature);u.contractApiService.validateActiveStateSignature(t,r,o.contractAddress).then(function(e){if(!e)return s("Bad Recipient Admission Approval.");var t=p.activeState.createOutgoingTransfer(_,a.trail_identifier,c,d,l);if(null===t)return s("No outgoing transfer created.");var r=new minimum_balance_marker_model_1.MinimumAvailableBalanceMarker(o.contractAddress,o.tokenAddress,o.address,o.latestEon.eonNumber,o.offChainBalance.minus(c));return null===r?s("No balance marker created."):(logging_1.Logging.debug("Data prepared."),logging_1.Logging.debug({transfer:t,hashes:{activeState:[p.activeState.spent.toFixed(0),p.activeState.gained.toFixed(0),p.activeState.transferTree.hash,p.activeState.hash],marker:[r.amount.toFixed(0),r.hash]}}),i({transfer:t,hashes:{activeState:p.activeState.hash,marker:r.hash},markerBalance:o.offChainBalance.minus(t.amount)}))})})}).catch(s)})},e.prototype.sendOutgoingTransfer=function(n,i,t,r){var s=this;return new Promise(function(a,e){s.operatorApiService.sendTransfer(n,i,t,r).then(function(e){var t=n.getEon(i.transfer.eonNumber);if(!t)return a(void 0);var r=t.activeState.createOutgoingTransfer(i.transfer.recipient,i.transfer.recipientTrailIdentifier,new bignumber_js_1.default(i.transfer.amount),i.transfer.isPassive,new bignumber_js_1.default(i.transfer.nonce),e.id,new bignumber_js_1.default(e.position));return a(r?e.id:void 0)}).catch(e)})},e.prepareReceipt=function(e,t){var r=eon_model_1.Eon.fromJSON(e.latestEon.json),a=r.activeState.createIncomingTransfer(t.sender,t.amount,t.nonce,t.txId,t.isPassive);return a?(logging_1.Logging.debug("Data prepared"),logging_1.Logging.debug({transfer:a,hashes:{activeState:[r.activeState.spent.toFixed(0),r.activeState.gained.toFixed(0),r.activeState.transferTree.hash,r.activeState.hash],marker:null}}),{transfer:a,hashes:{activeState:r.activeState.hash,marker:null},markerBalance:null}):null},e.prototype.sendIncomingTransferReceipt=function(n,i,t){var r=this;return new Promise(function(a,e){r.operatorApiService.sendReceipt(n,i.transfer.txId,t).then(function(e){var t=n.getEon(i.transfer.eonNumber);if(!t)return a(!1);var r=t.activeState.createIncomingTransfer(i.transfer.sender,i.transfer.amount,i.transfer.nonce,i.transfer.txId,i.transfer.isPassive);return a(!!r)}).catch(e)})},e.prototype.getAdmissionDigest=function(r){var a=this;return new Promise(function(t,e){a.contractApiService.currentEonNumber(r.contractAddress).then(function(e){return t(r.getAdmissionActiveState(e).hash)}).catch(e)})},e.prototype.initiateWithdrawal=function(r,a,n,i){var s=this;return new Promise(function(t,e){if(a.gt(r.withdrawableAmount))return e();s.contractApiService.getChallengeCost(r.contractAddress).then(function(e){s.contractApiService.requestWithdrawal(a,r.address,r.previousEon.proofOfExclusiveAllotment,r.contractAddress,e,n,i).then(t)}).catch(e)})},e.prototype.confirmWithdrawal=function(e,t,r){return this.contractApiService.confirmWithdrawal(e.tokenAddress,e.address,e.contractAddress,t,r)},e.resolveTransferState=function(e,t){var r=util_1.isSameHexValue(t.address,e.sender)&&util_1.isSameHexValue(t.tokenAddress,e.tokenAddress);return e.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)?e.isSwap?e.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)?e.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)?e.deliveryProof?transfer_state_model_1.TransferState.DELIVERY_RATIFIED:e.isSwapFinalized?transfer_state_model_1.TransferState.SWAP_FINALIZED:e.isSwapFulfilled?transfer_state_model_1.TransferState.SWAP_FULFILLED:e.isSwapFrozen?transfer_state_model_1.TransferState.SWAP_FROZEN:e.isSwapActive?transfer_state_model_1.TransferState.SWAP_ACTIVE:e.eonNumber===t.latestEon.eonNumber?transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:t.latestEon.proofOfExclusiveAllotment?void 0:transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:transfer_state_model_1.TransferState.MISSING_CREDIT_CONFIRMATION:transfer_state_model_1.TransferState.PENDING_PROVIDER_APPROVAL:e.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)?e.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)?e.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)?e.deliveryProof?transfer_state_model_1.TransferState.DELIVERY_RATIFIED:e.eonNumber===t.latestEon.eonNumber?transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:t.latestEon.proofOfExclusiveAllotment?r?transfer_state_model_1.TransferState.MISSING_RECEIPT:transfer_state_model_1.TransferState.DELIVERY_RATIFIED:transfer_state_model_1.TransferState.DELIVERY_CONFIRMED:transfer_state_model_1.TransferState.MISSING_CREDIT_CONFIRMATION:transfer_state_model_1.TransferState.PENDING_PROVIDER_APPROVAL:transfer_state_model_1.TransferState.PENDING_RECIPIENT_APPROVAL:transfer_state_model_1.TransferState.CANCELLED},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(wallet_storage_service_1.WalletStorageService)),__param(1,inversify_1.inject(poll_service_1.PollService)),__param(2,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE)),__param(3,inversify_1.inject(operator_api_service_1.OperatorApiService)),__param(4,inversify_1.inject(contract_api_service_1.ContractApiService)),__param(5,inversify_1.inject(contract_state_service_1.ContractStateService)),__param(6,inversify_1.inject(operator_state_service_1.OperatorStateService)),__param(7,inversify_1.inject(wallet_state_service_1.WalletStateService)),__param(8,inversify_1.inject(dispute_service_1.DisputeService)),__param(9,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(10,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WEB3_CONNECTIVITY)),__param(11,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH)),__param(12,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH)),__param(13,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_SYNC)),__metadata("design:paramtypes",[wallet_storage_service_1.WalletStorageService,poll_service_1.PollService,Object,operator_api_service_1.OperatorApiService,contract_api_service_1.ContractApiService,contract_state_service_1.ContractStateService,operator_state_service_1.OperatorStateService,wallet_state_service_1.WalletStateService,dispute_service_1.DisputeService,Object,rxjs_1.Observable,rxjs_1.Observable,rxjs_1.Observable,rxjs_1.Observable])],e)}();exports.NOCUSTClient=NOCUSTClient;
+},{"./inversify.types":333,"./models/primitives/signature.model":339,"./models/state/transfer-state.model":345,"./models/transactions/active-state.model":350,"./models/transactions/minimum-balance-marker.model":352,"./models/transactions/transfer-active-state-update-type.model":353,"./models/wallet/eon.model":357,"./models/wallet/wallet.model":358,"./services/contract-api.service":361,"./services/contract-state.service":362,"./services/dispute.service":363,"./services/logging":364,"./services/operator-api.service":365,"./services/operator-state.service":366,"./services/poll.service":367,"./services/wallet-state.service":368,"./services/wallet-storage.service":369,"./util":371,"bignumber.js":24,"inversify":165,"rxjs":404}],360:[function(require,module,exports){
+"use strict";var __awaiter=this&&this.__awaiter||function(i,a,o,c){return new(o||(o=Promise))(function(t,e){function r(t){try{s(c.next(t))}catch(t){e(t)}}function n(t){try{s(c.throw(t))}catch(t){e(t)}}function s(e){e.done?t(e.value):new o(function(t){t(e.value)}).then(r,n)}s((c=c.apply(i,a||[])).next())})},__generator=this&&this.__generator||function(r,n){var s,i,a,t,o={label:0,sent:function(){if(1&a[0])throw a[1];return a[1]},trys:[],ops:[]};return t={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(t[Symbol.iterator]=function(){return this}),t;function e(e){return function(t){return function(e){if(s)throw new TypeError("Generator is already executing.");for(;o;)try{if(s=1,i&&(a=2&e[0]?i.return:e[0]?i.throw||((a=i.return)&&a.call(i),0):i.next)&&!(a=a.call(i,e[1])).done)return a;switch(i=0,a&&(e=[2&e[0],a.value]),e[0]){case 0:case 1:a=e;break;case 4:return o.label++,{value:e[1],done:!1};case 5:o.label++,i=e[1],e=[0];continue;case 7:e=o.ops.pop(),o.trys.pop();continue;default:if(!(a=0<(a=o.trys).length&&a[a.length-1])&&(6===e[0]||2===e[0])){o=0;continue}if(3===e[0]&&(!a||e[1]>a[0]&&e[1]<a[3])){o.label=e[1];break}if(6===e[0]&&o.label<a[1]){o.label=a[1],a=e;break}if(a&&o.label<a[2]){o.label=a[2],o.ops.push(e);break}a[2]&&o.ops.pop(),o.trys.pop();continue}e=n.call(r,o)}catch(t){e=[6,t],i=0}finally{s=a=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,t])}}},__importDefault=this&&this.__importDefault||function(t){return t&&t.__esModule?t:{default:t}};Object.defineProperty(exports,"__esModule",{value:!0});var logging_1=require("./services/logging"),nocust_client_1=require("./nocust-client"),bignumber_js_1=__importDefault(require("bignumber.js")),transfer_model_1=require("./models/transactions/transfer.model"),wallet_model_1=require("./models/wallet/wallet.model"),inversify_container_1=require("./inversify.container"),constant_client_provider_service_1=require("./interfaces/default/constant-client-provider.service"),operator_api_service_1=require("./services/operator-api.service"),util_1=require("./util"),transfer_active_state_update_type_model_1=require("./models/transactions/transfer-active-state-update-type.model"),contract_api_service_1=require("./services/contract-api.service"),SLASH_GAS_COST=new bignumber_js_1.default(100100),NOCUSTManager=function(){function t(t){this.receiptSubscriptions=new Map,this.contractAddress=t.contractAddress,this.operatorApiUrl=t.operatorApiUrl;var e=util_1.detectEnvironment();"browser"!==e&&"react-native"!==e||(t.rpcApi.currentProvider._prepareRequest=function(){var e=new XMLHttpRequest;return e.open("POST",this.host,!0),e.setRequestHeader("Content-Type","application/json"),e.timeout=this.timeout&&1!==this.timeout?this.timeout:0,this.headers&&this.headers.forEach(function(t){e.setRequestHeader(t.name,t.value)}),e}),this.nocustClient=inversify_container_1.NOCUSTClassFactory.createNOCUSTClient({rpcProvider:new constant_client_provider_service_1.ConstantRPCClientProvider(t.rpcApi),web3Service:inversify_container_1.ClassContainerOption.DEFAULT,storageManager:t.storageManager||inversify_container_1.ClassContainerOption.DEFAULT,logging:t.logging||inversify_container_1.ClassContainerOption.DEFAULT,restApi:t.restApi||inversify_container_1.ClassContainerOption.DEFAULT,subscribeToWeb3Connectivity:!1})}return t.prototype.isAddressRegistered=function(e,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return t.trys.push([0,2,,3]),[4,this.nocustClient.operatorApiService.whoisWallet(r,e,this.operatorApiUrl)];case 1:return t.sent(),[3,3];case 2:return t.sent(),[2,!1];case 3:return[2]}})})},t.prototype.registerAddress=function(r,n){return void 0===n&&(n=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e;return __generator(this,function(t){switch(t.label){case 0:return t.trys.push([0,2,,3]),[4,this.registerAddressInternal(r,n)];case 1:return t.sent(),[3,3];case 2:if(-1<(e=t.sent()).message.search("The fields token, address must make a unique set."))return[2];throw new Error(e);case 3:return[2]}})})},t.prototype.subscribeToIncomingTransfer=function(e,r,t){void 0===t&&(t=this.contractAddress),"all"===t&&(t=void 0);var n=this.nocustClient.operatorApiService.walletSyncObservable(this.operatorApiUrl,e,operator_api_service_1.SocketMessageType.INCOMING_CONFIRMATION,t).subscribe(function(t){util_1.isSameHexValue(t.recipient.address,e)&&r(t)});return function(){return n.unsubscribe()}},t.prototype.sendTransaction=function(f){return __awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a,o,c,u,l,h,d,p,_;return __generator(this,function(t){switch(t.label){case 0:return r=f.tokenAddress?f.tokenAddress:this.contractAddress,n=Date.now(),[4,this.getSyncedWalletState(f.from,r,!0)];case 1:s=t.sent().wallet,i=Date.now()-n,n=Date.now(),t.label=2;case 2:return t.trys.push([2,4,,5]),[4,this.nocustClient.prepareOutgoingTransfer(s,f.to,util_1.toBigNumber(f.amount),!0,f.nonce)];case 3:return a=t.sent(),[3,5];case 4:if((o=t.sent())&&404===o.statusCode)throw new Error("The recipient "+f.to+" is not registered with the NOCUST operator for token "+(util_1.isSameHexValue(r,this.contractAddress)?"Ether":r)+", therefore he can't receive any transactions. The recipient needs to register with the operator first using registerAddress at least once.");throw new Error("Could not prepare transfer, "+JSON.stringify(o));case 5:if(c=Date.now()-n,!a)throw new Error("Failed to prepare transfer");t.label=6;case 6:return t.trys.push([6,8,,9]),[4,Promise.all([this.nocustClient.contractApiService.sign(f.from,a.hashes.activeState),this.nocustClient.contractApiService.sign(f.from,a.hashes.marker)])];case 7:return e=t.sent(),u=e[0],l=e[1],[3,9];case 8:throw h=t.sent(),new Error("Could not sing hashes, "+h);case 9:n=Date.now(),t.label=10;case 10:return t.trys.push([10,12,,13]),[4,this.nocustClient.sendOutgoingTransfer(s,a,u,l)];case 11:return d=t.sent(),[3,13];case 12:throw p=t.sent(),new Error("Could not post transfer, "+JSON.stringify(p));case 13:return _=Date.now()-n,logging_1.Logging.debug("Sync time: "+i+" prepare time: "+c+" post time: "+_),[2,d]}})})},t.prototype.syncWallet=function(r,n){return void 0===n&&(n=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e;return __generator(this,function(t){switch(t.label){case 0:return t.trys.push([0,2,,3]),[4,this.getSyncedWalletState(r,n,!1)];case 1:return t.sent(),[3,3];case 2:throw e=t.sent(),new Error("Sync failed "+e);case 3:return[2]}})})},t.prototype.deposit=function(s,i,a,o,c){return void 0===c&&(c=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n;return __generator(this,function(t){switch(t.label){case 0:if(i=util_1.toBigNumber(i),a=util_1.toBigNumber(a),util_1.isSameHexValue(c,this.contractAddress))return[3,5];r=void 0,t.label=1;case 1:return t.trys.push([1,3,,4]),[4,this.nocustClient.contractApiService.allowance(c,s,this.contractAddress)];case 2:return r=t.sent(),[3,4];case 3:throw t.sent(),new Error("Could not check for token allowance");case 4:if(r.isLessThan(i))throw new Error("Insufficient token transfer allowance, please approve the NOCUST contract to transfer funds.");t.label=5;case 5:return t.trys.push([5,7,,8]),[4,this.nocustClient.contractApiService.deposit(c,i,s,this.contractAddress,a,o)];case 6:return e=t.sent(),[3,8];case 7:throw n=t.sent(),new Error("Deposit failed "+n);case 8:return[2,e]}})})},t.prototype.approveAndDeposit=function(i,a,o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n,s;return __generator(this,function(t){switch(t.label){case 0:if(a=util_1.toBigNumber(a),o=util_1.toBigNumber(o),util_1.isSameHexValue(u,this.contractAddress))return[3,7];r=void 0,t.label=1;case 1:return t.trys.push([1,3,,4]),[4,this.nocustClient.contractApiService.allowance(u,i,this.contractAddress)];case 2:return r=t.sent(),[3,4];case 3:throw t.sent(),new Error("Could not check for token allowance");case 4:return r.isLessThan(a)?[4,this.nocustClient.web3Service.rpc.eth.getTransactionCount(i)]:[3,7];case 5:return e=t.sent(),[4,this.nocustClient.contractApiService.enableERC20Deposits(u,i,this.contractAddress,o,3e5,e)];case 6:t.sent(),t.label=7;case 7:return t.trys.push([7,9,,10]),[4,this.nocustClient.contractApiService.deposit(u,a,i,this.contractAddress,o,c,e?e+1:void 0)];case 8:return n=t.sent(),[3,10];case 9:throw s=t.sent(),new Error("Deposit failed "+s);case 10:return[2,n]}})})},t.prototype.withdrawalRequest=function(o,c,u,l,h){return void 0===h&&(h=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a;return __generator(this,function(t){switch(t.label){case 0:return c=util_1.toBigNumber(c),u=util_1.toBigNumber(u),[4,this.getSyncedWalletState(o,h,!0)];case 1:if(e=t.sent(),r=e.wallet,n=e.contractState,c.gt(r.withdrawableAmount))throw Error("No enough withdrawal allowance");if(s=bignumber_js_1.default.maximum(n.challengeCost,u),r.onChainBalance.isLessThan(s.times(SLASH_GAS_COST)))throw Error("Not enough balance, to make a withdrawal request you are required to pay the gas fee PLUS a fee equal to max("+n.challengeCost.decimalPlaces(-9)+" Gwei, gasPrice) * "+SLASH_GAS_COST+". This amount needs to be available on-chain.");t.label=2;case 2:return t.trys.push([2,4,,5]),[4,this.nocustClient.contractApiService.requestWithdrawal(c,o,r.previousEon.proofOfExclusiveAllotment,this.contractAddress,s,u,l)];case 3:return i=t.sent(),[3,5];case 4:throw a=t.sent(),new Error("Withdrawal request transaction failed "+a);case 5:return[2,i]}})})},t.prototype.withdrawalConfirmation=function(n,s,i,a){return void 0===a&&(a=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r;return __generator(this,function(t){switch(t.label){case 0:s=util_1.toBigNumber(s),t.label=1;case 1:return t.trys.push([1,3,,4]),[4,this.nocustClient.contractApiService.confirmWithdrawal(a,n,this.contractAddress,s,i)];case 2:return e=t.sent(),[3,4];case 3:throw r=t.sent(),Error("Withdrawal confirmation transaction failed "+r);case 4:return[2,e]}})})},t.prototype.getNOCUSTBalance=function(e,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(e,r,!1)];case 1:return[2,t.sent().wallet.offChainBalance]}})})},t.prototype.getSupportedTokens=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.nocustClient.operatorApiService.getTokensList(this.operatorApiUrl)];case 1:return[2,t.sent().map(function(t){return{tokenAddress:t.address,name:t.name,shortName:t.short_name}})]}})})},t.prototype.getTransaction=function(e){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.nocustClient.operatorApiService.getTransfersFromTxId(e,this.operatorApiUrl)];case 1:return[2,t.sent()]}})})},t.prototype.getTransactionsForAddress=function(e,r,n){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.nocustClient.operatorApiService.getWalletData(e,r,this.operatorApiUrl,n)];case 1:return[2,t.sent().transfers]}})})},t.prototype.getWithdrawalLimit=function(e,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(e,r,!1)];case 1:return[2,t.sent().wallet.withdrawableAmount]}})})},t.prototype.getOnChainBalance=function(e,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(e,r,!1)];case 1:return[2,t.sent().wallet.onChainBalance]}})})},t.prototype.getBlocksToWithdrawalConfirmation=function(o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a;return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(o,u,!1)];case 1:if(0===(e=t.sent().contractState).pendingWithdrawals.length)return[2,-1];if(!c)return[3,6];n=void 0,t.label=2;case 2:return t.trys.push([2,4,,5]),[4,this.nocustClient.web3Service.getOnChainTransactionReceipt(c)];case 3:return n=t.sent(),[3,5];case 4:throw s=t.sent(),new Error("Could not get on-chain transaction receipt, "+s);case 5:return r=contract_api_service_1.ContractApiService.eonNumberAt(n.blockNumber,e.genesis,e.blocksPerEon),[3,7];case 6:r=Math.min.apply(Math,e.pendingWithdrawals.map(function(t){return t.eonNumber})),t.label=7;case 7:return i=e.currentEonNumber,a=i-r,[2,Math.max(e.extendedSlackPeriod+e.blocksPerEon*(2-a)-e.currentSubBlock+1,0)]}})})},t.prototype.getWithdrawalFee=function(n){return __awaiter(this,void 0,void 0,function(){var e,r;return __generator(this,function(t){switch(t.label){case 0:return n=util_1.toBigNumber(n),r=bignumber_js_1.default.bind,[4,this.nocustClient.contractApiService.getChallengeCost(this.contractAddress)];case 1:return e=new(r.apply(bignumber_js_1.default,[void 0,t.sent()])),[2,bignumber_js_1.default.maximum(SLASH_GAS_COST.times(e),SLASH_GAS_COST.times(n))]}})})},t.prototype.getEonNumber=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.nocustClient.contractApiService.currentEonNumber(this.contractAddress)];case 1:return[2,t.sent()]}})})},t.prototype.getEraNumber=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.nocustClient.contractApiService.currentSubBlock(this.contractAddress)];case 1:return[2,t.sent()]}})})},t.prototype.getBlockPerEon=function(){return __awaiter(this,void 0,void 0,function(){var e;return __generator(this,function(t){switch(t.label){case 0:return e=parseInt,[4,this.nocustClient.contractApiService.getBlocksPerEon(this.contractAddress)];case 1:return[2,e.apply(void 0,[t.sent()])]}})})},t.prototype.getWalletState=function(e,r){return void 0===r&&(r=this.contractAddress),__awaiter(this,void 0,void 0,function(){return __generator(this,function(t){return[2,this.getSyncedWalletState(e,r,!1)]})})},t.prototype.getOrderBook=function(e,r){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){return[2,this.nocustClient.operatorApiService.getSwapOrders(e,r,this.operatorApiUrl)]})})},t.prototype.getSLADetail=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){return[2,this.nocustClient.operatorApiService.getSLADetails({webAddress:this.operatorApiUrl})]})})},t.prototype.getSLAStatus=function(r){return __awaiter(this,void 0,void 0,function(){var e;return __generator(this,function(t){switch(t.label){case 0:return t.trys.push([0,2,,3]),[4,this.nocustClient.operatorApiService.getSLAStatus({webAddress:this.operatorApiUrl,address:r})];case 1:return e=t.sent(),[3,3];case 2:return t.sent(),[2,0];case 3:return e&&e.expiry?[2,parseInt(e.expiry)]:[2,0]}})})},t.prototype.buySLA=function(n){return __awaiter(this,void 0,void 0,function(){var e,r;return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSLADetail()];case 1:return e=t.sent(),[4,this.getSyncedWalletState(n,e.token,!0)];case 2:return r=t.sent().wallet,[4,this.getSLAStatus(n)];case 3:if(t.sent())return[2];if(r.offChainBalance.isLessThan(e.cost))throw"To pay for the SLA you need "+new bignumber_js_1.default(e.cost)+" wei of token "+e.token+" available as nocust funds";return[4,this.sendTransaction({to:e.recipient,amount:new bignumber_js_1.default(e.cost),from:n,tokenAddress:e.token})];case 4:return t.sent(),[2]}})})},t.prototype.isRecovery=function(){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(t){switch(t.label){case 0:return[4,this.nocustClient.contractApiService.isPunished(this.contractAddress)];case 1:return[2,t.sent()]}})})},t.prototype.isAddressRegisteredWithOperator=function(r,n){return void 0===n&&(n=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e;return __generator(this,function(t){switch(t.label){case 0:return t.trys.push([0,2,,3]),[4,this.nocustClient.operatorApiService.whoisWallet(n,r,this.operatorApiUrl)];case 1:return e=t.sent(),[3,3];case 2:return t.sent(),[2,!1];case 3:return[2,!!e&&!!e.operator_signature]}})})},t.prototype.sendSwap=function(p,_,f,v,w){return __awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a,o,c,u,l,h,d;return __generator(this,function(t){switch(t.label){case 0:return v=util_1.toBigNumber(v),w=util_1.toBigNumber(w),[4,this.getSyncedWalletState(p,f,!0)];case 1:return r=t.sent().wallet,[4,this.getSyncedWalletState(p,_,!0)];case 2:n=t.sent().wallet,t.label=3;case 3:return t.trys.push([3,5,,6]),[4,this.nocustClient.prepareSwap(r,n,w,v)];case 4:return s=t.sent(),[3,6];case 5:throw i=t.sent(),new Error("Could not prepare swap "+i);case 6:return t.trys.push([6,8,,9]),[4,Promise.all([this.nocustClient.contractApiService.sign(p,s.hashes.recipientActiveState),this.nocustClient.contractApiService.sign(p,s.hashes.recipientFulfillmentActiveState),this.nocustClient.contractApiService.sign(p,s.hashes.senderActiveState),this.nocustClient.contractApiService.sign(p,s.hashes.marker)])];case 7:return e=t.sent(),a=e[0],o=e[1],c=e[2],u=e[3],[3,9];case 8:throw l=t.sent(),new Error("Could not sing hashes"+l);case 9:return t.trys.push([9,11,,12]),[4,this.nocustClient.sendSwap(r,n,s,c,a,o,u)];case 10:return h=t.sent(),[3,12];case 11:throw d=t.sent(),new Error("Could not post swap, "+JSON.stringify(d));case 12:return[2,h]}})})},t.prototype.finalizeSwap=function(o,c,u){return __awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a;return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(o,c,!0)];case 1:if(e=t.sent().wallet,r=e.latestEon.activeState.transfers.concat([e.latestEon.activeState.pendingTransfer]),!(n=r.find(function(t){return t.txId===u}))||!n.isSwap)throw Error("Could not find relevant swap data for txId "+u);s=nocust_client_1.NOCUSTClient.prepareSwapFinalization(e,n),t.label=2;case 2:return t.trys.push([2,4,,5]),[4,this.nocustClient.contractApiService.sign(o,s.hashes.recipientFinalizationActiveState)];case 3:return i=t.sent(),[3,5];case 4:throw a=t.sent(),new Error("Could not sing hashes"+a);case 5:return this.nocustClient.sendSwapFinalization(e,n,i),[2]}})})},t.prototype.issueStateUpdateChallenge=function(s,i,a,o){return void 0===o&&(o=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n;return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(s,o,!0)];case 1:return e=t.sent(),r=e.wallet,n=e.contractState,[4,this.nocustClient.disputeService.canIssueStateUpdateChallenge(r,n)];case 2:if(!t.sent())throw Error("Cannot issue state update challenge at the moment");return[2,this.nocustClient.disputeService.issueStateUpdateChallenge(r,n,i,a)]}})})},t.prototype.issueDeliveryChallenge=function(i,a,o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n,s;return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(i,u,!0)];case 1:if(e=t.sent(),r=e.wallet,n=e.contractState,!(s=r.previousEon.activeState.transfers.find(function(t){return t.id.toNumber()===a})))throw Error("Could not find relevant transfer data for txId ${tx}. Only transfers from the previous eonNumber can be challenged.");return[2,this.nocustClient.disputeService.issueDeliveryChallenge(r,s,n,o,c)]}})})},t.prototype.recoverFunds=function(a,o,c,u){return void 0===u&&(u=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n,s,i;return __generator(this,function(t){switch(t.label){case 0:return[4,this.getSyncedWalletState(a,u,!0)];case 1:return e=t.sent(),r=e.wallet,n=e.contractState,[4,this.nocustClient.disputeService.canRecoverAllFunds(r,n)];case 2:if(s=t.sent(),i=r.getEon(n.lastSubmissionEon-1),!s||!i||!i.proofOfExclusiveAllotment)throw Error("Cannot issue state update challenge at the moment");return[2,this.nocustClient.contractApiService.recoverAllFunds(i.proofOfExclusiveAllotment,o,c)]}})})},t.prototype.createWallet=function(s,i,a){return __awaiter(this,void 0,void 0,function(){var e,r,n;return __generator(this,function(t){switch(t.label){case 0:return t.trys.push([0,2,,3]),[4,this.nocustClient.contractApiService.getOperatorAccountAddress(this.contractAddress)];case 1:return r=t.sent(),[3,3];case 2:throw n=t.sent(),new Error("Could not get contract Owner, "+n);case 3:return e=new wallet_model_1.Wallet(s,a,r,this.contractAddress,i,this.operatorApiUrl),this.nocustClient.walletStorageService.saveWallet(e),[2,e]}})})},t.prototype.getSyncedWalletState=function(h,d,p){return __awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a,o,c,u,l;return __generator(this,function(t){switch(t.label){case 0:return t.trys.push([0,3,,4]),[4,this.nocustClient.web3Service.networkId()];case 1:return a=t.sent(),[4,this.nocustClient.walletStorageService.loadWallet(h,a,this.contractAddress,d)];case 2:return r=t.sent(),[3,4];case 3:throw o=t.sent(),Error("Retrieving wallet from storage, "+o);case 4:return r?[3,6]:[4,this.createWallet(h,d,a)];case 5:r=t.sent(),t.label=6;case 6:return t.trys.push([6,8,,9]),[4,Promise.all([this.nocustClient.contractStateFetchService.fetchContractState(r).then(function(t){return logging_1.Logging.debug("Done fetching contract state"),t}),this.nocustClient.operatorStateService.fetchOperatorState(r).then(function(t){return logging_1.Logging.debug("Done fetching operator state"),t})])];case 7:return e=t.sent(),n=e[0],s=e[1],[3,9];case 8:throw c=t.sent(),new Error("Could not fetch contract state and operator state "+c);case 9:if(s.walletData)return[3,11];if(!p)throw new Error("Wallet address "+h+" is not registered with operator for token "+(util_1.isSameHexValue(d,this.contractAddress)?"Ether":d)+", can't execute operation.");return u=s,[4,this.registerAddressInternal(h,d)];case 10:u.walletData=t.sent(),t.label=11;case 11:return t.trys.push([11,13,,14]),[4,this.nocustClient.walletStateService.syncWalletState(r,n,s)];case 12:return i=t.sent(),[3,14];case 13:throw l=t.sent(),new Error("Could not sync wallet state"+l);case 14:if(this.nocustClient.walletStorageService.saveWallet(i.wallet),i.updateError)throw Error("Could not sync wallet... "+i.updateError);return[2,i]}})})},t.prototype.registerAddressInternal=function(d,p){return void 0===p&&(p=this.contractAddress),__awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a,o,c,u,l,h=this;return __generator(this,function(t){switch(t.label){case 0:return[4,this.nocustClient.web3Service.networkId()];case 1:return e=t.sent(),[4,this.createWallet(d,p,e)];case 2:r=t.sent(),t.label=3;case 3:return t.trys.push([3,5,,6]),[4,this.nocustClient.operatorApiService.getStatusData(this.operatorApiUrl)];case 4:return n=t.sent().latest.eon_number,[3,6];case 5:throw s=t.sent(),new Error("Could not get current eonNumber, "+s);case 6:i=r.getAdmissionActiveState(n).hash,t.label=7;case 7:return t.trys.push([7,9,,10]),[4,this.nocustClient.contractApiService.sign(d,i)];case 8:return a=t.sent(),[3,10];case 9:throw o=t.sent(),new Error("Could not produce registration signature, "+o);case 10:c=function(){return new Promise(function(e,t){var r=setTimeout(function(){return t("Wait for registration timeout")},2e4),n=h.nocustClient.operatorApiService.walletSyncObservable(h.operatorApiUrl,d,operator_api_service_1.SocketMessageType.REGISTERED_WALLET,p).subscribe(function(t){clearTimeout(r),n.unsubscribe(),e(t)})})},t.label=11;case 11:return t.trys.push([11,13,,14]),[4,this.nocustClient.operatorApiService.register(r,a)];case 12:return t.sent(),[3,14];case 13:throw u=t.sent(),Error("Could not post registration, "+JSON.stringify(u));case 14:return t.trys.push([14,16,,17]),[4,c()];case 15:return t.sent(),[3,17];case 16:throw l=t.sent(),new Error("Registration did not succeed, "+l);case 17:return[2,void 0]}})})},t.prototype.approveReceipt=function(u){return __awaiter(this,void 0,void 0,function(){var e,r,n,s,i,a,o,c=this;return __generator(this,function(t){switch(t.label){case 0:if(e=function(t,e){var r=new transfer_model_1.Transfer(t.wallet.token,t.wallet.address,t.eon_number,new bignumber_js_1.default(t.amount),t.amount_swapped?new bignumber_js_1.default(t.amount_swapped):null,null,t.recipient.address,t.recipient.token,t.recipient_trail_identifier,null,new bignumber_js_1.default(t.nonce),t.id,t.passive);return e&&r.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,t.sender_active_state),r},r=u.latestEon.pendingIncomingTransfers.filter(function(t){return!t.passive}),0===(n=r.map(function(t){return nocust_client_1.NOCUSTClient.prepareReceipt(u,e(t,!0))})).length)return[2];t.label=1;case 1:return t.trys.push([1,3,,4]),[4,Promise.all(n.map(function(t){return c.nocustClient.contractApiService.sign(u.address,t.hashes.activeState)}))];case 2:return s=t.sent(),[3,4];case 3:throw i=t.sent(),new Error("Could not sign receipt, "+i);case 4:return t.trys.push([4,6,,7]),[4,Promise.all(s.map(function(t,e){return c.nocustClient.sendIncomingTransferReceipt(u,n[e],t)}))];case 5:return t.sent(),[3,7];case 6:throw a=t.sent(),new Error("Could not send receipt, "+a);case 7:return t.trys.push([7,9,,10]),[4,Promise.all(n.map(function(i){return __awaiter(c,void 0,void 0,function(){var e=this;return __generator(this,function(t){return[2,new Promise(function(n,s){return __awaiter(e,void 0,void 0,function(){var e,r;return __generator(this,function(t){return e=this.nocustClient.operatorApiService.walletSyncObservable(this.operatorApiUrl,u.address,operator_api_service_1.SocketMessageType.INCOMING_TIMEOUT,u.tokenAddress,i.transfer.txId).subscribe(function(){e.unsubscribe(),s("Timeout")}),r=this.nocustClient.operatorApiService.walletSyncObservable(this.operatorApiUrl,u.address,operator_api_service_1.SocketMessageType.INCOMING_CONFIRMATION,u.tokenAddress,i.transfer.txId).subscribe(function(){e.unsubscribe(),r.unsubscribe(),n()}),[2]})})})]})})}))];case 8:return t.sent(),[3,10];case 9:throw o=t.sent(),new Error("While waiting for incoming transfer confirmation, "+o);case 10:return[2]}})})},t}();exports.NOCUSTManager=NOCUSTManager;
+},{"./interfaces/default/constant-client-provider.service":328,"./inversify.container":332,"./models/transactions/transfer-active-state-update-type.model":353,"./models/transactions/transfer.model":354,"./models/wallet/wallet.model":358,"./nocust-client":359,"./services/contract-api.service":361,"./services/logging":364,"./services/operator-api.service":365,"./util":371,"bignumber.js":24}],361:[function(require,module,exports){
+"use strict";var __decorate=this&&this.__decorate||function(e,t,i,r){var n,o=arguments.length,a=o<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,i):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,i,r);else for(var u=e.length-1;0<=u;u--)(n=e[u])&&(a=(o<3?n(a):3<o?n(t,i,a):n(t,i))||a);return 3<o&&a&&Object.defineProperty(t,i,a),a},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(i,r){return function(e,t){r(e,t,i)}},__awaiter=this&&this.__awaiter||function(o,a,u,s){return new(u||(u=Promise))(function(e,t){function i(e){try{n(s.next(e))}catch(e){t(e)}}function r(e){try{n(s.throw(e))}catch(e){t(e)}}function n(t){t.done?e(t.value):new u(function(e){e(t.value)}).then(i,r)}n((s=s.apply(o,a||[])).next())})},__generator=this&&this.__generator||function(i,r){var n,o,a,e,u={label:0,sent:function(){if(1&a[0])throw a[1];return a[1]},trys:[],ops:[]};return e={next:t(0),throw:t(1),return:t(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function t(t){return function(e){return function(t){if(n)throw new TypeError("Generator is already executing.");for(;u;)try{if(n=1,o&&(a=2&t[0]?o.return:t[0]?o.throw||((a=o.return)&&a.call(o),0):o.next)&&!(a=a.call(o,t[1])).done)return a;switch(o=0,a&&(t=[2&t[0],a.value]),t[0]){case 0:case 1:a=t;break;case 4:return u.label++,{value:t[1],done:!1};case 5:u.label++,o=t[1],t=[0];continue;case 7:t=u.ops.pop(),u.trys.pop();continue;default:if(!(a=0<(a=u.trys).length&&a[a.length-1])&&(6===t[0]||2===t[0])){u=0;continue}if(3===t[0]&&(!a||t[1]>a[0]&&t[1]<a[3])){u.label=t[1];break}if(6===t[0]&&u.label<a[1]){u.label=a[1],a=t;break}if(a&&u.label<a[2]){u.label=a[2],u.ops.push(t);break}a[2]&&u.ops.pop(),u.trys.pop();continue}t=r.call(i,u)}catch(e){t=[6,e],o=0}finally{n=a=0}if(5&t[0])throw t[1];return{value:t[0]?t[1]:void 0,done:!0}}([t,e])}}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0}),require("reflect-metadata");var inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),proof_of_exclusive_allotment_model_1=require("../models/primitives/proof-of-exclusive-allotment.model"),nocust_commit_chain_abi_1=require("../models/nocust-commit-chain.abi"),util_1=require("../util"),eon_model_1=require("../models/wallet/eon.model"),signature_model_1=require("../models/primitives/signature.model"),bignumber_js_1=__importDefault(require("bignumber.js")),active_state_model_1=require("../models/transactions/active-state.model"),transfer_model_1=require("../models/transactions/transfer.model"),logging_1=require("./logging"),erc20_abi_1=require("../models/erc20-abi"),SLASH_GAS_COST=new bignumber_js_1.default(100100),ContractApiService=function(){function e(e){this.web3Service=e,this.contracts=new Map}var a;return(a=e).prototype.getABI=function(e,t){return void 0===t&&(t=nocust_commit_chain_abi_1.NOCUST_COMMIT_CHAIN_ABI),this.contracts.has(e)||this.contracts.set(e,this.web3Service.getContractAt(t,e)),this.contracts.get(e)},e.prototype.genesis=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.genesis().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getLiveChallenges=function(i,r){var n=this;return new Promise(function(e,t){n.getABI(r).methods.getLiveChallenges(i).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.currentEonNumber=function(n){var o=this;return new Promise(function(r,e){o.web3Service.latestBlockNumber().then(function(i){return o.genesis(n).then(function(t){return o.getBlocksPerEon(n).then(function(e){return r(a.eonNumberAt(i,t,e))})})}).catch(e)})},e.eonNumberAt=function(e,t,i){return Math.floor((e-t)/i)+1},e.prototype.nextBlockEon=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.currentEon().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.currentSubBlock=function(n){var o=this;return new Promise(function(r,e){o.web3Service.latestBlockNumber().then(function(i){return o.genesis(n).then(function(t){return o.getBlocksPerEon(n).then(function(e){return r(a.subBlockAt(i,t,e))})})}).catch(e)})},e.subBlockAt=function(e,t,i){return(e-t)%i},e.prototype.nextBlockSubBlock=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.currentEra().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.lastSubmissionEon=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.lastSubmissionEon().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.balance=function(i,r){var n=this;return void 0===r&&(r=null),r?new Promise(function(e,t){n.getABI(r,erc20_abi_1.ERC20_ABI).methods.balanceOf(util_1.add0xPrefix(i)).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult):this.web3Service.balanceOf(i)},e.prototype.allowance=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(i,erc20_abi_1.ERC20_ABI).methods.allowance(util_1.add0xPrefix(r),util_1.add0xPrefix(n)).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.pendingWithdrawals=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(o).methods.getPendingWithdrawalsAtSlot(util_1.add0xPrefix(i),r%n).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.getBlocksPerEon=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.BLOCKS_PER_EON().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getSlackPeriod=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.BLOCKS_PER_EPOCH().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getExtendedSlackPeriod=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.EXTENDED_BLOCKS_PER_EPOCH().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getEonsKept=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.EONS_KEPT().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getDepositsKept=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.DEPOSITS_KEPT().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.intValueOfResult)},e.prototype.getChallengeCost=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.MIN_CHALLENGE_GAS_COST().call(util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.recordBook=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getIsWalletRecovered(util_1.add0xPrefix(i),r).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.checkpoint=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(r).methods.getCheckpointAtSlot(i%n).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.valueOfResult)},e.prototype.clientContractStateVariables=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getClientContractStateVariables(util_1.add0xPrefix(i),r).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return{lastCheckpointEonNumber:util_1.intValueOfResult(e[0]),merkleRoots:e[1],liveChallenges:e[2].map(function(e){return util_1.intValueOfResult(e)}),currentEonDeposits:util_1.bigNumberValueOfResult(e[3]),previousEonDeposits:util_1.bigNumberValueOfResult(e[4]),secondPreviousEonDeposits:util_1.bigNumberValueOfResult(e[5]),pendingWithdrawals:e[6].filter(function(e){return"0"!==e[0]}).map(function(e){return[util_1.intValueOfResult(e[0]),util_1.bigNumberValueOfResult(e[1])]}),holderBalance:util_1.bigNumberValueOfResult(e[7])}})},e.prototype.metamaskHashFix=function(e){return this.web3Service.currentProvider.isMetaMask?util_1.Web3Utils.soliditySha3("Ethereum Signed Message:\n32",e):e},e.prototype.vrs=function(e){var t=util_1.remove0xPrefix(e),i=parseInt(t.slice(128,130),16);return i<27&&(i+=27),t.slice(0,128)+i.toString(16)},e.prototype.signPersonal=function(t,i){return this.web3Service.signPersonalMessage(t,i).then(function(e){return signature_model_1.Signature.fromRSV(i,t,e)})},e.prototype.signRaw=function(e,t){var i=this.metamaskHashFix(e);return this.web3Service.signRawDigest(i,t).then(function(e){return signature_model_1.Signature.fromRSV(t,i,e)})},e.prototype.sign=function(e,t){return this.web3Service.canSignPersonal?this.signPersonal(t,e):this.signRaw(t,e)},e.prototype.recoverSigningAddress=function(i,r,e){var n=this;return void 0===e&&(e=!1),e?this.recoverSigningAddressLocal(i):new Promise(function(e,t){n.getABI(r).methods.signedMessageECRECOVER(i.checksum,util_1.add0xPrefix(i.r),util_1.add0xPrefix(i.s),util_1.add0xPrefix(i.v)).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.validateActiveStateSignature=function(t,e,i){return this.verifyProofOfTransitionAgreement(t.tokenAddress,t.walletAddress,t.trailIdentifier,t.eonNumber,t.transferTree.hash,t.spent,t.gained,e,i).then(function(e){return e&&util_1.isSameHexValue(e.toString(),t.hash)}).catch(function(e){return logging_1.Logging.error("Transition Agreement Check Rejected: "+e),!1})},e.prototype.validateDataActiveState=function(u,s,l,c,d,f,_,g){var m=this;return logging_1.Logging.debug("validateDataActiveState"),new Promise(function(t,e){var i=util_1.isSameHexValue(l.address,u.wallet.address)&&util_1.isSameHexValue(l.token,u.wallet.token),r=i?u.wallet_trail_identifier:u.recipient_trail_identifier,n=i?u.recipient:u.wallet,o=active_state_model_1.ActiveState.checksum(d,f,l.address,r,u.eon_number,s.tx_set_hash,new bignumber_js_1.default(s.updated_spendings),new bignumber_js_1.default(s.updated_gains)),a=util_1.isSameHexValue(c,l.address)?signature_model_1.Signature.fromRSV(c,o,s.wallet_signature):signature_model_1.Signature.fromRSV(c,o,s.operator_signature);m.verifyProofOfTransitionAgreement(f,l.address,r,u.eon_number,s.tx_set_hash,new bignumber_js_1.default(s.updated_spendings),new bignumber_js_1.default(s.updated_gains),a,d).then(function(e){if(!util_1.isSameHexValue(e,o))return t(!1);logging_1.Logging.debug(e),g?m.verifyProofOfSwapAggregationRaw(u.wallet.token,u.recipient.token,s.tx_set_index,s.tx_set_proof,new bignumber_js_1.default(u.amount),new bignumber_js_1.default(u.amount_swapped),g,u.recipient_trail_identifier,new bignumber_js_1.default(u.nonce),s.tx_set_hash,d,_).then(t):m.verifyProofOfTransferAggregationRaw(s.tx_set_index,s.tx_set_proof,n.address,new bignumber_js_1.default(u.amount),u.recipient_trail_identifier,new bignumber_js_1.default(u.nonce),s.tx_set_hash,d,!1,null,_).then(t)}).catch(e)})},e.prototype.validateTransferDebit=function(n,o,a,u,s){var l=this;return logging_1.Logging.debug("validateTransferDebit"),new Promise(function(t,e){var i=active_state_model_1.ActiveState.checksum(a,u,n.wallet.address,n.wallet_trail_identifier,n.eon_number,n.sender_active_state.tx_set_hash,new bignumber_js_1.default(n.sender_active_state.updated_spendings),new bignumber_js_1.default(n.sender_active_state.updated_gains)),r=util_1.isSameHexValue(o,n.wallet.address)?signature_model_1.Signature.fromRSV(o,i,n.sender_active_state.wallet_signature):signature_model_1.Signature.fromRSV(o,i,n.sender_active_state.operator_signature);l.verifyProofOfTransitionAgreement(u,n.wallet.address,n.wallet_trail_identifier,n.eon_number,n.sender_active_state.tx_set_hash,new bignumber_js_1.default(n.sender_active_state.updated_spendings),new bignumber_js_1.default(n.sender_active_state.updated_gains),r,a).then(function(e){if(!util_1.isSameHexValue(e,i))return t(!1);logging_1.Logging.debug(e),l.verifyProofOfTransferAggregationRaw(n.sender_active_state.tx_set_index,n.sender_active_state.tx_set_proof,n.recipient.address,new bignumber_js_1.default(n.amount),n.recipient_trail_identifier,new bignumber_js_1.default(n.nonce),n.sender_active_state.tx_set_hash,a,n.passive,new bignumber_js_1.default(n.position),s).then(t)}).catch(e)})},e.prototype.validateTransferCredit=function(n,o,a,u,s){var l=this;return logging_1.Logging.debug("validateTransferCredit"),new Promise(function(t,e){if(n.passive)return t(!1);var i=active_state_model_1.ActiveState.checksum(a,u,n.recipient.address,n.recipient_trail_identifier,n.eon_number,n.recipient_active_state.tx_set_hash,new bignumber_js_1.default(n.recipient_active_state.updated_spendings),new bignumber_js_1.default(n.recipient_active_state.updated_gains)),r=util_1.isSameHexValue(o,n.recipient.address)?signature_model_1.Signature.fromRSV(o,i,n.recipient_active_state.wallet_signature):signature_model_1.Signature.fromRSV(o,i,n.recipient_active_state.operator_signature);l.verifyProofOfTransitionAgreement(u,n.recipient.address,n.recipient_trail_identifier,n.eon_number,n.recipient_active_state.tx_set_hash,new bignumber_js_1.default(n.recipient_active_state.updated_spendings),new bignumber_js_1.default(n.recipient_active_state.updated_gains),r,a).then(function(e){if(!util_1.isSameHexValue(e,i))return t(!1);logging_1.Logging.debug(e),l.verifyProofOfTransferAggregationRaw(n.recipient_active_state.tx_set_index,n.recipient_active_state.tx_set_proof,n.wallet.address,new bignumber_js_1.default(n.amount),n.recipient_trail_identifier,new bignumber_js_1.default(n.nonce),n.recipient_active_state.tx_set_hash,a,n.passive,new bignumber_js_1.default(n.position),s).then(t)}).catch(e)})},e.prototype.validateDeliveryProof=function(s,i,l,c,d){var f=this;return logging_1.Logging.debug("validateDeliveryProof"),new Promise(function(n,o){var e=new eon_model_1.Eon(l,c,s.recipient,s.recipientTrailIdentifier,s.eonNumber+1),a=i.delivery_proof,u=a.merkle_proof,t=new proof_of_exclusive_allotment_model_1.ProofOfExclusiveAllotment(l,c,s.recipient,u.active_state_checksum,s.recipientTrailIdentifier,s.eonNumber+1,u.allotment_chain,u.membership_chain,u.values.map(function(e){return new bignumber_js_1.default(e)}),new bignumber_js_1.default(u.left),new bignumber_js_1.default(u.right),u.passive_checksum,new bignumber_js_1.default(u.passive_amount),new bignumber_js_1.default(u.passive_marker));f.verifyProof(e,t).then(function(e){if(!e)return logging_1.Logging.error("Invalid recipient proof of exclusive allotment"),n(!1);var r=a.final_active_state;f.getOperatorAccountAddress(l).then(function(e){var i=active_state_model_1.ActiveState.checksum(l,c,s.recipient,s.recipientTrailIdentifier,s.eonNumber,r.tx_set_hash,new bignumber_js_1.default(r.updated_spendings),new bignumber_js_1.default(r.updated_gains));if(!util_1.isSameHexValue(i,u.active_state_checksum))return logging_1.Logging.error(i),logging_1.Logging.error(u.active_state_checksum),logging_1.Logging.error("Mismatching activeStateChecksum."),n(!1);var t=signature_model_1.Signature.fromRSV(e,i,r.operator_signature);f.verifyProofOfTransitionAgreement(c,s.recipient,s.recipientTrailIdentifier,s.eonNumber,r.tx_set_hash,new bignumber_js_1.default(r.updated_spendings),new bignumber_js_1.default(r.updated_gains),t,l).then(function(e){if(!util_1.isSameHexValue(e,i))return logging_1.Logging.error("Mismatching activeState checksumTransfer by operator"),logging_1.Logging.error(e),logging_1.Logging.error(i),n(!1);var t=signature_model_1.Signature.fromRSV(s.recipient,i,r.wallet_signature);f.verifyProofOfTransitionAgreement(c,s.recipient,s.recipientTrailIdentifier,s.eonNumber,r.tx_set_hash,new bignumber_js_1.default(r.updated_spendings),new bignumber_js_1.default(r.updated_gains),t,l).then(function(e){if(!util_1.isSameHexValue(e,i))return logging_1.Logging.error("Mismatching activeState checksumTransfer by wallet"),logging_1.Logging.error(e),logging_1.Logging.error(i),n(!1);f.verifyProofOfTransferAggregationRaw(a.transfer_membership_trail,a.transfer_membership_chain,s.sender,s.amount,s.recipientTrailIdentifier,s.nonce,r.tx_set_hash,l,s.isPassive,s.passiveOffset,d).then(n)}).catch(o)}).catch(o)})}).catch(o)})},e.prototype.validateSignature=function(t,e){return this.recoverSigningAddress(t,e).then(function(e){return util_1.isSameHexValue(e,t.address)}).catch(function(){return!1})},e.prototype.getOperatorAccountAddress=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.operator().call(util_1.promiseExecutorCallback(e,t))})},e.prototype.validateOperatorSignature=function(e,i){var r=this;return this.getOperatorAccountAddress(i).then(function(t){return r.recoverSigningAddress(e,i).then(function(e){return util_1.isSameHexValue(e,t)})}).catch(function(){return!1})},e.prototype.doNothingOnce=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(r).methods.doNothing.send({from:i,gas:o,gasPrice:n.toFixed(0)},util_1.promiseExecutorCallback(e,t))})},e.prototype.doNothing=function(r,n,o,a,u){var t=this;return new Promise(function(i,e){return __awaiter(t,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:t=0,e.label=1;case 1:return t<r?[4,this.doNothingOnce(n,o,a,u)]:[3,4];case 2:e.sent(),e.label=3;case 3:return t++,[3,1];case 4:return i(!0),[2]}})})})},e.prototype.getDeposits=function(i,r,n,o,a){var u=this;return new Promise(function(e,t){if(r<1)return e(void 0);u.getABI(a).methods.getDepositsAtSlot(o,i,r%n).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e&&e[0].valueOf()==r?new bignumber_js_1.default(e[1].valueOf()):new bignumber_js_1.default(0)})},e.prototype.getTotalDepositAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getWalletDepositActiveStateAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return new bignumber_js_1.default(e[1].valueOf())})},e.prototype.getTotalDepositEonAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getWalletDepositActiveStateAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e[0].valueOf()})},e.prototype.getPendingWithdrawalsAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getPendingWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return new bignumber_js_1.default(e[1].valueOf())})},e.prototype.getPendingWithdrawalsEonAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getPendingWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e[0].valueOf()})},e.prototype.getConfirmedWithdrawalsAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getConfirmedWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return new bignumber_js_1.default(e[1].valueOf())})},e.prototype.getConfirmedWithdrawalsEonAtSlot=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.getConfirmedWithdrawalsAtSlot(r,i).call(util_1.promiseExecutorCallback(e,t))}).then(function(e){return e[0].valueOf()})},e.prototype.deposit=function(i,r,n,o,e,t,a){var u=this,s=util_1.isSameHexValue(i,o)?{value:r.toFixed(0),from:n,gasPrice:e.toFixed(0),gas:t,nonce:a}:{value:0,from:n,gasPrice:e.toFixed(0),gas:t,nonce:a};return new Promise(function(e,t){u.getABI(o).methods.deposit(util_1.add0xPrefix(i),n,r.toFixed(0)).send(s,util_1.promiseExecutorCallback(e,t))})},e.prototype.enableERC20Deposits=function(i,r,n,o,a,u){var s=this;return new Promise(function(e,t){s.getABI(i,erc20_abi_1.ERC20_ABI).methods.approve(util_1.add0xPrefix(n),new bignumber_js_1.default(2).pow(256).minus(1).toFixed(0)).send({from:r,gasPrice:o.toFixed(0),gas:a,nonce:u},util_1.promiseExecutorCallback(e,t))})},e.prototype.requestWithdrawal=function(i,r,n,o,a,u,s){var l=this;return new Promise(function(e,t){l.getABI(o).methods.requestWithdrawal(n.tokenAddress,[n.activeStateChecksum,n.passiveChecksum],n.trail,n.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),n.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),n.values.map(function(e){return e.toFixed(0)}),[[n.left.toFixed(0),n.right.toFixed(0)],[n.passiveAmount.toFixed(0),n.passiveMarker.toFixed(0)]],i.toFixed(0)).send({from:r,value:a.multipliedBy(SLASH_GAS_COST).toFixed(0),gas:s,gasPrice:u.toFixed(0)},util_1.promiseExecutorCallback(e,t))})},e.prototype.confirmWithdrawal=function(i,r,n,o,a){var u=this;return new Promise(function(e,t){u.getABI(n).methods.confirmWithdrawal(util_1.add0xPrefix(i),util_1.add0xPrefix(r)).send({from:r,gasPrice:o.toFixed(0),gas:a},util_1.promiseExecutorCallback(e,t))})},e.prototype.hasOutstandingChallenges=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.hasOutstandingChallenges().call(util_1.promiseExecutorCallback(e,t))})},e.prototype.hasMissedCheckpointSubmission=function(i){var r=this;return new Promise(function(e,t){r.getABI(i).methods.hasMissedCheckpointSubmission().call(util_1.promiseExecutorCallback(e,t))})},e.prototype.isPunished=function(r){var n=this;return new Promise(function(t,i){n.hasOutstandingChallenges(r).then(function(e){return e?t(!0):n.hasMissedCheckpointSubmission(r).then(t).catch(i)}).catch(i)})},e.prototype.estimateChallengeInitialEmptyStateCost=function(r,n,o,a,u,s,l,c){var d=this;return logging_1.Logging.debug("estimateChallengeInitialEmptyStateCost"),new Promise(function(t,i){d.balance(n).then(function(e){d.getABI(c).methods.challengeStateUpdateWithProofOfActiveStateUpdateAgreement(r,a,o,[u.toFixed(0),s.toFixed(0)],util_1.add0xPrefix(l.r),util_1.add0xPrefix(l.s),util_1.add0xPrefix(l.v)).estimateGas({from:n,value:e.toFixed(0)},util_1.promiseExecutorCallback(t,i))}).catch(i)})},e.prototype.submitChallengeInitialEmptyState=function(i,r,n,o,a,u,s,l,c,d,f){var _=this;return logging_1.Logging.debug("submitChallengeInitialEmptyState"),new Promise(function(e,t){_.getABI(c).methods.challengeStateUpdateWithProofOfActiveStateUpdateAgreement(i,o,n,[a.toFixed(0),u.toFixed(0)],util_1.add0xPrefix(s.r),util_1.add0xPrefix(s.s),util_1.add0xPrefix(s.v)).send({from:r,value:l.toFixed(0),gasPrice:d.toFixed(0),gas:f},util_1.promiseExecutorCallback(e,t))})},e.prototype.estimateChallengeInitialMerkleStateCost=function(r,n,o,a,u,s,l){var c=this;return logging_1.Logging.debug("estimateChallengeInitialMerkleStateCost"),new Promise(function(t,i){c.balance(r).then(function(e){c.getABI(l).methods.challengeStateUpdateWithProofOfExclusiveBalanceAllotment(n.tokenAddress,[n.activeStateChecksum,n.passiveChecksum],n.trail,n.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),n.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),n.values.map(function(e){return e.toFixed(0)}),[[n.left.toFixed(0),n.right.toFixed(0)],[a.toFixed(0),u.toFixed(0)],[n.passiveAmount.toFixed(0),n.passiveMarker.toFixed(0)]][(util_1.add0xPrefix(s.r),util_1.add0xPrefix(s.s),o)],util_1.add0xPrefix(s.v)).estimateGas({from:r,value:e.toFixed(0)},util_1.promiseExecutorCallback(t,i))}).catch(i)})},e.prototype.submitChallengeInitialMerkleState=function(i,r,n,o,a,u,s,l,c,d){var f=this;return logging_1.Logging.debug("submitChallengeInitialMerkleState"),new Promise(function(e,t){f.getABI(l).methods.submitInitialMerkleState(r.tokenAddress,[r.activeStateChecksum,r.passiveChecksum],r.trail,r.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),r.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),r.values.map(function(e){return e.toFixed(0)}),[[r.left.toFixed(0),r.right.toFixed(0)],[o.toFixed(0),a.toFixed(0)],[r.passiveAmount.toFixed(0),r.passiveMarker.toFixed(0)]][(util_1.add0xPrefix(u.r),util_1.add0xPrefix(u.s),n)],util_1.add0xPrefix(u.v)).send({from:i,value:s.toFixed(0),gasPrice:c.toFixed(0),gas:d},util_1.promiseExecutorCallback(e,t))})},e.prototype.estimateDeliveryCommitmentCost=function(r,n,o,a,u,s,l,c,d,f,_,g,m,p,h){var x=this;return logging_1.Logging.debug("estimateDeliveryCommitmentCost"),new Promise(function(t,i){x.balance(n).then(function(e){x.getABI(h).methods.challengeTransferDeliveryWithProofOfActiveStateUpdateAgreement(util_1.add0xPrefix(r),[util_1.add0xPrefix(o),util_1.add0xPrefix(a)],[u.toFixed(0),m.toFixed(0)],[s,l,c],d.map(function(e){return util_1.add0xPrefix(e)}),[_.toFixed(0),g.toFixed(0)],[util_1.add0xPrefix(p.r),util_1.add0xPrefix(p.s),util_1.add0xPrefix(f)],util_1.add0xPrefix(p.v)).estimateGas({from:n,value:e.toFixed(0)},util_1.promiseExecutorCallback(t,i))}).catch(i)})},e.prototype.submitDeliveryCommitment=function(i,r,n,o,a,u,s,l,c,d,f,_,g,m,p,h,x,v){var b=this;return logging_1.Logging.debug("submitDeliveryCommitment"),new Promise(function(e,t){b.getABI(h).methods.challengeTransferDeliveryWithProofOfActiveStateUpdateAgreement(util_1.add0xPrefix(i),[util_1.add0xPrefix(n),util_1.add0xPrefix(o)],[a.toFixed(0),g.toFixed(0)],[u,s,l],c.map(function(e){return util_1.add0xPrefix(e)}),[f.toFixed(0),_.toFixed(0)],[util_1.add0xPrefix(m.r),util_1.add0xPrefix(m.s),util_1.add0xPrefix(d)],util_1.add0xPrefix(m.v)).send({from:r,value:p.toFixed(0),gasPrice:x.toFixed(0),gas:v},util_1.promiseExecutorCallback(e,t))})},e.prototype.getChallengeBook=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(o).methods.getChallenge(util_1.add0xPrefix(i),r,n).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.verifyProofOfTransferAggregationRaw=function(i,r,e,t,n,o,a,u,s,l,c){var d=this;void 0===l&&(l=null),logging_1.Logging.debug("verifyProofOfTransferAggregationRaw");var f=transfer_model_1.Transfer.checksumTransfer(e,t,n,o,s,l);return c?s?(logging_1.Logging.debug("!! We are skipping verifyProofOfTransferAggregationRaw for passive transfer because not supported !!"),Promise.resolve(!0)):this.verifyProofOfMembershipLocal(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(f),util_1.add0xPrefix(a)):s?(logging_1.Logging.debug("!! We are skipping verifyProofOfTransferAggregationRaw for passive transfer because not supported !!"),Promise.resolve(!0)):new Promise(function(e,t){d.getABI(u).methods.verifyProofOfMembership(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(f),util_1.add0xPrefix(a)).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.verifyProofOfSwapAggregationRaw=function(e,t,i,r,n,o,a,u,s,l,c,d){var f=this;logging_1.Logging.debug("verifyProofOfSwapAggregationRaw"),logging_1.Logging.debug([e,t,i,r,n,o,a,u,s,l,c]);var _=transfer_model_1.Transfer.checksumSwap(e,t,u,n,o,a,s);return d?this.verifyProofOfMembershipLocal(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(_),util_1.add0xPrefix(l)):new Promise(function(e,t){f.getABI(c).methods.verifyProofOfMembership(i,r.map(function(e){return util_1.add0xPrefix(e)}),util_1.add0xPrefix(_),util_1.add0xPrefix(l)).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.verifyProofOfTransitionAgreement=function(i,r,n,o,a,u,s,l,c,e){var d=this;return void 0===e&&(e=!0),logging_1.Logging.debug("verifyProofOfTransitionAgreement"),logging_1.Logging.debug([util_1.add0xPrefix(i),util_1.add0xPrefix(r),n,o,util_1.add0xPrefix(a),[u.toFixed(0),s.toFixed(0)],util_1.add0xPrefix(l.address),util_1.add0xPrefix(l.r),util_1.add0xPrefix(l.s),util_1.add0xPrefix(l.v)]),e?this.verifyProofOfTransitionAgreementLocal(i,r,n,o,a,u,s,l,c):new Promise(function(e,t){d.getABI(c).methods.verifyProofOfActiveStateUpdateAgreement(util_1.add0xPrefix(i),util_1.add0xPrefix(r),n,o,util_1.add0xPrefix(a),[u.toFixed(0),s.toFixed(0)],util_1.add0xPrefix(l.address),util_1.add0xPrefix(l.r),util_1.add0xPrefix(l.s),util_1.add0xPrefix(l.v)).call(util_1.promiseExecutorCallback(e,t))}).then(util_1.valueOfResult)},e.prototype.verifyProof=function(e,t){return logging_1.Logging.debug("verifyProof"),this.verifyProofRaw(e.tokenAddress,e.walletAddress,t.activeStateChecksum,t.trail,e.eonNumber,t.allotmentChain,t.membershipChain,t.values.map(function(e){return e.toFixed(0)}),t.left.toFixed(0),t.right.toFixed(0),t.passiveChecksum,t.passiveAmount.toFixed(0),t.passiveMarker.toFixed(0),e.contractAddress)},e.prototype.verifyProofRaw=function(i,r,n,o,a,u,s,l,c,d,f,_,g,m){var p=this;return logging_1.Logging.debug("verifyProofRaw"),logging_1.Logging.debug([util_1.add0xPrefix(i),util_1.add0xPrefix(r),[util_1.add0xPrefix(n),util_1.add0xPrefix(f)],o,[a,_,g],u,s,l,[c,d]]),new Promise(function(e,t){p.getABI(m).methods.verifyProofOfExclusiveAccountBalanceAllotment(util_1.add0xPrefix(i),util_1.add0xPrefix(r),[util_1.add0xPrefix(n),util_1.add0xPrefix(f)],o,[a,_,g],u,s,l,[c,d]).call(util_1.promiseExecutorCallback(e,t))})},e.prototype.getStateUpdateEvents=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).events.StateUpdate({filter:{token:util_1.add0xPrefix(i),account:r},fromBlock:0,toBlock:"latest"},util_1.promiseExecutorCallback(e,t))})},e.prototype.getStateUpdateEventAtEon=function(i,r,n,o){var a=this;return new Promise(function(e,t){a.getABI(o).events.StateUpdate({filter:{token:util_1.add0xPrefix(i),account:r,eonNumber:n},fromBlock:0,toBlock:"latest"},util_1.promiseExecutorCallback(e,t))})},e.prototype.recoverOnlyOnChainFunds=function(i,r,n,o,a){var u=this;return new Promise(function(e,t){u.getABI(n).methods.recoverOnlyParentChainFunds(util_1.add0xPrefix(i)).send({from:r,gasPrice:o.toFixed(0),gas:a},util_1.promiseExecutorCallback(e,t))})},e.prototype.getReclaimableOnChainFunds=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(n).methods.recoverOnlyParentChainFunds(util_1.add0xPrefix(i)).call({from:r},util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.recoverAllFunds=function(i,r,n){var o=this;return new Promise(function(e,t){o.getABI(i.contractAddress).methods.recoverAllFunds(i.tokenAddress,i.activeStateChecksum,i.trail,i.allotmentChain,i.membershipChain,i.values.map(function(e){return e.toFixed(0)}),[i.left.toFixed(0),i.right.toFixed(0)]).send({from:i.walletAddress,gasPrice:r.toFixed(0),gas:n},util_1.promiseExecutorCallback(e,t))})},e.prototype.getAllReclaimableFunds=function(i){var r=this;return new Promise(function(e,t){r.getABI(i.contractAddress).methods.recoverAllFunds(util_1.add0xPrefix(i.tokenAddress),util_1.add0xPrefix(i.activeStateChecksum),i.trail,i.allotmentChain.map(function(e){return util_1.add0xPrefix(e)}),i.membershipChain.map(function(e){return util_1.add0xPrefix(e)}),i.values.map(function(e){return e.toFixed(0)}),[i.left.toFixed(0),i.right.toFixed(0)]).call({from:i.walletAddress},util_1.promiseExecutorCallback(e,t))}).then(util_1.bigNumberValueOfResult)},e.prototype.verifyProofOfTransitionAgreementLocal=function(r,n,o,a,u,s,l,c,d){return __awaiter(this,void 0,void 0,function(){var t,i;return __generator(this,function(e){switch(e.label){case 0:return t=active_state_model_1.ActiveState.checksum(d,r,n,o,a,u,s,l),[4,this.recoverSigningAddressLocal(c)];case 1:if(i=e.sent(),util_1.isSameHexValue(c.address,i))return[2,t];throw new Error("signature verification failed, recovered address: "+util_1.add0xPrefix(i)+" expected: "+util_1.add0xPrefix(c.address))}})})},e.prototype.recoverSigningAddressLocal=function(i){return __awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return t=util_1.lqdWrapper(this.metamaskHashFix(i.checksum)),[4,this.web3Service.rpc.eth.accounts.recover(util_1.add0xPrefix(t),util_1.add0xPrefix(i.v),util_1.add0xPrefix(i.r),util_1.add0xPrefix(i.s))];case 1:return[2,e.sent()]}})})},e.prototype.verifyProofOfMembershipLocal=function(r,n,o,a){return __awaiter(this,void 0,void 0,function(){var t,i;return __generator(this,function(e){for(t=0;t<n.length;t++)i=!1,0<r&&(i=r%2==1,r=Math.floor(r/2)),o=util_1.Web3Utils.soliditySha3({type:"uint32",value:t},{type:"bytes32",value:i?n[t]:o},{type:"bytes32",value:i?o:n[t]});return[2,util_1.isSameHexValue(o,a)]})})},e.prototype.verifyProofLocal=function(e,t){return __awaiter(this,void 0,void 0,function(){return __generator(this,function(e){return[2]})})},e=a=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE)),__metadata("design:paramtypes",[Object])],e)}();exports.ContractApiService=ContractApiService;
+},{"../inversify.types":333,"../models/erc20-abi":334,"../models/nocust-commit-chain.abi":335,"../models/primitives/proof-of-exclusive-allotment.model":338,"../models/primitives/signature.model":339,"../models/transactions/active-state.model":350,"../models/transactions/transfer.model":354,"../models/wallet/eon.model":357,"../util":371,"./logging":364,"bignumber.js":24,"inversify":165,"reflect-metadata":402}],362:[function(require,module,exports){
+"use strict";var __decorate=this&&this.__decorate||function(t,e,r,n){var a,o=arguments.length,c=o<3?e:null===n?n=Object.getOwnPropertyDescriptor(e,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)c=Reflect.decorate(t,e,r,n);else for(var i=t.length-1;0<=i;i--)(a=t[i])&&(c=(o<3?a(c):3<o?a(e,r,c):a(e,r))||c);return 3<o&&c&&Object.defineProperty(e,r,c),c},__metadata=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},__param=this&&this.__param||function(r,n){return function(t,e){n(t,e,r)}},__awaiter=this&&this.__awaiter||function(o,c,i,s){return new(i||(i=Promise))(function(t,e){function r(t){try{a(s.next(t))}catch(t){e(t)}}function n(t){try{a(s.throw(t))}catch(t){e(t)}}function a(e){e.done?t(e.value):new i(function(t){t(e.value)}).then(r,n)}a((s=s.apply(o,c||[])).next())})},__generator=this&&this.__generator||function(r,n){var a,o,c,t,i={label:0,sent:function(){if(1&c[0])throw c[1];return c[1]},trys:[],ops:[]};return t={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(t[Symbol.iterator]=function(){return this}),t;function e(e){return function(t){return function(e){if(a)throw new TypeError("Generator is already executing.");for(;i;)try{if(a=1,o&&(c=2&e[0]?o.return:e[0]?o.throw||((c=o.return)&&c.call(o),0):o.next)&&!(c=c.call(o,e[1])).done)return c;switch(o=0,c&&(e=[2&e[0],c.value]),e[0]){case 0:case 1:c=e;break;case 4:return i.label++,{value:e[1],done:!1};case 5:i.label++,o=e[1],e=[0];continue;case 7:e=i.ops.pop(),i.trys.pop();continue;default:if(!(c=0<(c=i.trys).length&&c[c.length-1])&&(6===e[0]||2===e[0])){i=0;continue}if(3===e[0]&&(!c||e[1]>c[0]&&e[1]<c[3])){i.label=e[1];break}if(6===e[0]&&i.label<c[1]){i.label=c[1],c=e;break}if(c&&i.label<c[2]){i.label=c[2],i.ops.push(e);break}c[2]&&i.ops.pop(),i.trys.pop();continue}e=n.call(r,i)}catch(t){e=[6,t],o=0}finally{a=c=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,t])}}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),rxjs_1=require("rxjs"),contract_api_service_1=require("./contract-api.service"),inversify_types_1=require("../inversify.types"),contract_state_model_1=require("../models/state/contract-state.model"),logging_1=require("./logging"),wallet_storage_service_1=require("./wallet-storage.service"),ContractStateService=function(){function t(t,e,r,n){var a=this;this.stateUpdatePollObservable=t,this.contractStateFetchObserver=e,this.web3Service=r,this.contractApi=n,this.stateCache=new Map,this.parametersCache=new Map,t.subscribe(function(t){a.fetchContractState(t.wallet).then(function(t){a.contractStateFetchObserver.next(t)})})}return t.prototype.fetchContractState=function(a){var o=this;logging_1.Logging.debug("fetchContractState");var c=new contract_state_model_1.ContractState;return c.timestamp=(new Date).getTime(),this.web3Service.networkId().then(function(t){return c.networkId=t,o.web3Service.latestBlockNumber()}).then(function(t){c.block=t;var e,r=wallet_storage_service_1.WalletStorageService.walletKey(a.address,c.networkId,a.contractAddress,a.tokenAddress),n=r.concat("/",c.block.toString());return o.stateCache.has(n)?((e=o.stateCache.get(n)).timestamp=c.timestamp,e.networkId=c.networkId,e):o.parametersCache.has(r)?((e=o.parametersCache.get(r)).timestamp=c.timestamp,e.networkId=c.networkId,e.block=c.block,o.fetchContractStateVariables(a,e).then(function(t){return o.stateCache.set(n,t),t})):o.fetchContractStateConstants(a,c).then(function(t){return o.parametersCache.set(r,t),o.fetchContractStateVariables(a,t)}).then(function(t){return o.stateCache.set(n,t),t})}).catch(function(t){return logging_1.Logging.error(t),null})},t.prototype.fetchContractStateConstants=function(e,t){var r=this;logging_1.Logging.debug("fetchContractStateConstants");var n=contract_state_model_1.ContractState.fromJSON(t.json);return this.contractApi.genesis(e.contractAddress).then(function(t){return n.genesis=t,r.contractApi.getBlocksPerEon(e.contractAddress)}).then(function(t){return n.blocksPerEon=t,r.contractApi.getChallengeCost(e.contractAddress)}).then(function(t){return n.challengeCost=t,r.contractApi.getSlackPeriod(e.contractAddress)}).then(function(t){return n.slackPeriod=t,r.contractApi.getExtendedSlackPeriod(e.contractAddress)}).then(function(t){return n.extendedSlackPeriod=t,r.contractApi.getEonsKept(e.contractAddress)}).then(function(t){return n.eonsKept=t,r.contractApi.getDepositsKept(e.contractAddress)}).then(function(t){return n.depositsKept=t,n})},t.prototype.fetchContractStateVariables=function(s,l){return __awaiter(this,void 0,void 0,function(){var e,r,n,a,o,c,i;return __generator(this,function(t){switch(t.label){case 0:return logging_1.Logging.debug("fetchContractStateVariables"),e=contract_state_model_1.ContractState.fromJSON(l.json),r=contract_api_service_1.ContractApiService.eonNumberAt(e.block,e.genesis,e.blocksPerEon),!e.currentEonNumber||r>e.currentEonNumber?(n=e,[4,this.contractApi.hasOutstandingChallenges(s.contractAddress)]):[3,2];case 1:n.hasOutstandingChallenges=t.sent(),t.label=2;case 2:return e.currentEonNumber=r,e.currentSubBlock=contract_api_service_1.ContractApiService.subBlockAt(e.block,e.genesis,e.blocksPerEon),[4,this.contractApi.clientContractStateVariables(s.tokenAddress,s.address,s.contractAddress)];case 3:for(a=t.sent(),e.onChainBalance=a.holderBalance,e.deposits[0]=a.currentEonDeposits,e.deposits[1]=a.previousEonDeposits,e.deposits[2]=a.secondPreviousEonDeposits,e.pendingWithdrawals=a.pendingWithdrawals.map(function(t){return{eonNumber:t[0],amount:t[1]}}),e.LatestEonsData=new Array(e.eonsKept).fill({eonNumber:0,merkleRoot:"0x0000000000000000000000000000000000000000",liveChallenges:0}),o=0;o<e.eonsKept&&o<=a.lastCheckpointEonNumber;o++)c=a.lastCheckpointEonNumber-o,i=c%e.eonsKept,e.LatestEonsData[i]={eonNumber:c,merkleRoot:a.merkleRoots[i],liveChallenges:a.liveChallenges[i]};return[2,e]}})})},t=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(1,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH)),__param(2,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.WEB3_SERVICE_INTERFACE)),__param(3,inversify_1.inject(contract_api_service_1.ContractApiService)),__metadata("design:paramtypes",[rxjs_1.Observable,Object,Object,contract_api_service_1.ContractApiService])],t)}();exports.ContractStateService=ContractStateService;
+},{"../inversify.types":333,"../models/state/contract-state.model":341,"./contract-api.service":361,"./logging":364,"./wallet-storage.service":369,"inversify":165,"rxjs":404}],363:[function(require,module,exports){
+"use strict";var __decorate=this&&this.__decorate||function(e,t,r,n){var a,i=arguments.length,o=i<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)o=Reflect.decorate(e,t,r,n);else for(var s=e.length-1;0<=s;s--)(a=e[s])&&(o=(i<3?a(o):3<i?a(t,r,o):a(t,r))||o);return 3<i&&o&&Object.defineProperty(t,r,o),o},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,n){return function(e,t){n(e,t,r)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),contract_api_service_1=require("./contract-api.service"),eon_model_1=require("../models/wallet/eon.model"),signature_model_1=require("../models/primitives/signature.model"),proof_of_exclusive_allotment_model_1=require("../models/primitives/proof-of-exclusive-allotment.model"),wallet_update_error_model_1=require("../models/state/wallet-update-error.model"),util_1=require("../util"),bignumber_js_1=__importDefault(require("bignumber.js")),active_state_model_1=require("../models/transactions/active-state.model"),logging_1=require("./logging"),transfer_active_state_update_type_model_1=require("../models/transactions/transfer-active-state-update-type.model"),DisputeService=function(){function e(e){this.contractApi=e}var d;return(d=e).prototype.canIssueStateUpdateChallenge=function(e,t){var r=this;return e.lock.runExclusive(function(){return r.canIssueStateUpdateChallengeInternal(e,t)})},e.prototype.canIssueStateUpdateChallengeInternal=function(a,i){var t=this;return new Promise(function(n,e){t.contractApi.getChallengeBook(a.tokenAddress,a.address,a.address,a.contractAddress).then(function(e){var t=0<parseInt(e[0].valueOf(),10),r=parseInt(e[2].valueOf(),10);return!a.isRegistered||a.isPendingRegistrationApproval?(logging_1.Logging.error("reason 1"),n(!1)):a.registrationEon>=i.currentEonNumber?(logging_1.Logging.error("reason 2"),n(!1)):!a.previousEon||a.previousEon.eonNumber<i.currentEonNumber-1?(logging_1.Logging.error("reason 3"),n(!1)):a.registrationEon<a.previousEon.eonNumber&&!a.previousEon.proofOfExclusiveAllotment?(logging_1.Logging.error("reason 4"),n(!1)):a.previousEon.activeState.lastConfirmedTransfer&&!a.previousEon.activeState.lastConfirmedTransfer.confirmations.get(util_1.isSameHexValue(a.previousEon.activeState.lastConfirmedTransfer.sender,a.address)?transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT:transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)?(logging_1.Logging.error("reason 5"),n(!1)):t||r>=i.currentEonNumber-1?(logging_1.Logging.error("reason 6"),n(!1)):i.currentSubBlock<i.slackPeriod?(logging_1.Logging.error("reason 7"),n(!1)):i?i.networkId!=a.networkId?(logging_1.Logging.error("reason 9"),n(!1)):n(!i.isPunished):(logging_1.Logging.error("reason 8"),n(!1))})})},e.prototype.canRecoverAllFunds=function(e,t){var r=this;return e.lock.runExclusive(function(){return r.canRecoverAllFundsInternal(e,t)})},e.prototype.canRecoverAllFundsInternal=function(a,i){var o=this;return new Promise(function(r,n){return o.contractApi.recordBook(a.tokenAddress,a.address,a.contractAddress).then(function(e){var t=i.lastSubmissionEon-1;return!a.isRegistered||a.isPendingRegistrationApproval?(logging_1.Logging.error("canRecoverAllFunds reason 1"),r(!1)):a.registrationEon>=t?(logging_1.Logging.error("canRecoverAllFunds reason 2"),r(!1)):a.getEon(t)&&a.getEon(t).proofOfExclusiveAllotment?e?(logging_1.Logging.error("canRecoverAllFunds reason 4"),r(!1)):i.networkId!=a.networkId?(logging_1.Logging.error("reason 9"),r(!1)):o.contractApi.getAllReclaimableFunds(a.getEon(t).proofOfExclusiveAllotment).then(function(e){return r(!e.isZero())}).catch(n):(logging_1.Logging.error("canRecoverAllFunds reason 3"),r(!1))})})},e.prototype.canRecoverOnChainFunds=function(e,t){var r=this;return e.lock.runExclusive(function(){return r.canRecoverOnChainFundsInternal(e,t)})},e.prototype.canRecoverOnChainFundsInternal=function(n,a){var i=this;return new Promise(function(t,r){return i.contractApi.recordBook(n.tokenAddress,n.address,n.contractAddress).then(function(e){return a.deposits?e?(logging_1.Logging.error("canRecoverOnChainFunds reason 3"),t(!1)):a.networkId!=n.networkId?(logging_1.Logging.error("reason 9"),t(!1)):void i.contractApi.getReclaimableOnChainFunds(n.tokenAddress,n.address,n.contractAddress).then(function(e){return t(!e.isZero())}).catch(r):(logging_1.Logging.error("canRecoverOnChainFunds reason 1"),t(!1))})})},e.prototype.issueStateUpdateChallenge=function(s,l,c,g){var u=this;return s.lock.runExclusive(function(){return new Promise(function(i,o){u.canIssueStateUpdateChallengeInternal(s,l).then(function(e){if(!e)return i(!1);var t=s.previousEon.activeState.isTransferPending,r=t?eon_model_1.Eon.fromJSON(s.previousEon.json):s.previousEon;t&&r.activeState.cancelPendingTransfer();var n=r.activeState.lastConfirmedTransfer,a=n?n.confirmations.get(util_1.isSameHexValue(n.sender,s.address)?transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT:transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT):signature_model_1.Signature.EMPTY;r.eonNumber!=s.registrationEon||n||(a=s.registrationApproval),logging_1.Logging.log(r.proofOfExclusiveAllotment),logging_1.Logging.log(r.activeState.trailIdentifier),logging_1.Logging.log(r.activeState.hash),logging_1.Logging.log(a.checksum),logging_1.Logging.log(a.json),n&&u.contractApi.verifyProofOfTransitionAgreement(s.tokenAddress,s.address,s.trailIdentifier,r.eonNumber,r.activeState.transferTree.hash,r.activeState.spent,r.activeState.gained,a,s.contractAddress).then(function(e){logging_1.Logging.log("res"),logging_1.Logging.log(e)}).catch(function(e){logging_1.Logging.error("bad"),logging_1.Logging.error(e)}),r.proofOfExclusiveAllotment?(a===signature_model_1.Signature.EMPTY&&n&&logging_1.Logging.error("Empty signature on activeState."),u.contractApi.estimateChallengeInitialMerkleStateCost(s.address,r.proofOfExclusiveAllotment,r.activeState.transferTree.hash,r.activeState.spent,r.activeState.gained,a,s.contractAddress).then(function(e){logging_1.Logging.log("estimateChallengeInitialMerkleStateCost: "+e),u.contractApi.submitChallengeInitialMerkleState(s.address,r.proofOfExclusiveAllotment,r.activeState.transferTree.hash,r.activeState.spent,r.activeState.gained,a,l.challengeCost.multipliedBy(e),s.contractAddress,c,g).then(i).catch(o)}).catch(o)):u.contractApi.estimateChallengeInitialEmptyStateCost(s.tokenAddress,s.address,s.trailIdentifier,r.activeState.transferTree.hash,r.activeState.spent,r.activeState.gained,a,s.contractAddress).then(function(e){logging_1.Logging.log("estimateChallengeInitialEmptyStateCost: "+e),u.contractApi.submitChallengeInitialEmptyState(s.tokenAddress,s.address,s.trailIdentifier,r.activeState.transferTree.hash,r.activeState.spent,r.activeState.gained,a,l.challengeCost.multipliedBy(e),s.contractAddress,c,g).then(i).catch(o)}).catch(o)})})})},e.prototype.checkStateUpdateChallengeResponse=function(g,e){var u=this;return new Promise(function(o,e){var s,l,c=g.latestEon.eonNumber;u.contractApi.getStateUpdateEventAtEon(g.tokenAddress,g.address,c,g.contractAddress).then(function(e){if(!e||!e.length)return o(null);var t=e.find(function(e){return util_1.isSameHexValue(e.args.account,g.address)&&e.args.eonNumber.toNumber()==c});if(!t||!t.args)return o(null);var r=t.args;logging_1.Logging.log("answer"),logging_1.Logging.log(r),s=new proof_of_exclusive_allotment_model_1.ProofOfExclusiveAllotment(g.contractAddress,g.tokenAddress,g.address,r.activeStateChecksum,r.trail.toNumber(),c,r.allotmentChain,r.membershipChain,r.values.map(function(e){return new bignumber_js_1.default(e)}),r.LR[0],r.LR[1],r.passiveChecksum,r.lrDeltasPassiveMark[2][0],r.lrDeltasPassiveMark[2][1]);var n=util_1.remove0xPrefix(r.r.toString(16)),a=util_1.remove0xPrefix(r.s.toString(16)),i=util_1.remove0xPrefix(r.v.toString(16));return l=signature_model_1.Signature.fromRSV(g.contractOwnerAddress,r.activeStateChecksum,[n,a,i].join("")),u.contractApi.verifyProof(g.getEon(c),s)}).then(function(e){if(!e)throw wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_INVALID;return util_1.isSameHexValue(l.checksum,util_1.EMPTY_HASH)||u.contractApi.validateOperatorSignature(l,g.contractAddress)}).then(function(e){if(!e)throw wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TRANSFER_CREDIT_HUB_SIGNATURE_INVALID;return o([s,l])}).catch(e)})},e.prototype.resolveOnChainStateUpdateDispute=function(e,t,r){var n=this;return e.lock.runExclusive(function(){return n.resolveOnChainStateUpdateDisputeInternal(e,t,r)})},e.prototype.resolveOnChainStateUpdateDisputeInternal=function(o,s,l){var e=this;return new Promise(function(r,n){if(o.latestEon.proofOfExclusiveAllotment)return r(wallet_update_error_model_1.WalletUpdateError.LOGIC_PROOF_ALREADY_UPDATED);if(!s||!l)return n(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF);var a=o.latestEon,i=o.previousEon;e.contractApi.verifyProof(a,s).then(function(e){if(!e)return n(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_INVALID);if(s.amount.isLessThan(i.expectedBalance))return n(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_INSUFFICIENT_BALANCE);if(a.setProofOfExclusiveAllotment(s),util_1.isSameHexValue(s.activeStateChecksum,i.activeState.hash)){if(i.activeState.isTransferPending)!util_1.isSameHexValue(i.activeState.pendingTransfer.recipient,o.address)?(i.activeState.pendingTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,l),i.activeState.confirmPendingOutgoingTransfer()):(i.activeState.pendingTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,l),i.activeState.confirmPendingIncomingTransfer());return r(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF)}if(i.activeState.isTransferPending){var t=active_state_model_1.ActiveState.fromJSON(i.activeState.json);if(t.cancelPendingTransfer(),util_1.isSameHexValue(s.activeStateChecksum,t.hash))return i.activeState.cancelPendingTransfer(),r(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR)}return r(wallet_update_error_model_1.WalletUpdateError.LOGIC_UNKNOWN)}).catch(n)})},e.canIssueDeliveryChallenge=function(e,t,r){return!!r&&(!r.isPunished&&(!!t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)&&(!!t.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)&&(!(!util_1.isSameHexValue(e.address,t.sender)&&!util_1.isSameHexValue(e.address,t.recipient))&&(t.eonNumber==r.currentEonNumber-1&&!(r.currentSubBlock<r.slackPeriod))))))},e.prototype.issueDeliveryChallenge=function(o,s,l,c,g){var u=this;return o.lock.runExclusive(function(){return new Promise(function(t,r){if(!d.canIssueDeliveryChallenge(o,s,l))return r(new Error);var n=util_1.isSameHexValue(o.address,s.sender),a=s.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT),i=s.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT);u.contractApi.estimateDeliveryCommitmentCost(o.tokenAddress,o.address,s.sender,s.recipient,s.nonce,n?o.trailIdentifier:s.recipientTrailIdentifier,a.tx_set_index,s.recipientTrailIdentifier,a.tx_set_proof,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings),new bignumber_js_1.default(a.updated_gains),s.amount,i,o.contractAddress).then(function(e){logging_1.Logging.log("estimateDeliveryCommitmentCost: "+e),u.contractApi.submitDeliveryCommitment(o.tokenAddress,o.address,s.sender,s.recipient,s.nonce,n?o.trailIdentifier:s.recipientTrailIdentifier,a.tx_set_index,s.recipientTrailIdentifier,a.tx_set_proof,a.tx_set_hash,new bignumber_js_1.default(a.updated_spendings),new bignumber_js_1.default(a.updated_gains),s.amount,i,l.challengeCost.multipliedBy(e),o.contractAddress,c,g).then(t).catch(r)}).catch(r)})})},e=d=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(contract_api_service_1.ContractApiService)),__metadata("design:paramtypes",[contract_api_service_1.ContractApiService])],e)}();exports.DisputeService=DisputeService;
+},{"../models/primitives/proof-of-exclusive-allotment.model":338,"../models/primitives/signature.model":339,"../models/state/wallet-update-error.model":348,"../models/transactions/active-state.model":350,"../models/transactions/transfer-active-state-update-type.model":353,"../models/wallet/eon.model":357,"../util":371,"./contract-api.service":361,"./logging":364,"bignumber.js":24,"inversify":165}],364:[function(require,module,exports){
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var Logging=function(){function g(){}return g.debug=function(n){g.loggingInterface.debug(n)},g.error=function(n){g.loggingInterface.error(n)},g.info=function(n){g.loggingInterface.info(n)},g.log=function(n){g.loggingInterface.log(n)},g.warning=function(n){g.loggingInterface.warning(n)},g}();exports.Logging=Logging;
-},{}],367:[function(require,module,exports){
-"use strict";var __decorate=this&&this.__decorate||function(e,t,r,i){var o,s=arguments.length,n=s<3?t:null===i?i=Object.getOwnPropertyDescriptor(t,r):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,r,i);else for(var l=e.length-1;0<=l;l--)(o=e[l])&&(n=(s<3?o(n):3<s?o(t,r,n):o(t,r))||n);return 3<s&&n&&Object.defineProperty(t,r,n),n},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,i){return function(e,t){i(e,t,r)}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),rxjs_1=require("rxjs"),state_poll_model_1=require("../models/state/state-poll.model"),inversify_types_1=require("../inversify.types"),operators_1=require("rxjs/internal/operators"),PollService=function(){function e(e){this.walletStatePollObserver=e,this.pollTimer=new rxjs_1.Subject;var t=rxjs_1.from(this.pollTimer);this.pollTrigger=t.pipe(operators_1.switchAll())}return e.prototype.startSynchronization=function(e,t,r){this.subscribeToPollTrigger(e),this.pollTimer.next(rxjs_1.timer(t,r))},e.prototype.stopSynchronization=function(){this.pollSubscription&&this.pollSubscription.unsubscribe()},e.prototype.triggerSynchronization=function(e){this.walletStatePollObserver.next(new state_poll_model_1.StatePoll(e))},e.prototype.subscribeToPollTrigger=function(e){var t=this;this.pollSubscription&&!this.pollSubscription.closed||(this.pollSubscription=this.pollTrigger.subscribe(function(){t.triggerSynchronization(e)}))},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__metadata("design:paramtypes",[Object])],e)}();exports.PollService=PollService;
-},{"../inversify.types":333,"../models/state/state-poll.model":344,"inversify":166,"rxjs":404,"rxjs/internal/operators":487}],368:[function(require,module,exports){
-"use strict";var __decorate=this&&this.__decorate||function(e,r,t,a){var n,_=arguments.length,i=_<3?r:null===a?a=Object.getOwnPropertyDescriptor(r,t):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(e,r,t,a);else for(var o=e.length-1;0<=o;o--)(n=e[o])&&(i=(_<3?n(i):3<_?n(r,t,i):n(r,t))||i);return 3<_&&i&&Object.defineProperty(r,t,i),i},__metadata=this&&this.__metadata||function(e,r){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,r)},__param=this&&this.__param||function(t,a){return function(e,r){a(e,r,t)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var withdrawal_model_1=require("./../models/transactions/withdrawal.model"),inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),rxjs_1=require("rxjs"),contract_api_service_1=require("./contract-api.service"),hub_api_service_1=require("./hub-api.service"),wallet_state_model_1=require("../models/state/wallet-state.model"),round_model_1=require("../models/wallet/round.model"),bignumber_js_1=__importDefault(require("bignumber.js")),wallet_sync_state_model_1=require("../models/state/wallet-sync-state.model"),signature_model_1=require("../models/primitives/signature.model"),aggregate_model_1=require("../models/transactions/aggregate.model"),proof_of_stake_model_1=require("../models/primitives/proof-of-stake.model"),util_1=require("../util"),wallet_update_error_model_1=require("../models/state/wallet-update-error.model"),operators_1=require("rxjs/internal/operators"),deposit_model_1=require("../models/transactions/deposit.model"),transfer_model_1=require("../models/transactions/transfer.model"),logging_1=require("./logging"),transfer_aggregate_type_model_1=require("../models/transactions/transfer-aggregate-type.model"),WalletStateService=function(){function e(e,r,t,a,n,_){var i=this;this.walletStatePollObservable=e,this.hubStateFetchObservable=r,this.contractStateFetchObservable=t,this.walletStateSyncObserver=a,this.contractApi=n,this.hubApi=_,e.subscribe(function(a){rxjs_1.combineLatest(t,r).pipe(operators_1.take(1)).subscribe(function(e){var r=e[0],t=e[1];i.syncWalletState(a.wallet,r,t).then(function(e){i.walletStateSyncObserver.next(e)})})})}return e.prototype.syncWalletState=function(t,a,n,_){var i=this;return void 0===_&&(_=!0),t.lock.runExclusive(function(){return i.updateOnChainData(t,a,n).then(function(){return i.updatePendingRegistrationState(t,a,n)}).then(function(){return i.updateRegistrationState(t,a,n)}).then(function(){return i.updateLightSyncRound(t,a,n,_)}).then(function(){return i.updateOlderRoundStates(t,a,n,_)}).then(function(){return i.updatePreviousRoundState(t,a,n,_)}).then(function(){return new Promise(function(e,r){return i.updateCurrentRoundState(t,a,n,_).then(function(){return a.isPunished?r(wallet_update_error_model_1.WalletUpdateError.PROVIDER_PUNISHED):e(new wallet_state_model_1.WalletState(t,wallet_sync_state_model_1.WalletSyncState.SYNCHRONIZED,null,a,n))}).catch(r)})}).catch(function(e){return logging_1.Logging.debug(e),new wallet_state_model_1.WalletState(t,wallet_sync_state_model_1.WalletSyncState.UNSAFE,e,a,n)})})},e.prototype.updateOnChainData=function(t,a,e){return logging_1.Logging.debug("updateOnChainData"),new Promise(function(e,r){return t?a?a.networkId!=t.networkId?r(wallet_update_error_model_1.WalletUpdateError.INCORRECT_NETWORK_ID):(t.onChainBalance=a.onChainBalance,e()):r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updatePendingRegistrationState=function(a,n,e){var _=this;logging_1.Logging.debug("updatePendingRegistrationState");var i,o=e?e.walletData:null;return new Promise(function(r,t){if(!a)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(a.isRegistered)return r();if(!n)return t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(!(o&&o.registration&&o.registration.wallet_signature&&o.registration.round))return a.unmarkPendingRegistrationApproval(),t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_NO_REQUEST);if(o.registration.round>n.currentRound)return a.unmarkPendingRegistrationApproval(),t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_BAD_REQUEST);i=a.getAdmissionAggregate(o.registration.round);var e=signature_model_1.Signature.fromRSV(a.address,i.hash,o.registration.wallet_signature);_.contractApi.validateAggregateSignature(i,e,a.contractAddress).then(function(e){return e?(a.markPendingRegistrationApproval(o.registration.round),r()):t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_BAD_REQUEST)}).catch(t)})},e.prototype.updateRegistrationState=function(n,e,r){var _=this;logging_1.Logging.debug("updateRegistrationState");var i,o=r?r.walletData:null;return new Promise(function(r,t){if(!n)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(n.isRegistered)return r();if(!n.isPendingRegistrationApproval)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_APPROVAL_NOT_PENDING);if(!e)return t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(!o||!o.registration||!o.registration.hub_signature)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_APPROVAL_NOT_PROVIDED);i=n.getAdmissionAggregate(n.registrationRound,o.registration.trail_identifier);var a=signature_model_1.Signature.fromRSV(n.contractOwnerAddress,i.hash,o.registration.hub_signature);_.contractApi.validateAggregateSignature(i,a,n.contractAddress).then(function(e){return e?(n.markRegistered(a,o.registration.trail_identifier),r()):t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_APPROVAL_INVALID)}).catch(t)})},e.prototype.updateOlderRoundStates=function(t,a,n,_){var i=this;return logging_1.Logging.debug("updateOlderRoundStates"),new Promise(function(e,r){return t?t.isRegistered?a?t.latestRound.roundNumber>=a.currentRound-1?e():i.updateLatestLocalRoundProofStake(t,a,n,_).then(function(){return i.updateLatestRoundAggregate(t,a,n,_)}).then(function(){return i.updateLatestRoundDeposits(t,a,n)}).then(function(){return i.updateLatestRoundOnChainWithdrawal(t,a,n)}).then(function(){return i.updateLatestRoundDeliveryReceipts(t,a,n,_)}).then(function(){return i.progressRound(t,a,n)}).then(function(){return i.updateOlderRoundStates(t,a,n,!1)}).then(e).catch(r):r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED):r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updatePreviousRoundState=function(t,a,n,_){var i=this;return logging_1.Logging.debug("updatePreviousRoundState"),new Promise(function(e,r){return t?t.isRegistered?a?t.latestRound.roundNumber<a.currentRound-1?r(wallet_update_error_model_1.WalletUpdateError.LOGIC_OLD_ROUNDS_NOT_UPDATED):t.latestRound.roundNumber==a.currentRound?e():i.updateLatestLocalRoundProofStake(t,a,n,!1).then(function(){return i.updateLatestRoundAggregate(t,a,n,_)}).then(function(){return i.updateLatestRoundDeposits(t,a,n)}).then(function(){return i.updateLatestRoundOnChainWithdrawal(t,a,n)}).then(function(){return i.updateLatestRoundDeliveryReceipts(t,a,n,!1)}).then(function(){return i.progressRound(t,a,n)}).then(e).catch(r):r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED):r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updateCurrentRoundState=function(t,a,n,_){var i=this;return logging_1.Logging.debug("updateCurrentRoundState"),new Promise(function(e,r){return t?t.isRegistered?a?t.latestRound.roundNumber<a.currentRound?r(wallet_update_error_model_1.WalletUpdateError.LOGIC_PREVIOUS_ROUND_NOT_UPDATED):i.updateCurrentRoundOnChainDeposits(t,a,n).then(function(){return i.updateLatestLocalRoundProofStake(t,a,n,!1)}).then(function(){return i.updateLatestRoundAggregate(t,a,n,_)}).then(function(){return i.updateLatestRoundDeposits(t,a,n)}).then(function(){return i.updateLatestRoundOnChainWithdrawal(t,a,n)}).then(function(){return i.updateLatestRoundDeliveryReceipts(t,a,n,!1)}).then(e).catch(r):r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED):r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updateLatestLocalRoundProofStake=function(o,g,e,d){var l=this;logging_1.Logging.debug("updateLatestLocalRoundProofStake");var s=e?e.walletData:null;return new Promise(function(r,t){if(!o)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!o.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!g)return t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);var a=o.latestRound;if(!a)return t(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_ROUND);if(a.proofOfStake||a.roundNumber==o.registrationRound)return r();if(a.roundNumber==g.currentRound&&!g.isCheckpointSubmitted)return g.currentSubBlock>g.extendedSlackPeriod?t(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF):r();var n,_=d&&o.latestRound.roundNumber===g.currentRound-2;if(!_){if(!(n=o.getRound(a.roundNumber-1)))return t(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_PREVIOUS_ROUND);if(!s||!s.merkle_proofs||!s.merkle_proofs.length)return t(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_NO_MERKLE_PROOFS)}var e=s.merkle_proofs.find(function(e){return e.round_number==a.roundNumber});if(!e)return t(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF);if(e.trail!=o.trailIdentifier)return t(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_INVALID_TRAIL);var i=new proof_of_stake_model_1.ProofOfStake(o.contractAddress,o.tokenAddress,o.address,e.paint,e.trail,e.round_number,e.allotment_chain,e.membership_chain,e.values.map(function(e){return new bignumber_js_1.default(e)}),new bignumber_js_1.default(e.left),new bignumber_js_1.default(e.right),e.passive_checksum,new bignumber_js_1.default(e.passive_amount),new bignumber_js_1.default(e.passive_marker));return a.proposedProofOfStake=i,!_&&i.amount.isLessThan(n.expectedBalance)?t(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_INSUFFICIENT_BALANCE):a.roundNumber<=g.currentRound-g.roundsKept+1?(a.setProofOfStake(i),r()):void l.contractApi.verifyProof(a,i).then(function(e){if(!e)return t(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_INVALID);if(!_&&n.aggregate.transferTree.isEmpty){if(!util_1.isSameHexValue(i.paint,util_1.EMPTY_HASH)&&!util_1.isSameHexValue(i.paint,n.aggregate.hash))return logging_1.Logging.error(i.paint),logging_1.Logging.error("not empty"),t(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_UNEXPECTED_PAINT)}else if(!_&&!util_1.isSameHexValue(i.paint,n.aggregate.hash))return logging_1.Logging.error(i.paint),logging_1.Logging.error(n.aggregate.hash),logging_1.Logging.log(n.aggregate),t(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_STAKE_UNEXPECTED_PAINT);return a.setProofOfStake(i),r()}).catch(t)})},e.prototype.updateLatestRoundAggregate=function(n,_,i,o){var g=this;logging_1.Logging.debug("updateLatestRoundAggregate");var d=i?i.walletData:null;return new Promise(function(e,r){if(!n)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!n.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!d||!d.transfers)return e();var t=n.latestRound;if(!t)return r(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_ROUND);var a=d.transfers.filter(function(e){return e.round==t.roundNumber}).sort(function(e,r){return e.id-r.id});return g.updateLatestRoundAggregateTransactions(n,a,0,_,i,o).then(e).catch(r)})},e.prototype.updateLatestRoundAggregateTransactions=function(n,_,i,o,g,d){var l=this;return logging_1.Logging.debug("updateLatestRoundAggregateTransactions"),new Promise(function(e,r){if(!n)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!n.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!_||i>=_.length)return e();var t=function(e,r){return l.updateLatestRoundAggregateTransactions(n,_,i+1,o,g,d).then(e).catch(r)},a=_[i];return(util_1.isSameHexValue(a.wallet.address,a.recipient.address)&&!util_1.isSameHexValue(a.wallet.token,a.recipient.token)?l.updateLatestRoundAggregateSwaps(n,a,o,g,t,d):l.updateLatestRoundAggregateTransfers(n,a,o,g,t,d)).then(e).catch(r)})},e.prototype.updateLatestRoundAggregateTransfers=function(o,g,e,r,d,l){var s=this;return logging_1.Logging.debug("updateLatestRoundAggregateTransfers"),new Promise(function(r,t){var _=util_1.isSameHexValue(g.wallet.address,o.address)&&util_1.isSameHexValue(g.wallet.token,o.tokenAddress),i=o.latestRound,a=i.aggregate.latestTransfer,n=function(a,n){return s.contractApi.validateTransferDebit(g,o.contractOwnerAddress,o.contractAddress,o.tokenAddress,l).then(function(e){if(!e)return n(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TRANSFER_DEBIT_HUB_SIGNATURE_INVALID);var r=aggregate_model_1.Aggregate.checksum(o.contractAddress,o.tokenAddress,g.wallet.address,g.wallet_trail_identifier,g.round,g.sender_aggregate.tx_set_hash,new bignumber_js_1.default(g.sender_aggregate.updated_spendings),new bignumber_js_1.default(g.sender_aggregate.updated_gains)),t=signature_model_1.Signature.fromRSV(o.contractOwnerAddress,r,g.sender_aggregate.hub_signature);if(i.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,t),g.passive){if(_){if(!i.aggregate.confirmPendingOutgoingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_OUTGOING)}else if(!i.aggregate.confirmPendingIncomingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_INCOMING);return d(a,n)}return s.contractApi.validateTransferCredit(g,o.contractOwnerAddress,o.contractAddress,o.tokenAddress,l).then(function(e){if(!e)return n(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TRANSFER_CREDIT_HUB_SIGNATURE_INVALID);var r=aggregate_model_1.Aggregate.checksum(o.contractAddress,o.tokenAddress,g.recipient.address,g.recipient_trail_identifier,g.round,g.recipient_aggregate.tx_set_hash,new bignumber_js_1.default(g.recipient_aggregate.updated_spendings),new bignumber_js_1.default(g.recipient_aggregate.updated_gains)),t=signature_model_1.Signature.fromRSV(o.contractOwnerAddress,r,g.recipient_aggregate.hub_signature);if(i.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,t),_){if(!i.aggregate.confirmPendingOutgoingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_OUTGOING)}else if(!i.aggregate.confirmPendingIncomingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_INCOMING);return d(a,n)})})};if(a&&g.id<a.txId)return d(r,t);if(a&&g.id==a.txId){if(i.removePendingIncomingTransfer(g),!i.aggregate.isTransferPending)return d(r,t);if(g.processed&&g.voided)return i.addCancelledTransfer(g),i.aggregate.cancelPendingTransfer(),d(r,t);if(_){if(!util_1.isSameHexValue(i.aggregate.transferTree.hash,g.sender_aggregate.tx_set_hash))return t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_OUTGOING)}else if(g.recipient_aggregate&&!util_1.isSameHexValue(i.aggregate.transferTree.hash,g.recipient_aggregate.tx_set_hash))return t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_INCOMING);return s.contractApi.validateTransferDebit(g,g.wallet.address,o.contractAddress,o.tokenAddress,l).then(function(e){return e?g.passive?n(r,t):g.recipient_aggregate?(a.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)||a.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,g.sender_aggregate),s.contractApi.validateTransferCredit(g,g.recipient.address,o.contractAddress,o.tokenAddress,l).then(function(e){return e?(a.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)||a.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,g.recipient_aggregate),g.processed?n(r,t):d(r,t)):t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TRANSFER_CREDIT_WALLET_SIGNATURE_INVALID)})):d(r,t):t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TRANSFER_DEBIT_WALLET_SIGNATURE_INVALID)})}if(g.processed&&g.voided)return i.removePendingIncomingTransfer(g),i.addCancelledTransfer(g),d(r,t);var e=aggregate_model_1.Aggregate.fromJSON(i.aggregate.json);e.isTransferPending&&e.cancelPendingTransfer();_?e.createOutgoingTransfer(g.recipient.address,g.recipient_trail_identifier,new bignumber_js_1.default(g.amount),g.passive,new bignumber_js_1.default(g.nonce)):e.createIncomingTransfer(g.wallet.address,new bignumber_js_1.default(g.amount),new bignumber_js_1.default(g.nonce),g.id,g.passive);if(_){if(i.aggregate.isTransferPending)return t(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);if(!util_1.isSameHexValue(e.transferTree.hash,g.sender_aggregate.tx_set_hash))return t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_OUTGOING)}else if(g.recipient_aggregate){if(i.aggregate.isTransferPending)return t(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);if(!util_1.isSameHexValue(e.transferTree.hash,g.recipient_aggregate.tx_set_hash))return t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_INCOMING)}return s.contractApi.validateTransferDebit(g,g.wallet.address,o.contractAddress,o.tokenAddress,l).then(function(e){return e?(_?i.aggregate.createOutgoingTransfer(g.recipient.address,g.recipient_trail_identifier,new bignumber_js_1.default(g.amount),g.passive,new bignumber_js_1.default(g.nonce),g.id,new bignumber_js_1.default(g.position)).authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,g.sender_aggregate):i.addPendingIncomingTransfer(g),g.recipient_aggregate||g.passive?g.passive?(_||(i.aggregate.createIncomingTransfer(g.wallet.address,new bignumber_js_1.default(g.amount),new bignumber_js_1.default(g.nonce),g.id,g.passive).authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,g.sender_aggregate),i.removePendingIncomingTransfer(g)),g.processed?n(r,t):d(r,t)):s.contractApi.validateTransferCredit(g,g.recipient.address,o.contractAddress,o.tokenAddress,l).then(function(e){return e?(_||(i.aggregate.createIncomingTransfer(g.wallet.address,new bignumber_js_1.default(g.amount),new bignumber_js_1.default(g.nonce),g.id,g.passive).authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,g.sender_aggregate),i.removePendingIncomingTransfer(g)),i.aggregate.latestTransfer.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,g.recipient_aggregate),g.processed?n(r,t):d(r,t)):t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TRANSFER_CREDIT_WALLET_SIGNATURE_INVALID)}):d(r,t)):t(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TRANSFER_DEBIT_WALLET_SIGNATURE_INVALID)})})},e.prototype.updateLatestRoundAggregateSwaps=function(s,u,e,r,p,c){var f=this;return logging_1.Logging.debug("updateLatestRoundAggregateSwaps"),new Promise(function(i,o){var n=util_1.isSameHexValue(u.wallet.address,s.address)&&util_1.isSameHexValue(u.wallet.token,s.tokenAddress),g=s.latestRound,e=g.aggregate.latestTransfer;if(!(util_1.isSameHexValue(u.wallet.address,u.recipient.address)&&!util_1.isSameHexValue(u.wallet.token,u.recipient.token)))return o(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);var a=function(){if(logging_1.Logging.debug("processSwapFinalization"),!u.matched_amounts||!u.recipient_finalization_aggregate)return p(i,o);if(n){if(g.aggregate.latestTransfer.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.FINALIZATION,u.recipient_finalization_aggregate),!u.recipient_finalization_aggregate.hub_signature)return p(i,o);var e=aggregate_model_1.Aggregate.checksum(s.contractAddress,u.recipient.token,u.recipient.address,u.recipient_trail_identifier,u.round,u.recipient_finalization_aggregate.tx_set_hash,new bignumber_js_1.default(u.recipient_finalization_aggregate.updated_spendings),new bignumber_js_1.default(u.recipient_finalization_aggregate.updated_gains)),r=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,e,u.recipient_finalization_aggregate.hub_signature);return g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.FINALIZATION,r),g.aggregate.latestTransfer.amountsMatched=u.matched_amounts,g.aggregate.finalizePendingSwap()?p(i,o):new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.SWAP_FINALIZATION_FAILURE)})}return f.contractApi.validateDataAggregate(u,u.recipient_finalization_aggregate,u.recipient,s.address,s.contractAddress,s.tokenAddress,c,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){return e?(g.aggregate.latestTransfer.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.FINALIZATION,u.recipient_finalization_aggregate),u.recipient_finalization_aggregate.hub_signature?f.contractApi.validateDataAggregate(u,u.recipient_finalization_aggregate,u.recipient,s.contractOwnerAddress,s.contractAddress,s.tokenAddress,c,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_FINALIZATION_HUB_SIGNATURE_INVALID);var r=aggregate_model_1.Aggregate.checksum(s.contractAddress,s.tokenAddress,s.address,s.trailIdentifier,u.round,u.recipient_finalization_aggregate.tx_set_hash,new bignumber_js_1.default(u.recipient_finalization_aggregate.updated_spendings),new bignumber_js_1.default(u.recipient_finalization_aggregate.updated_gains)),t=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,r,u.recipient_finalization_aggregate.hub_signature);return g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.FINALIZATION,t),g.aggregate.latestTransfer.amountsMatched=u.matched_amounts,g.aggregate.finalizePendingSwap()?p(i,o):new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.SWAP_FINALIZATION_FAILURE)})}):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_FINALIZATION_WALLET_SIGNATURE_INVALID)})},_=function(){if(logging_1.Logging.debug("processSwapFreezing"),u.complete||!u.cancelled)return a();if(!u.swap_freezing_signature)return p(i,o);var _=g.aggregate.latestTransfer;u.matched_amounts&&(_.amountsMatched=u.matched_amounts);var r=signature_model_1.Signature.fromRSV(s.address,_.cancellationHash,u.swap_freezing_signature);f.contractApi.validateSignature(r,s.contractAddress).then(function(e){return e?(_.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.FREEZING,r),u.sender_cancellation_aggregate&&u.recipient_cancellation_aggregate?void(n?f.contractApi.validateDataAggregate(u,u.sender_cancellation_aggregate,u.wallet,u.wallet.address,s.contractAddress,s.tokenAddress,c,s.getRoundSwapStartingBalance(g.roundNumber)).then(function(e){return e?(_.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION,u.sender_cancellation_aggregate),u.sender_cancellation_aggregate.hub_signature&&u.recipient_cancellation_aggregate.hub_signature?f.contractApi.validateDataAggregate(u,u.sender_cancellation_aggregate,u.wallet,s.contractOwnerAddress,s.contractAddress,s.tokenAddress,c,s.getRoundSwapStartingBalance(g.roundNumber)).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_SENDER_CANCELLATION_HUB_SIGNATURE_INVALID);_.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION,u.recipient_cancellation_aggregate);var r=aggregate_model_1.Aggregate.checksum(s.contractAddress,s.tokenAddress,s.address,s.trailIdentifier,u.round,u.sender_cancellation_aggregate.tx_set_hash,new bignumber_js_1.default(u.sender_cancellation_aggregate.updated_spendings),new bignumber_js_1.default(u.sender_cancellation_aggregate.updated_gains)),t=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,r,u.sender_cancellation_aggregate.hub_signature);_.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION,t);var a=aggregate_model_1.Aggregate.checksum(s.contractAddress,u.recipient.token,u.recipient.address,u.recipient_trail_identifier,u.round,u.recipient_cancellation_aggregate.tx_set_hash,new bignumber_js_1.default(u.recipient_cancellation_aggregate.updated_spendings),new bignumber_js_1.default(u.recipient_cancellation_aggregate.updated_gains)),n=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,a,u.recipient_cancellation_aggregate.hub_signature);return _.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION,n),g.aggregate.cancelPendingSwap()?p(i,o):o(wallet_update_error_model_1.WalletUpdateError.SWAP_CANCELLATION_FAILURE)}):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_SENDER_CANCELLATION_WALLET_SIGNATURE_INVALID)}):f.contractApi.validateDataAggregate(u,u.recipient_cancellation_aggregate,u.recipient,u.recipient.address,s.contractAddress,s.tokenAddress,c,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){return e?(_.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION,u.recipient_cancellation_aggregate),u.sender_cancellation_aggregate.hub_signature&&u.recipient_cancellation_aggregate.hub_signature?f.contractApi.validateDataAggregate(u,u.recipient_cancellation_aggregate,u.recipient,s.contractOwnerAddress,s.contractAddress,s.tokenAddress,c,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_RECIPIENT_CANCELLATION_HUB_SIGNATURE_INVALID);_.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION,u.sender_cancellation_aggregate);var r=aggregate_model_1.Aggregate.checksum(s.contractAddress,u.wallet.token,u.wallet.address,u.wallet_trail_identifier,u.round,u.sender_cancellation_aggregate.tx_set_hash,new bignumber_js_1.default(u.sender_cancellation_aggregate.updated_spendings),new bignumber_js_1.default(u.sender_cancellation_aggregate.updated_gains)),t=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,r,u.sender_cancellation_aggregate.hub_signature);_.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.SENDER_CANCELLATION,t);var a=aggregate_model_1.Aggregate.checksum(s.contractAddress,s.tokenAddress,s.address,s.trailIdentifier,u.round,u.recipient_cancellation_aggregate.tx_set_hash,new bignumber_js_1.default(u.recipient_cancellation_aggregate.updated_spendings),new bignumber_js_1.default(u.recipient_cancellation_aggregate.updated_gains)),n=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,a,u.recipient_cancellation_aggregate.hub_signature);return _.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.RECIPIENT_CANCELLATION,n),g.aggregate.cancelPendingSwap()?p(i,o):o(wallet_update_error_model_1.WalletUpdateError.SWAP_CANCELLATION_FAILURE)}):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_RECIPIENT_CANCELLATION_WALLET_SIGNATURE_INVALID)})):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.INVALID_WALLET_FREEZE_REQUEST_SIGNATURE)})},d=function(){if(logging_1.Logging.debug("processSwapFulfillment"),u.matched_amounts&&(g.aggregate.latestTransfer.amountsMatched=u.matched_amounts),!u.complete)return _();if(!u.recipient_fulfillment_aggregate||!u.recipient_fulfillment_aggregate.hub_signature)return new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_FULFILLMENT_HUB_SIGNATURE_MISSING)});if(n){var e=aggregate_model_1.Aggregate.checksum(s.contractAddress,u.recipient.token,u.recipient.address,u.recipient_trail_identifier,u.round,u.recipient_fulfillment_aggregate.tx_set_hash,new bignumber_js_1.default(u.recipient_fulfillment_aggregate.updated_spendings),new bignumber_js_1.default(u.recipient_fulfillment_aggregate.updated_gains)),r=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,e,u.recipient_fulfillment_aggregate.hub_signature);return g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT,r),g.aggregate.fulfillPendingSwap()?a():new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.SWAP_FULFILLMENT_FAILURE)})}return f.contractApi.validateDataAggregate(u,u.recipient_fulfillment_aggregate,u.recipient,s.contractOwnerAddress,s.contractAddress,s.tokenAddress,c,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_FULFILLMENT_HUB_SIGNATURE_INVALID);var r=aggregate_model_1.Aggregate.checksum(s.contractAddress,s.tokenAddress,s.address,s.trailIdentifier,u.round,u.recipient_fulfillment_aggregate.tx_set_hash,new bignumber_js_1.default(u.recipient_fulfillment_aggregate.updated_spendings),new bignumber_js_1.default(u.recipient_fulfillment_aggregate.updated_gains)),t=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,r,u.recipient_fulfillment_aggregate.hub_signature);return g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT,t),g.aggregate.fulfillPendingSwap()?a():o(wallet_update_error_model_1.WalletUpdateError.SWAP_FULFILLMENT_FAILURE)})},l=function(){if(logging_1.Logging.debug("processSwapActivation"),!u.sender_aggregate.hub_signature||!u.recipient_aggregate.hub_signature)return _();var e=aggregate_model_1.Aggregate.checksum(s.contractAddress,u.wallet.token,u.wallet.address,u.wallet_trail_identifier,u.round,u.sender_aggregate.tx_set_hash,new bignumber_js_1.default(u.sender_aggregate.updated_spendings),new bignumber_js_1.default(u.sender_aggregate.updated_gains)),r=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,e,u.sender_aggregate.hub_signature),t=aggregate_model_1.Aggregate.checksum(s.contractAddress,u.recipient.token,u.recipient.address,u.recipient_trail_identifier,u.round,u.recipient_aggregate.tx_set_hash,new bignumber_js_1.default(u.recipient_aggregate.updated_spendings),new bignumber_js_1.default(u.recipient_aggregate.updated_gains)),a=signature_model_1.Signature.fromRSV(s.contractOwnerAddress,t,u.recipient_aggregate.hub_signature);return n?f.contractApi.validateDataAggregate(u,u.sender_aggregate,u.wallet,s.contractOwnerAddress,s.contractAddress,u.wallet.token,c,s.getRoundSwapStartingBalance(g.roundNumber)).then(function(e){return e?(g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,r),g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,a),d()):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_SWAP_DEBIT_HUB_SIGNATURE_INVALID)}):f.contractApi.validateDataAggregate(u,u.recipient_aggregate,u.recipient,s.contractOwnerAddress,s.contractAddress,u.recipient.token,c,s.getRoundSwapStartingBalance(g.roundNumber)).then(function(e){return e?(g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,r),g.aggregate.latestTransfer.confirmations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,a),d()):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_SWAP_CREDIT_HUB_SIGNATURE_INVALID)})},r=function(t){return logging_1.Logging.debug("processSwapEnrollment"),u.processed&&u.voided?(g.removePendingIncomingTransfer(u),g.addCancelledTransfer(u),p(i,o)):n?f.contractApi.validateDataAggregate(u,u.sender_aggregate,u.wallet,u.wallet.address,s.contractAddress,u.wallet.token,c,s.getRoundSwapStartingBalance(g.roundNumber)).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_SWAP_DEBIT_WALLET_SIGNATURE_INVALID);t&&g.aggregate.createOutgoingSwap(u.recipient.address,u.recipient.token,u.recipient_trail_identifier,new bignumber_js_1.default(u.amount),new bignumber_js_1.default(u.amount_swapped),s.getRoundSwapStartingBalance(g.roundNumber),new bignumber_js_1.default(u.nonce),u.id);var r=g.aggregate.latestTransfer;return r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)||r.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,u.sender_aggregate),r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)||r.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,u.recipient_aggregate),r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT)||r.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT,u.recipient_fulfillment_aggregate),l()}):f.contractApi.validateDataAggregate(u,u.recipient_aggregate,u.recipient,u.recipient.address,s.contractAddress,u.recipient.token,c,s.getRoundSwapStartingBalance(g.roundNumber)).then(function(e){return e?f.contractApi.validateDataAggregate(u,u.recipient_fulfillment_aggregate,u.recipient,s.address,s.contractAddress,s.tokenAddress,c,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_FULFILLMENT_WALLET_SIGNATURE_INVALID);if(t)g.aggregate.createIncomingSwap(u.wallet.address,u.wallet.token,new bignumber_js_1.default(u.amount),new bignumber_js_1.default(u.amount_swapped),s.getRoundSwapStartingBalance(g.roundNumber),new bignumber_js_1.default(u.nonce),u.id);var r=g.aggregate.latestTransfer;return r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)||r.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT,u.sender_aggregate),r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT)||r.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT,u.recipient_aggregate),r.authorizations.get(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT)||r.authorizations.set(transfer_aggregate_type_model_1.TransferAggregateType.FULFILLMENT,u.recipient_fulfillment_aggregate),l()}):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_SWAP_CREDIT_WALLET_SIGNATURE_INVALID)})};if(e&&u.id<e.txId)return p(i,o);if(e&&u.id==e.txId)return g.aggregate.isTransferPending?e.isSwapFinalized?o(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK):e.isSwapFulfilled?a():e.isSwapActive?d():n&&!util_1.isSameHexValue(g.aggregate.transferTree.hash,u.sender_aggregate.tx_set_hash)?o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_OUTGOING):n||util_1.isSameHexValue(g.aggregate.transferTree.hash,u.recipient_aggregate.tx_set_hash)?r(!1):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_INCOMING):p(i,o);if(u.processed&&u.voided)return g.removePendingIncomingTransfer(u),g.addCancelledTransfer(u),p(i,o);if(g.aggregate.isTransferPending)return o(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);var t=aggregate_model_1.Aggregate.fromJSON(g.aggregate.json);return t.isTransferPending&&t.cancelPendingTransfer(),n?t.createOutgoingSwap(u.recipient.address,u.recipient.token,u.recipient_trail_identifier,new bignumber_js_1.default(u.amount),new bignumber_js_1.default(u.amount_swapped),s.getRoundSwapStartingBalance(g.roundNumber),new bignumber_js_1.default(u.nonce),u.id):t.createIncomingSwap(u.wallet.address,u.wallet.token,new bignumber_js_1.default(u.amount),new bignumber_js_1.default(u.amount_swapped),s.getRoundSwapStartingBalance(g.roundNumber),new bignumber_js_1.default(u.nonce),u.id),n&&!util_1.isSameHexValue(t.transferTree.hash,u.sender_aggregate.tx_set_hash)?o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_OUTGOING):n||util_1.isSameHexValue(t.transferTree.hash,u.recipient_aggregate.tx_set_hash)?r(!0):o(wallet_update_error_model_1.WalletUpdateError.AGGREGATE_TX_SET_ROOT_INVALID_INCOMING)})},e.prototype.updateLatestRoundWithdrawalRequests=function(t,e,r){logging_1.Logging.debug("updateLatestRoundWithdrawalRequests");var a=r?r.walletData:null;return new Promise(function(e,r){if(!t)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!t.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!(a&&a.withdrawal_requests&&a.withdrawal_requests.length))return e();if(!t.latestRound)return r(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_ROUND);t.latestRound;try{return e()}catch(e){return r(e)}})},e.prototype.updateLatestRoundOnChainWithdrawal=function(i,o,g){return logging_1.Logging.debug("updateLatestRoundOnChainWithdrawal"),new Promise(function(e,r){if(!i)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!i.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!o)return r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(!i.latestRound)return r(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_ROUND);for(var t=[],a=g.walletData.withdrawal_requests,n=0;n<a.length;n++)if(a[n].round===i.latestRound.roundNumber){var _=!o.pendingWithdrawals.some(function(e){return e.round===a[n].round});t.push(new withdrawal_model_1.Withdrawal(g.walletData.withdrawal_requests[n].round,new bignumber_js_1.default(g.walletData.withdrawal_requests[n].amount),_))}return i.latestRound.setOnChainWithdrawals(t),e()})},e.prototype.updateLatestRoundDeposits=function(a,e,r){logging_1.Logging.debug("updateLatestRoundDeposits");var n=r?r.walletData:null;return new Promise(function(e,r){if(!a)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!a.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!n||!n.deposits||!n.deposits.length)return e();var t=a.latestRound;if(!t)return r(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_ROUND);try{return n.deposits.filter(function(e){return e.round==t.roundNumber}).map(function(e){return new deposit_model_1.Deposit(e.txid,e.block,e.round,new bignumber_js_1.default(e.amount))}).map(function(e){return t.addDeposit(e)}),e()}catch(e){return r(e)}})},e.prototype.updateCurrentRoundOnChainDeposits=function(t,a,e){return logging_1.Logging.debug("updateCurrentRoundOnChainDeposits"),new Promise(function(e,r){if(!t)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!t.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!a)return r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);try{t.latestRound&&(t.latestRound.onChainDeposit=a.deposits[0]),t.previousRound&&(t.previousRound.onChainDeposit=a.deposits[1]),t.secondPreviousRound&&(t.secondPreviousRound.onChainDeposit=a.deposits[2])}catch(e){return r(e)}return e()})},e.prototype.updateLatestRoundDeliveryReceipts=function(_,i,o,g){var d=this;logging_1.Logging.debug("updateLatestRoundDeliveryReceipts");var l=o?o.walletData:null;return new Promise(function(e,r){if(!_)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!_.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);var t=_.latestRound;if(!t)return r(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_ROUND);if(t.roundNumber==_.registrationRound)return e();if(t.roundNumber==i.currentRound&&!i.isCheckpointSubmitted)return i.currentSubBlock>i.slackPeriod?r(wallet_update_error_model_1.WalletUpdateError.PROVIDER_NOT_AUDITABLE):e();if(g&&_.latestRound.roundNumber==i.currentRound-2)return e();var a=l?l.transfers.filter(function(e){return e.round==t.roundNumber-1}).sort(function(e,r){return e.id-r.id}):[],n=_.previousRound.aggregate.transfers;return d.updateDeliveryReceipt(_,n,a,0,i,o,g).then(e).catch(r)})},e.prototype.updateDeliveryReceipt=function(i,o,g,d,l,s,e,u){var p=this;return void 0===u&&(u=!1),logging_1.Logging.debug("updateDeliveryReceipt"),new Promise(function(r,t){if(!i)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!o||d>=o.length)return u?t(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_INVALID_DELIVERY_RECEIPT):r();var a=function(e,r,t){return void 0===t&&(t=u),p.updateDeliveryReceipt(i,o,g,d+1,l,s,t).then(e).catch(r)},n=o[d];if(n.deliveryProof)return a(r,t,u);if(util_1.isSameHexValue(i.address,n.recipient))return a(r,t,u);if(n.round<l.currentRound-l.roundsKept)return a(r,t,u);if(n.isPassive)return logging_1.Logging.debug("!! We are skipping validateDeliveryProof Because passive transfer verification is not supported !!"),a(r,t,u);if(!n.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.DEBIT)||!n.confirmations.get(transfer_aggregate_type_model_1.TransferAggregateType.CREDIT))return t(wallet_update_error_model_1.WalletUpdateError.LOGIC_RECEIPT_VALIDATION_ERROR_MISSING_CONFIRMATION);var _=g.find(function(e){return e.id==n.txId});if(!_||!_.delivery_proof)return logging_1.Logging.error(n),logging_1.Logging.error(g),a(r,t,!0);p.contractApi.validateDeliveryProof(n,_,i.contractAddress,i.tokenAddress,e).then(function(e){return e?(n.saveDeliveryProof(_.delivery_proof),a(r,t,u)):a(r,t,!0)})})},e.prototype.progressRound=function(a,n,e){return logging_1.Logging.debug("progressRound"),new Promise(function(e,r){if(!a)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!a.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!n)return r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(a.latestRound.roundNumber===n.currentRound)return r(wallet_update_error_model_1.WalletUpdateError.LOGIC_PREMATURE_ROUND_ADVANCEMENT);var t=new round_model_1.Round(a.contractAddress,a.tokenAddress,a.address,a.trailIdentifier,a.latestRound.roundNumber+1);return a.addRound(t),e()})},e.prototype.updateLightSyncRound=function(a,n,e,_){return new Promise(function(e,r){if(!_||a.latestRound.roundNumber>=n.currentRound-2)return e();var t=new round_model_1.Round(a.contractAddress,a.tokenAddress,a.address,a.trailIdentifier,n.currentRound-2);return a.addRoundForce(t),e()})},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(1,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH)),__param(2,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH)),__param(3,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_SYNC)),__param(4,inversify_1.inject(contract_api_service_1.ContractApiService)),__param(5,inversify_1.inject(hub_api_service_1.HubApiService)),__metadata("design:paramtypes",[rxjs_1.Observable,rxjs_1.Observable,rxjs_1.Observable,Object,contract_api_service_1.ContractApiService,hub_api_service_1.HubApiService])],e)}();exports.WalletStateService=WalletStateService;
-},{"../inversify.types":333,"../models/primitives/proof-of-stake.model":338,"../models/primitives/signature.model":339,"../models/state/wallet-state.model":346,"../models/state/wallet-sync-state.model":347,"../models/state/wallet-update-error.model":348,"../models/transactions/aggregate.model":350,"../models/transactions/deposit.model":352,"../models/transactions/transfer-aggregate-type.model":353,"../models/transactions/transfer.model":354,"../models/wallet/round.model":357,"../util":371,"./../models/transactions/withdrawal.model":355,"./contract-api.service":361,"./hub-api.service":364,"./logging":366,"bignumber.js":24,"inversify":166,"rxjs":404,"rxjs/internal/operators":487}],369:[function(require,module,exports){
+},{}],365:[function(require,module,exports){
+(function (process){
+"use strict";var __decorate=this&&this.__decorate||function(e,t,r,s){var i,n=arguments.length,o=n<3?t:null===s?s=Object.getOwnPropertyDescriptor(t,r):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)o=Reflect.decorate(e,t,r,s);else for(var a=e.length-1;0<=a;a--)(i=e[a])&&(o=(n<3?i(o):3<n?i(t,r,o):i(t,r))||o);return 3<n&&o&&Object.defineProperty(t,r,o),o},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,s){return function(e,t){s(e,t,r)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var util_1=require("./../util"),rxjs_1=require("rxjs"),inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),util_2=require("../util"),isomorphic_ws_1=__importDefault(require("isomorphic-ws")),operators_1=require("rxjs/operators"),logging_1=require("./logging");require("reflect-metadata");var SocketMessageType,https_proxy_agent_1=__importDefault(require("https-proxy-agent")),WS_RECONNECT_INIT_INTERVAL=500,WS_RECONNECT_INCREASE=2;!function(e){e.INCOMING_TRANSFER="incoming_transfer",e.INCOMING_RECEIPT="incoming_receipt",e.INCOMING_CONFIRMATION="incoming_confirmation",e.INCOMING_TIMEOUT="timeout_transfer",e.REGISTERED_WALLET="registered_wallet"}(SocketMessageType=exports.SocketMessageType||(exports.SocketMessageType={}));var OperatorApiService=function(){function e(e){this.api=e,this.syncMessageObserver=new rxjs_1.Subject,this.subscribedAddresses=[],this.webSocketUrl="",this.webSocketReconnectInterval=WS_RECONNECT_INIT_INTERVAL}return e.prototype.getStatusData=function(e){return this.api.get(e,"audit/")},e.prototype.getTokensList=function(e){return this.api.get(e,"audit/tokens/")},e.prototype.getWalletData=function(e,t,r,s,i){return void 0===s&&(s=0),void 0===i&&(i=0),this.api.get(r,"audit/"+util_2.remove0xPrefix(t)+"/"+util_2.remove0xPrefix(e)+"/","eon_number="+s+"&transfer_id="+i)},e.prototype.whoisWallet=function(e,t,r){return this.api.get(r,"audit/"+util_2.remove0xPrefix(e)+"/"+util_2.remove0xPrefix(t)+"/whois")},e.prototype.getTransfersFromTxId=function(e,t){return this.api.get(t,"transfer/"+e.toString())},e.prototype.getSwapOrders=function(e,t,r,s){return this.api.get(r,"audit/swaps/"+util_2.remove0xPrefix(e)+"/"+util_2.remove0xPrefix(t),s?"eon_number="+s:null)},e.prototype.register=function(e,t){return this.api.post(e.webAddress,"admission/",{token:util_2.remove0xPrefix(e.tokenAddress),address:util_2.remove0xPrefix(e.address),authorization:t.rsv})},e.prototype.getSLADetails=function(e){return this.api.get(e.webAddress,"sla/")},e.prototype.getSLAStatus=function(e){return this.api.get(e.webAddress,"sla/"+util_2.remove0xPrefix(e.address))},e.prototype.sendTransfer=function(e,t,r,s){return this.api.post(e.webAddress,"transfer/",{wallet_signature:{value:r.rsv},wallet_balance_signature:{value:s.rsv},eon_number:t.transfer.eonNumber,amount:t.transfer.amount,passive:t.transfer.isPassive,wallet_balance:t.markerBalance.toFixed(0),nonce:t.transfer.nonce,wallet:{address:util_2.remove0xPrefix(t.transfer.sender),token:util_2.remove0xPrefix(e.tokenAddress)},recipient:util_2.remove0xPrefix(t.transfer.recipient)})},e.prototype.sendSwap=function(e,t,r,s,i,n,o){return this.api.post(e.webAddress,"swap/",{debit_signature:{value:s.rsv},debit_balance_signature:{value:o.rsv},credit_signature:{value:i.rsv},fulfillment_signature:{value:n.rsv},eon_number:r.senderTransfer.eonNumber,amount:r.senderTransfer.amount,amount_swapped:r.senderTransfer.amountSwapped,nonce:r.senderTransfer.nonce,debit_balance:r.balanceMarker.toFixed(0),wallet:{address:e.address,token:e.tokenAddress},recipient:{address:t.address,token:t.tokenAddress}})},e.prototype.sendSwapFreeze=function(e,t,r){return this.api.put(e.webAddress,"swap/"+t.txId+"/freeze",{freezing_signature:{value:r.rsv}})},e.prototype.sendSwapCancellation=function(e,t,r,s){return this.api.put(e.webAddress,"swap/"+t.txId+"/cancel",{sender_cancellation_signature:{value:r.rsv},recipient_cancellation_signature:{value:s.rsv}})},e.prototype.sendSwapFinalization=function(e,t,r){return this.api.put(e.webAddress,"swap/"+t.txId+"/finalize",{finalization_signature:{value:r.rsv}})},e.prototype.sendReceipt=function(e,t,r){return this.api.put(e.webAddress,"transfer/"+t+"/",{wallet_signature:{value:r.rsv}})},e.prototype.isWebSocketConnectionOpen=function(){return!(!this.socket||this.socket.readyState!==this.socket.OPEN)},e.prototype.toWebSocketUrl=function(e){if(e.endsWith("/")||(e+="/"),e.startsWith("https://"))return"wss://"+e.slice(8);if(e.startsWith("http://"))return"ws://"+e.slice(7);if(e.startsWith("ws://")||e.startsWith("wss://"))return e;throw Error("Unknown protocol")},e.prototype.initSocket=function(t,r){var s=this,i=this;if(i.webSocketUrl=i.toWebSocketUrl(r),process&&process.env&&(process.env.HTTPS_PROXY||process.env.https_proxy)){var e=process.env.HTTPS_PROXY||process.env.https_proxy,n=new https_proxy_agent_1.default(e);i.socket=new isomorphic_ws_1.default(i.webSocketUrl+"sync/wallets/",{agent:n})}else i.socket=new isomorphic_ws_1.default(i.webSocketUrl+"sync/wallets/");i.socket.onclose=function(e){logging_1.Logging.log("Socket closed, reopen..."+e),setTimeout(function(){return i.initSocket(t,r)},i.webSocketReconnectInterval),i.webSocketReconnectInterval*=WS_RECONNECT_INCREASE},i.socket.onerror=function(e){logging_1.Logging.log("Socket error, reopen..."+e)},i.socket.onopen=function(){i.webSocketReconnectInterval=WS_RECONNECT_INIT_INTERVAL;var e=util_1.removeDuplicateFromArray(Array.from(s.subscribedAddresses).concat([t]).map(function(e){return util_2.remove0xPrefix(e)}));i.socket.send(JSON.stringify({action:"subscribe",wallets:e}))},i.socket.onmessage=function(e){i.webSocketReconnectInterval=WS_RECONNECT_INIT_INTERVAL;var t=util_1.JSONbig.parse(e.data);"success"===t.status?i.subscribedAddresses=t.message.wallets.map(function(e){return util_1.add0xPrefix(e)}):"notify"===t.status&&i.syncMessageObserver.next(t)}},e.prototype.walletSyncObservable=function(e,s,i,n,o){var t=this.subscribedAddresses.find(function(e){return e===s});if(this.socket&&!t&&this.socket.readyState!==this.socket.OPEN)throw Error("Do not run this function in parallel");if(this.socket||this.initSocket(s,e),this.webSocketUrl!==this.toWebSocketUrl(e))throw Error("Hub api url inconsistent");if(!t&&this.socket.readyState===this.socket.OPEN){var r=util_1.removeDuplicateFromArray(Array.from(this.subscribedAddresses).concat([s]).map(function(e){return util_2.remove0xPrefix(e)}));this.socket.send(JSON.stringify({action:"subscribe",wallets:r}))}return this.syncMessageObserver.pipe(operators_1.map(function(e){return e.message}),operators_1.filter(function(e){if(!util_2.isSameHexValue(e.topic,s))return!1;if(i&&i!==e.type)return!1;var t=e.data;switch(e.type){case SocketMessageType.REGISTERED_WALLET:return!n||util_2.isSameHexValue(t.token,n);case SocketMessageType.INCOMING_CONFIRMATION:case SocketMessageType.INCOMING_RECEIPT:case SocketMessageType.INCOMING_TIMEOUT:case SocketMessageType.INCOMING_TRANSFER:var r=!1;r=!n||util_2.isSameHexValue(t.wallet.token,n);return(!n||o===t.id)&&r}}),operators_1.map(function(e){return e.data}))},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.REST_API_INTERFACE)),__metadata("design:paramtypes",[Object])],e)}();exports.OperatorApiService=OperatorApiService;
+}).call(this,require('_process'))
+},{"../inversify.types":333,"../util":371,"./../util":371,"./logging":364,"_process":864,"https-proxy-agent":142,"inversify":165,"isomorphic-ws":191,"reflect-metadata":402,"rxjs":404,"rxjs/operators":601}],366:[function(require,module,exports){
+"use strict";var __decorate=this&&this.__decorate||function(e,t,r,a){var i,o=arguments.length,s=o<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,r):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,a);else for(var n=e.length-1;0<=n;n--)(i=e[n])&&(s=(o<3?i(s):3<o?i(t,r,s):i(t,r))||s);return 3<o&&s&&Object.defineProperty(t,r,s),s},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,a){return function(e,t){a(e,t,r)}};Object.defineProperty(exports,"__esModule",{value:!0});var rxjs_1=require("rxjs"),operator_api_service_1=require("./operator-api.service"),operator_state_model_1=require("../models/state/operator-state.model"),inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),OperatorStateService=function(){function e(e,t,r){var a=this;this.walletStatePollObservable=e,this.operatorStateFetchObserver=t,this.operatorApi=r,e.subscribe(function(e){a.fetchOperatorState(e.wallet).then(function(e){a.operatorStateFetchObserver.next(e)})})}return e.prototype.fetchOperatorState=function(e){var t=new operator_state_model_1.OperatorState;return t.timestamp=(new Date).getTime(),Promise.all([this.operatorApi.getStatusData(e.webAddress),this.operatorApi.getWalletData(e.address,e.tokenAddress,e.webAddress,e.latestEon.eonNumber-1).catch(function(){})]).then(function(e){return t.statusData=e[0],t.walletData=e[1],t}).catch(function(){return t})},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(1,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH)),__param(2,inversify_1.inject(operator_api_service_1.OperatorApiService)),__metadata("design:paramtypes",[rxjs_1.Observable,Object,operator_api_service_1.OperatorApiService])],e)}();exports.OperatorStateService=OperatorStateService;
+},{"../inversify.types":333,"../models/state/operator-state.model":343,"./operator-api.service":365,"inversify":165,"rxjs":404}],367:[function(require,module,exports){
+"use strict";var __decorate=this&&this.__decorate||function(e,t,r,i){var o,s=arguments.length,n=s<3?t:null===i?i=Object.getOwnPropertyDescriptor(t,r):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,r,i);else for(var l=e.length-1;0<=l;l--)(o=e[l])&&(n=(s<3?o(n):3<s?o(t,r,n):o(t,r))||n);return 3<s&&n&&Object.defineProperty(t,r,n),n},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,i){return function(e,t){i(e,t,r)}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),rxjs_1=require("rxjs"),state_poll_model_1=require("../models/state/state-poll.model"),inversify_types_1=require("../inversify.types"),operators_1=require("rxjs/internal/operators"),PollService=function(){function e(e){this.walletStatePollObserver=e,this.pollTimer=new rxjs_1.Subject;var t=rxjs_1.from(this.pollTimer);this.pollTrigger=t.pipe(operators_1.switchAll())}return e.prototype.startSynchronization=function(e,t,r){this.subscribeToPollTrigger(e),this.pollTimer.next(rxjs_1.timer(t,r))},e.prototype.stopSynchronization=function(){this.pollSubscription&&this.pollSubscription.unsubscribe()},e.prototype.triggerSynchronization=function(e){this.walletStatePollObserver.next(new state_poll_model_1.StateUpdatePoll(e))},e.prototype.subscribeToPollTrigger=function(e){var t=this;this.pollSubscription&&!this.pollSubscription.closed||(this.pollSubscription=this.pollTrigger.subscribe(function(){t.triggerSynchronization(e)}))},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__metadata("design:paramtypes",[Object])],e)}();exports.PollService=PollService;
+},{"../inversify.types":333,"../models/state/state-poll.model":344,"inversify":165,"rxjs":404,"rxjs/internal/operators":487}],368:[function(require,module,exports){
+"use strict";var __decorate=this&&this.__decorate||function(e,t,r,a){var n,_=arguments.length,i=_<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,r):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(e,t,r,a);else for(var o=e.length-1;0<=o;o--)(n=e[o])&&(i=(_<3?n(i):3<_?n(t,r,i):n(t,r))||i);return 3<_&&i&&Object.defineProperty(t,r,i),i},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,a){return function(e,t){a(e,t,r)}},__importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var withdrawal_model_1=require("./../models/transactions/withdrawal.model"),inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),rxjs_1=require("rxjs"),contract_api_service_1=require("./contract-api.service"),operator_api_service_1=require("./operator-api.service"),wallet_state_model_1=require("../models/state/wallet-state.model"),eon_model_1=require("../models/wallet/eon.model"),bignumber_js_1=__importDefault(require("bignumber.js")),wallet_sync_state_model_1=require("../models/state/wallet-sync-state.model"),signature_model_1=require("../models/primitives/signature.model"),active_state_model_1=require("../models/transactions/active-state.model"),proof_of_exclusive_allotment_model_1=require("../models/primitives/proof-of-exclusive-allotment.model"),util_1=require("../util"),wallet_update_error_model_1=require("../models/state/wallet-update-error.model"),operators_1=require("rxjs/internal/operators"),deposit_model_1=require("../models/transactions/deposit.model"),transfer_model_1=require("../models/transactions/transfer.model"),logging_1=require("./logging"),transfer_active_state_update_type_model_1=require("../models/transactions/transfer-active-state-update-type.model"),WalletStateService=function(){function e(e,t,r,a,n,_){var i=this;this.walletStatePollObservable=e,this.operatorStateFetchObservable=t,this.contractStateFetchObservable=r,this.walletStateSyncObserver=a,this.contractApi=n,this.operatorApi=_,e.subscribe(function(a){rxjs_1.combineLatest(r,t).pipe(operators_1.take(1)).subscribe(function(e){var t=e[0],r=e[1];i.syncWalletState(a.wallet,t,r).then(function(e){i.walletStateSyncObserver.next(e)})})})}return e.prototype.syncWalletState=function(r,a,n,_){var i=this;return void 0===_&&(_=!0),r.lock.runExclusive(function(){return i.updateOnChainData(r,a,n).then(function(){return i.updatePendingRegistrationState(r,a,n)}).then(function(){return i.updateRegistrationState(r,a,n)}).then(function(){return i.updateLightSyncEon(r,a,n,_)}).then(function(){return i.updateOlderEonStates(r,a,n,_)}).then(function(){return i.updatePreviousEonState(r,a,n,_)}).then(function(){return new Promise(function(e,t){return i.updateCurrentEonState(r,a,n,_).then(function(){return a.isPunished?t(wallet_update_error_model_1.WalletUpdateError.PROVIDER_PUNISHED):e(new wallet_state_model_1.WalletState(r,wallet_sync_state_model_1.WalletSyncState.SYNCHRONIZED,null,a,n))}).catch(t)})}).catch(function(e){return logging_1.Logging.debug(e),new wallet_state_model_1.WalletState(r,wallet_sync_state_model_1.WalletSyncState.UNSAFE,e,a,n)})})},e.prototype.updateOnChainData=function(r,a,e){return logging_1.Logging.debug("updateOnChainData"),new Promise(function(e,t){return r?a?a.networkId!=r.networkId?t(wallet_update_error_model_1.WalletUpdateError.INCORRECT_NETWORK_ID):(r.onChainBalance=a.onChainBalance,e()):t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updatePendingRegistrationState=function(a,n,e){var _=this;logging_1.Logging.debug("updatePendingRegistrationState");var i,o=e?e.walletData:null;return new Promise(function(t,r){if(!a)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(a.isRegistered)return t();if(!n)return r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(!(o&&o.registration&&o.registration.wallet_signature&&o.registration.eon_number))return a.unmarkPendingRegistrationApproval(),r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_NO_REQUEST);if(o.registration.eon_number>n.currentEonNumber)return a.unmarkPendingRegistrationApproval(),r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_BAD_REQUEST);i=a.getAdmissionActiveState(o.registration.eon_number);var e=signature_model_1.Signature.fromRSV(a.address,i.hash,o.registration.wallet_signature);_.contractApi.validateActiveStateSignature(i,e,a.contractAddress).then(function(e){return e?(a.markPendingRegistrationApproval(o.registration.eon_number),t()):r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_BAD_REQUEST)}).catch(r)})},e.prototype.updateRegistrationState=function(n,e,t){var _=this;logging_1.Logging.debug("updateRegistrationState");var i,o=t?t.walletData:null;return new Promise(function(t,r){if(!n)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(n.isRegistered)return t();if(!n.isPendingRegistrationApproval)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_APPROVAL_NOT_PENDING);if(!e)return r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(!o||!o.registration||!o.registration.operator_signature)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_APPROVAL_NOT_PROVIDED);i=n.getAdmissionActiveState(n.registrationEon,o.registration.trail_identifier);var a=signature_model_1.Signature.fromRSV(n.contractOwnerAddress,i.hash,o.registration.operator_signature);_.contractApi.validateActiveStateSignature(i,a,n.contractAddress).then(function(e){return e?(n.markRegistered(a,o.registration.trail_identifier),t()):r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED_APPROVAL_INVALID)}).catch(r)})},e.prototype.updateOlderEonStates=function(r,a,n,_){var i=this;return logging_1.Logging.debug("updateOlderEonStates"),new Promise(function(e,t){return r?r.isRegistered?a?r.latestEon.eonNumber>=a.currentEonNumber-1?e():i.updateLatestLocalEonProofOfExclusiveAllotment(r,a,n,_).then(function(){return i.updateLatestEonActiveState(r,a,n,_)}).then(function(){return i.updateLatestEonDeposits(r,a,n)}).then(function(){return i.updateLatestEonOnChainWithdrawal(r,a,n)}).then(function(){return i.updateLatestEonDeliveryReceipts(r,a,n,_)}).then(function(){return i.progressEon(r,a,n)}).then(function(){return i.updateOlderEonStates(r,a,n,!1)}).then(e).catch(t):t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED):t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updatePreviousEonState=function(r,a,n,_){var i=this;return logging_1.Logging.debug("updatePreviousEonState"),new Promise(function(e,t){return r?r.isRegistered?a?r.latestEon.eonNumber<a.currentEonNumber-1?t(wallet_update_error_model_1.WalletUpdateError.LOGIC_OLD_EONS_NOT_UPDATED):r.latestEon.eonNumber==a.currentEonNumber?e():i.updateLatestLocalEonProofOfExclusiveAllotment(r,a,n,!1).then(function(){return i.updateLatestEonActiveState(r,a,n,_)}).then(function(){return i.updateLatestEonDeposits(r,a,n)}).then(function(){return i.updateLatestEonOnChainWithdrawal(r,a,n)}).then(function(){return i.updateLatestEonDeliveryReceipts(r,a,n,!1)}).then(function(){return i.progressEon(r,a,n)}).then(e).catch(t):t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED):t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updateCurrentEonState=function(r,a,n,_){var i=this;return logging_1.Logging.debug("updateCurrentEonState"),new Promise(function(e,t){return r?r.isRegistered?a?r.latestEon.eonNumber<a.currentEonNumber?t(wallet_update_error_model_1.WalletUpdateError.LOGIC_PREVIOUS_EON_NOT_UPDATED):i.updateCurrentEonOnChainDeposits(r,a,n).then(function(){return i.updateLatestLocalEonProofOfExclusiveAllotment(r,a,n,!1)}).then(function(){return i.updateLatestEonActiveState(r,a,n,_)}).then(function(){return i.updateLatestEonDeposits(r,a,n)}).then(function(){return i.updateLatestEonOnChainWithdrawal(r,a,n)}).then(function(){return i.updateLatestEonDeliveryReceipts(r,a,n,!1)}).then(e).catch(t):t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED):t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED):t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED)})},e.prototype.updateLatestLocalEonProofOfExclusiveAllotment=function(o,s,e,l){var d=this;logging_1.Logging.debug("updateLatestLocalEonProofOfExclusiveAllotment");var u=e?e.walletData:null;return new Promise(function(t,r){if(!o)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!o.isRegistered)return r(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!s)return r(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);var a=o.latestEon;if(!a)return r(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_EON);if(a.proofOfExclusiveAllotment||a.eonNumber==o.registrationEon)return t();if(a.eonNumber==s.currentEonNumber&&!s.isCheckpointSubmitted)return s.currentSubBlock>s.extendedSlackPeriod?r(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF):t();var n,_=l&&o.latestEon.eonNumber===s.currentEonNumber-2;if(!_){if(!(n=o.getEon(a.eonNumber-1)))return r(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_PREVIOUS_EON);if(!u||!u.merkle_proofs||!u.merkle_proofs.length)return r(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_NO_MERKLE_PROOFS)}var e=u.merkle_proofs.find(function(e){return e.eon_number==a.eonNumber});if(!e)return r(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_MISSING_MERKLE_PROOF);if(e.trail!=o.trailIdentifier)return r(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_INVALID_TRAIL);var i=new proof_of_exclusive_allotment_model_1.ProofOfExclusiveAllotment(o.contractAddress,o.tokenAddress,o.address,e.active_state_checksum,e.trail,e.eon_number,e.allotment_chain,e.membership_chain,e.values.map(function(e){return new bignumber_js_1.default(e)}),new bignumber_js_1.default(e.left),new bignumber_js_1.default(e.right),e.passive_checksum,new bignumber_js_1.default(e.passive_amount),new bignumber_js_1.default(e.passive_marker));return a.proposedProofOfExclusiveAllotment=i,!_&&i.amount.isLessThan(n.expectedBalance)?r(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_INSUFFICIENT_BALANCE):a.eonNumber<=s.currentEonNumber-s.eonsKept+1?(a.setProofOfExclusiveAllotment(i),t()):void d.contractApi.verifyProof(a,i).then(function(e){if(!e)return r(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_INVALID);if(!_&&n.activeState.transferTree.isEmpty){if(!util_1.isSameHexValue(i.activeStateChecksum,util_1.EMPTY_HASH)&&!util_1.isSameHexValue(i.activeStateChecksum,n.activeState.hash))return logging_1.Logging.error(i.activeStateChecksum),logging_1.Logging.error("not empty"),r(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_UNEXPECTED_ACTIVE_STATE_CHECKSUM)}else if(!_&&!util_1.isSameHexValue(i.activeStateChecksum,n.activeState.hash))return logging_1.Logging.error(i.activeStateChecksum),logging_1.Logging.error(n.activeState.hash),logging_1.Logging.log(n.activeState),r(wallet_update_error_model_1.WalletUpdateError.PROOF_OF_EXCLUSIVE_ALLOTMENT_UNEXPECTED_ACTIVE_STATE_CHECKSUM);return a.setProofOfExclusiveAllotment(i),t()}).catch(r)})},e.prototype.updateLatestEonActiveState=function(n,_,i,o){var s=this;logging_1.Logging.debug("updateLatestEonActiveState");var l=i?i.walletData:null;return new Promise(function(e,t){if(!n)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!n.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!l||!l.transfers)return e();var r=n.latestEon;if(!r)return t(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_EON);var a=l.transfers.filter(function(e){return e.eon_number==r.eonNumber}).sort(function(e,t){return e.id-t.id});return s.updateLatestEonActiveStateTransactions(n,a,0,_,i,o).then(e).catch(t)})},e.prototype.updateLatestEonActiveStateTransactions=function(n,_,i,o,s,l){var d=this;return logging_1.Logging.debug("updateLatestEonActiveStateTransactions"),new Promise(function(e,t){if(!n)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!n.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!_||i>=_.length)return e();var r=function(e,t){return d.updateLatestEonActiveStateTransactions(n,_,i+1,o,s,l).then(e).catch(t)},a=_[i];return(util_1.isSameHexValue(a.wallet.address,a.recipient.address)&&!util_1.isSameHexValue(a.wallet.token,a.recipient.token)?d.updateLatestEonActiveStateSwaps(n,a,o,s,r,l):d.updateLatestEonActiveStateTransfers(n,a,o,s,r,l)).then(e).catch(t)})},e.prototype.updateLatestEonActiveStateTransfers=function(o,s,e,t,l,d){var u=this;return logging_1.Logging.debug("updateLatestEonActiveStateTransfers"),new Promise(function(t,r){var _=util_1.isSameHexValue(s.wallet.address,o.address)&&util_1.isSameHexValue(s.wallet.token,o.tokenAddress),i=o.latestEon,a=i.activeState.latestTransfer,n=function(a,n){return u.contractApi.validateTransferDebit(s,o.contractOwnerAddress,o.contractAddress,o.tokenAddress,d).then(function(e){if(!e)return n(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TRANSFER_DEBIT_HUB_SIGNATURE_INVALID);var t=active_state_model_1.ActiveState.checksum(o.contractAddress,o.tokenAddress,s.wallet.address,s.wallet_trail_identifier,s.eon_number,s.sender_active_state.tx_set_hash,new bignumber_js_1.default(s.sender_active_state.updated_spendings),new bignumber_js_1.default(s.sender_active_state.updated_gains)),r=signature_model_1.Signature.fromRSV(o.contractOwnerAddress,t,s.sender_active_state.operator_signature);if(i.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,r),s.passive){if(_){if(!i.activeState.confirmPendingOutgoingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_OUTGOING)}else if(!i.activeState.confirmPendingIncomingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_INCOMING);return l(a,n)}return u.contractApi.validateTransferCredit(s,o.contractOwnerAddress,o.contractAddress,o.tokenAddress,d).then(function(e){if(!e)return n(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TRANSFER_CREDIT_HUB_SIGNATURE_INVALID);var t=active_state_model_1.ActiveState.checksum(o.contractAddress,o.tokenAddress,s.recipient.address,s.recipient_trail_identifier,s.eon_number,s.recipient_active_state.tx_set_hash,new bignumber_js_1.default(s.recipient_active_state.updated_spendings),new bignumber_js_1.default(s.recipient_active_state.updated_gains)),r=signature_model_1.Signature.fromRSV(o.contractOwnerAddress,t,s.recipient_active_state.operator_signature);if(i.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,r),_){if(!i.activeState.confirmPendingOutgoingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_OUTGOING)}else if(!i.activeState.confirmPendingIncomingTransfer())return n(wallet_update_error_model_1.WalletUpdateError.LOGIC_TRANSFER_CONFIRM_ERROR_INCOMING);return l(a,n)})})};if(a&&s.id<a.txId)return l(t,r);if(a&&s.id==a.txId){if(i.removePendingIncomingTransfer(s),!i.activeState.isTransferPending)return l(t,r);if(s.processed&&s.voided)return i.addCancelledTransfer(s),i.activeState.cancelPendingTransfer(),l(t,r);if(_){if(!util_1.isSameHexValue(i.activeState.transferTree.hash,s.sender_active_state.tx_set_hash))return r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_OUTGOING)}else if(s.recipient_active_state&&!util_1.isSameHexValue(i.activeState.transferTree.hash,s.recipient_active_state.tx_set_hash))return r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_INCOMING);return u.contractApi.validateTransferDebit(s,s.wallet.address,o.contractAddress,o.tokenAddress,d).then(function(e){return e?s.passive?s.processed?n(t,r):l(t,r):s.recipient_active_state?(a.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)||a.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,s.sender_active_state),u.contractApi.validateTransferCredit(s,s.recipient.address,o.contractAddress,o.tokenAddress,d).then(function(e){return e?(a.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)||a.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,s.recipient_active_state),s.processed?n(t,r):l(t,r)):r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TRANSFER_CREDIT_WALLET_SIGNATURE_INVALID)})):l(t,r):r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TRANSFER_DEBIT_WALLET_SIGNATURE_INVALID)})}if(s.processed&&s.voided)return i.removePendingIncomingTransfer(s),i.addCancelledTransfer(s),l(t,r);var e=active_state_model_1.ActiveState.fromJSON(i.activeState.json);e.isTransferPending&&e.cancelPendingTransfer();_?e.createOutgoingTransfer(s.recipient.address,s.recipient_trail_identifier,new bignumber_js_1.default(s.amount),s.passive,new bignumber_js_1.default(s.nonce)):e.createIncomingTransfer(s.wallet.address,new bignumber_js_1.default(s.amount),new bignumber_js_1.default(s.nonce),s.id,s.passive);if(_){if(i.activeState.isTransferPending)return r(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);if(!util_1.isSameHexValue(e.transferTree.hash,s.sender_active_state.tx_set_hash))return r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_OUTGOING)}else if(s.recipient_active_state){if(i.activeState.isTransferPending)return r(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);if(!util_1.isSameHexValue(e.transferTree.hash,s.recipient_active_state.tx_set_hash))return r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_INCOMING)}return u.contractApi.validateTransferDebit(s,s.wallet.address,o.contractAddress,o.tokenAddress,d).then(function(e){return e?(_?i.activeState.createOutgoingTransfer(s.recipient.address,s.recipient_trail_identifier,new bignumber_js_1.default(s.amount),s.passive,new bignumber_js_1.default(s.nonce),s.id,new bignumber_js_1.default(s.position)).authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,s.sender_active_state):i.addPendingIncomingTransfer(s),s.recipient_active_state||s.passive?s.passive?(_||(i.activeState.createIncomingTransfer(s.wallet.address,new bignumber_js_1.default(s.amount),new bignumber_js_1.default(s.nonce),s.id,s.passive).authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,s.sender_active_state),i.removePendingIncomingTransfer(s)),s.processed?n(t,r):l(t,r)):u.contractApi.validateTransferCredit(s,s.recipient.address,o.contractAddress,o.tokenAddress,d).then(function(e){return e?(_||(i.activeState.createIncomingTransfer(s.wallet.address,new bignumber_js_1.default(s.amount),new bignumber_js_1.default(s.nonce),s.id,s.passive).authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,s.sender_active_state),i.removePendingIncomingTransfer(s)),i.activeState.latestTransfer.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,s.recipient_active_state),s.processed?n(t,r):l(t,r)):r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TRANSFER_CREDIT_WALLET_SIGNATURE_INVALID)}):l(t,r)):r(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TRANSFER_DEBIT_WALLET_SIGNATURE_INVALID)})})},e.prototype.updateLatestEonActiveStateSwaps=function(u,c,e,t,p,E){var f=this;return logging_1.Logging.debug("updateLatestEonActiveStateSwaps"),new Promise(function(i,o){var n=util_1.isSameHexValue(c.wallet.address,u.address)&&util_1.isSameHexValue(c.wallet.token,u.tokenAddress),s=u.latestEon,e=s.activeState.latestTransfer;if(!(util_1.isSameHexValue(c.wallet.address,c.recipient.address)&&!util_1.isSameHexValue(c.wallet.token,c.recipient.token)))return o(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);var a=function(){if(logging_1.Logging.debug("processSwapFinalization"),!c.matched_amounts||!c.recipient_finalization_active_state)return p(i,o);if(n){if(s.activeState.latestTransfer.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FINALIZATION,c.recipient_finalization_active_state),!c.recipient_finalization_active_state.operator_signature)return p(i,o);var e=active_state_model_1.ActiveState.checksum(u.contractAddress,c.recipient.token,c.recipient.address,c.recipient_trail_identifier,c.eon_number,c.recipient_finalization_active_state.tx_set_hash,new bignumber_js_1.default(c.recipient_finalization_active_state.updated_spendings),new bignumber_js_1.default(c.recipient_finalization_active_state.updated_gains)),t=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,e,c.recipient_finalization_active_state.operator_signature);return s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FINALIZATION,t),s.activeState.latestTransfer.amountsMatched=c.matched_amounts,s.activeState.finalizePendingSwap()?p(i,o):new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.SWAP_FINALIZATION_FAILURE)})}return f.contractApi.validateDataActiveState(c,c.recipient_finalization_active_state,c.recipient,u.address,u.contractAddress,u.tokenAddress,E,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){return e?(s.activeState.latestTransfer.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FINALIZATION,c.recipient_finalization_active_state),c.recipient_finalization_active_state.operator_signature?f.contractApi.validateDataActiveState(c,c.recipient_finalization_active_state,c.recipient,u.contractOwnerAddress,u.contractAddress,u.tokenAddress,E,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_FINALIZATION_HUB_SIGNATURE_INVALID);var t=active_state_model_1.ActiveState.checksum(u.contractAddress,u.tokenAddress,u.address,u.trailIdentifier,c.eon_number,c.recipient_finalization_active_state.tx_set_hash,new bignumber_js_1.default(c.recipient_finalization_active_state.updated_spendings),new bignumber_js_1.default(c.recipient_finalization_active_state.updated_gains)),r=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,t,c.recipient_finalization_active_state.operator_signature);return s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FINALIZATION,r),s.activeState.latestTransfer.amountsMatched=c.matched_amounts,s.activeState.finalizePendingSwap()?p(i,o):new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.SWAP_FINALIZATION_FAILURE)})}):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_FINALIZATION_WALLET_SIGNATURE_INVALID)})},_=function(){if(logging_1.Logging.debug("processSwapFreezing"),c.complete||!c.cancelled)return a();if(!c.swap_freezing_signature)return p(i,o);var _=s.activeState.latestTransfer;c.matched_amounts&&(_.amountsMatched=c.matched_amounts);var t=signature_model_1.Signature.fromRSV(u.address,_.cancellationHash,c.swap_freezing_signature);f.contractApi.validateSignature(t,u.contractAddress).then(function(e){return e?(_.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FREEZING,t),c.sender_cancellation_active_state&&c.recipient_cancellation_active_state?void(n?f.contractApi.validateDataActiveState(c,c.sender_cancellation_active_state,c.wallet,c.wallet.address,u.contractAddress,u.tokenAddress,E,u.getEonSwapStartingBalance(s.eonNumber)).then(function(e){return e?(_.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION,c.sender_cancellation_active_state),c.sender_cancellation_active_state.operator_signature&&c.recipient_cancellation_active_state.operator_signature?f.contractApi.validateDataActiveState(c,c.sender_cancellation_active_state,c.wallet,u.contractOwnerAddress,u.contractAddress,u.tokenAddress,E,u.getEonSwapStartingBalance(s.eonNumber)).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_SENDER_CANCELLATION_HUB_SIGNATURE_INVALID);_.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION,c.recipient_cancellation_active_state);var t=active_state_model_1.ActiveState.checksum(u.contractAddress,u.tokenAddress,u.address,u.trailIdentifier,c.eon_number,c.sender_cancellation_active_state.tx_set_hash,new bignumber_js_1.default(c.sender_cancellation_active_state.updated_spendings),new bignumber_js_1.default(c.sender_cancellation_active_state.updated_gains)),r=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,t,c.sender_cancellation_active_state.operator_signature);_.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION,r);var a=active_state_model_1.ActiveState.checksum(u.contractAddress,c.recipient.token,c.recipient.address,c.recipient_trail_identifier,c.eon_number,c.recipient_cancellation_active_state.tx_set_hash,new bignumber_js_1.default(c.recipient_cancellation_active_state.updated_spendings),new bignumber_js_1.default(c.recipient_cancellation_active_state.updated_gains)),n=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,a,c.recipient_cancellation_active_state.operator_signature);return _.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION,n),s.activeState.cancelPendingSwap()?p(i,o):o(wallet_update_error_model_1.WalletUpdateError.SWAP_CANCELLATION_FAILURE)}):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_SENDER_CANCELLATION_WALLET_SIGNATURE_INVALID)}):f.contractApi.validateDataActiveState(c,c.recipient_cancellation_active_state,c.recipient,c.recipient.address,u.contractAddress,u.tokenAddress,E,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){return e?(_.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION,c.recipient_cancellation_active_state),c.sender_cancellation_active_state.operator_signature&&c.recipient_cancellation_active_state.operator_signature?f.contractApi.validateDataActiveState(c,c.recipient_cancellation_active_state,c.recipient,u.contractOwnerAddress,u.contractAddress,u.tokenAddress,E,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_RECIPIENT_CANCELLATION_HUB_SIGNATURE_INVALID);_.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION,c.sender_cancellation_active_state);var t=active_state_model_1.ActiveState.checksum(u.contractAddress,c.wallet.token,c.wallet.address,c.wallet_trail_identifier,c.eon_number,c.sender_cancellation_active_state.tx_set_hash,new bignumber_js_1.default(c.sender_cancellation_active_state.updated_spendings),new bignumber_js_1.default(c.sender_cancellation_active_state.updated_gains)),r=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,t,c.sender_cancellation_active_state.operator_signature);_.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.SENDER_CANCELLATION,r);var a=active_state_model_1.ActiveState.checksum(u.contractAddress,u.tokenAddress,u.address,u.trailIdentifier,c.eon_number,c.recipient_cancellation_active_state.tx_set_hash,new bignumber_js_1.default(c.recipient_cancellation_active_state.updated_spendings),new bignumber_js_1.default(c.recipient_cancellation_active_state.updated_gains)),n=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,a,c.recipient_cancellation_active_state.operator_signature);return _.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.RECIPIENT_CANCELLATION,n),s.activeState.cancelPendingSwap()?p(i,o):o(wallet_update_error_model_1.WalletUpdateError.SWAP_CANCELLATION_FAILURE)}):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_RECIPIENT_CANCELLATION_WALLET_SIGNATURE_INVALID)})):p(i,o)):o(wallet_update_error_model_1.WalletUpdateError.INVALID_WALLET_FREEZE_REQUEST_SIGNATURE)})},l=function(){if(logging_1.Logging.debug("processSwapFulfillment"),c.matched_amounts&&(s.activeState.latestTransfer.amountsMatched=c.matched_amounts),!c.complete)return _();if(!c.recipient_fulfillment_active_state||!c.recipient_fulfillment_active_state.operator_signature)return new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_FULFILLMENT_HUB_SIGNATURE_MISSING)});if(n){var e=active_state_model_1.ActiveState.checksum(u.contractAddress,c.recipient.token,c.recipient.address,c.recipient_trail_identifier,c.eon_number,c.recipient_fulfillment_active_state.tx_set_hash,new bignumber_js_1.default(c.recipient_fulfillment_active_state.updated_spendings),new bignumber_js_1.default(c.recipient_fulfillment_active_state.updated_gains)),t=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,e,c.recipient_fulfillment_active_state.operator_signature);return s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT,t),s.activeState.fulfillPendingSwap()?a():new Promise(function(){return o(wallet_update_error_model_1.WalletUpdateError.SWAP_FULFILLMENT_FAILURE)})}return f.contractApi.validateDataActiveState(c,c.recipient_fulfillment_active_state,c.recipient,u.contractOwnerAddress,u.contractAddress,u.tokenAddress,E,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_FULFILLMENT_HUB_SIGNATURE_INVALID);var t=active_state_model_1.ActiveState.checksum(u.contractAddress,u.tokenAddress,u.address,u.trailIdentifier,c.eon_number,c.recipient_fulfillment_active_state.tx_set_hash,new bignumber_js_1.default(c.recipient_fulfillment_active_state.updated_spendings),new bignumber_js_1.default(c.recipient_fulfillment_active_state.updated_gains)),r=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,t,c.recipient_fulfillment_active_state.operator_signature);return s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT,r),s.activeState.fulfillPendingSwap()?a():o(wallet_update_error_model_1.WalletUpdateError.SWAP_FULFILLMENT_FAILURE)})},d=function(){if(logging_1.Logging.debug("processSwapActivation"),!c.sender_active_state.operator_signature||!c.recipient_active_state.operator_signature)return _();var e=active_state_model_1.ActiveState.checksum(u.contractAddress,c.wallet.token,c.wallet.address,c.wallet_trail_identifier,c.eon_number,c.sender_active_state.tx_set_hash,new bignumber_js_1.default(c.sender_active_state.updated_spendings),new bignumber_js_1.default(c.sender_active_state.updated_gains)),t=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,e,c.sender_active_state.operator_signature),r=active_state_model_1.ActiveState.checksum(u.contractAddress,c.recipient.token,c.recipient.address,c.recipient_trail_identifier,c.eon_number,c.recipient_active_state.tx_set_hash,new bignumber_js_1.default(c.recipient_active_state.updated_spendings),new bignumber_js_1.default(c.recipient_active_state.updated_gains)),a=signature_model_1.Signature.fromRSV(u.contractOwnerAddress,r,c.recipient_active_state.operator_signature);return n?f.contractApi.validateDataActiveState(c,c.sender_active_state,c.wallet,u.contractOwnerAddress,u.contractAddress,c.wallet.token,E,u.getEonSwapStartingBalance(s.eonNumber)).then(function(e){return e?(s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,t),s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,a),l()):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_SWAP_DEBIT_HUB_SIGNATURE_INVALID)}):f.contractApi.validateDataActiveState(c,c.recipient_active_state,c.recipient,u.contractOwnerAddress,u.contractAddress,c.recipient.token,E,u.getEonSwapStartingBalance(s.eonNumber)).then(function(e){return e?(s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,t),s.activeState.latestTransfer.confirmations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,a),l()):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_SWAP_CREDIT_HUB_SIGNATURE_INVALID)})},t=function(r){return logging_1.Logging.debug("processSwapEnrollment"),c.processed&&c.voided?(s.removePendingIncomingTransfer(c),s.addCancelledTransfer(c),p(i,o)):n?f.contractApi.validateDataActiveState(c,c.sender_active_state,c.wallet,c.wallet.address,u.contractAddress,c.wallet.token,E,u.getEonSwapStartingBalance(s.eonNumber)).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_SWAP_DEBIT_WALLET_SIGNATURE_INVALID);r&&s.activeState.createOutgoingSwap(c.recipient.address,c.recipient.token,c.recipient_trail_identifier,new bignumber_js_1.default(c.amount),new bignumber_js_1.default(c.amount_swapped),u.getEonSwapStartingBalance(s.eonNumber),new bignumber_js_1.default(c.nonce),c.id);var t=s.activeState.latestTransfer;return t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)||t.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,c.sender_active_state),t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)||t.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,c.recipient_active_state),t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT)||t.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT,c.recipient_fulfillment_active_state),d()}):f.contractApi.validateDataActiveState(c,c.recipient_active_state,c.recipient,c.recipient.address,u.contractAddress,c.recipient.token,E,u.getEonSwapStartingBalance(s.eonNumber)).then(function(e){return e?f.contractApi.validateDataActiveState(c,c.recipient_fulfillment_active_state,c.recipient,u.address,u.contractAddress,u.tokenAddress,E,transfer_model_1.Transfer.FULFILLED_SWAP_MARKER).then(function(e){if(!e)return o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_FULFILLMENT_WALLET_SIGNATURE_INVALID);if(r)s.activeState.createIncomingSwap(c.wallet.address,c.wallet.token,new bignumber_js_1.default(c.amount),new bignumber_js_1.default(c.amount_swapped),u.getEonSwapStartingBalance(s.eonNumber),new bignumber_js_1.default(c.nonce),c.id);var t=s.activeState.latestTransfer;return t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)||t.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT,c.sender_active_state),t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT)||t.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT,c.recipient_active_state),t.authorizations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT)||t.authorizations.set(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.FULFILLMENT,c.recipient_fulfillment_active_state),d()}):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_SWAP_CREDIT_WALLET_SIGNATURE_INVALID)})};if(e&&c.id<e.txId)return p(i,o);if(e&&c.id==e.txId)return s.activeState.isTransferPending?e.isSwapFinalized?o(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK):e.isSwapFulfilled?a():e.isSwapActive?l():n&&!util_1.isSameHexValue(s.activeState.transferTree.hash,c.sender_active_state.tx_set_hash)?o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_OUTGOING):n||util_1.isSameHexValue(s.activeState.transferTree.hash,c.recipient_active_state.tx_set_hash)?t(!1):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_INCOMING):p(i,o);if(c.processed&&c.voided)return s.removePendingIncomingTransfer(c),s.addCancelledTransfer(c),p(i,o);if(s.activeState.isTransferPending)return o(wallet_update_error_model_1.WalletUpdateError.LOGIC_AGGREGATION_FORK);var r=active_state_model_1.ActiveState.fromJSON(s.activeState.json);return r.isTransferPending&&r.cancelPendingTransfer(),n?r.createOutgoingSwap(c.recipient.address,c.recipient.token,c.recipient_trail_identifier,new bignumber_js_1.default(c.amount),new bignumber_js_1.default(c.amount_swapped),u.getEonSwapStartingBalance(s.eonNumber),new bignumber_js_1.default(c.nonce),c.id):r.createIncomingSwap(c.wallet.address,c.wallet.token,new bignumber_js_1.default(c.amount),new bignumber_js_1.default(c.amount_swapped),u.getEonSwapStartingBalance(s.eonNumber),new bignumber_js_1.default(c.nonce),c.id),n&&!util_1.isSameHexValue(r.transferTree.hash,c.sender_active_state.tx_set_hash)?o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_OUTGOING):n||util_1.isSameHexValue(r.transferTree.hash,c.recipient_active_state.tx_set_hash)?t(!0):o(wallet_update_error_model_1.WalletUpdateError.ACTIVE_STATE_TX_SET_ROOT_INVALID_INCOMING)})},e.prototype.updateLatestEonWithdrawalRequests=function(r,e,t){logging_1.Logging.debug("updateLatestEonWithdrawalRequests");var a=t?t.walletData:null;return new Promise(function(e,t){if(!r)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!r.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!(a&&a.withdrawal_requests&&a.withdrawal_requests.length))return e();if(!r.latestEon)return t(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_EON);r.latestEon;try{return e()}catch(e){return t(e)}})},e.prototype.updateLatestEonOnChainWithdrawal=function(i,o,s){return logging_1.Logging.debug("updateLatestEonOnChainWithdrawal"),new Promise(function(e,t){if(!i)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!i.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!o)return t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(!i.latestEon)return t(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_EON);for(var r=[],a=s.walletData.withdrawal_requests,n=0;n<a.length;n++)if(a[n].eon_number===i.latestEon.eonNumber){var _=!o.pendingWithdrawals.some(function(e){return e.eonNumber===a[n].eon_number});r.push(new withdrawal_model_1.Withdrawal(s.walletData.withdrawal_requests[n].eon_number,new bignumber_js_1.default(s.walletData.withdrawal_requests[n].amount),_))}return i.latestEon.setOnChainWithdrawals(r),e()})},e.prototype.updateLatestEonDeposits=function(a,e,t){logging_1.Logging.debug("updateLatestEonDeposits");var n=t?t.walletData:null;return new Promise(function(e,t){if(!a)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!a.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!n||!n.deposits||!n.deposits.length)return e();var r=a.latestEon;if(!r)return t(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_EON);try{return n.deposits.filter(function(e){return e.eon_number==r.eonNumber}).map(function(e){return new deposit_model_1.Deposit(e.txid,e.block,e.eon_number,new bignumber_js_1.default(e.amount))}).map(function(e){return r.addDeposit(e)}),e()}catch(e){return t(e)}})},e.prototype.updateCurrentEonOnChainDeposits=function(r,a,e){return logging_1.Logging.debug("updateCurrentEonOnChainDeposits"),new Promise(function(e,t){if(!r)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!r.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!a)return t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);try{r.latestEon&&(r.latestEon.onChainDeposit=a.deposits[0]),r.previousEon&&(r.previousEon.onChainDeposit=a.deposits[1]),r.secondPreviousEon&&(r.secondPreviousEon.onChainDeposit=a.deposits[2])}catch(e){return t(e)}return e()})},e.prototype.updateLatestEonDeliveryReceipts=function(_,i,o,s){var l=this;logging_1.Logging.debug("updateLatestEonDeliveryReceipts");var d=o?o.walletData:null;return new Promise(function(e,t){if(!_)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!_.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);var r=_.latestEon;if(!r)return t(wallet_update_error_model_1.WalletUpdateError.LOCAL_DATA_MISSING_LATEST_EON);if(r.eonNumber==_.registrationEon)return e();if(r.eonNumber==i.currentEonNumber&&!i.isCheckpointSubmitted)return i.currentSubBlock>i.slackPeriod?t(wallet_update_error_model_1.WalletUpdateError.PROVIDER_NOT_AUDITABLE):e();if(s&&_.latestEon.eonNumber==i.currentEonNumber-2)return e();var a=d?d.transfers.filter(function(e){return e.eon_number==r.eonNumber-1}).sort(function(e,t){return e.id-t.id}):[],n=_.previousEon.activeState.transfers;return l.updateDeliveryReceipt(_,n,a,0,i,o,s).then(e).catch(t)})},e.prototype.updateDeliveryReceipt=function(i,o,s,l,d,u,e,c){var p=this;return void 0===c&&(c=!1),logging_1.Logging.debug("updateDeliveryReceipt"),new Promise(function(t,r){if(!i)return r(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!o||l>=o.length)return c?r(wallet_update_error_model_1.WalletUpdateError.REMOTE_DATA_INVALID_DELIVERY_RECEIPT):t();var a=function(e,t,r){return void 0===r&&(r=c),p.updateDeliveryReceipt(i,o,s,l+1,d,u,r).then(e).catch(t)},n=o[l];if(n.deliveryProof)return a(t,r,c);if(util_1.isSameHexValue(i.address,n.recipient))return a(t,r,c);if(n.eonNumber<d.currentEonNumber-d.eonsKept)return a(t,r,c);if(n.isPassive)return logging_1.Logging.debug("!! We are skipping validateDeliveryProof Because passive transfer verification is not supported !!"),a(t,r,c);if(!n.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.DEBIT)||!n.confirmations.get(transfer_active_state_update_type_model_1.TransferActiveStateUpdateType.CREDIT))return r(wallet_update_error_model_1.WalletUpdateError.LOGIC_RECEIPT_VALIDATION_ERROR_MISSING_CONFIRMATION);var _=s.find(function(e){return e.id==n.txId});if(!_||!_.delivery_proof)return logging_1.Logging.error(n),logging_1.Logging.error(s),a(t,r,!0);p.contractApi.validateDeliveryProof(n,_,i.contractAddress,i.tokenAddress,e).then(function(e){return e?(n.saveDeliveryProof(_.delivery_proof),a(t,r,c)):a(t,r,!0)})})},e.prototype.progressEon=function(a,n,e){return logging_1.Logging.debug("progressEon"),new Promise(function(e,t){if(!a)return t(wallet_update_error_model_1.WalletUpdateError.NO_WALLET_SPECIFIED);if(!a.isRegistered)return t(wallet_update_error_model_1.WalletUpdateError.UNREGISTERED);if(!n)return t(wallet_update_error_model_1.WalletUpdateError.NO_CONTRACT_STATE_SPECIFIED);if(a.latestEon.eonNumber===n.currentEonNumber)return t(wallet_update_error_model_1.WalletUpdateError.LOGIC_PREMATURE_EON_ADVANCEMENT);var r=new eon_model_1.Eon(a.contractAddress,a.tokenAddress,a.address,a.trailIdentifier,a.latestEon.eonNumber+1);return a.addEon(r),e()})},e.prototype.updateLightSyncEon=function(a,n,e,_){return new Promise(function(e,t){if(!_||a.latestEon.eonNumber>=n.currentEonNumber-2)return e();var r=new eon_model_1.Eon(a.contractAddress,a.tokenAddress,a.address,a.trailIdentifier,n.currentEonNumber-2);return a.addEonForce(r),e()})},e=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_POLL)),__param(1,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.HUB_STATE_FETCH)),__param(2,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.CONTRACT_STATE_FETCH)),__param(3,inversify_1.inject(inversify_types_1.TYPES.SUBJECT.WALLET_STATE_SYNC)),__param(4,inversify_1.inject(contract_api_service_1.ContractApiService)),__param(5,inversify_1.inject(operator_api_service_1.OperatorApiService)),__metadata("design:paramtypes",[rxjs_1.Observable,rxjs_1.Observable,rxjs_1.Observable,Object,contract_api_service_1.ContractApiService,operator_api_service_1.OperatorApiService])],e)}();exports.WalletStateService=WalletStateService;
+},{"../inversify.types":333,"../models/primitives/proof-of-exclusive-allotment.model":338,"../models/primitives/signature.model":339,"../models/state/wallet-state.model":346,"../models/state/wallet-sync-state.model":347,"../models/state/wallet-update-error.model":348,"../models/transactions/active-state.model":350,"../models/transactions/deposit.model":351,"../models/transactions/transfer-active-state-update-type.model":353,"../models/transactions/transfer.model":354,"../models/wallet/eon.model":357,"../util":371,"./../models/transactions/withdrawal.model":355,"./contract-api.service":361,"./logging":364,"./operator-api.service":365,"bignumber.js":24,"inversify":165,"rxjs":404,"rxjs/internal/operators":487}],369:[function(require,module,exports){
 "use strict";var __decorate=this&&this.__decorate||function(e,t,r,n){var a,i=arguments.length,s=i<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,r,n);else for(var o=e.length-1;0<=o;o--)(a=e[o])&&(s=(i<3?a(s):3<i?a(t,r,s):a(t,r))||s);return 3<i&&s&&Object.defineProperty(t,r,s),s},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__param=this&&this.__param||function(r,n){return function(e,t){n(e,t,r)}},__awaiter=this&&this.__awaiter||function(i,s,o,l){return new(o||(o=Promise))(function(e,t){function r(e){try{a(l.next(e))}catch(e){t(e)}}function n(e){try{a(l.throw(e))}catch(e){t(e)}}function a(t){t.done?e(t.value):new o(function(e){e(t.value)}).then(r,n)}a((l=l.apply(i,s||[])).next())})},__generator=this&&this.__generator||function(r,n){var a,i,s,e,o={label:0,sent:function(){if(1&s[0])throw s[1];return s[1]},trys:[],ops:[]};return e={next:t(0),throw:t(1),return:t(2)},"function"==typeof Symbol&&(e[Symbol.iterator]=function(){return this}),e;function t(t){return function(e){return function(t){if(a)throw new TypeError("Generator is already executing.");for(;o;)try{if(a=1,i&&(s=2&t[0]?i.return:t[0]?i.throw||((s=i.return)&&s.call(i),0):i.next)&&!(s=s.call(i,t[1])).done)return s;switch(i=0,s&&(t=[2&t[0],s.value]),t[0]){case 0:case 1:s=t;break;case 4:return o.label++,{value:t[1],done:!1};case 5:o.label++,i=t[1],t=[0];continue;case 7:t=o.ops.pop(),o.trys.pop();continue;default:if(!(s=0<(s=o.trys).length&&s[s.length-1])&&(6===t[0]||2===t[0])){o=0;continue}if(3===t[0]&&(!s||t[1]>s[0]&&t[1]<s[3])){o.label=t[1];break}if(6===t[0]&&o.label<s[1]){o.label=s[1],s=t;break}if(s&&o.label<s[2]){o.label=s[2],o.ops.push(t);break}s[2]&&o.ops.pop(),o.trys.pop();continue}t=n.call(r,o)}catch(e){t=[6,e],i=0}finally{a=s=0}if(5&t[0])throw t[1];return{value:t[0]?t[1]:void 0,done:!0}}([t,e])}}};Object.defineProperty(exports,"__esModule",{value:!0});var inversify_1=require("inversify"),inversify_types_1=require("../inversify.types"),wallet_model_1=require("../models/wallet/wallet.model"),util_1=require("../util"),logging_1=require("./logging"),WalletStorageService=function(){function e(e){this.storage=e}var u;return(u=e).prototype.saveWallet=function(a){return __awaiter(this,void 0,void 0,function(){var t,r,n;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,3,,4]),t=u.walletInstanceKey(a),[4,this.storage.set(t,util_1.JSONbig.stringify(a.json))];case 1:return r=e.sent(),[4,this.addToIndex(a)];case 2:return e.sent(),[2,r];case 3:return n=e.sent(),logging_1.Logging.error(n),[2,!1];case 4:return[2]}})})},e.prototype.loadWallet=function(i,s,o,l){return __awaiter(this,void 0,void 0,function(){var t,r,n,a;return __generator(this,function(e){switch(e.label){case 0:return e.trys.push([0,5,,6]),t=u.walletKey(i,s,o,l),[4,this.storage.get(t)];case 1:return(r=e.sent())?[3,3]:[4,this.removeFromIndex(new wallet_model_1.Wallet(i,s,null,o,l,null))];case 2:return e.sent(),[2,null];case 3:return n=wallet_model_1.Wallet.fromJSON(util_1.JSONbig.parse(r)),[4,this.addToIndex(n)];case 4:return e.sent(),[2,n];case 5:return a=e.sent(),logging_1.Logging.error(a),[2,null];case 6:return[2]}})})},e.prototype.wallets=function(){return __awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return[4,this.storage.get(u.INDEX_KEY)];case 1:return(t=e.sent())?[2,new Map(util_1.JSONbig.parse(t))]:[2,new Map]}})})},e.prototype.addToIndex=function(r){return __awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return[4,this.wallets()];case 1:return(t=e.sent()).set(u.walletInstanceKey(r),{address:r.address,networkId:r.networkId,contractAddress:r.contractAddress,webAddress:r.webAddress,tokenAddress:r.tokenAddress}),this.storage.set(u.INDEX_KEY,util_1.JSONbig.stringify(Array.from(t.entries()))),[2]}})})},e.prototype.removeFromIndex=function(r){return __awaiter(this,void 0,void 0,function(){var t;return __generator(this,function(e){switch(e.label){case 0:return[4,this.wallets()];case 1:return(t=e.sent()).delete(u.walletInstanceKey(r)),this.storage.set(u.INDEX_KEY,util_1.JSONbig.stringify(Array.from(t.entries()))),[2]}})})},e.walletInstanceKey=function(e){return u.walletKey(e.address,e.networkId,e.contractAddress,e.tokenAddress)},e.walletKey=function(e,t,r,n){return util_1.Web3Utils.soliditySha3({type:"address",value:e},{type:"uint256",value:t},{type:"address",value:r},{type:"address",value:n})},e.INDEX_KEY="lqd-wallet-client-index",e=u=__decorate([inversify_1.injectable(),__param(0,inversify_1.inject(inversify_types_1.TYPES.EXTERNAL.STORAGE_MANAGER_INTERFACE)),__metadata("design:paramtypes",[Object])],e)}();exports.WalletStorageService=WalletStorageService;
-},{"../inversify.types":333,"../models/wallet/wallet.model":358,"../util":371,"./logging":366,"inversify":166}],370:[function(require,module,exports){
+},{"../inversify.types":333,"../models/wallet/wallet.model":358,"../util":371,"./logging":364,"inversify":165}],370:[function(require,module,exports){
 "use strict";var __extends=this&&this.__extends||function(){var r=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,n){t.__proto__=n}||function(t,n){for(var e in n)n.hasOwnProperty(e)&&(t[e]=n[e])};return function(t,n){function e(){this.constructor=t}r(t,n),t.prototype=null===n?Object.create(n):(e.prototype=n.prototype,new e)}}();Object.defineProperty(exports,"__esModule",{value:!0});var events_1=require("events"),IncomingTransferEmitter=function(t){function n(){return null!==t&&t.apply(this,arguments)||this}return __extends(n,t),n.prototype.emitIncomingPendingTransfer=function(t){this.emit("IncomingPendingTransfer",t)},n.prototype.emitIncomingTransfer=function(t){this.emit("IncomingTransfer",t)},n}(events_1.EventEmitter);exports.IncomingTransferEmitter=IncomingTransferEmitter;
 },{"events":827}],371:[function(require,module,exports){
 "use strict";var __importDefault=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var bn_js_1=__importDefault(require("bn.js")),bignumber_js_1=__importDefault(require("bignumber.js"));function remove0xPrefix(e){return 0===e.indexOf("0x")?e.substring(2):e}function add0xPrefix(e){return 0===e.indexOf("0x")?e:"0x"+e}function isSameHexValue(e,t){return remove0xPrefix(e).toLowerCase()==remove0xPrefix(t).toLowerCase()}function getWeb3HttpProvider(e){void 0===e&&(e="http://localhost:8545");var t=new exports.Web3(new exports.Web3.providers.HttpProvider(e));return t.eth.accounts.wallet.clear(),t.eth.accounts.wallet.add("0x4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d"),t.eth.accounts.wallet.add("0x6cbed15c793ce57650b9877cf6fa156fbef513c4e6134f022a85b1ffdd59b2a1"),t.eth.accounts.wallet.add("0x6370fd033278c143179d81c5526140625662b8daa446c22ee2d73db3707e620c"),t.eth.accounts.wallet.add("0x646f1ce2fdad0e6deeeb5c7e8e5543bdde65e86029e2fd9fc169899c440a7913"),t.eth.accounts.wallet.add("0xadd53f9a7e588d003326d1cbf9e4a43c061aadd9bc938c843a79e7b4fd2ad743"),t}function promiseExecutorCallback(r,u){return function(e,t){e?u(e):r(t)}}function bigNumberValueOfResult(e){return new bignumber_js_1.default(e.valueOf())}function intValueOfResult(e){return parseInt(e.valueOf(),10)}function toBigNumber(e){return bn_js_1.default.isBN(e)?new bignumber_js_1.default(e.toString()):new bignumber_js_1.default(e)}function valueOfResult(e,t){return t?e[t].valueOf():e.valueOf()}function indexedValueOfResult(t){return function(e){return valueOfResult(e,t)}}function removeDuplicateFromArray(e){return Array.from(new Set(e))}function lqdWrapper(e){return exports.Web3Utils.soliditySha3("Liquidity.Network Authorization:\n32",e)}function sleep(t){return new Promise(function(e){return setTimeout(e,t)})}function deepClone(e){return JSON.parse(JSON.stringify(e))}function detectEnvironment(){return"undefined"!=typeof document?"browser":"undefined"!=typeof navigator&&"ReactNative"==navigator.product?"react-native":"node"}exports.remove0xPrefix=remove0xPrefix,exports.add0xPrefix=add0xPrefix,exports.isSameHexValue=isSameHexValue,exports.Web3=require("web3"),exports.Web3Utils=require("web3-utils"),exports.JSONbig=require("json-bigint"),exports.EMPTY_HASH="0x0000000000000000000000000000000000000000000000000000000000000000",exports.getWeb3HttpProvider=getWeb3HttpProvider,exports.promiseExecutorCallback=promiseExecutorCallback,exports.bigNumberValueOfResult=bigNumberValueOfResult,exports.intValueOfResult=intValueOfResult,exports.toBigNumber=toBigNumber,exports.valueOfResult=valueOfResult,exports.indexedValueOfResult=indexedValueOfResult,exports.removeDuplicateFromArray=removeDuplicateFromArray,exports.lqdWrapper=lqdWrapper,exports.sleep=sleep,exports.deepClone=deepClone,exports.detectEnvironment=detectEnvironment;
-},{"bignumber.js":24,"bn.js":25,"json-bigint":193,"web3":730,"web3-utils":723}],372:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],373:[function(require,module,exports){
+},{"bignumber.js":24,"bn.js":25,"json-bigint":192,"web3":727,"web3-utils":720}],372:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],373:[function(require,module,exports){
 var BN = require('bn.js');
 var stripHexPrefix = require('strip-hex-prefix');
 
@@ -38080,6 +38097,8 @@ if (!Object.keys) {
 		$frames: true,
 		$innerHeight: true,
 		$innerWidth: true,
+		$onmozfullscreenchange: true,
+		$onmozfullscreenerror: true,
 		$outerHeight: true,
 		$outerWidth: true,
 		$pageXOffset: true,
@@ -41187,7 +41206,7 @@ module.exports = function (okey, password) {
   }
 }
 
-},{"browserify-aes":29,"evp_bytestokey":120,"safe-buffer":602}],383:[function(require,module,exports){
+},{"browserify-aes":29,"evp_bytestokey":122,"safe-buffer":602}],383:[function(require,module,exports){
 var asn1 = require('./asn1')
 var aesid = require('./aesid.json')
 var fixProc = require('./fixProc')
@@ -41329,7 +41348,7 @@ module.exports = function (headers) {
   return result
 }
 
-},{"for-each":121,"string.prototype.trim":615}],385:[function(require,module,exports){
+},{"for-each":123,"string.prototype.trim":615}],385:[function(require,module,exports){
 exports.pbkdf2 = require('./lib/async')
 exports.pbkdf2Sync = require('./lib/sync')
 
@@ -41482,8 +41501,8 @@ module.exports = function (password, salt, iterations, keylen) {
   }
 }
 
-}).call(this,{"isBuffer":require("../../../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js":846}],389:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js":846}],389:[function(require,module,exports){
 var md5 = require('create-hash/md5')
 var RIPEMD160 = require('ripemd160')
 var sha = require('sha.js')
@@ -42069,7 +42088,7 @@ exports.parseUrl = function (str, opts) {
 	};
 };
 
-},{"decode-uri-component":63,"object-assign":374,"strict-uri-encode":613}],397:[function(require,module,exports){
+},{"decode-uri-component":65,"object-assign":374,"strict-uri-encode":613}],397:[function(require,module,exports){
 (function (process,global){
 'use strict'
 
@@ -43605,7 +43624,7 @@ function fn5 (a, b, c, d, e, m, k, s) {
 
 module.exports = RIPEMD160
 
-},{"buffer":791,"hash-base":126,"inherits":146}],404:[function(require,module,exports){
+},{"buffer":791,"hash-base":128,"inherits":145}],404:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Observable_1 = require("./internal/Observable");
@@ -54511,7 +54530,7 @@ Sha.prototype._hash = function () {
 
 module.exports = Sha
 
-},{"./hash":605,"inherits":146,"safe-buffer":602}],608:[function(require,module,exports){
+},{"./hash":605,"inherits":145,"safe-buffer":602}],608:[function(require,module,exports){
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
  * in FIPS PUB 180-1
@@ -54612,7 +54631,7 @@ Sha1.prototype._hash = function () {
 
 module.exports = Sha1
 
-},{"./hash":605,"inherits":146,"safe-buffer":602}],609:[function(require,module,exports){
+},{"./hash":605,"inherits":145,"safe-buffer":602}],609:[function(require,module,exports){
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
  * in FIPS 180-2
@@ -54667,7 +54686,7 @@ Sha224.prototype._hash = function () {
 
 module.exports = Sha224
 
-},{"./hash":605,"./sha256":610,"inherits":146,"safe-buffer":602}],610:[function(require,module,exports){
+},{"./hash":605,"./sha256":610,"inherits":145,"safe-buffer":602}],610:[function(require,module,exports){
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
  * in FIPS 180-2
@@ -54804,7 +54823,7 @@ Sha256.prototype._hash = function () {
 
 module.exports = Sha256
 
-},{"./hash":605,"inherits":146,"safe-buffer":602}],611:[function(require,module,exports){
+},{"./hash":605,"inherits":145,"safe-buffer":602}],611:[function(require,module,exports){
 var inherits = require('inherits')
 var SHA512 = require('./sha512')
 var Hash = require('./hash')
@@ -54863,7 +54882,7 @@ Sha384.prototype._hash = function () {
 
 module.exports = Sha384
 
-},{"./hash":605,"./sha512":612,"inherits":146,"safe-buffer":602}],612:[function(require,module,exports){
+},{"./hash":605,"./sha512":612,"inherits":145,"safe-buffer":602}],612:[function(require,module,exports){
 var inherits = require('inherits')
 var Hash = require('./hash')
 var Buffer = require('safe-buffer').Buffer
@@ -55125,7 +55144,7 @@ Sha512.prototype._hash = function () {
 
 module.exports = Sha512
 
-},{"./hash":605,"inherits":146,"safe-buffer":602}],613:[function(require,module,exports){
+},{"./hash":605,"inherits":145,"safe-buffer":602}],613:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -55148,7 +55167,7 @@ module.exports = function trim() {
 	return replace(replace(S, leftWhitespace, ''), rightWhitespace, '');
 };
 
-},{"es-abstract/es5":92,"function-bind":123}],615:[function(require,module,exports){
+},{"es-abstract/es5":94,"function-bind":125}],615:[function(require,module,exports){
 'use strict';
 
 var bind = require('function-bind');
@@ -55168,7 +55187,7 @@ define(boundTrim, {
 
 module.exports = boundTrim;
 
-},{"./implementation":614,"./polyfill":616,"./shim":617,"define-properties":64,"function-bind":123}],616:[function(require,module,exports){
+},{"./implementation":614,"./polyfill":616,"./shim":617,"define-properties":66,"function-bind":125}],616:[function(require,module,exports){
 'use strict';
 
 var implementation = require('./implementation');
@@ -55194,7 +55213,7 @@ module.exports = function shimStringTrim() {
 	return polyfill;
 };
 
-},{"./polyfill":616,"define-properties":64}],618:[function(require,module,exports){
+},{"./polyfill":616,"define-properties":66}],618:[function(require,module,exports){
 var isHexPrefixed = require('is-hex-prefixed');
 
 /**
@@ -55210,7 +55229,7 @@ module.exports = function stripHexPrefix(str) {
   return isHexPrefixed(str) ? str.slice(2) : str;
 }
 
-},{"is-hex-prefixed":191}],619:[function(require,module,exports){
+},{"is-hex-prefixed":190}],619:[function(require,module,exports){
 var unavailable = function unavailable() {
   throw "This swarm.js function isn't available on the browser.";
 };
@@ -58453,8 +58472,8 @@ module.exports = Bzz;
 
 
 },{"swarm-js":619,"underscore":626}],630:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],631:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],631:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],632:[function(require,module,exports){
 /*
@@ -58822,7 +58841,7 @@ module.exports = {
 };
 
 
-},{"./soliditySha3.js":633,"./utils.js":634,"ethjs-unit":117,"randomhex":401,"underscore":626}],633:[function(require,module,exports){
+},{"./soliditySha3.js":633,"./utils.js":634,"ethjs-unit":119,"randomhex":401,"underscore":626}],633:[function(require,module,exports){
 /*
  This file is part of web3.js.
 
@@ -60067,12 +60086,12 @@ module.exports = {
 
 
 },{"./errors":635,"./formatters":636}],638:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],639:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],639:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],640:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":641,"./utils.js":642,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],641:[function(require,module,exports){
+},{"./soliditySha3.js":641,"./utils.js":642,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],641:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":642,"bn.js":638,"dup":633,"underscore":626}],642:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -60762,7 +60781,7 @@ PromiEvent.resolve = function(value) {
 
 module.exports = PromiEvent;
 
-},{"any-promise":5,"eventemitter3":119}],645:[function(require,module,exports){
+},{"any-promise":5,"eventemitter3":121}],645:[function(require,module,exports){
 /*
     This file is part of web3.js.
 
@@ -61175,7 +61194,7 @@ module.exports = {
     BatchManager: BatchManager
 };
 
-},{"./batch.js":645,"./givenProvider.js":646,"./jsonrpc.js":648,"underscore":626,"web3-core-helpers":637,"web3-providers-http":716,"web3-providers-ipc":717,"web3-providers-ws":721}],648:[function(require,module,exports){
+},{"./batch.js":645,"./givenProvider.js":646,"./jsonrpc.js":648,"underscore":626,"web3-core-helpers":637,"web3-providers-http":716,"web3-providers-ipc":717,"web3-providers-ws":718}],648:[function(require,module,exports){
 /*
     This file is part of web3.js.
 
@@ -61652,13 +61671,13 @@ Subscription.prototype.subscribe = function() {
 
 module.exports = Subscription;
 
-},{"eventemitter3":119,"underscore":626,"web3-core-helpers":637}],651:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],652:[function(require,module,exports){
+},{"eventemitter3":121,"underscore":626,"web3-core-helpers":637}],651:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],652:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],653:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":654,"./utils.js":655,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],654:[function(require,module,exports){
+},{"./soliditySha3.js":654,"./utils.js":655,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],654:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":655,"bn.js":651,"dup":633,"underscore":626}],655:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -61822,12 +61841,12 @@ module.exports = {
 
 
 },{"./extend.js":656,"web3-core-requestmanager":647}],658:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],659:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],659:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],660:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":661,"./utils.js":662,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],661:[function(require,module,exports){
+},{"./soliditySha3.js":661,"./utils.js":662,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],661:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":662,"bn.js":658,"dup":633,"underscore":626}],662:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -62144,7 +62163,7 @@ var coder = new ABICoder();
 
 module.exports = coder;
 
-},{"ethers/utils/abi-coder":107,"underscore":626,"web3-utils":660}],664:[function(require,module,exports){
+},{"ethers/utils/abi-coder":109,"underscore":626,"web3-utils":660}],664:[function(require,module,exports){
 (function (Buffer){
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
@@ -62228,7 +62247,7 @@ module.exports = {
   decodeSignature: decodeSignature
 };
 }).call(this,require("buffer").Buffer)
-},{"./bytes":666,"./hash":667,"./nat":668,"./rlp":669,"buffer":791,"elliptic":75}],665:[function(require,module,exports){
+},{"./bytes":666,"./hash":667,"./nat":668,"./rlp":669,"buffer":791,"elliptic":77}],665:[function(require,module,exports){
 arguments[4][623][0].apply(exports,arguments)
 },{"dup":623}],666:[function(require,module,exports){
 arguments[4][624][0].apply(exports,arguments)
@@ -62594,12 +62613,12 @@ uuid.unparse = unparse;
 module.exports = uuid;
 
 },{"./rng":670}],672:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],673:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],673:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],674:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":675,"./utils.js":676,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],675:[function(require,module,exports){
+},{"./soliditySha3.js":675,"./utils.js":676,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],675:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":676,"bn.js":672,"dup":633,"underscore":626}],676:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -63142,12 +63161,12 @@ module.exports = Accounts;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
 },{"any-promise":5,"buffer":791,"crypto":800,"crypto-browserify":62,"eth-lib/lib/account":664,"eth-lib/lib/bytes":666,"eth-lib/lib/hash":667,"eth-lib/lib/nat":668,"eth-lib/lib/rlp":669,"scrypt.js":603,"underscore":626,"uuid":671,"web3-core":657,"web3-core-helpers":637,"web3-core-method":643,"web3-utils":674}],678:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],679:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],679:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],680:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":681,"./utils.js":682,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],681:[function(require,module,exports){
+},{"./soliditySha3.js":681,"./utils.js":682,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],681:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":682,"bn.js":678,"dup":633,"underscore":626}],682:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -64364,7 +64383,7 @@ Registry.prototype.resolver = function (name) {
 
 module.exports = Registry;
 
-},{"../ressources/ABI/Registry":689,"../ressources/ABI/Resolver":690,"eth-ens-namehash":103,"underscore":626,"web3-core-promievent":644,"web3-eth-contract":683}],687:[function(require,module,exports){
+},{"../ressources/ABI/Registry":689,"../ressources/ABI/Resolver":690,"eth-ens-namehash":105,"underscore":626,"web3-core-promievent":644,"web3-eth-contract":683}],687:[function(require,module,exports){
 /*
     This file is part of web3.js.
     web3.js is free software: you can redistribute it and/or modify
@@ -64582,7 +64601,7 @@ ResolverMethodHandler.prototype.prepareArguments = function (name, methodArgumen
 
 module.exports = ResolverMethodHandler;
 
-},{"eth-ens-namehash":103,"underscore":626,"web3-core-promievent":644}],689:[function(require,module,exports){
+},{"eth-ens-namehash":105,"underscore":626,"web3-core-promievent":644}],689:[function(require,module,exports){
 "use strict";
 
 var REGISTRY = [
@@ -65148,12 +65167,12 @@ var RESOLVER = [
 module.exports = RESOLVER;
 
 },{}],691:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],692:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],692:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],693:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":694,"./utils.js":695,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],694:[function(require,module,exports){
+},{"./soliditySha3.js":694,"./utils.js":695,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],694:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":695,"bn.js":691,"dup":633,"underscore":626}],695:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -65427,12 +65446,12 @@ Iban.prototype.toString = function () {
 module.exports = Iban;
 
 },{"bn.js":691,"web3-utils":693}],697:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],698:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],698:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],699:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":700,"./utils.js":701,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],700:[function(require,module,exports){
+},{"./soliditySha3.js":700,"./utils.js":701,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],700:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":701,"bn.js":697,"dup":633,"underscore":626}],701:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -65589,12 +65608,12 @@ module.exports = Personal;
 
 
 },{"web3-core":657,"web3-core-helpers":637,"web3-core-method":643,"web3-net":715,"web3-utils":699}],703:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],704:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],704:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],705:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":706,"./utils.js":707,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],706:[function(require,module,exports){
+},{"./soliditySha3.js":706,"./utils.js":707,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],706:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":707,"bn.js":703,"dup":633,"underscore":626}],707:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -66147,12 +66166,12 @@ module.exports = Eth;
 
 
 },{"./getNetworkType.js":708,"underscore":626,"web3-core":657,"web3-core-helpers":637,"web3-core-method":643,"web3-core-subscriptions":649,"web3-eth-abi":663,"web3-eth-accounts":677,"web3-eth-contract":683,"web3-eth-ens":687,"web3-eth-iban":696,"web3-eth-personal":702,"web3-net":715,"web3-utils":705}],710:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],711:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],711:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
 },{"dup":625}],712:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":713,"./utils.js":714,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],713:[function(require,module,exports){
+},{"./soliditySha3.js":713,"./utils.js":714,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],713:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
 },{"./utils.js":714,"bn.js":710,"dup":633,"underscore":626}],714:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
@@ -66658,148 +66677,6 @@ module.exports = IpcProvider;
 
 
 },{"oboe":378,"underscore":626,"web3-core-helpers":637}],718:[function(require,module,exports){
-var _global = (function() { return this || {}; })();
-var NativeWebSocket = _global.WebSocket || _global.MozWebSocket;
-var websocket_version = require('./version');
-
-
-/**
- * Expose a W3C WebSocket class with just one or two arguments.
- */
-function W3CWebSocket(uri, protocols) {
-	var native_instance;
-
-	if (protocols) {
-		native_instance = new NativeWebSocket(uri, protocols);
-	}
-	else {
-		native_instance = new NativeWebSocket(uri);
-	}
-
-	/**
-	 * 'native_instance' is an instance of nativeWebSocket (the browser's WebSocket
-	 * class). Since it is an Object it will be returned as it is when creating an
-	 * instance of W3CWebSocket via 'new W3CWebSocket()'.
-	 *
-	 * ECMAScript 5: http://bclary.com/2004/11/07/#a-13.2.2
-	 */
-	return native_instance;
-}
-if (NativeWebSocket) {
-	['CONNECTING', 'OPEN', 'CLOSING', 'CLOSED'].forEach(function(prop) {
-		Object.defineProperty(W3CWebSocket, prop, {
-			get: function() { return NativeWebSocket[prop]; }
-		});
-	});
-}
-
-/**
- * Module exports.
- */
-module.exports = {
-    'w3cwebsocket' : NativeWebSocket ? W3CWebSocket : null,
-    'version'      : websocket_version
-};
-
-},{"./version":719}],719:[function(require,module,exports){
-module.exports = require('../package.json').version;
-
-},{"../package.json":720}],720:[function(require,module,exports){
-module.exports={
-  "_from": "git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
-  "_id": "websocket@1.0.26",
-  "_inBundle": false,
-  "_integrity": "",
-  "_location": "/web3-providers-ws/websocket",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "git",
-    "raw": "websocket@git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
-    "name": "websocket",
-    "escapedName": "websocket",
-    "rawSpec": "git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
-    "saveSpec": "git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
-    "fetchSpec": "git://github.com/frozeman/WebSocket-Node.git",
-    "gitCommittish": "browserifyCompatible"
-  },
-  "_requiredBy": [
-    "/web3-providers-ws"
-  ],
-  "_resolved": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
-  "_spec": "websocket@git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
-  "_where": "/home/george/Projects/liquidity/testapp/node_modules/web3-providers-ws",
-  "author": {
-    "name": "Brian McKelvey",
-    "email": "brian@worlize.com",
-    "url": "https://www.worlize.com/"
-  },
-  "browser": "lib/browser.js",
-  "bugs": {
-    "url": "https://github.com/theturtle32/WebSocket-Node/issues"
-  },
-  "bundleDependencies": false,
-  "config": {
-    "verbose": false
-  },
-  "contributors": [
-    {
-      "name": "Iñaki Baz Castillo",
-      "email": "ibc@aliax.net",
-      "url": "http://dev.sipdoc.net"
-    }
-  ],
-  "dependencies": {
-    "debug": "^2.2.0",
-    "nan": "^2.3.3",
-    "typedarray-to-buffer": "^3.1.2",
-    "yaeti": "^0.0.6"
-  },
-  "deprecated": false,
-  "description": "Websocket Client & Server Library implementing the WebSocket protocol as specified in RFC 6455.",
-  "devDependencies": {
-    "buffer-equal": "^1.0.0",
-    "faucet": "^0.0.1",
-    "gulp": "git+https://github.com/gulpjs/gulp.git#4.0",
-    "gulp-jshint": "^2.0.4",
-    "jshint": "^2.0.0",
-    "jshint-stylish": "^2.2.1",
-    "tape": "^4.0.1"
-  },
-  "directories": {
-    "lib": "./lib"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "homepage": "https://github.com/theturtle32/WebSocket-Node",
-  "keywords": [
-    "websocket",
-    "websockets",
-    "socket",
-    "networking",
-    "comet",
-    "push",
-    "RFC-6455",
-    "realtime",
-    "server",
-    "client"
-  ],
-  "license": "Apache-2.0",
-  "main": "index",
-  "name": "websocket",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theturtle32/WebSocket-Node.git"
-  },
-  "scripts": {
-    "gulp": "gulp",
-    "install": "(node-gyp rebuild 2> builderror.log) || (exit 0)",
-    "test": "faucet test/unit"
-  },
-  "version": "1.0.26"
-}
-
-},{}],721:[function(require,module,exports){
 (function (Buffer){
 /*
  This file is part of web3.js.
@@ -67204,7 +67081,7 @@ WebsocketProvider.prototype.disconnect = function () {
 module.exports = WebsocketProvider;
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":791,"underscore":626,"url":909,"web3-core-helpers":637,"websocket":718}],722:[function(require,module,exports){
+},{"buffer":791,"underscore":626,"url":909,"web3-core-helpers":637,"websocket":728}],719:[function(require,module,exports){
 /*
     This file is part of web3.js.
 
@@ -67395,25 +67272,25 @@ module.exports = Shh;
 
 
 
-},{"web3-core":657,"web3-core-method":643,"web3-core-subscriptions":649,"web3-net":715}],723:[function(require,module,exports){
+},{"web3-core":657,"web3-core-method":643,"web3-core-subscriptions":649,"web3-net":715}],720:[function(require,module,exports){
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash/isBoolean'), require('lodash/isString'), require('lodash/isNumber'), require('lodash/isNull'), require('number-to-bn'), require('utf8'), require('eth-lib/lib/hash'), require('ethjs-unit'), require('@babel/runtime/helpers/typeof'), require('lodash/isArray'), require('lodash/isObject'), require('lodash/map'), require('bn.js'), require('randomhex')) :
-    typeof define === 'function' && define.amd ? define(['exports', 'lodash/isBoolean', 'lodash/isString', 'lodash/isNumber', 'lodash/isNull', 'number-to-bn', 'utf8', 'eth-lib/lib/hash', 'ethjs-unit', '@babel/runtime/helpers/typeof', 'lodash/isArray', 'lodash/isObject', 'lodash/map', 'bn.js', 'randomhex'], factory) :
-    (factory((global.Web3Utils = {}),global.isBoolean,global.isString,global.isNumber,global.isNull,global.numberToBN,global.utf8,global.Hash,global.ethjsUnit,global._typeof,global.isArray,global.isObject,global.map,global.BN,global.randomhex));
-}(this, (function (exports,isBoolean,isString,isNumber,isNull,numberToBN,utf8,Hash,ethjsUnit,_typeof,isArray,isObject,map,BN,randomhex) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@babel/runtime/helpers/typeof'), require('lodash/isObject'), require('lodash/isString'), require('lodash/isArray'), require('lodash/isBoolean'), require('lodash/isNumber'), require('lodash/isNull'), require('number-to-bn'), require('utf8'), require('eth-lib/lib/hash'), require('bn.js'), require('ethjs-unit'), require('lodash/map'), require('randomhex')) :
+    typeof define === 'function' && define.amd ? define(['exports', '@babel/runtime/helpers/typeof', 'lodash/isObject', 'lodash/isString', 'lodash/isArray', 'lodash/isBoolean', 'lodash/isNumber', 'lodash/isNull', 'number-to-bn', 'utf8', 'eth-lib/lib/hash', 'bn.js', 'ethjs-unit', 'lodash/map', 'randomhex'], factory) :
+    (global = global || self, factory(global.Web3Utils = {}, global._typeof, global.isObject, global.isString, global.isArray, global.isBoolean, global.isNumber, global.isNull, global.numberToBN, global.utf8, global.Hash, global.BN, global.ethjsUnit, global.map, global.randomhex));
+}(this, function (exports, _typeof, isObject, isString, isArray, isBoolean, isNumber, isNull, numberToBN, utf8, Hash, BN, ethjsUnit, map, randomhex) { 'use strict';
 
-    isBoolean = isBoolean && isBoolean.hasOwnProperty('default') ? isBoolean['default'] : isBoolean;
+    _typeof = _typeof && _typeof.hasOwnProperty('default') ? _typeof['default'] : _typeof;
+    isObject = isObject && isObject.hasOwnProperty('default') ? isObject['default'] : isObject;
     isString = isString && isString.hasOwnProperty('default') ? isString['default'] : isString;
+    isArray = isArray && isArray.hasOwnProperty('default') ? isArray['default'] : isArray;
+    isBoolean = isBoolean && isBoolean.hasOwnProperty('default') ? isBoolean['default'] : isBoolean;
     isNumber = isNumber && isNumber.hasOwnProperty('default') ? isNumber['default'] : isNumber;
     isNull = isNull && isNull.hasOwnProperty('default') ? isNull['default'] : isNull;
     numberToBN = numberToBN && numberToBN.hasOwnProperty('default') ? numberToBN['default'] : numberToBN;
     utf8 = utf8 && utf8.hasOwnProperty('default') ? utf8['default'] : utf8;
     Hash = Hash && Hash.hasOwnProperty('default') ? Hash['default'] : Hash;
-    _typeof = _typeof && _typeof.hasOwnProperty('default') ? _typeof['default'] : _typeof;
-    isArray = isArray && isArray.hasOwnProperty('default') ? isArray['default'] : isArray;
-    isObject = isObject && isObject.hasOwnProperty('default') ? isObject['default'] : isObject;
-    map = map && map.hasOwnProperty('default') ? map['default'] : map;
     BN = BN && BN.hasOwnProperty('default') ? BN['default'] : BN;
+    map = map && map.hasOwnProperty('default') ? map['default'] : map;
     randomhex = randomhex && randomhex.hasOwnProperty('default') ? randomhex['default'] : randomhex;
 
     var isBN = function isBN(object) {
@@ -67463,15 +67340,15 @@ module.exports = Shh;
       var padding = chars - string.length + 1 >= 0 ? chars - string.length + 1 : 0;
       return (hasPrefix ? '0x' : '') + string + new Array(padding).join(sign || '0');
     };
-    var utf8ToHex = function utf8ToHex(str) {
-      str = utf8.encode(str);
+    var utf8ToHex = function utf8ToHex(value) {
+      value = utf8.encode(value);
       var hex = '';
-      str = str.replace(/^(?:\u0000)*/, '');
-      str = str.split('').reverse().join('');
-      str = str.replace(/^(?:\u0000)*/, '');
-      str = str.split('').reverse().join('');
-      for (var i = 0; i < str.length; i++) {
-        var code = str.charCodeAt(i);
+      value = value.replace(/^(?:\u0000)*/, '');
+      value = value.split('').reverse().join('');
+      value = value.replace(/^(?:\u0000)*/, '');
+      value = value.split('').reverse().join('');
+      for (var i = 0; i < value.length; i++) {
+        var code = value.charCodeAt(i);
         var n = code.toString(16);
         hex += n.length < 2 ? "0".concat(n) : n;
       }
@@ -67479,7 +67356,7 @@ module.exports = Shh;
     };
     var hexToUtf8 = function hexToUtf8(hex) {
       if (!isHexStrict(hex)) throw new Error("The parameter \"".concat(hex, "\" must be a valid HEX string."));
-      var str = '';
+      var string = '';
       var code = 0;
       hex = hex.replace(/^0x/i, '');
       hex = hex.replace(/^(?:00)*/, '');
@@ -67489,9 +67366,9 @@ module.exports = Shh;
       var l = hex.length;
       for (var i = 0; i < l; i += 2) {
         code = parseInt(hex.substr(i, 2), 16);
-        str += String.fromCharCode(code);
+        string += String.fromCharCode(code);
       }
-      return utf8.decode(str);
+      return utf8.decode(string);
     };
     var hexToNumber = function hexToNumber(value) {
       if (!value) {
@@ -67642,26 +67519,26 @@ module.exports = Shh;
       var arraySize = /^\D+\d*\[(\d+)\]$/.exec(type);
       return arraySize ? parseInt(arraySize[1], 10) : null;
     };
-    var _parseNumber = function _parseNumber(arg) {
-      var type = _typeof(arg);
+    var _parseNumber = function _parseNumber(argument) {
+      var type = _typeof(argument);
       if (type === 'string') {
-        if (isHexStrict(arg)) {
-          return new BN(arg.replace(/0x/i, ''), 16);
+        if (isHexStrict(argument)) {
+          return new BN(argument.replace(/0x/i, ''), 16);
         } else {
-          return new BN(arg, 10);
+          return new BN(argument, 10);
         }
       } else if (type === 'number') {
-        return new BN(arg);
-      } else if (isBigNumber(arg)) {
-        return new BN(arg.toString(10));
-      } else if (isBN(arg)) {
-        return arg;
+        return new BN(argument);
+      } else if (isBigNumber(argument)) {
+        return new BN(argument.toString(10));
+      } else if (isBN(argument)) {
+        return argument;
       } else {
-        throw new Error("".concat(arg, " is not a number"));
+        throw new Error("".concat(argument, " is not a number"));
       }
     };
     var _solidityPack = function _solidityPack(type, value, arraySize) {
-      var size, num;
+      var size, number;
       type = _elementaryName(type);
       if (type === 'bytes') {
         if (value.replace(/^0x/i, '').length % 2 !== 0) {
@@ -67699,44 +67576,44 @@ module.exports = Shh;
         if (size % 8 || size < 8 || size > 256) {
           throw new Error("Invalid uint".concat(size, " size"));
         }
-        num = _parseNumber(value);
-        if (num.bitLength() > size) {
-          throw new Error("Supplied uint exceeds width: ".concat(size, " vs ").concat(num.bitLength()));
+        number = _parseNumber(value);
+        if (number.bitLength() > size) {
+          throw new Error("Supplied uint exceeds width: ".concat(size, " vs ").concat(number.bitLength()));
         }
-        if (num.lt(new BN(0))) {
-          throw new Error("Supplied uint ".concat(num.toString(), " is negative"));
+        if (number.lt(new BN(0))) {
+          throw new Error("Supplied uint ".concat(number.toString(), " is negative"));
         }
-        return size ? leftPad(num.toString('hex'), size / 8 * 2) : num;
+        return size ? leftPad(number.toString('hex'), size / 8 * 2) : number;
       } else if (type.startsWith('int')) {
         if (size % 8 || size < 8 || size > 256) {
           throw new Error("Invalid int".concat(size, " size"));
         }
-        num = _parseNumber(value);
-        if (num.bitLength() > size) {
-          throw new Error("Supplied int exceeds width: ".concat(size, " vs ").concat(num.bitLength()));
+        number = _parseNumber(value);
+        if (number.bitLength() > size) {
+          throw new Error("Supplied int exceeds width: ".concat(size, " vs ").concat(number.bitLength()));
         }
-        if (num.lt(new BN(0))) {
-          return num.toTwos(size).toString('hex');
+        if (number.lt(new BN(0))) {
+          return number.toTwos(size).toString('hex');
         } else {
-          return size ? leftPad(num.toString('hex'), size / 8 * 2) : num;
+          return size ? leftPad(number.toString('hex'), size / 8 * 2) : number;
         }
       } else {
         throw new Error("Unsupported or invalid type: ".concat(type));
       }
     };
-    var _processSoliditySha3Args = function _processSoliditySha3Args(arg) {
-      if (isArray(arg)) {
+    var _processSoliditySha3Arguments = function _processSoliditySha3Arguments(argument) {
+      if (isArray(argument)) {
         throw new Error('Autodetection of array types is not supported.');
       }
       var type;
       var value = '';
-      var hexArg, arraySize;
-      if (isObject(arg) && (arg.hasOwnProperty('v') || arg.hasOwnProperty('t') || arg.hasOwnProperty('value') || arg.hasOwnProperty('type'))) {
-        type = arg.hasOwnProperty('t') ? arg.t : arg.type;
-        value = arg.hasOwnProperty('v') ? arg.v : arg.value;
+      var hexArgument, arraySize;
+      if (isObject(argument) && (argument.hasOwnProperty('v') || argument.hasOwnProperty('t') || argument.hasOwnProperty('value') || argument.hasOwnProperty('type'))) {
+        type = argument.hasOwnProperty('t') ? argument.t : argument.type;
+        value = argument.hasOwnProperty('v') ? argument.v : argument.value;
       } else {
-        type = toHex(arg, true);
-        value = toHex(arg);
+        type = toHex(argument, true);
+        value = toHex(argument);
         if (!type.startsWith('int') && !type.startsWith('uint')) {
           type = 'bytes';
         }
@@ -67753,23 +67630,23 @@ module.exports = Shh;
         }
       }
       if (isArray(value)) {
-        hexArg = value.map(function (val) {
-          return _solidityPack(type, val, arraySize).toString('hex').replace('0x', '');
+        hexArgument = value.map(function (value_) {
+          return _solidityPack(type, value_, arraySize).toString('hex').replace('0x', '');
         });
-        return hexArg.join('');
+        return hexArgument.join('');
       } else {
-        hexArg = _solidityPack(type, value, arraySize);
-        return hexArg.toString('hex').replace('0x', '');
+        hexArgument = _solidityPack(type, value, arraySize);
+        return hexArgument.toString('hex').replace('0x', '');
       }
     };
     var soliditySha3 = function soliditySha3() {
-      var args = Array.prototype.slice.call(arguments);
-      var hexArgs = map(args, _processSoliditySha3Args);
-      return sha3("0x".concat(hexArgs.join('')));
+      var arguments_ = Array.prototype.slice.call(arguments);
+      var hexArguments = map(arguments_, _processSoliditySha3Arguments);
+      return sha3("0x".concat(hexArguments.join('')));
     };
 
     var jsonInterfaceMethodToString = function jsonInterfaceMethodToString(json) {
-      if (isObject(json) && json.name && json.name.indexOf('(') !== -1) {
+      if (isObject(json) && json.name && json.name.includes('(')) {
         return json.name;
       }
       return "".concat(json.name, "(").concat(_flattenTypes(false, json.inputs).join(','), ")");
@@ -67802,7 +67679,7 @@ module.exports = Shh;
     };
     var hexToAscii = function hexToAscii(hex) {
       if (!isHexStrict(hex)) throw new Error('The parameter must be a valid HEX string.');
-      var str = '';
+      var value = '';
       var i = 0;
       var l = hex.length;
       if (hex.substring(0, 2) === '0x') {
@@ -67810,15 +67687,15 @@ module.exports = Shh;
       }
       for (; i < l; i += 2) {
         var code = parseInt(hex.substr(i, 2), 16);
-        str += String.fromCharCode(code);
+        value += String.fromCharCode(code);
       }
-      return str;
+      return value;
     };
-    var asciiToHex = function asciiToHex(str) {
+    var asciiToHex = function asciiToHex(value) {
       var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 32;
       var hex = '';
-      for (var i = 0; i < str.length; i++) {
-        var code = str.charCodeAt(i);
+      for (var i = 0; i < value.length; i++) {
+        var code = value.charCodeAt(i);
         var n = code.toString(16);
         hex += n.length < 2 ? "0".concat(n) : n;
       }
@@ -67892,60 +67769,60 @@ module.exports = Shh;
     var hexToBytes$1 = hexToBytes;
 
     exports.randomHex = randomhex;
-    exports.jsonInterfaceMethodToString = jsonInterfaceMethodToString;
-    exports.hexToAscii = hexToAscii;
     exports.asciiToHex = asciiToHex;
-    exports.getUnitValue = getUnitValue;
-    exports.fromWei = fromWei;
-    exports.toWei = toWei;
-    exports.toChecksumAddress = toChecksumAddress;
-    exports.keccak256 = keccak256;
-    exports.sha3 = sha3$1;
-    exports.toDecimal = toDecimal;
-    exports.hexToNumber = hexToNumber$1;
-    exports.fromDecimal = fromDecimal;
-    exports.numberToHex = numberToHex$1;
-    exports.hexToUtf8 = hexToUtf8$1;
-    exports.hexToString = hexToString;
-    exports.toUtf8 = toUtf8;
-    exports.stringToHex = stringToHex;
-    exports.fromUtf8 = fromUtf8;
-    exports.utf8ToHex = utf8ToHex$1;
-    exports.toAscii = toAscii;
+    exports.bytesToHex = bytesToHex$1;
+    exports.checkAddressChecksum = checkAddressChecksum$1;
     exports.fromAscii = fromAscii;
-    exports.padLeft = padLeft;
-    exports.padRight = padRight;
+    exports.fromDecimal = fromDecimal;
+    exports.fromUtf8 = fromUtf8;
+    exports.fromWei = fromWei;
     exports.getSignatureParameters = getSignatureParameters$1;
+    exports.getUnitValue = getUnitValue;
+    exports.hexToAscii = hexToAscii;
+    exports.hexToBytes = hexToBytes$1;
+    exports.hexToNumber = hexToNumber$1;
+    exports.hexToNumberString = hexToNumberString$1;
+    exports.hexToString = hexToString;
+    exports.hexToUtf8 = hexToUtf8$1;
     exports.isAddress = isAddress$1;
     exports.isBN = isBN$1;
-    exports.checkAddressChecksum = checkAddressChecksum$1;
-    exports.toBN = toBN$1;
-    exports.toHex = toHex$1;
-    exports.hexToNumberString = hexToNumberString$1;
-    exports.toTwosComplement = toTwosComplement$1;
+    exports.isBloom = isBloom$1;
     exports.isHex = isHex$1;
     exports.isHexStrict = isHexStrict$1;
-    exports.isBloom = isBloom$1;
     exports.isTopic = isTopic$1;
-    exports.bytesToHex = bytesToHex$1;
-    exports.hexToBytes = hexToBytes$1;
+    exports.jsonInterfaceMethodToString = jsonInterfaceMethodToString;
+    exports.keccak256 = keccak256;
+    exports.numberToHex = numberToHex$1;
+    exports.padLeft = padLeft;
+    exports.padRight = padRight;
+    exports.sha3 = sha3$1;
     exports.soliditySha3 = soliditySha3;
+    exports.stringToHex = stringToHex;
+    exports.toAscii = toAscii;
+    exports.toBN = toBN$1;
+    exports.toChecksumAddress = toChecksumAddress;
+    exports.toDecimal = toDecimal;
+    exports.toHex = toHex$1;
+    exports.toTwosComplement = toTwosComplement$1;
+    exports.toUtf8 = toUtf8;
+    exports.toWei = toWei;
+    exports.utf8ToHex = utf8ToHex$1;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
 
-},{"@babel/runtime/helpers/typeof":2,"bn.js":25,"eth-lib/lib/hash":105,"ethjs-unit":117,"lodash/isArray":302,"lodash/isBoolean":304,"lodash/isNull":308,"lodash/isNumber":309,"lodash/isObject":310,"lodash/isString":312,"lodash/map":316,"number-to-bn":373,"randomhex":401,"utf8":628}],724:[function(require,module,exports){
-arguments[4][118][0].apply(exports,arguments)
-},{"dup":118}],725:[function(require,module,exports){
+},{"@babel/runtime/helpers/typeof":2,"bn.js":25,"eth-lib/lib/hash":107,"ethjs-unit":119,"lodash/isArray":301,"lodash/isBoolean":303,"lodash/isNull":307,"lodash/isNumber":308,"lodash/isObject":309,"lodash/isString":311,"lodash/map":315,"number-to-bn":373,"randomhex":401,"utf8":628}],721:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"dup":120}],722:[function(require,module,exports){
 arguments[4][625][0].apply(exports,arguments)
-},{"dup":625}],726:[function(require,module,exports){
+},{"dup":625}],723:[function(require,module,exports){
 arguments[4][632][0].apply(exports,arguments)
-},{"./soliditySha3.js":727,"./utils.js":728,"dup":632,"ethjs-unit":117,"randomhex":401,"underscore":626}],727:[function(require,module,exports){
+},{"./soliditySha3.js":724,"./utils.js":725,"dup":632,"ethjs-unit":119,"randomhex":401,"underscore":626}],724:[function(require,module,exports){
 arguments[4][633][0].apply(exports,arguments)
-},{"./utils.js":728,"bn.js":724,"dup":633,"underscore":626}],728:[function(require,module,exports){
+},{"./utils.js":725,"bn.js":721,"dup":633,"underscore":626}],725:[function(require,module,exports){
 arguments[4][634][0].apply(exports,arguments)
-},{"bn.js":724,"dup":634,"eth-lib/lib/hash":725,"number-to-bn":373,"underscore":626,"utf8":628}],729:[function(require,module,exports){
+},{"bn.js":721,"dup":634,"eth-lib/lib/hash":722,"number-to-bn":373,"underscore":626,"utf8":628}],726:[function(require,module,exports){
 module.exports={
   "_from": "web3@1.0.0-beta.36",
   "_id": "web3@1.0.0-beta.36",
@@ -67984,7 +67861,7 @@ module.exports={
   "_resolved": "https://registry.npmjs.org/web3/-/web3-1.0.0-beta.36.tgz",
   "_shasum": "2954da9e431124c88396025510d840ba731c8373",
   "_spec": "web3@1.0.0-beta.36",
-  "_where": "/home/george/Projects/liquidity/testapp",
+  "_where": "/Users/hazemelagaty/Liquidity/liquidity-browser-app",
   "author": {
     "name": "ethereum.org"
   },
@@ -68045,7 +67922,7 @@ module.exports={
   "version": "1.0.0-beta.36"
 }
 
-},{}],730:[function(require,module,exports){
+},{}],727:[function(require,module,exports){
 /*
     This file is part of web3.js.
 
@@ -68126,7 +68003,149 @@ core.addProviders(Web3);
 module.exports = Web3;
 
 
-},{"../package.json":729,"web3-bzz":629,"web3-core":657,"web3-eth":709,"web3-eth-personal":702,"web3-net":715,"web3-shh":722,"web3-utils":726}],731:[function(require,module,exports){
+},{"../package.json":726,"web3-bzz":629,"web3-core":657,"web3-eth":709,"web3-eth-personal":702,"web3-net":715,"web3-shh":719,"web3-utils":723}],728:[function(require,module,exports){
+var _global = (function() { return this || {}; })();
+var NativeWebSocket = _global.WebSocket || _global.MozWebSocket;
+var websocket_version = require('./version');
+
+
+/**
+ * Expose a W3C WebSocket class with just one or two arguments.
+ */
+function W3CWebSocket(uri, protocols) {
+	var native_instance;
+
+	if (protocols) {
+		native_instance = new NativeWebSocket(uri, protocols);
+	}
+	else {
+		native_instance = new NativeWebSocket(uri);
+	}
+
+	/**
+	 * 'native_instance' is an instance of nativeWebSocket (the browser's WebSocket
+	 * class). Since it is an Object it will be returned as it is when creating an
+	 * instance of W3CWebSocket via 'new W3CWebSocket()'.
+	 *
+	 * ECMAScript 5: http://bclary.com/2004/11/07/#a-13.2.2
+	 */
+	return native_instance;
+}
+if (NativeWebSocket) {
+	['CONNECTING', 'OPEN', 'CLOSING', 'CLOSED'].forEach(function(prop) {
+		Object.defineProperty(W3CWebSocket, prop, {
+			get: function() { return NativeWebSocket[prop]; }
+		});
+	});
+}
+
+/**
+ * Module exports.
+ */
+module.exports = {
+    'w3cwebsocket' : NativeWebSocket ? W3CWebSocket : null,
+    'version'      : websocket_version
+};
+
+},{"./version":729}],729:[function(require,module,exports){
+module.exports = require('../package.json').version;
+
+},{"../package.json":730}],730:[function(require,module,exports){
+module.exports={
+  "_from": "git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
+  "_id": "websocket@1.0.26",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/websocket",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "websocket@git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
+    "name": "websocket",
+    "escapedName": "websocket",
+    "rawSpec": "git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
+    "saveSpec": "git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
+    "fetchSpec": "git://github.com/frozeman/WebSocket-Node.git",
+    "gitCommittish": "browserifyCompatible"
+  },
+  "_requiredBy": [
+    "/web3-providers-ws"
+  ],
+  "_resolved": "git://github.com/frozeman/WebSocket-Node.git#6c72925e3f8aaaea8dc8450f97627e85263999f2",
+  "_spec": "websocket@git://github.com/frozeman/WebSocket-Node.git#browserifyCompatible",
+  "_where": "/Users/hazemelagaty/Liquidity/liquidity-browser-app/node_modules/web3-providers-ws",
+  "author": {
+    "name": "Brian McKelvey",
+    "email": "brian@worlize.com",
+    "url": "https://www.worlize.com/"
+  },
+  "browser": "lib/browser.js",
+  "bugs": {
+    "url": "https://github.com/theturtle32/WebSocket-Node/issues"
+  },
+  "bundleDependencies": false,
+  "config": {
+    "verbose": false
+  },
+  "contributors": [
+    {
+      "name": "Iñaki Baz Castillo",
+      "email": "ibc@aliax.net",
+      "url": "http://dev.sipdoc.net"
+    }
+  ],
+  "dependencies": {
+    "debug": "^2.2.0",
+    "nan": "^2.3.3",
+    "typedarray-to-buffer": "^3.1.2",
+    "yaeti": "^0.0.6"
+  },
+  "deprecated": false,
+  "description": "Websocket Client & Server Library implementing the WebSocket protocol as specified in RFC 6455.",
+  "devDependencies": {
+    "buffer-equal": "^1.0.0",
+    "faucet": "^0.0.1",
+    "gulp": "git+https://github.com/gulpjs/gulp.git#4.0",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.0.0",
+    "jshint-stylish": "^2.2.1",
+    "tape": "^4.0.1"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "homepage": "https://github.com/theturtle32/WebSocket-Node",
+  "keywords": [
+    "websocket",
+    "websockets",
+    "socket",
+    "networking",
+    "comet",
+    "push",
+    "RFC-6455",
+    "realtime",
+    "server",
+    "client"
+  ],
+  "license": "Apache-2.0",
+  "main": "index",
+  "name": "websocket",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theturtle32/WebSocket-Node.git"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "install": "(node-gyp rebuild 2> builderror.log) || (exit 0)",
+    "test": "faucet test/unit"
+  },
+  "version": "1.0.26"
+}
+
+},{}],731:[function(require,module,exports){
 var request = require('xhr-request')
 
 module.exports = function (url, options) {
@@ -68515,7 +68534,7 @@ function getXml(xhr) {
 
 function noop() {}
 
-},{"global/window":124,"is-function":190,"parse-headers":384,"xtend":743}],737:[function(require,module,exports){
+},{"global/window":126,"is-function":189,"parse-headers":384,"xtend":743}],737:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -69427,6 +69446,7 @@ arguments[4][53][0].apply(exports,arguments)
 },{"./curves.json":786,"bn.js":760,"buffer":791,"dup":53,"elliptic":811,"parse-asn1":857}],790:[function(require,module,exports){
 arguments[4][54][0].apply(exports,arguments)
 },{"buffer":791,"dup":54}],791:[function(require,module,exports){
+(function (Buffer){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -71205,7 +71225,8 @@ function numberIsNaN (obj) {
   return obj !== obj // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":759,"ieee754":844}],792:[function(require,module,exports){
+}).call(this,require("buffer").Buffer)
+},{"base64-js":759,"buffer":791,"ieee754":844}],792:[function(require,module,exports){
 module.exports = {
   "100": "Continue",
   "101": "Switching Protocols",
@@ -71397,56 +71418,56 @@ arguments[4][61][0].apply(exports,arguments)
 },{"cipher-base":793,"dup":61,"inherits":845,"safe-buffer":892}],800:[function(require,module,exports){
 arguments[4][62][0].apply(exports,arguments)
 },{"browserify-cipher":780,"browserify-sign":787,"browserify-sign/algos":784,"create-ecdh":795,"create-hash":796,"create-hmac":798,"diffie-hellman":807,"dup":62,"pbkdf2":858,"public-encrypt":865,"randombytes":875,"randomfill":876}],801:[function(require,module,exports){
-arguments[4][65][0].apply(exports,arguments)
-},{"./des/cbc":802,"./des/cipher":803,"./des/des":804,"./des/ede":805,"./des/utils":806,"dup":65}],802:[function(require,module,exports){
-arguments[4][66][0].apply(exports,arguments)
-},{"dup":66,"inherits":845,"minimalistic-assert":850}],803:[function(require,module,exports){
 arguments[4][67][0].apply(exports,arguments)
-},{"dup":67,"minimalistic-assert":850}],804:[function(require,module,exports){
+},{"./des/cbc":802,"./des/cipher":803,"./des/des":804,"./des/ede":805,"./des/utils":806,"dup":67}],802:[function(require,module,exports){
 arguments[4][68][0].apply(exports,arguments)
-},{"../des":801,"dup":68,"inherits":845,"minimalistic-assert":850}],805:[function(require,module,exports){
+},{"dup":68,"inherits":845,"minimalistic-assert":850}],803:[function(require,module,exports){
 arguments[4][69][0].apply(exports,arguments)
-},{"../des":801,"dup":69,"inherits":845,"minimalistic-assert":850}],806:[function(require,module,exports){
+},{"dup":69,"minimalistic-assert":850}],804:[function(require,module,exports){
 arguments[4][70][0].apply(exports,arguments)
-},{"dup":70}],807:[function(require,module,exports){
+},{"../des":801,"dup":70,"inherits":845,"minimalistic-assert":850}],805:[function(require,module,exports){
 arguments[4][71][0].apply(exports,arguments)
-},{"./lib/dh":808,"./lib/generatePrime":809,"./lib/primes.json":810,"buffer":791,"dup":71}],808:[function(require,module,exports){
+},{"../des":801,"dup":71,"inherits":845,"minimalistic-assert":850}],806:[function(require,module,exports){
 arguments[4][72][0].apply(exports,arguments)
-},{"./generatePrime":809,"bn.js":760,"buffer":791,"dup":72,"miller-rabin":849,"randombytes":875}],809:[function(require,module,exports){
+},{"dup":72}],807:[function(require,module,exports){
 arguments[4][73][0].apply(exports,arguments)
-},{"bn.js":760,"dup":73,"miller-rabin":849,"randombytes":875}],810:[function(require,module,exports){
+},{"./lib/dh":808,"./lib/generatePrime":809,"./lib/primes.json":810,"buffer":791,"dup":73}],808:[function(require,module,exports){
 arguments[4][74][0].apply(exports,arguments)
-},{"dup":74}],811:[function(require,module,exports){
+},{"./generatePrime":809,"bn.js":760,"buffer":791,"dup":74,"miller-rabin":849,"randombytes":875}],809:[function(require,module,exports){
 arguments[4][75][0].apply(exports,arguments)
-},{"../package.json":826,"./elliptic/curve":814,"./elliptic/curves":817,"./elliptic/ec":818,"./elliptic/eddsa":821,"./elliptic/utils":825,"brorand":761,"dup":75}],812:[function(require,module,exports){
+},{"bn.js":760,"dup":75,"miller-rabin":849,"randombytes":875}],810:[function(require,module,exports){
 arguments[4][76][0].apply(exports,arguments)
-},{"../../elliptic":811,"bn.js":760,"dup":76}],813:[function(require,module,exports){
+},{"dup":76}],811:[function(require,module,exports){
 arguments[4][77][0].apply(exports,arguments)
-},{"../../elliptic":811,"../curve":814,"bn.js":760,"dup":77,"inherits":845}],814:[function(require,module,exports){
+},{"../package.json":826,"./elliptic/curve":814,"./elliptic/curves":817,"./elliptic/ec":818,"./elliptic/eddsa":821,"./elliptic/utils":825,"brorand":761,"dup":77}],812:[function(require,module,exports){
 arguments[4][78][0].apply(exports,arguments)
-},{"./base":812,"./edwards":813,"./mont":815,"./short":816,"dup":78}],815:[function(require,module,exports){
+},{"../../elliptic":811,"bn.js":760,"dup":78}],813:[function(require,module,exports){
 arguments[4][79][0].apply(exports,arguments)
-},{"../../elliptic":811,"../curve":814,"bn.js":760,"dup":79,"inherits":845}],816:[function(require,module,exports){
+},{"../../elliptic":811,"../curve":814,"bn.js":760,"dup":79,"inherits":845}],814:[function(require,module,exports){
 arguments[4][80][0].apply(exports,arguments)
-},{"../../elliptic":811,"../curve":814,"bn.js":760,"dup":80,"inherits":845}],817:[function(require,module,exports){
+},{"./base":812,"./edwards":813,"./mont":815,"./short":816,"dup":80}],815:[function(require,module,exports){
 arguments[4][81][0].apply(exports,arguments)
-},{"../elliptic":811,"./precomputed/secp256k1":824,"dup":81,"hash.js":830}],818:[function(require,module,exports){
+},{"../../elliptic":811,"../curve":814,"bn.js":760,"dup":81,"inherits":845}],816:[function(require,module,exports){
 arguments[4][82][0].apply(exports,arguments)
-},{"../../elliptic":811,"./key":819,"./signature":820,"bn.js":760,"dup":82,"hmac-drbg":842}],819:[function(require,module,exports){
+},{"../../elliptic":811,"../curve":814,"bn.js":760,"dup":82,"inherits":845}],817:[function(require,module,exports){
 arguments[4][83][0].apply(exports,arguments)
-},{"../../elliptic":811,"bn.js":760,"dup":83}],820:[function(require,module,exports){
+},{"../elliptic":811,"./precomputed/secp256k1":824,"dup":83,"hash.js":830}],818:[function(require,module,exports){
 arguments[4][84][0].apply(exports,arguments)
-},{"../../elliptic":811,"bn.js":760,"dup":84}],821:[function(require,module,exports){
+},{"../../elliptic":811,"./key":819,"./signature":820,"bn.js":760,"dup":84,"hmac-drbg":842}],819:[function(require,module,exports){
 arguments[4][85][0].apply(exports,arguments)
-},{"../../elliptic":811,"./key":822,"./signature":823,"dup":85,"hash.js":830}],822:[function(require,module,exports){
+},{"../../elliptic":811,"bn.js":760,"dup":85}],820:[function(require,module,exports){
 arguments[4][86][0].apply(exports,arguments)
-},{"../../elliptic":811,"dup":86}],823:[function(require,module,exports){
+},{"../../elliptic":811,"bn.js":760,"dup":86}],821:[function(require,module,exports){
 arguments[4][87][0].apply(exports,arguments)
-},{"../../elliptic":811,"bn.js":760,"dup":87}],824:[function(require,module,exports){
+},{"../../elliptic":811,"./key":822,"./signature":823,"dup":87,"hash.js":830}],822:[function(require,module,exports){
 arguments[4][88][0].apply(exports,arguments)
-},{"dup":88}],825:[function(require,module,exports){
+},{"../../elliptic":811,"dup":88}],823:[function(require,module,exports){
 arguments[4][89][0].apply(exports,arguments)
-},{"bn.js":760,"dup":89,"minimalistic-assert":850,"minimalistic-crypto-utils":851}],826:[function(require,module,exports){
+},{"../../elliptic":811,"bn.js":760,"dup":89}],824:[function(require,module,exports){
+arguments[4][90][0].apply(exports,arguments)
+},{"dup":90}],825:[function(require,module,exports){
+arguments[4][91][0].apply(exports,arguments)
+},{"bn.js":760,"dup":91,"minimalistic-assert":850,"minimalistic-crypto-utils":851}],826:[function(require,module,exports){
 module.exports={
   "_from": "elliptic@^6.0.0",
   "_id": "elliptic@6.4.1",
@@ -72061,36 +72082,36 @@ function functionBindPolyfill(context) {
 }
 
 },{}],828:[function(require,module,exports){
-arguments[4][120][0].apply(exports,arguments)
-},{"dup":120,"md5.js":848,"safe-buffer":892}],829:[function(require,module,exports){
-arguments[4][126][0].apply(exports,arguments)
-},{"dup":126,"inherits":845,"safe-buffer":892,"stream":901}],830:[function(require,module,exports){
-arguments[4][127][0].apply(exports,arguments)
-},{"./hash/common":831,"./hash/hmac":832,"./hash/ripemd":833,"./hash/sha":834,"./hash/utils":841,"dup":127}],831:[function(require,module,exports){
+arguments[4][122][0].apply(exports,arguments)
+},{"dup":122,"md5.js":848,"safe-buffer":892}],829:[function(require,module,exports){
 arguments[4][128][0].apply(exports,arguments)
-},{"./utils":841,"dup":128,"minimalistic-assert":850}],832:[function(require,module,exports){
+},{"dup":128,"inherits":845,"safe-buffer":892,"stream":901}],830:[function(require,module,exports){
 arguments[4][129][0].apply(exports,arguments)
-},{"./utils":841,"dup":129,"minimalistic-assert":850}],833:[function(require,module,exports){
+},{"./hash/common":831,"./hash/hmac":832,"./hash/ripemd":833,"./hash/sha":834,"./hash/utils":841,"dup":129}],831:[function(require,module,exports){
 arguments[4][130][0].apply(exports,arguments)
-},{"./common":831,"./utils":841,"dup":130}],834:[function(require,module,exports){
+},{"./utils":841,"dup":130,"minimalistic-assert":850}],832:[function(require,module,exports){
 arguments[4][131][0].apply(exports,arguments)
-},{"./sha/1":835,"./sha/224":836,"./sha/256":837,"./sha/384":838,"./sha/512":839,"dup":131}],835:[function(require,module,exports){
+},{"./utils":841,"dup":131,"minimalistic-assert":850}],833:[function(require,module,exports){
 arguments[4][132][0].apply(exports,arguments)
-},{"../common":831,"../utils":841,"./common":840,"dup":132}],836:[function(require,module,exports){
+},{"./common":831,"./utils":841,"dup":132}],834:[function(require,module,exports){
 arguments[4][133][0].apply(exports,arguments)
-},{"../utils":841,"./256":837,"dup":133}],837:[function(require,module,exports){
+},{"./sha/1":835,"./sha/224":836,"./sha/256":837,"./sha/384":838,"./sha/512":839,"dup":133}],835:[function(require,module,exports){
 arguments[4][134][0].apply(exports,arguments)
-},{"../common":831,"../utils":841,"./common":840,"dup":134,"minimalistic-assert":850}],838:[function(require,module,exports){
+},{"../common":831,"../utils":841,"./common":840,"dup":134}],836:[function(require,module,exports){
 arguments[4][135][0].apply(exports,arguments)
-},{"../utils":841,"./512":839,"dup":135}],839:[function(require,module,exports){
+},{"../utils":841,"./256":837,"dup":135}],837:[function(require,module,exports){
 arguments[4][136][0].apply(exports,arguments)
-},{"../common":831,"../utils":841,"dup":136,"minimalistic-assert":850}],840:[function(require,module,exports){
+},{"../common":831,"../utils":841,"./common":840,"dup":136,"minimalistic-assert":850}],838:[function(require,module,exports){
 arguments[4][137][0].apply(exports,arguments)
-},{"../utils":841,"dup":137}],841:[function(require,module,exports){
+},{"../utils":841,"./512":839,"dup":137}],839:[function(require,module,exports){
 arguments[4][138][0].apply(exports,arguments)
-},{"dup":138,"inherits":845,"minimalistic-assert":850}],842:[function(require,module,exports){
+},{"../common":831,"../utils":841,"dup":138,"minimalistic-assert":850}],840:[function(require,module,exports){
 arguments[4][139][0].apply(exports,arguments)
-},{"dup":139,"hash.js":830,"minimalistic-assert":850,"minimalistic-crypto-utils":851}],843:[function(require,module,exports){
+},{"../utils":841,"dup":139}],841:[function(require,module,exports){
+arguments[4][140][0].apply(exports,arguments)
+},{"dup":140,"inherits":845,"minimalistic-assert":850}],842:[function(require,module,exports){
+arguments[4][141][0].apply(exports,arguments)
+},{"dup":141,"hash.js":830,"minimalistic-assert":850,"minimalistic-crypto-utils":851}],843:[function(require,module,exports){
 var http = require('http')
 var url = require('url')
 
@@ -72210,8 +72231,8 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 }
 
 },{}],845:[function(require,module,exports){
-arguments[4][146][0].apply(exports,arguments)
-},{"dup":146}],846:[function(require,module,exports){
+arguments[4][145][0].apply(exports,arguments)
+},{"dup":145}],846:[function(require,module,exports){
 /*!
  * Determine if an object is a Buffer
  *
@@ -72242,14 +72263,14 @@ module.exports = Array.isArray || function (arr) {
 };
 
 },{}],848:[function(require,module,exports){
+arguments[4][321][0].apply(exports,arguments)
+},{"dup":321,"hash-base":829,"inherits":845,"safe-buffer":892}],849:[function(require,module,exports){
 arguments[4][322][0].apply(exports,arguments)
-},{"dup":322,"hash-base":829,"inherits":845,"safe-buffer":892}],849:[function(require,module,exports){
+},{"bn.js":760,"brorand":761,"dup":322}],850:[function(require,module,exports){
 arguments[4][323][0].apply(exports,arguments)
-},{"bn.js":760,"brorand":761,"dup":323}],850:[function(require,module,exports){
+},{"dup":323}],851:[function(require,module,exports){
 arguments[4][324][0].apply(exports,arguments)
-},{"dup":324}],851:[function(require,module,exports){
-arguments[4][325][0].apply(exports,arguments)
-},{"dup":325}],852:[function(require,module,exports){
+},{"dup":324}],852:[function(require,module,exports){
 exports.endianness = function () { return 'LE' };
 
 exports.hostname = function () {
@@ -72307,40 +72328,8 @@ arguments[4][380][0].apply(exports,arguments)
 },{"./certificate":855,"asn1.js":745,"dup":380}],855:[function(require,module,exports){
 arguments[4][381][0].apply(exports,arguments)
 },{"asn1.js":745,"dup":381}],856:[function(require,module,exports){
-(function (Buffer){
-// adapted from https://github.com/apatil/pemstrip
-var findProc = /Proc-Type: 4,ENCRYPTED[\n\r]+DEK-Info: AES-((?:128)|(?:192)|(?:256))-CBC,([0-9A-H]+)[\n\r]+([0-9A-z\n\r\+\/\=]+)[\n\r]+/m
-var startRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----/m
-var fullRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----([0-9A-z\n\r\+\/\=]+)-----END \1-----$/m
-var evp = require('evp_bytestokey')
-var ciphers = require('browserify-aes')
-module.exports = function (okey, password) {
-  var key = okey.toString()
-  var match = key.match(findProc)
-  var decrypted
-  if (!match) {
-    var match2 = key.match(fullRegex)
-    decrypted = new Buffer(match2[2].replace(/[\r\n]/g, ''), 'base64')
-  } else {
-    var suite = 'aes' + match[1]
-    var iv = new Buffer(match[2], 'hex')
-    var cipherText = new Buffer(match[3].replace(/[\r\n]/g, ''), 'base64')
-    var cipherKey = evp(password, iv.slice(0, 8), parseInt(match[1], 10)).key
-    var out = []
-    var cipher = ciphers.createDecipheriv(suite, cipherKey, iv)
-    out.push(cipher.update(cipherText))
-    out.push(cipher.final())
-    decrypted = Buffer.concat(out)
-  }
-  var tag = key.match(startRegex)[1]
-  return {
-    tag: tag,
-    data: decrypted
-  }
-}
-
-}).call(this,require("buffer").Buffer)
-},{"browserify-aes":765,"buffer":791,"evp_bytestokey":828}],857:[function(require,module,exports){
+arguments[4][382][0].apply(exports,arguments)
+},{"browserify-aes":765,"dup":382,"evp_bytestokey":828,"safe-buffer":892}],857:[function(require,module,exports){
 arguments[4][383][0].apply(exports,arguments)
 },{"./aesid.json":853,"./asn1":854,"./fixProc":856,"browserify-aes":765,"dup":383,"pbkdf2":858,"safe-buffer":892}],858:[function(require,module,exports){
 arguments[4][385][0].apply(exports,arguments)
@@ -73345,48 +73334,8 @@ exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
 },{"./decode":872,"./encode":873}],875:[function(require,module,exports){
-(function (process,global){
-'use strict'
-
-function oldBrowser () {
-  throw new Error('Secure random number generation is not supported by this browser.\nUse Chrome, Firefox or Internet Explorer 11')
-}
-
-var Buffer = require('safe-buffer').Buffer
-var crypto = global.crypto || global.msCrypto
-
-if (crypto && crypto.getRandomValues) {
-  module.exports = randomBytes
-} else {
-  module.exports = oldBrowser
-}
-
-function randomBytes (size, cb) {
-  // phantomjs needs to throw
-  if (size > 65536) throw new Error('requested too many random bytes')
-  // in case browserify  isn't using the Uint8Array version
-  var rawBytes = new global.Uint8Array(size)
-
-  // This will not work in older browsers.
-  // See https://developer.mozilla.org/en-US/docs/Web/API/window.crypto.getRandomValues
-  if (size > 0) {  // getRandomValues fails on IE if size == 0
-    crypto.getRandomValues(rawBytes)
-  }
-
-  // XXX: phantomjs doesn't like a buffer being passed here
-  var bytes = Buffer.from(rawBytes.buffer)
-
-  if (typeof cb === 'function') {
-    return process.nextTick(function () {
-      cb(null, bytes)
-    })
-  }
-
-  return bytes
-}
-
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":864,"safe-buffer":892}],876:[function(require,module,exports){
+arguments[4][397][0].apply(exports,arguments)
+},{"_process":864,"dup":397,"safe-buffer":892}],876:[function(require,module,exports){
 arguments[4][398][0].apply(exports,arguments)
 },{"_process":864,"dup":398,"randombytes":875,"safe-buffer":892}],877:[function(require,module,exports){
 module.exports = require('./lib/_stream_duplex.js');

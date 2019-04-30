@@ -1,4 +1,4 @@
-const HUB_CONTRACT_ADDRESS = "0xb0f0FE02b1B9A6167E93d382bdeE68521B0f3022";
+const HUB_CONTRACT_ADDRESS = "0x66b26B6CeA8557D6d209B33A30D69C11B0993a3a";
 const HUB_API_URL = "https://rinkeby.liquidity.network/";
 const RPC_URL = "https://rinkeby.infura.io/";
 
