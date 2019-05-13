@@ -31,12 +31,22 @@ $(document).ready(function(){
     $("#get-money-button").prop('disabled', true);
 
     const Http = new XMLHttpRequest();
-    const url= FAUCET_URL + "/" + BOB_PUB;
-    Http.open("GET", url);
+    const url= FAUCET_URL;
+    const params = 'address=' + BOB_PUB;
+    Http.open("POST", url, true);
+    Http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
     Http.send();
     Http.onreadystatechange=(e)=>{
       console.log(Http.responseText)
     }
+
+    Http.onreadystatechange = function() {
+        if(Http.readyState == 4 && Http.status == 200) {
+            console.log(Http.responseText);
+        }
+    }
+    Http.send(params);
   }
 
   async function register() {
