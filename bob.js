@@ -31,7 +31,7 @@ $(document).ready(function(){
     $("#get-money-button").prop('disabled', true);
 
     const Http = new XMLHttpRequest();
-    const url="https://faucet.liquidity.network/" + BOB_PUB;
+    const url= FAUCET_URL + "/" + BOB_PUB;
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange=(e)=>{
