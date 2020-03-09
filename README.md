@@ -11,7 +11,7 @@ Bundle.js is a browser friendly compilation of all dependencies required to use 
 
 1) A dummy npm project with index.js 
   ```
-  const Web3 = require('web3') // Web3 1.0.0-beta.36 only for now
+  const Web3 = require('web3') // Web3 1.0.0-beta.37 only for now
   const BigNumber = require('bignumber.js')
   const { NocustManager } = require('nocust-client')
 
@@ -28,7 +28,7 @@ Bundle.js is a browser friendly compilation of all dependencies required to use 
   };
   ```
 
-2) package.json including dependencies as in https://docs.liquidity.network
+2) package.json including dependencies as in [here](https://liquidity-network.github.io/nocust-client-library/docs/getting-started)
 
 3) then dependencies are bundled using browserify
   ```
