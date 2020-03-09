@@ -1,9 +1,9 @@
 // const HUB_CONTRACT_ADDRESS = "0x66b26B6CeA8557D6d209B33A30D69C11B0993a3a";
-const HUB_CONTRACT_ADDRESS = "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7";
-// const HUB_API_URL = "https://rinkeby.liquidity.network/";
-const HUB_API_URL = "http://localhost:8123/";
-// const RPC_URL = "https://rinkeby.infura.io/";
-const RPC_URL = "http://localhost:8545/";
+const HUB_CONTRACT_ADDRESS = "0x01A6cC0201F51fc6e016DB734489799031881fD3";
+const HUB_API_URL = "https://rinkeby-v2.liquidity.network/";
+// const HUB_API_URL = "http://localhost:8123/";
+const RPC_URL = "https://rinkeby.infura.io/v3/1e82e39a71a24c6680a9e3feabe71106";
+// const RPC_URL = "http://localhost:8545/";
 // const FAUCET_URL = "https://rinkeby-faucet.liquidity.network";
 
 

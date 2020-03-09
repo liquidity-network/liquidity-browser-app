@@ -74,20 +74,23 @@ $(document).ready(function () {
     // $("#get-money-button").prop('disabled', true);
 
     // Send fETH on the commit-chain to Alice  
-    const txId = await nocust.transfer({
+    const tx = await nocust.transfer({
       from: BOB_PUB,
       to: ALICE_PUB,
       amount: 0,
     });
 
-    console.log("Transfer to Alice sent ! Transaction ID: ", txId);
+    console.log("Transfer to Alice sent ! Transaction ID: ", tx.txId);
+
+    $("#send-button").text('💸 Send To Alice');
+    $("#send-button").prop('disabled', false);
+    alert(`'Transfer to Alice is sent! Transaction ID: ${tx.txId}`)
   }
 
   register();
 
   window.sendToALice = sendToALice;
   // window.getMoney = getMoney;
-
 });
 
 
